@@ -127,6 +127,29 @@
             background-clip: text;
             animation: gradientFlow 4s linear infinite;
         }
+
+        /* Shine Effect for Logo */
+        @keyframes shineSweep {
+            0% { left: -100%; }
+            20% { left: 100%; }
+            100% { left: 100%; }
+        }
+        .animate-shine {
+            position: relative;
+            overflow: hidden;
+        }
+        .animate-shine::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+            transform: skewX(-25deg);
+            animation: shineSweep 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+            pointer-events: none; /* ป้องกันไม่ให้บังการคลิก */
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col text-gray-800 relative z-0">
@@ -138,8 +161,8 @@
     <nav id="main-nav" class="w-full bg-slate-900 shadow-xl px-3 sm:px-6 py-2.5 sticky top-0 z-50 flex items-center gap-3 sm:gap-5 border-b border-slate-700/50">
         
         <!-- Brand / Logo (Top Left) -->
-        <div class="flex items-center cursor-pointer shrink-0 group gap-2" onclick="navigateTo('home', event)">
-            <img src="/icon.svg?v=3" alt="AILSED Logo" class="h-8 sm:h-10 w-auto object-contain transition-transform duration-300 group-hover:opacity-90 rounded-md" />
+        <div class="flex items-center cursor-pointer shrink-0 group gap-2 animate-shine rounded-md" onclick="navigateTo('home', event)">
+            <img src="https://live.staticflickr.com/65535/55608910330_91be335ec1_c.jpg" alt="AILSED Logo" class="h-8 sm:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
         </div>
 
         <!-- Nav Links -->
@@ -583,18 +606,21 @@
             });
 
             if(event && event.currentTarget) {
-                const activeLink = event.currentTarget;
-                const activeColor = activeLink.getAttribute('data-active-color');
-                const defaultColor = activeLink.getAttribute('data-default-color');
-                
-                if (activeColor && defaultColor) {
-                    activeLink.classList.remove(defaultColor);
-                    activeLink.classList.add(activeColor);
-                }
-                
-                const activeIcon = activeLink.querySelector('i');
-                if (activeIcon) {
-                    activeIcon.style.color = "inherit";
+                // เช็คว่าที่คลิกมาเป็น nav-link หรือไม่ (เพื่อไม่ให้โลโก้ไปเปลี่ยนสีเมนู)
+                const activeLink = event.currentTarget.closest('.nav-link');
+                if (activeLink) {
+                    const activeColor = activeLink.getAttribute('data-active-color');
+                    const defaultColor = activeLink.getAttribute('data-default-color');
+                    
+                    if (activeColor && defaultColor) {
+                        activeLink.classList.remove(defaultColor);
+                        activeLink.classList.add(activeColor);
+                    }
+                    
+                    const activeIcon = activeLink.querySelector('i');
+                    if (activeIcon) {
+                        activeIcon.style.color = "inherit";
+                    }
                 }
             }
 
