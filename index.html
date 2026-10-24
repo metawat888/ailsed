@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ailsed</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles & Animations -->
+    <style>
+        body {
+            font-family: 'Sarabun', 'Inter', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+            background-color: #f8fafc;
+        }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        
+        /* Smooth Page Transitions */
+        .page-section {
+            display: none;
+            opacity: 0;
+            transform: translateY(15px);
+            transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: opacity, transform;
+        }
+        .page-section.active {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* UI Animations */
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            20% { transform: rotate(-15deg); }
+            40% { transform: rotate(10deg); }
+            60% { transform: rotate(-5deg); }
+            80% { transform: rotate(5deg); }
+        }
+        .animate-wiggle { 
+            animation: wiggle 2.5s ease-in-out infinite; 
+            display: inline-block; 
+            transform-origin: bottom center; 
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        /* Cloud Floating Pattern */
+        .bg-grid-pattern {
+            background-color: rgba(255, 255, 255, 0.85);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 150' width='300' height='225'%3E%3Cpath d='M73.5,45c-0.8-11.5-10.4-20.5-22-20.5c-7.7,0-14.5,4-18.4,10C31.5,33.8,29.9,33,28,33c-6.1,0-11,4.9-11,11c0,0.5,0,0.9,0.1,1.4C12.5,47.3,9,52.2,9,58c0,7.2,5.8,13,13,13h50c8.3,0,15-6.7,15-15C87,48.7,81.1,45.3,73.5,45z' fill='%230ea5e9' fill-opacity='0.08'/%3E%3Cpath d='M163.5,105c-0.6-8.6-7.8-15.3-16.5-15.3c-5.8,0-10.9,3-13.8,7.5c-1.2-0.9-2.4-1.5-3.8-1.5c-4.5,0-8.2,3.7-8.2,8.2c0,0.4,0,0.7,0.1,1c-2.6,0.5-5.3,4.2-5.3,8.6c0,5.4,4.3,9.7,9.7,9.7h37.5c6.2,0,11.2-5,11.2-11.2C173.7,107.8,169.3,105.3,163.5,105z' fill='%230ea5e9' fill-opacity='0.05'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            animation: moveClouds 40s linear infinite;
+        }
+
+        @keyframes moveClouds {
+            from { background-position: 0px 0px; }
+            to { background-position: 300px 0px; }
+        }
+
+        .animate-fade-in-up { animation: fadeInUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; will-change: transform, opacity; }
+        .animate-slide-in-left { animation: slideInLeft 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; will-change: transform, opacity; }
+        
+        .anim-delay-100 { animation-delay: 0.1s; }
+        .anim-delay-200 { animation-delay: 0.2s; }
+        .anim-delay-300 { animation-delay: 0.3s; }
+        .anim-delay-400 { animation-delay: 0.4s; }
+        .anim-delay-500 { animation-delay: 0.5s; }
+        .start-opacity-0 { opacity: 0; }
+        
+        iframe { background: transparent; }
+
+        /* Hide scrollbar for mobile navigation */
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Flowing Text Gradient Effect */
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        .animate-gradient-flow {
+            background: linear-gradient(to right, #ffffff 0%, #0ea5e9 25%, #ffffff 50%, #0ea5e9 75%, #ffffff 100%);
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: gradientFlow 4s linear infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col text-gray-800 relative z-0">
+
+    <!-- Interactive Background Canvas -->
+    <canvas id="particle-canvas" class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"></canvas>
+
+    <!-- Top Banner Navigation -->
+    <nav id="main-nav" class="w-full bg-slate-900 shadow-xl px-4 sm:px-6 py-3 sticky top-0 z-50 flex flex-col xl:flex-row items-center justify-between gap-4 border-b border-slate-700/50">
+        
+        <!-- Brand / Logo (Top Left) -->
+        <div class="flex items-center cursor-pointer shrink-0 group" onclick="navigateTo('home', event)">
+            <img src="https://live.staticflickr.com/65535/55608910330_91be335ec1_c.jpg" alt="Ai Lab Studio Education Logo" class="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105 group-hover:opacity-90 rounded-md" />
+        </div>
+
+        <!-- Nav Links -->
+        <div class="flex flex-nowrap items-center justify-start xl:justify-end gap-4 sm:gap-6 lg:gap-7 text-sm w-full xl:w-auto overflow-x-auto scrollbar-hide py-1" id="nav-menu">
+            
+            <a href="#" onclick="navigateTo('home', event)" class="nav-link shrink-0 flex items-center gap-1.5 transition-colors duration-300 cursor-pointer group text-white hover:text-white" data-active-color="text-white" data-hover-color="hover:text-white" data-default-color="text-gray-400">
+                <i class="fa-solid fa-house text-lg group-hover:scale-110 transition-transform duration-300" style="color: inherit;"></i>
+                <span class="font-medium tracking-wide">หน้าหลัก</span>
+            </a>
+
+            <a href="#" onclick="navigateTo('ailab', event)" class="nav-link shrink-0 flex items-center gap-1.5 transition-colors duration-300 cursor-pointer group text-gray-400 hover:text-[#0ea5e9]" data-active-color="text-[#0ea5e9]" data-hover-color="hover:text-[#0ea5e9]" data-default-color="text-gray-400">
+                <i class="fa-solid fa-flask text-lg group-hover:scale-110 transition-transform duration-300" style="color: inherit;"></i>
+                <span class="font-medium tracking-wide">Ai Lab</span>
+            </a>
+
+            <a href="#" onclick="navigateTo('worksheet', event)" class="nav-link shrink-0 flex items-center gap-1.5 transition-colors duration-300 cursor-pointer group text-gray-400 hover:text-[#f97316]" data-active-color="text-[#f97316]" data-hover-color="hover:text-[#f97316]" data-default-color="text-gray-400">
+                <i class="fa-solid fa-clipboard text-lg group-hover:scale-110 transition-transform duration-300" style="color: inherit;"></i>
+                <span class="font-medium tracking-wide">ใบงาน</span>
+            </a>
+            
+            <a href="#" onclick="navigateTo('classroom', event)" class="nav-link shrink-0 flex items-center gap-1.5 transition-colors duration-300 cursor-pointer group text-gray-400 hover:text-[#10B981]" data-active-color="text-[#10B981]" data-hover-color="hover:text-[#10B981]" data-default-color="text-gray-400">
+                <i class="fa-solid fa-school-flag text-lg group-hover:scale-110 transition-transform duration-300" style="color: inherit;"></i>
+                <span class="font-medium tracking-wide">ห้องเรียน</span>
+            </a>
+
+            <a href="#" onclick="navigateTo('exams', event)" class="nav-link shrink-0 flex items-center gap-1.5 transition-colors duration-300 cursor-pointer group text-gray-400 hover:text-[#ef4444]" data-active-color="text-[#ef4444]" data-hover-color="hover:text-[#ef4444]" data-default-color="text-gray-400">
+                <i class="fa-solid fa-book text-lg group-hover:scale-110 transition-transform duration-300" style="color: inherit;"></i>
+                <span class="font-medium tracking-wide">คลังข้อสอบ</span>
+            </a>
+            
+            <a href="#" onclick="navigateTo('pa', event)" class="nav-link shrink-0 flex items-center gap-1.5 transition-colors duration-300 cursor-pointer group text-gray-400 hover:text-[#8b5cf6]" data-active-color="text-[#8b5cf6]" data-hover-color="hover:text-[#8b5cf6]" data-default-color="text-gray-400">
+                <i class="fa-solid fa-file text-lg group-hover:scale-110 transition-transform duration-300" style="color: inherit;"></i>
+                <span class="font-medium tracking-wide">รายงาน PA</span>
+            </a>
+
+            <a href="#" onclick="navigateTo('development', event)" class="nav-link shrink-0 flex items-center gap-1.5 transition-colors duration-300 cursor-pointer group text-gray-400 hover:text-[#3b82f6]" data-active-color="text-[#3b82f6]" data-hover-color="hover:text-[#3b82f6]" data-default-color="text-gray-400">
+                <i class="fa-solid fa-user text-lg group-hover:scale-110 transition-transform duration-300" style="color: inherit;"></i>
+                <span class="font-medium tracking-wide">รายงานการพัฒนาตน</span>
+            </a>
+
+            <a href="#" onclick="navigateTo('research', event)" class="nav-link shrink-0 flex items-center gap-1.5 transition-colors duration-300 cursor-pointer group text-gray-400 hover:text-[#ec4899]" data-active-color="text-[#ec4899]" data-hover-color="hover:text-[#ec4899]" data-default-color="text-gray-400">
+                <i class="fa-solid fa-r text-lg group-hover:scale-110 transition-transform duration-300" style="color: inherit;"></i>
+                <span class="font-medium tracking-wide">งานวิจัย</span>
+            </a>
+
+        </div>
+    </nav>
+
+    <main class="flex-grow relative z-10 w-full flex flex-col">
+        
+        <!-- SECTION: Home -->
+        <section id="home" class="page-section active bg-grid-pattern backdrop-blur-md py-12 md:py-20 px-6 sm:px-12 lg:px-20 flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12 border border-gray-200/80 shadow-xl relative z-10 my-4 md:my-8 mx-4 sm:mx-6 lg:mx-8 xl:mx-auto max-w-[1600px] rounded-3xl overflow-hidden flex-grow-0">
+            <div class="flex-1 text-center md:text-left space-y-5">
+                <h2 class="font-inter text-[#0ea5e9] font-bold tracking-widest uppercase text-xs md:text-sm mb-2 start-opacity-0 animate-slide-in-left anim-delay-100">
+                    <i class="fa-solid fa-sparkles mr-2"></i> Inspiring the Future
+                </h2>
+                
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-loose drop-shadow-sm start-opacity-0 animate-fade-in-up anim-delay-200 py-3">
+                    ยินดีต้อนรับสู่ 
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#0ea5e9] to-[#3b82f6] font-black italic tracking-wide inline-block hover:scale-105 transition-transform duration-300 cursor-default px-2 py-3 ml-0 md:ml-3 mt-2 md:mt-0 pr-4">
+                        ห้องเรียนครูอาร์ม
+                    </span>
+                </h1>
+
+                <p class="text-lg md:text-xl text-gray-700 font-medium py-2 start-opacity-0 animate-fade-in-up anim-delay-300 leading-loose">
+                    พื้นที่รวบรวม <span class="text-[#f97316] font-bold underline decoration-[#f97316]/40 decoration-4 underline-offset-4 hover:text-[#ea580c] transition-colors cursor-default">นวัตกรรม</span> และ <span class="text-[#0ea5e9] font-bold underline decoration-[#0ea5e9]/40 decoration-4 underline-offset-4 hover:text-[#0284c7] transition-colors cursor-default">ไอเดียการเรียนรู้</span>
+                </p>
+                
+                <p class="font-inter text-sm md:text-base text-gray-600 leading-loose max-w-2xl mx-auto md:mx-0 border-l-4 border-[#0ea5e9] pl-5 py-4 bg-white/60 rounded-r-xl shadow-sm backdrop-blur-md start-opacity-0 animate-fade-in-up anim-delay-400 hover:border-l-8 transition-all duration-300" style="font-family: 'Inter', 'Sarabun', sans-serif;">
+                    ผมมีความตั้งใจในการพัฒนาสื่อการสอนเทคโนโลยี <span class="font-semibold text-gray-800">AI Solutions</span> และสร้างสรรค์สถาปัตยกรรมซอฟต์แวร์ใหม่ๆ 
+                    ที่จะช่วยเปลี่ยนห้องเรียนธรรมดา ให้กลายเป็นพื้นที่แห่งการเรียนรู้ที่สนุกและตอบโจทย์อนาคต
+                </p>
+            </div>
+            
+            <div class="flex-1 flex flex-col items-center justify-center start-opacity-0 animate-fade-in-up anim-delay-500">
+                <div class="relative w-64 h-64 md:w-80 md:h-80 hover:scale-105 transition-transform duration-500">
+                    <img src="https://live.staticflickr.com/65535/55605088814_c19d528e89_c.jpg" alt="ครูวิทยาศาสตร์ในห้องเรียนอัจฉริยะ" class="w-full h-full object-cover object-top rounded-full shadow-2xl border-4 border-white relative z-10"/>
+                    <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-[#0ea5e9]/40 to-[#f97316]/30 blur-2xl -z-10 animate-pulse"></div>
+                </div>
+                
+                <div class="mt-8 text-center bg-grid-pattern px-6 py-3.5 rounded-2xl backdrop-blur-xl border border-gray-200/80 shadow-lg hover:shadow-xl transition-shadow w-fit mx-auto">
+                    <h3 class="font-inter text-lg md:text-xl font-bold text-gray-900 tracking-wide whitespace-nowrap">
+                        Mr. Metawat Phongsaphang
+                    </h3>
+                    <p class="font-inter text-xs md:text-sm font-bold mt-1.5 uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#0ea5e9] to-[#f97316] whitespace-nowrap">
+                        Senior Professional Level Teacher
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: Ai Lab (Full Screen) -->
+        <section id="ailab" class="page-section w-full h-[calc(100vh-64px)] sm:h-[calc(100vh-76px)] flex-col relative z-10 p-0 m-0 flex-grow bg-white">
+            <iframe id="iframe-ailab" src="about:blank" data-src="https://ailabv2.vercel.app/" title="Ai Lab Platform" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+
+        <!-- SECTION: Worksheet -->
+        <section id="worksheet" class="page-section p-3 sm:p-4 md:p-6 lg:p-8 flex-col relative z-10 w-full max-w-full mx-auto flex-grow">
+            <div class="max-w-[1800px] w-full mx-auto flex flex-col gap-6">
+                <!-- Header -->
+                <div class="flex justify-between items-center bg-grid-pattern rounded-2xl shadow-sm px-4 md:px-6 py-3 md:py-4 border border-gray-200/80 flex-wrap gap-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-[#f97316]/10 rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-clipboard text-[#f97316] text-xl"></i>
+                        </div>
+                        <h2 class="text-xl md:text-2xl font-bold text-gray-800">คลังใบงาน</h2>
+                    </div>
+                    <!-- Search Box -->
+                    <div class="relative w-full md:w-auto min-w-[250px] lg:w-[350px]">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        <input type="text" oninput="filterItems('worksheet', this.value)" placeholder="ค้นหาใบงาน..." class="w-full pl-11 pr-4 py-2.5 bg-white border border-gray-200 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-[#f97316]/50 focus:border-[#f97316] transition-all shadow-sm font-inter">
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 mx-auto w-full" id="worksheet-grid">
+                    <!-- Card: Genetic m.3 -->
+                    <div class="bg-grid-pattern rounded-2xl p-4 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer border border-gray-200/80 flex flex-col" onclick="openIframeModal('https://online.fliphtml5.com/Ailabv2/Genetic-m-3/', 'Genetic ม.3')">
+                        <div class="overflow-hidden rounded-xl aspect-[3/4] bg-gray-100 mb-5 relative shadow-inner border border-gray-200/50">
+                            <img src="https://live.staticflickr.com/65535/55606899404_bd77584533_c.jpg" alt="ภาพปก Genetic ม.3" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"/>
+                            <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                                <span class="text-white text-sm font-semibold px-5 py-2.5 bg-[#f97316] rounded-full shadow-lg flex items-center gap-2">
+                                    <i class="fa-solid fa-book-open"></i> เปิดอ่าน E-Book
+                                </span>
+                            </div>
+                        </div>
+                        <h3 class="text-center font-bold text-gray-800 text-lg">Genetic ม.3</h3>
+                        <p class="text-center text-xs text-gray-500 mt-2">เอกสารแบบโต้ตอบ (FlipHTML5)</p>
+                    </div>
+
+                    <!-- Card: Electric m.3 -->
+                    <div class="bg-grid-pattern rounded-2xl p-4 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer border border-gray-200/80 flex flex-col" onclick="openIframeModal('https://online.fliphtml5.com/Ailabv2/m-3-Electric/', 'Electric ม.3')">
+                        <div class="overflow-hidden rounded-xl aspect-[3/4] bg-gray-100 mb-5 relative shadow-inner border border-gray-200/50">
+                            <img src="https://live.staticflickr.com/65535/55606836048_761800db61_c.jpg" alt="ภาพปก Electric ม.3" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"/>
+                            <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                                <span class="text-white text-sm font-semibold px-5 py-2.5 bg-[#f97316] rounded-full shadow-lg flex items-center gap-2">
+                                    <i class="fa-solid fa-book-open"></i> เปิดอ่าน E-Book
+                                </span>
+                            </div>
+                        </div>
+                        <h3 class="text-center font-bold text-gray-800 text-lg">Electric ม.3</h3>
+                        <p class="text-center text-xs text-gray-500 mt-2">เอกสารแบบโต้ตอบ (FlipHTML5)</p>
+                    </div>
+
+                    <!-- Card: Ecosystem m.3 -->
+                    <div class="bg-grid-pattern rounded-2xl p-4 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer border border-gray-200/80 flex flex-col" onclick="openIframeModal('https://online.fliphtml5.com/Ailabv2/m-3-Ecosystem/', 'Ecosystem ม.3')">
+                        <div class="overflow-hidden rounded-xl aspect-[3/4] bg-gray-100 mb-5 relative shadow-inner border border-gray-200/50">
+                            <img src="https://live.staticflickr.com/65535/55607329179_6bf3efe9b2_c.jpg" alt="ภาพปก Ecosystem ม.3" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"/>
+                            <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                                <span class="text-white text-sm font-semibold px-5 py-2.5 bg-[#f97316] rounded-full shadow-lg flex items-center gap-2">
+                                    <i class="fa-solid fa-book-open"></i> เปิดอ่าน E-Book
+                                </span>
+                            </div>
+                        </div>
+                        <h3 class="text-center font-bold text-gray-800 text-lg">Ecosystem ม.3</h3>
+                        <p class="text-center text-xs text-gray-500 mt-2">เอกสารแบบโต้ตอบ (FlipHTML5)</p>
+                    </div>
+
+                    <!-- Card: รวมใบงาน m.3 -->
+                    <div class="bg-grid-pattern rounded-2xl p-4 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer border border-gray-200/80 flex flex-col" onclick="openIframeModal('https://online.fliphtml5.com/Ailabv2/fsls/', 'รวมใบงาน ม.3')">
+                        <div class="overflow-hidden rounded-xl aspect-[3/4] bg-gray-100 mb-5 relative shadow-inner border border-gray-200/50">
+                            <img src="https://live.staticflickr.com/65535/55607338799_0e2063de30_c.jpg" alt="ภาพปกรวมใบงาน ม.3" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"/>
+                            <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                                <span class="text-white text-sm font-semibold px-5 py-2.5 bg-[#f97316] rounded-full shadow-lg flex items-center gap-2">
+                                    <i class="fa-solid fa-book-open"></i> เปิดอ่าน E-Book
+                                </span>
+                            </div>
+                        </div>
+                        <h3 class="text-center font-bold text-gray-800 text-lg">รวมใบงาน ม.3</h3>
+                        <p class="text-center text-xs text-gray-500 mt-2">เอกสารแบบโต้ตอบ (FlipHTML5)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: Classroom (Full Screen) -->
+        <section id="classroom" class="page-section w-full h-[calc(100vh-64px)] sm:h-[calc(100vh-76px)] flex-col relative z-10 p-0 m-0 flex-grow bg-white">
+            <iframe id="iframe-classroom" src="about:blank" data-src="https://proj14.ipst.ac.th/" title="ห้องเรียนอัจฉริยะ Project 14" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+        
+        <!-- SECTION: Exams -->
+        <section id="exams" class="page-section p-3 sm:p-4 md:p-6 lg:p-8 flex-col relative z-10 w-full max-w-full mx-auto flex-grow">
+            <div class="max-w-[1800px] w-full mx-auto flex flex-col gap-6">
+                <!-- Header -->
+                <div class="flex justify-between items-center bg-grid-pattern rounded-2xl shadow-sm px-4 md:px-6 py-3 md:py-4 border border-gray-200/80 flex-wrap gap-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-[#ef4444]/10 rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-book text-[#ef4444] text-xl"></i>
+                        </div>
+                        <h2 class="text-xl md:text-2xl font-bold text-gray-800">คลังข้อสอบ</h2>
+                    </div>
+                    <!-- Search Box -->
+                    <div class="relative w-full md:w-auto min-w-[250px] lg:w-[350px]">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        <input type="text" oninput="filterItems('exams', this.value)" placeholder="ค้นหาข้อสอบ..." class="w-full pl-11 pr-4 py-2.5 bg-white border border-gray-200 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-[#ef4444]/50 focus:border-[#ef4444] transition-all shadow-sm font-inter">
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 mx-auto w-full" id="exams-grid">
+                    <div class="col-span-full text-center py-20 text-gray-500 flex flex-col items-center bg-white/50 rounded-2xl border border-dashed border-gray-300">
+                        <i class="fa-solid fa-folder-open text-5xl mb-4 text-gray-300"></i>
+                        <p class="text-lg font-medium text-gray-600">ยังไม่มีข้อมูลข้อสอบในขณะนี้</p>
+                        <p class="text-sm mt-1 text-gray-400">สามารถค้นหาและแสดงผลได้เมื่อมีการเพิ่มข้อมูลในอนาคต</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: PA -->
+        <section id="pa" class="page-section p-3 sm:p-4 md:p-6 lg:p-8 flex-col relative z-10 w-full max-w-full mx-auto flex-grow">
+            <div class="max-w-[1800px] w-full mx-auto flex flex-col gap-6">
+                <!-- Header -->
+                <div class="flex justify-between items-center bg-grid-pattern rounded-2xl shadow-sm px-4 md:px-6 py-3 md:py-4 border border-gray-200/80">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-[#8b5cf6]/10 rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-file text-[#8b5cf6] text-xl"></i>
+                        </div>
+                        <h2 class="text-xl md:text-2xl font-bold text-gray-800">รายงาน PA (Performance Agreement)</h2>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 mx-auto w-full">
+                    <!-- Cards -->
+                    <div class="bg-grid-pattern rounded-2xl p-4 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer border border-gray-200/80" onclick="openModal('https://live.staticflickr.com/65535/55606730863_315ae62c26_c.jpg')">
+                        <div class="overflow-hidden rounded-xl aspect-[3/4] bg-gray-100 mb-5 relative shadow-inner border border-gray-200/50">
+                            <img src="https://live.staticflickr.com/65535/55606730863_315ae62c26_c.jpg" alt="รายงาน PA 2568-1" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"/>
+                            <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                                <span class="text-white text-sm font-semibold px-5 py-2.5 bg-[#8b5cf6] rounded-full shadow-lg flex items-center gap-2">
+                                    <i class="fa-solid fa-expand"></i> ขยายดูภาพ
+                                </span>
+                            </div>
+                        </div>
+                        <h3 class="text-center font-bold text-gray-800 text-lg">ภาคเรียนที่ 1/2568</h3>
+                    </div>
+
+                    <div class="bg-grid-pattern rounded-2xl p-4 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer border border-gray-200/80" onclick="openModal('https://live.staticflickr.com/65535/55605584122_c899f11a10_c.jpg')">
+                        <div class="overflow-hidden rounded-xl aspect-[3/4] bg-gray-100 mb-5 relative shadow-inner border border-gray-200/50">
+                            <img src="https://live.staticflickr.com/65535/55605584122_c899f11a10_c.jpg" alt="รายงาน PA 2568-2" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"/>
+                            <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                                <span class="text-white text-sm font-semibold px-5 py-2.5 bg-[#8b5cf6] rounded-full shadow-lg flex items-center gap-2">
+                                    <i class="fa-solid fa-expand"></i> ขยายดูภาพ
+                                </span>
+                            </div>
+                        </div>
+                        <h3 class="text-center font-bold text-gray-800 text-lg">ภาคเรียนที่ 2/2568</h3>
+                    </div>
+
+                    <div class="bg-grid-pattern rounded-2xl p-4 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer border border-gray-200/80" onclick="openModal('https://live.staticflickr.com/65535/55607011275_0972dcef7a_c.jpg')">
+                        <div class="overflow-hidden rounded-xl aspect-[3/4] bg-gray-100 mb-5 relative shadow-inner border border-gray-200/50">
+                            <img src="https://live.staticflickr.com/65535/55607011275_0972dcef7a_c.jpg" alt="รายงาน PA 2569-1" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"/>
+                            <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                                <span class="text-white text-sm font-semibold px-5 py-2.5 bg-[#8b5cf6] rounded-full shadow-lg flex items-center gap-2">
+                                    <i class="fa-solid fa-expand"></i> ขยายดูภาพ
+                                </span>
+                            </div>
+                        </div>
+                        <h3 class="text-center font-bold text-gray-800 text-lg">ภาคเรียนที่ 1/2569</h3>
+                    </div>
+
+                    <div class="bg-grid-pattern rounded-2xl p-4 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer border border-gray-200/80" onclick="openModal('https://live.staticflickr.com/65535/55605584117_13df9ff444_c.jpg')">
+                        <div class="overflow-hidden rounded-xl aspect-[3/4] bg-gray-100 mb-5 relative shadow-inner border border-gray-200/50">
+                            <img src="https://live.staticflickr.com/65535/55605584117_13df9ff444_c.jpg" alt="รายงาน PA 2569-2" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"/>
+                            <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                                <span class="text-white text-sm font-semibold px-5 py-2.5 bg-[#8b5cf6] rounded-full shadow-lg flex items-center gap-2">
+                                    <i class="fa-solid fa-expand"></i> ขยายดูภาพ
+                                </span>
+                            </div>
+                        </div>
+                        <h3 class="text-center font-bold text-gray-800 text-lg">ภาคเรียนที่ 2/2569</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: Development -->
+        <section id="development" class="page-section p-3 sm:p-4 md:p-6 lg:p-8 flex-col relative z-10 w-full max-w-full mx-auto flex-grow">
+            <div class="max-w-[1800px] w-full mx-auto flex flex-col gap-6">
+                <!-- Header -->
+                <div class="flex justify-between items-center bg-grid-pattern rounded-2xl shadow-sm px-4 md:px-6 py-3 md:py-4 border border-gray-200/80">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-[#3b82f6]/10 rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-user text-[#3b82f6] text-xl"></i>
+                        </div>
+                        <h2 class="text-xl md:text-2xl font-bold text-gray-800">รายงานการพัฒนาตนเอง</h2>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 mx-auto w-full">
+                    <!-- Card: Dev 1 -->
+                    <div class="bg-grid-pattern rounded-2xl p-4 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer border border-gray-200/80 flex flex-col" onclick="openModal('https://live.staticflickr.com/65535/55607107489_507f287778_c.jpg')">
+                        <div class="overflow-hidden rounded-xl aspect-[3/4] bg-gray-100 mb-5 relative shadow-inner border border-gray-200/50">
+                            <img src="https://live.staticflickr.com/65535/55607107489_507f287778_c.jpg" alt="งานพัฒนาตนเอง 1" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"/>
+                            <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                                <span class="text-white text-sm font-semibold px-5 py-2.5 bg-[#3b82f6] rounded-full shadow-lg flex items-center gap-2">
+                                    <i class="fa-solid fa-expand"></i> ขยายดูภาพ
+                                </span>
+                            </div>
+                        </div>
+                        <h3 class="text-center font-bold text-gray-800 text-lg">งานพัฒนาตนเอง 1</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: Research -->
+        <section id="research" class="page-section p-3 sm:p-4 md:p-6 lg:p-8 flex-col relative z-10 w-full max-w-full mx-auto flex-grow">
+            <div class="max-w-[1800px] w-full mx-auto flex flex-col gap-6">
+                <!-- Header -->
+                <div class="flex justify-between items-center bg-grid-pattern rounded-2xl shadow-sm px-4 md:px-6 py-3 md:py-4 border border-gray-200/80 flex-wrap gap-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-[#ec4899]/10 rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-r text-[#ec4899] text-xl"></i>
+                        </div>
+                        <h2 class="text-xl md:text-2xl font-bold text-gray-800">ผลงานวิจัย</h2>
+                    </div>
+                    <!-- Search Box -->
+                    <div class="relative w-full md:w-auto min-w-[250px] lg:w-[350px]">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        <input type="text" oninput="filterItems('research', this.value)" placeholder="ค้นหางานวิจัย..." class="w-full pl-11 pr-4 py-2.5 bg-white border border-gray-200 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-[#ec4899]/50 focus:border-[#ec4899] transition-all shadow-sm font-inter">
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 mx-auto w-full" id="research-grid">
+                    <!-- Card: Research 1 -->
+                    <div class="bg-grid-pattern rounded-2xl p-4 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer border border-gray-200/80 flex flex-col" onclick="openModal('https://live.staticflickr.com/65535/55605886287_6265f8a795_c.jpg')">
+                        <div class="overflow-hidden rounded-xl aspect-[3/4] bg-gray-100 mb-5 relative shadow-inner border border-gray-200/50">
+                            <img src="https://live.staticflickr.com/65535/55605886287_6265f8a795_c.jpg" alt="งานวิจัย 1" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"/>
+                            <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                                <span class="text-white text-sm font-semibold px-5 py-2.5 bg-[#ec4899] rounded-full shadow-lg flex items-center gap-2">
+                                    <i class="fa-solid fa-expand"></i> ขยายดูภาพ
+                                </span>
+                            </div>
+                        </div>
+                        <h3 class="text-center font-bold text-gray-800 text-sm leading-snug line-clamp-3" title="การแก้ไขมโนมติที่คลาดเคลื่อนและการพัฒนาทักษะกระบวนการทางวิทยาศาสตร์ เรื่อง ไฟฟ้าและอิเล็กทรอนิกส์ ของนักเรียนชั้นมัธยมศึกษาปีที่ 3 โดยใช้การจัดการเรียนรู้แบบ 5E ร่วมกับปัญญาประดิษฐ์และแนวคิดแบบเปิด (Open Approach)">
+                            การแก้ไขมโนมติที่คลาดเคลื่อนและการพัฒนาทักษะกระบวนการทางวิทยาศาสตร์ เรื่อง ไฟฟ้าและอิเล็กทรอนิกส์ ของนักเรียนชั้นมัธยมศึกษาปีที่ 3...
+                        </h3>
+                    </div>
+
+                    <!-- Card: Research 2 -->
+                    <div class="bg-grid-pattern rounded-2xl p-4 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer border border-gray-200/80 flex flex-col" onclick="openModal('https://live.staticflickr.com/65535/55607114839_a51cc3cde3_c.jpg')">
+                        <div class="overflow-hidden rounded-xl aspect-[3/4] bg-gray-100 mb-5 relative shadow-inner border border-gray-200/50">
+                            <img src="https://live.staticflickr.com/65535/55607114839_a51cc3cde3_c.jpg" alt="งานวิจัย 2" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"/>
+                            <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                                <span class="text-white text-sm font-semibold px-5 py-2.5 bg-[#ec4899] rounded-full shadow-lg flex items-center gap-2">
+                                    <i class="fa-solid fa-expand"></i> ขยายดูภาพ
+                                </span>
+                            </div>
+                        </div>
+                        <h3 class="text-center font-bold text-gray-800 text-sm leading-snug line-clamp-3" title="การพัฒนาบทเรียน เรื่อง การใช้ไฟฟ้าอย่างประหยัดและปลอดภัย โดยใช้ การจัดการเรียนรู้แบบสืบเสาะหาความรู้ (5E) เน้นให้ผู้เรียนได้สร้างองค์ความรู้ ด้วยตนเอง ร่วมกับ Active Learning และ ระบบปัญญาประดิษฐ์ (AI) ในระดับชั้นมัธยมศึกษาปีที่ 3">
+                            การพัฒนาบทเรียน เรื่อง การใช้ไฟฟ้าอย่างประหยัดและปลอดภัย โดยใช้ การจัดการเรียนรู้แบบสืบเสาะหาความรู้ (5E)...
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Compact Footer (Show only on Home) -->
+    <footer id="main-footer" class="bg-slate-900 text-white py-3 px-4 sm:px-6 mt-auto z-20 w-full border-t border-slate-800">
+        <div class="max-w-[1800px] mx-auto flex items-center justify-between gap-6 w-full overflow-x-auto scrollbar-hide whitespace-nowrap">
+            
+            <!-- Social Icons -->
+            <div class="flex items-center gap-4 shrink-0">
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-[#1877F2] transition-colors"><i class="fa-brands fa-facebook text-lg"></i></a>
+                <a href="https://line.me/ti/p/~Metawat" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-[#00C300] transition-colors"><i class="fa-brands fa-line text-lg"></i></a>
+                <a href="https://www.youtube.com/@Ailabv2" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-[#FF0000] transition-colors"><i class="fa-brands fa-youtube text-lg"></i></a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="text-slate-500 text-xs font-inter shrink-0">
+                © <span id="current-year"></span> Ai Lab Studio dev by Metawat Phongsaphang. All rights reserved.
+            </div>
+            
+        </div>
+    </footer>
+
+    <!-- Image Modal (Lightbox) -->
+    <div id="image-modal" class="hidden fixed inset-0 z-[100] bg-slate-900/95 backdrop-blur-sm flex items-center justify-center p-4 sm:p-8 transition-opacity duration-300 opacity-0" onclick="closeModal()">
+        <button class="absolute top-6 right-6 sm:top-8 sm:right-8 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full text-white text-xl flex items-center justify-center transition-all hover:scale-110 z-[110]" onclick="closeModal()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <img id="modal-img" src="" alt="ภาพเต็มจอ" class="max-w-full max-h-full object-contain rounded-xl shadow-2xl relative z-[105] transform scale-95 transition-transform duration-300" onclick="event.stopPropagation()"/>
+    </div>
+
+    <!-- Iframe Modal (Lightbox for Documents) -->
+    <div id="iframe-modal" class="hidden fixed inset-0 z-[100] bg-slate-900/95 backdrop-blur-sm flex items-center justify-center p-4 sm:p-8 md:p-12 transition-opacity duration-300 opacity-0" onclick="closeIframeModal()">
+        <button class="absolute top-4 right-4 sm:top-6 sm:right-6 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full text-white text-xl flex items-center justify-center transition-all hover:scale-110 z-[110]" onclick="closeIframeModal()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div id="iframe-modal-content" class="w-full h-full max-w-[1600px] bg-white rounded-2xl overflow-hidden shadow-2xl relative z-[105] transform scale-95 transition-transform duration-300 flex flex-col" onclick="event.stopPropagation()">
+            <div class="bg-gray-100 h-10 w-full border-b border-gray-200 flex items-center px-4 shrink-0">
+                <span id="iframe-modal-title" class="text-xs font-medium text-gray-500 font-inter tracking-wide">Document Viewer</span>
+            </div>
+            <iframe id="modal-iframe" src="" class="w-full flex-grow border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Smooth Page Navigation
+        function navigateTo(pageId, event = null) {
+            if (event) event.preventDefault();
+
+            const sections = document.querySelectorAll('.page-section');
+            const targetSection = document.getElementById(pageId);
+            
+            // Fade out current section
+            sections.forEach(section => {
+                if (section.classList.contains('active') && section.id !== pageId) {
+                    section.style.opacity = '0';
+                    section.style.transform = 'translateY(15px)';
+                    setTimeout(() => {
+                        section.classList.remove('active');
+                    }, 300); // Wait for transition
+                }
+            });
+            
+            // Fade in new section
+            if (targetSection) {
+                setTimeout(() => {
+                    targetSection.classList.add('active');
+                    void targetSection.offsetWidth;
+                    targetSection.style.opacity = '1';
+                    targetSection.style.transform = 'translateY(0)';
+                }, 350);
+            }
+
+            // Update Navigation Styles
+            document.querySelectorAll('.nav-link').forEach(link => {
+                const defaultColor = link.getAttribute('data-default-color');
+                const activeColor = link.getAttribute('data-active-color');
+                const hoverColor = link.getAttribute('data-hover-color');
+                
+                if (activeColor) link.classList.remove(activeColor);
+                
+                const icon = link.querySelector('i');
+                if (icon) {
+                    if (activeColor) icon.classList.remove(activeColor);
+                    icon.style.color = "inherit"; 
+                }
+                
+                if (defaultColor) link.classList.add(defaultColor);
+                if (hoverColor) link.classList.add(hoverColor);
+            });
+
+            if(event && event.currentTarget) {
+                const activeLink = event.currentTarget;
+                const activeColor = activeLink.getAttribute('data-active-color');
+                const defaultColor = activeLink.getAttribute('data-default-color');
+                
+                if (activeColor && defaultColor) {
+                    activeLink.classList.remove(defaultColor);
+                    activeLink.classList.add(activeColor);
+                }
+                
+                const activeIcon = activeLink.querySelector('i');
+                if (activeIcon) {
+                    activeIcon.style.color = "inherit";
+                }
+            }
+
+            // Toggle Footer Visibility
+            const footer = document.getElementById('main-footer');
+            if (footer) {
+                if (pageId === 'home') {
+                    footer.style.display = 'block';
+                } else {
+                    footer.style.display = 'none';
+                }
+            }
+
+            // Lazy Load Fullscreen iframes
+            if (pageId === 'ailab') {
+                setTimeout(() => {
+                    const iframe = document.getElementById('iframe-ailab');
+                    if (iframe && iframe.src.includes('about:blank')) iframe.src = iframe.getAttribute('data-src');
+                }, 400);
+            } else if (pageId === 'classroom') {
+                setTimeout(() => {
+                    const iframe = document.getElementById('iframe-classroom');
+                    if (iframe && iframe.src.includes('about:blank')) iframe.src = iframe.getAttribute('data-src');
+                }, 400);
+            }
+        }
+
+        // Initialize active state on load
+        document.getElementById('home').style.opacity = '1';
+        document.getElementById('home').style.transform = 'translateY(0)';
+
+        // Modal Logic (Lightbox)
+        function openModal(imgSrc) {
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-img');
+            
+            modalImg.src = imgSrc;
+            modal.classList.remove('hidden');
+            
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalImg.classList.remove('scale-95');
+                modalImg.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-img');
+            
+            modal.classList.add('opacity-0');
+            modalImg.classList.remove('scale-100');
+            modalImg.classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modalImg.src = '';
+            }, 300);
+        }
+
+        // Iframe Modal Logic
+        function openIframeModal(url, title) {
+            const modal = document.getElementById('iframe-modal');
+            const iframe = document.getElementById('modal-iframe');
+            const modalTitle = document.getElementById('iframe-modal-title');
+            
+            iframe.src = url;
+            if (title) modalTitle.textContent = title;
+            
+            modal.classList.remove('hidden');
+            
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                document.getElementById('iframe-modal-content').classList.remove('scale-95');
+                document.getElementById('iframe-modal-content').classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeIframeModal() {
+            const modal = document.getElementById('iframe-modal');
+            const content = document.getElementById('iframe-modal-content');
+            
+            modal.classList.add('opacity-0');
+            content.classList.remove('scale-100');
+            content.classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.getElementById('modal-iframe').src = '';
+            }, 300);
+        }
+
+        // Search Filter
+        function filterItems(sectionId, query) {
+            const grid = document.getElementById(sectionId + '-grid');
+            if (!grid) return;
+            
+            const items = grid.querySelectorAll('.group');
+            const lowerQuery = query.toLowerCase();
+            let hasVisibleItems = false;
+            
+            items.forEach(item => {
+                const text = item.innerText.toLowerCase();
+                if (text.includes(lowerQuery)) {
+                    item.style.display = 'flex'; 
+                    hasVisibleItems = true;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            let noResultMsg = grid.querySelector('.no-results-msg');
+            if (!hasVisibleItems && items.length > 0) {
+                if (!noResultMsg) {
+                    noResultMsg = document.createElement('div');
+                    noResultMsg.className = 'no-results-msg col-span-full text-center py-16 text-gray-500 w-full flex flex-col items-center bg-white/50 rounded-2xl border border-dashed border-gray-300';
+                    noResultMsg.innerHTML = '<i class="fa-solid fa-magnifying-glass text-5xl mb-4 text-gray-300"></i><p class="text-lg font-medium">ไม่พบข้อมูลที่ค้นหา</p><p class="text-sm mt-1">ลองใช้คำค้นหาอื่นดูอีกครั้ง</p>';
+                    grid.appendChild(noResultMsg);
+                } else {
+                    noResultMsg.style.display = 'flex';
+                }
+            } else if (noResultMsg) {
+                noResultMsg.style.display = 'none';
+            }
+        }
+
+        // Particle Background 
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d', { alpha: false }); 
+        let particles = [];
+        let mouse = { x: null, y: null, radius: 180 };
+        let animationFrameId;
+        
+        let width, height;
+
+        const handleMouseMove = (event) => {
+            mouse.x = event.clientX;
+            mouse.y = event.clientY;
+        };
+        const handleMouseOut = () => {
+            mouse.x = null;
+            mouse.y = null;
+        };
+
+        window.addEventListener('mousemove', handleMouseMove, { passive: true });
+        window.addEventListener('mouseout', handleMouseOut, { passive: true });
+
+        const resize = () => {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+            initParticles();
+        };
+        
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(resize, 200);
+        });
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.8;
+                this.speedY = (Math.random() - 0.5) * 0.8;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x < 0 || this.x > width) this.speedX *= -1;
+                if (this.y < 0 || this.y > height) this.speedY *= -1;
+            }
+            draw() {
+                ctx.fillStyle = '#bae6fd'; 
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        const initParticles = () => {
+            particles = [];
+            const numberOfParticles = Math.min((width * height) / 12000, 100); 
+            for (let i = 0; i < numberOfParticles; i++) {
+                particles.push(new Particle());
+            }
+        };
+
+        const animateParticles = () => {
+            ctx.fillStyle = '#f8fafc'; 
+            ctx.fillRect(0, 0, width, height);
+            
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+                
+                for (let j = i + 1; j < particles.length; j++) {
+                    let dx = particles[i].x - particles[j].x;
+                    let dy = particles[i].y - particles[j].y;
+                    
+                    if (Math.abs(dx) < 150 && Math.abs(dy) < 150) { 
+                        let distance = Math.sqrt(dx * dx + dy * dy);
+                        if (distance < 150) {
+                            ctx.beginPath();
+                            ctx.strokeStyle = `rgba(14, 165, 233, ${(1 - distance/150) * 0.15})`; 
+                            ctx.lineWidth = 0.5;
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+                
+                if (mouse.x != null) {
+                    let dx = particles[i].x - mouse.x;
+                    let dy = particles[i].y - mouse.y;
+                    if (Math.abs(dx) < mouse.radius && Math.abs(dy) < mouse.radius) {
+                        let distance = Math.sqrt(dx * dx + dy * dy);
+                        if (distance < mouse.radius) {
+                            ctx.beginPath();
+                            ctx.strokeStyle = `rgba(249, 115, 22, ${(1 - distance/mouse.radius) * 0.3})`;
+                            ctx.lineWidth = 1;
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(mouse.x, mouse.y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+            animationFrameId = requestAnimationFrame(animateParticles);
+        };
+
+        window.onload = function() {
+            resize();
+            animateParticles();
+        };
+
+    </script>
+</body>
+</html>
