@@ -175,6 +175,11 @@
                 <span class="font-medium tracking-wide">ห้องเรียน</span>
             </a>
 
+            <a href="#" onclick="navigateTo('lesson', event)" class="nav-link shrink-0 flex items-center gap-1.5 transition-colors duration-300 cursor-pointer group text-gray-400 hover:text-[#eab308]" data-active-color="text-[#eab308]" data-hover-color="hover:text-[#eab308]" data-default-color="text-gray-400">
+                <i class="fa-solid fa-newspaper text-lg group-hover:scale-110 transition-transform duration-300" style="color: inherit;"></i>
+                <span class="font-medium tracking-wide">บทเรียน</span>
+            </a>
+
             <a href="#" onclick="navigateTo('exams', event)" class="nav-link shrink-0 flex items-center gap-1.5 transition-colors duration-300 cursor-pointer group text-gray-400 hover:text-[#ef4444]" data-active-color="text-[#ef4444]" data-hover-color="hover:text-[#ef4444]" data-default-color="text-gray-400">
                 <i class="fa-solid fa-book text-lg group-hover:scale-110 transition-transform duration-300" style="color: inherit;"></i>
                 <span class="font-medium tracking-wide">คลังข้อสอบ</span>
@@ -398,6 +403,67 @@
             <iframe id="iframe-classroom" src="about:blank" data-src="https://proj14.ipst.ac.th/" title="ห้องเรียนอัจฉริยะ Project 14" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </section>
         
+        <!-- SECTION: Lesson -->
+        <section id="lesson" class="page-section p-3 sm:p-4 md:p-6 lg:p-8 flex-col relative z-10 w-full max-w-full mx-auto flex-grow">
+            <div class="max-w-[1800px] w-full mx-auto flex flex-col gap-6">
+                <!-- Header -->
+                <div class="flex justify-between items-center bg-grid-pattern rounded-2xl shadow-sm px-4 md:px-6 py-3 md:py-4 border border-gray-200/80 flex-wrap gap-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-[#eab308]/10 rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-newspaper text-[#eab308] text-xl"></i>
+                        </div>
+                        <h2 class="text-xl md:text-2xl font-bold text-gray-800">บทเรียนออนไลน์</h2>
+                    </div>
+                    <!-- Search Box -->
+                    <div class="relative w-full md:w-auto min-w-[250px] lg:w-[350px]">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        <input type="text" oninput="filterItems('lesson', this.value)" placeholder="ค้นหาบทเรียน..." class="w-full pl-11 pr-4 py-2.5 bg-white border border-gray-200 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-[#eab308]/50 focus:border-[#eab308] transition-all shadow-sm font-inter">
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 mx-auto w-full" id="lesson-grid">
+                    
+                    <!-- Lesson Card: สัปดาห์ที่ 1 -->
+                    <div class="bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-200/80 flex flex-col h-full relative overflow-hidden">
+                        <!-- Decor Element -->
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-[#eab308]/10 rounded-bl-full -z-10 transition-transform duration-500 group-hover:scale-125"></div>
+                        
+                        <div class="flex items-start gap-4 mb-4 border-b border-gray-100 pb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-[#eab308] to-[#ca8a04] text-white rounded-xl flex items-center justify-center shadow-md shrink-0 mt-1">
+                                <span class="font-bold text-lg">W1</span>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-[#eab308] uppercase tracking-wider mb-1">สัปดาห์ที่ 1</h4>
+                                <h3 class="font-bold text-gray-800 text-lg leading-snug group-hover:text-[#ca8a04] transition-colors">การเกิดปฏิกิริยาเคมี</h3>
+                            </div>
+                        </div>
+
+                        <!-- วิดีโอ YouTube ฝังในการ์ด (ปรับให้เป็น Responsive) -->
+                        <div class="w-full aspect-video rounded-xl overflow-hidden shadow-sm border border-gray-200/50 mb-4 bg-gray-100">
+                            <iframe src="https://www.youtube.com/embed/y4e02W9rYmo" title="สรุป ปฏิกิริยาเคมี ม.3 (1/3) | Bio-oei" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+
+                        <div class="flex-grow space-y-3 text-sm text-gray-700 font-inter mb-6 leading-relaxed">
+                            <p><strong class="text-gray-900 font-semibold underline decoration-[#eab308]/50 decoration-2 underline-offset-2">ปฏิกิริยาเคมี:</strong> คือ กระบวนการที่สารตั้งต้นเปลี่ยนแปลงเป็นสารใหม่ที่มีสมบัติแตกต่างจากเดิม โดยเกิดจากการจัดเรียงอะตอมใหม่และมีการแตกหรือสร้างพันธะเคมี</p>
+                            <p><strong class="text-gray-900 font-semibold underline decoration-[#eab308]/50 decoration-2 underline-offset-2">หลักฐานที่บ่งบอก:</strong> การเปลี่ยนสี, การเกิดแก๊ส, การเกิดตะกอน, การเปลี่ยนแปลงอุณหภูมิ, และการเกิดแสง</p>
+                            <div class="bg-gray-50 p-3 rounded-lg border border-gray-100 text-xs">
+                                <strong class="text-gray-900 font-semibold block mb-1">สมการเคมี:</strong> 
+                                สารตั้งต้น &rarr; ผลิตภัณฑ์ <br>
+                                <span class="text-gray-500">(เช่น น้ำส้มสายชู + เบกกิ้งโซดา &rarr; แก๊สคาร์บอนไดออกไซด์ + สารใหม่)</span>
+                                <span class="block mt-1 text-[#ca8a04] font-medium">* จำนวนอะตอมแต่ละธาตุต้องเท่ากัน</span>
+                            </div>
+                        </div>
+
+                        <!-- Action Button -->
+                        <button onclick="openIframeModal('https://ailab17.vercel.app/', 'Ai Lab 17 - การเกิดปฏิกิริยาเคมี')" class="mt-auto w-full py-3 bg-gradient-to-r from-[#eab308]/10 to-[#ca8a04]/10 text-[#ca8a04] font-bold rounded-xl hover:from-[#eab308] hover:to-[#ca8a04] hover:text-white transition-all duration-300 flex items-center justify-center gap-2 border border-[#eab308]/20 hover:shadow-lg hover:shadow-[#eab308]/30 group/btn">
+                            <i class="fa-solid fa-flask-vial group-hover/btn:animate-wiggle"></i> เข้าทดลองที่ Lab - 17
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
         <!-- SECTION: Exams -->
         <section id="exams" class="page-section p-3 sm:p-4 md:p-6 lg:p-8 flex-col relative z-10 w-full max-w-full mx-auto flex-grow">
             <div class="max-w-[1800px] w-full mx-auto flex flex-col gap-6">
