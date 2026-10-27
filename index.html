@@ -160,6 +160,11 @@
         <!-- Nav Links -->
         <div class="flex-1 flex flex-nowrap items-center justify-start md:justify-end gap-4 sm:gap-6 lg:gap-7 text-sm overflow-x-auto scrollbar-hide py-1" id="nav-menu">
 
+            <a href="#" onclick="navigateTo('aiclips', event)" class="nav-link shrink-0 flex items-center gap-1.5 transition-colors duration-300 cursor-pointer group text-gray-400 hover:text-[#ff0000]" data-active-color="text-[#ff0000]" data-hover-color="hover:text-[#ff0000]" data-default-color="text-gray-400">
+                <i class="fa-brands fa-youtube text-lg group-hover:scale-110 transition-transform duration-300" style="color: inherit;"></i>
+                <span class="font-medium tracking-wide">คลิปสั้น Ai</span>
+            </a>
+
             <a href="#" onclick="navigateTo('ailab', event)" class="nav-link shrink-0 flex items-center gap-1.5 transition-colors duration-300 cursor-pointer group text-gray-400 hover:text-[#0ea5e9]" data-active-color="text-[#0ea5e9]" data-hover-color="hover:text-[#0ea5e9]" data-default-color="text-gray-400">
                 <i class="fa-solid fa-flask text-lg group-hover:scale-110 transition-transform duration-300" style="color: inherit;"></i>
                 <span class="font-medium tracking-wide">Ai Lab</span>
@@ -313,6 +318,51 @@
                 </div>
             </div>
 
+        </section>
+
+        <!-- SECTION: AI Clips -->
+        <section id="aiclips" class="page-section p-3 sm:p-4 md:p-6 lg:p-8 flex-col relative z-10 w-full max-w-full mx-auto flex-grow">
+            <div class="max-w-[1800px] w-full mx-auto flex flex-col gap-6">
+                <!-- Header -->
+                <div class="flex justify-between items-center bg-grid-pattern rounded-2xl shadow-sm px-4 md:px-6 py-3 md:py-4 border border-gray-200/80">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-[#ff0000]/10 rounded-full flex items-center justify-center">
+                            <i class="fa-brands fa-youtube text-[#ff0000] text-xl"></i>
+                        </div>
+                        <h2 class="text-xl md:text-2xl font-bold text-gray-800">คลิปสั้น Ai</h2>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8 mx-auto w-full">
+                    
+                    <!-- Video Card 1 -->
+                    <div class="bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200/80 flex flex-col group">
+                        <div class="w-full rounded-xl overflow-hidden shadow-sm bg-gray-900 relative" style="aspect-ratio: 9/16;">
+                            <iframe src="https://www.youtube.com/embed/I4s4AjeNd0w" title="YouTube Shorts 1" class="absolute inset-0 w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <div class="mt-4 flex items-center gap-3 px-1">
+                            <div class="w-8 h-8 rounded-full bg-[#ff0000]/10 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-play text-[#ff0000] text-xs"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-800 text-sm line-clamp-2">เทคนิคและการใช้งาน AI (คลิปที่ 1)</h3>
+                        </div>
+                    </div>
+
+                    <!-- Video Card 2 -->
+                    <div class="bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200/80 flex flex-col group">
+                        <div class="w-full rounded-xl overflow-hidden shadow-sm bg-gray-900 relative" style="aspect-ratio: 9/16;">
+                            <iframe src="https://www.youtube.com/embed/4qnLb__1QRY" title="YouTube Shorts 2" class="absolute inset-0 w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <div class="mt-4 flex items-center gap-3 px-1">
+                            <div class="w-8 h-8 rounded-full bg-[#ff0000]/10 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-play text-[#ff0000] text-xs"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-800 text-sm line-clamp-2">เทคนิคและการใช้งาน AI (คลิปที่ 2)</h3>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </section>
 
         <!-- SECTION: Ai Lab (Full Screen) -->
