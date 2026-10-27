@@ -160,11 +160,6 @@
         <!-- Nav Links -->
         <div class="flex-1 flex flex-nowrap items-center justify-start md:justify-end gap-4 sm:gap-6 lg:gap-7 text-sm overflow-x-auto scrollbar-hide py-1" id="nav-menu">
 
-            <a href="#" onclick="navigateTo('aiclips', event)" class="nav-link shrink-0 flex items-center gap-1.5 transition-colors duration-300 cursor-pointer group text-gray-400 hover:text-[#ff0000]" data-active-color="text-[#ff0000]" data-hover-color="hover:text-[#ff0000]" data-default-color="text-gray-400">
-                <i class="fa-brands fa-youtube text-lg group-hover:scale-110 transition-transform duration-300" style="color: inherit;"></i>
-                <span class="font-medium tracking-wide">คลิปสั้น Ai</span>
-            </a>
-
             <a href="#" onclick="navigateTo('ailab', event)" class="nav-link shrink-0 flex items-center gap-1.5 transition-colors duration-300 cursor-pointer group text-gray-400 hover:text-[#0ea5e9]" data-active-color="text-[#0ea5e9]" data-hover-color="hover:text-[#0ea5e9]" data-default-color="text-gray-400">
                 <i class="fa-solid fa-flask text-lg group-hover:scale-110 transition-transform duration-300" style="color: inherit;"></i>
                 <span class="font-medium tracking-wide">Ai Lab</span>
@@ -203,6 +198,11 @@
             <a href="#" onclick="navigateTo('research', event)" class="nav-link shrink-0 flex items-center gap-1.5 transition-colors duration-300 cursor-pointer group text-gray-400 hover:text-[#ec4899]" data-active-color="text-[#ec4899]" data-hover-color="hover:text-[#ec4899]" data-default-color="text-gray-400">
                 <i class="fa-solid fa-r text-lg group-hover:scale-110 transition-transform duration-300" style="color: inherit;"></i>
                 <span class="font-medium tracking-wide">งานวิจัย</span>
+            </a>
+
+            <a href="#" onclick="navigateTo('class_gallery', event)" class="nav-link shrink-0 flex items-center gap-1.5 transition-colors duration-300 cursor-pointer group text-gray-400 hover:text-[#14b8a6]" data-active-color="text-[#14b8a6]" data-hover-color="hover:text-[#14b8a6]" data-default-color="text-gray-400">
+                <i class="fa-solid fa-images text-lg group-hover:scale-110 transition-transform duration-300" style="color: inherit;"></i>
+                <span class="font-medium tracking-wide">ภาพชั้นเรียน</span>
             </a>
 
         </div>
@@ -320,51 +320,6 @@
 
         </section>
 
-        <!-- SECTION: AI Clips -->
-        <section id="aiclips" class="page-section p-3 sm:p-4 md:p-6 lg:p-8 flex-col relative z-10 w-full max-w-full mx-auto flex-grow">
-            <div class="max-w-[1800px] w-full mx-auto flex flex-col gap-6">
-                <!-- Header -->
-                <div class="flex justify-between items-center bg-grid-pattern rounded-2xl shadow-sm px-4 md:px-6 py-3 md:py-4 border border-gray-200/80">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-[#ff0000]/10 rounded-full flex items-center justify-center">
-                            <i class="fa-brands fa-youtube text-[#ff0000] text-xl"></i>
-                        </div>
-                        <h2 class="text-xl md:text-2xl font-bold text-gray-800">คลิปสั้น Ai</h2>
-                    </div>
-                </div>
-                
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8 mx-auto w-full">
-                    
-                    <!-- Video Card 1 -->
-                    <div class="bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200/80 flex flex-col group">
-                        <div class="w-full rounded-xl overflow-hidden shadow-sm bg-gray-900 relative" style="aspect-ratio: 9/16;">
-                            <iframe src="https://www.youtube.com/embed/I4s4AjeNd0w" title="YouTube Shorts 1" class="absolute inset-0 w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div>
-                        <div class="mt-4 flex items-center gap-3 px-1">
-                            <div class="w-8 h-8 rounded-full bg-[#ff0000]/10 flex items-center justify-center shrink-0">
-                                <i class="fa-solid fa-play text-[#ff0000] text-xs"></i>
-                            </div>
-                            <h3 class="font-bold text-gray-800 text-sm line-clamp-2">เทคนิคและการใช้งาน AI (คลิปที่ 1)</h3>
-                        </div>
-                    </div>
-
-                    <!-- Video Card 2 -->
-                    <div class="bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200/80 flex flex-col group">
-                        <div class="w-full rounded-xl overflow-hidden shadow-sm bg-gray-900 relative" style="aspect-ratio: 9/16;">
-                            <iframe src="https://www.youtube.com/embed/4qnLb__1QRY" title="YouTube Shorts 2" class="absolute inset-0 w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div>
-                        <div class="mt-4 flex items-center gap-3 px-1">
-                            <div class="w-8 h-8 rounded-full bg-[#ff0000]/10 flex items-center justify-center shrink-0">
-                                <i class="fa-solid fa-play text-[#ff0000] text-xs"></i>
-                            </div>
-                            <h3 class="font-bold text-gray-800 text-sm line-clamp-2">เทคนิคและการใช้งาน AI (คลิปที่ 2)</h3>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
         <!-- SECTION: Ai Lab (Full Screen) -->
         <section id="ailab" class="page-section w-full h-[calc(100vh-64px)] sm:h-[calc(100vh-76px)] flex-col relative z-10 p-0 m-0 flex-grow bg-white">
             <iframe id="iframe-ailab" src="about:blank" data-src="https://ailabv2.vercel.app/" title="Ai Lab Platform" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -452,83 +407,67 @@
         <section id="classroom" class="page-section w-full h-[calc(100vh-64px)] sm:h-[calc(100vh-76px)] flex-col relative z-10 p-0 m-0 flex-grow bg-white">
             <iframe id="iframe-classroom" src="about:blank" data-src="https://proj14.ipst.ac.th/" title="ห้องเรียนอัจฉริยะ Project 14" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </section>
-        
+
         <!-- SECTION: Lesson -->
         <section id="lesson" class="page-section p-3 sm:p-4 md:p-6 lg:p-8 flex-col relative z-10 w-full max-w-full mx-auto flex-grow">
             <div class="max-w-[1800px] w-full mx-auto flex flex-col gap-6">
+                
                 <!-- Header -->
-                <div class="flex justify-between items-center bg-grid-pattern rounded-2xl shadow-sm px-4 md:px-6 py-3 md:py-4 border border-gray-200/80 flex-wrap gap-4">
+                <div class="flex justify-between items-center bg-grid-pattern rounded-2xl shadow-sm px-4 md:px-6 py-3 md:py-4 border border-gray-200/80">
                     <div class="flex items-center gap-4">
                         <div class="w-12 h-12 bg-[#eab308]/10 rounded-full flex items-center justify-center">
                             <i class="fa-solid fa-newspaper text-[#eab308] text-xl"></i>
                         </div>
-                        <h2 class="text-xl md:text-2xl font-bold text-gray-800">บทเรียนออนไลน์</h2>
-                    </div>
-                    <!-- Search Box -->
-                    <div class="relative w-full md:w-auto min-w-[250px] lg:w-[350px]">
-                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
-                        <input type="text" oninput="filterItems('lesson', this.value)" placeholder="ค้นหาบทเรียน..." class="w-full pl-11 pr-4 py-2.5 bg-white border border-gray-200 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-[#eab308]/50 focus:border-[#eab308] transition-all shadow-sm font-inter">
+                        <h2 class="text-xl md:text-2xl font-bold text-gray-800">บทเรียน</h2>
                     </div>
                 </div>
                 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 mx-auto w-full" id="lesson-grid">
+                <!-- Card Lesson 1 -->
+                <div class="bg-white/90 backdrop-blur-md border border-gray-200/80 rounded-3xl p-6 shadow-xl relative overflow-hidden">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="px-3 py-1 bg-yellow-100 text-yellow-700 font-bold rounded-lg text-sm">สัปดาห์ที่ 1</span>
+                        <h3 class="text-xl md:text-2xl font-extrabold text-gray-900">การเกิดปฏิกิริยาเคมี</h3>
+                    </div>
                     
-                    <!-- Lesson Card: สัปดาห์ที่ 1 -->
-                    <div class="bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-200/80 flex flex-col h-full relative overflow-hidden">
-                        <!-- Decor Element -->
-                        <div class="absolute top-0 right-0 w-24 h-24 bg-[#eab308]/10 rounded-bl-full -z-10 transition-transform duration-500 group-hover:scale-125"></div>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <!-- ฝั่งซ้าย: ข้อความและปุ่มเข้า Lab -->
+                        <div class="text-gray-700 leading-loose space-y-4">
+                            <p><strong>การเกิดปฏิกิริยาเคมี</strong> คือ กระบวนการที่สารตั้งต้นเปลี่ยนแปลงเป็นสารใหม่ที่มีสมบัติแตกต่างจากเดิม โดยเกิดจากการจัดเรียงอะตอมใหม่และมีการแตกหรือสร้างพันธะเคมี</p>
+                            <p><strong>หลักฐานที่บ่งบอกว่าเกิดปฏิกิริยาเคมี</strong> ได้แก่ การเปลี่ยนสี การเกิดแก๊ส การเกิดตะกอน การเปลี่ยนแปลงอุณหภูมิ และการเกิดแสง</p>
+                            <p><strong>สมการเคมี</strong> เขียนแทนปฏิกิริยาโดยใช้สารตั้งต้น &rarr; ผลิตภัณฑ์ เช่น น้ำส้มสายชู + เบกกิ้งโซดา &rarr; แก๊สคาร์บอนไดออกไซด์ พร้อมสารใหม่อื่น ๆ โดยจำนวนอะตอมของแต่ละธาตุต้องเท่ากันทั้งสองข้างของสมการ</p>
+                            
+                            <button onclick="window.open('https://ailab17.vercel.app/', '_blank')" class="mt-4 px-6 py-3 bg-gradient-to-r from-yellow-400 to-amber-500 text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center gap-2">
+                                <i class="fa-solid fa-flask"></i> เข้าทดลองที่ Lab - 17 (แท็บใหม่)
+                            </button>
+                        </div>
                         
-                        <div class="flex items-start gap-4 mb-4 border-b border-gray-100 pb-4">
-                            <div class="w-12 h-12 bg-gradient-to-br from-[#eab308] to-[#ca8a04] text-white rounded-xl flex items-center justify-center shadow-md shrink-0 mt-1">
-                                <span class="font-bold text-lg">W1</span>
+                        <!-- ฝั่งขวา: วิดีโอ และ ใบงาน -->
+                        <div class="flex flex-col gap-4">
+                            <!-- Youtube -->
+                            <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                                <iframe class="w-full h-full" src="https://www.youtube.com/embed/y4e02W9rYmo" title="สรุป ปฏิกิริยาเคมี ม.3 (1/3) | Bio-oei" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                             </div>
-                            <div>
-                                <h4 class="text-xs font-bold text-[#eab308] uppercase tracking-wider mb-1">สัปดาห์ที่ 1</h4>
-                                <h3 class="font-bold text-gray-800 text-lg leading-snug group-hover:text-[#ca8a04] transition-colors">การเกิดปฏิกิริยาเคมี</h3>
-                            </div>
-                        </div>
-
-                        <!-- วิดีโอ YouTube ฝังในการ์ด (ปรับให้เป็น Responsive) -->
-                        <div class="w-full aspect-video rounded-xl overflow-hidden shadow-sm border border-gray-200/50 mb-4 bg-gray-100">
-                            <iframe src="https://www.youtube.com/embed/y4e02W9rYmo" title="สรุป ปฏิกิริยาเคมี ม.3 (1/3) | Bio-oei" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>
-
-                        <div class="flex-grow space-y-3 text-sm text-gray-700 font-inter mb-6 leading-relaxed">
-                            <p><strong class="text-gray-900 font-semibold underline decoration-[#eab308]/50 decoration-2 underline-offset-2">ปฏิกิริยาเคมี:</strong> คือ กระบวนการที่สารตั้งต้นเปลี่ยนแปลงเป็นสารใหม่ที่มีสมบัติแตกต่างจากเดิม โดยเกิดจากการจัดเรียงอะตอมใหม่และมีการแตกหรือสร้างพันธะเคมี</p>
-                            <p><strong class="text-gray-900 font-semibold underline decoration-[#eab308]/50 decoration-2 underline-offset-2">หลักฐานที่บ่งบอก:</strong> การเปลี่ยนสี, การเกิดแก๊ส, การเกิดตะกอน, การเปลี่ยนแปลงอุณหภูมิ, และการเกิดแสง</p>
-                            <div class="bg-gray-50 p-3 rounded-lg border border-gray-100 text-xs">
-                                <strong class="text-gray-900 font-semibold block mb-1">สมการเคมี:</strong> 
-                                สารตั้งต้น &rarr; ผลิตภัณฑ์ <br>
-                                <span class="text-gray-500">(เช่น น้ำส้มสายชู + เบกกิ้งโซดา &rarr; แก๊สคาร์บอนไดออกไซด์ + สารใหม่)</span>
-                                <span class="block mt-1 text-[#ca8a04] font-medium">* จำนวนอะตอมแต่ละธาตุต้องเท่ากัน</span>
-                            </div>
-                        </div>
-
-                        <!-- ใบงาน FlipHTML5 ฝังในการ์ด พร้อมปุ่มขยาย -->
-                        <div class="w-full mb-6 shrink-0">
-                            <div class="flex items-center justify-between mb-2">
-                                <h5 class="text-sm font-bold text-gray-800 flex items-center gap-2">
-                                    <i class="fa-solid fa-file-pen text-[#eab308]"></i> ใบงานประกอบบทเรียน
-                                </h5>
-                                <button onclick="openIframeModal('https://online.fliphtml5.com/Ailabv2/fsls/#p=34', 'ใบงาน: การเกิดปฏิกิริยาเคมี')" class="text-xs font-semibold bg-[#eab308]/10 text-[#ca8a04] hover:bg-[#eab308] hover:text-white px-3 py-1.5 rounded-full flex items-center gap-1.5 transition-all duration-300 shadow-sm">
-                                    <i class="fa-solid fa-expand"></i> ขยายดูเต็มจอ
+                            
+                            <!-- Worksheet button for Interactive Board -->
+                            <div class="bg-gray-50 p-4 rounded-2xl border border-gray-200 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-file-pdf text-red-500 text-3xl"></i>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800">ใบงานประกอบบทเรียน</h4>
+                                        <p class="text-xs text-gray-500">เรื่อง การเกิดปฏิกิริยาเคมี</p>
+                                    </div>
+                                </div>
+                                <button onclick="window.open('https://online.fliphtml5.com/Ailabv2/fsls/#p=34', '_blank')" class="px-4 py-2 bg-gray-900 text-white text-sm font-bold rounded-lg hover:bg-gray-800 transition-colors shadow-md">
+                                    เปิดในแท็บใหม่ <i class="fa-solid fa-external-link-alt ml-1"></i>
                                 </button>
                             </div>
-                            <div class="w-full relative rounded-xl overflow-hidden shadow-sm border border-gray-200/50 bg-gray-100" style="padding-top:max(60%,324px);">
-                                <iframe style="position:absolute;border:none;width:100%;height:100%;left:0;top:0;" src="https://online.fliphtml5.com/Ailabv2/fsls/#p=34" title="รวมใบงาน M3" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true"></iframe>
-                            </div>
                         </div>
-
-                        <!-- Action Button -->
-                        <button onclick="openIframeModal('https://ailab17.vercel.app/', 'Ai Lab 17 - การเกิดปฏิกิริยาเคมี')" class="mt-auto w-full py-3 bg-gradient-to-r from-[#eab308]/10 to-[#ca8a04]/10 text-[#ca8a04] font-bold rounded-xl hover:from-[#eab308] hover:to-[#ca8a04] hover:text-white transition-all duration-300 flex items-center justify-center gap-2 border border-[#eab308]/20 hover:shadow-lg hover:shadow-[#eab308]/30 group/btn">
-                            <i class="fa-solid fa-flask-vial group-hover/btn:animate-wiggle"></i> เข้าทดลองที่ Lab - 17
-                        </button>
                     </div>
-
                 </div>
+
             </div>
         </section>
-
+        
         <!-- SECTION: Exams -->
         <section id="exams" class="page-section p-3 sm:p-4 md:p-6 lg:p-8 flex-col relative z-10 w-full max-w-full mx-auto flex-grow">
             <div class="max-w-[1800px] w-full mx-auto flex flex-col gap-6">
@@ -564,7 +503,7 @@
                 <div class="flex justify-between items-center bg-grid-pattern rounded-2xl shadow-sm px-4 md:px-6 py-3 md:py-4 border border-gray-200/80">
                     <div class="flex items-center gap-4">
                         <div class="w-12 h-12 bg-[#8b5cf6]/10 rounded-full flex items-center justify-center">
-                            <i class="fa-solid fa-file-signature text-[#8b5cf6] text-xl"></i>
+                            <i class="fa-solid fa-file text-[#8b5cf6] text-xl"></i>
                         </div>
                         <h2 class="text-xl md:text-2xl font-bold text-gray-800">PA (Performance Agreement)</h2>
                     </div>
@@ -576,9 +515,7 @@
                         <i class="fa-solid fa-handshake text-[#8b5cf6]"></i> ส่วนที่ 1 : ข้อตกลงในการพัฒนางาน (PA)
                     </h3>
                     
-                    <!-- ฝังโค้ด FlipHTML5 ข้อตกลง PA 2/2569 -->
                     <div class="w-full bg-white rounded-3xl p-3 sm:p-4 shadow-lg border border-purple-100 relative overflow-hidden">
-                        <!-- Header for the iframe -->
                         <div class="flex items-center justify-between mb-3 px-2">
                             <h4 class="font-bold text-[#8b5cf6] flex items-center gap-2 text-sm sm:text-base">
                                 <i class="fa-solid fa-book-open"></i> ข้อตกลง PA ชำนาญการพิเศษ (2/2569)
@@ -587,8 +524,6 @@
                                 <i class="fa-solid fa-expand"></i> <span class="hidden sm:inline">ขยายดูเต็มจอ</span>
                             </button>
                         </div>
-                        
-                        <!-- The embedded iframe code -->
                         <div class="w-full rounded-2xl overflow-hidden shadow-inner border border-gray-100 bg-gray-50">
                             <div style="position:relative;padding-top:max(60%,324px);width:100%;height:0;">
                                 <iframe style="position:absolute;border:none;width:100%;height:100%;left:0;top:0;" src="https://online.fliphtml5.com/Ailabv2/hhzx/" title="ข้อตกลง PA ชำนาญการพิเศษ 69 เทอม 2" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true"></iframe>
@@ -602,43 +537,55 @@
                     <h3 class="text-lg md:text-xl font-bold text-gray-700 mb-5 flex items-center gap-2 border-l-4 border-[#8b5cf6] pl-4">
                         <i class="fa-solid fa-file-invoice text-[#8b5cf6]"></i> ส่วนที่ 2 : รายงานผลการปฏิบัติตามข้อตกลง
                     </h3>
-                    
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 mx-auto w-full">
                         <!-- Cards -->
                         <div class="bg-grid-pattern rounded-2xl p-4 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer border border-gray-200/80" onclick="openModal('https://live.staticflickr.com/65535/55606730863_315ae62c26_c.jpg')">
-                        <div class="overflow-hidden rounded-xl aspect-[3/4] bg-gray-100 mb-5 relative shadow-inner border border-gray-200/50">
-                            <img src="https://live.staticflickr.com/65535/55605584122_c899f11a10_c.jpg" alt="รายงาน PA 2568-2" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"/>
-                            <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
-                                <span class="text-white text-sm font-semibold px-5 py-2.5 bg-[#8b5cf6] rounded-full shadow-lg flex items-center gap-2">
-                                    <i class="fa-solid fa-expand"></i> ขยายดูภาพ
-                                </span>
+                            <div class="overflow-hidden rounded-xl aspect-[3/4] bg-gray-100 mb-5 relative shadow-inner border border-gray-200/50">
+                                <img src="https://live.staticflickr.com/65535/55606730863_315ae62c26_c.jpg" alt="รายงาน PA 2568-1" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"/>
+                                <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                                    <span class="text-white text-sm font-semibold px-5 py-2.5 bg-[#8b5cf6] rounded-full shadow-lg flex items-center gap-2">
+                                        <i class="fa-solid fa-expand"></i> ขยายดูภาพ
+                                    </span>
+                                </div>
                             </div>
+                            <h3 class="text-center font-bold text-gray-800 text-lg">ภาคเรียนที่ 1/2568</h3>
                         </div>
-                        <h3 class="text-center font-bold text-gray-800 text-lg">ภาคเรียนที่ 2/2568</h3>
-                    </div>
 
-                    <div class="bg-grid-pattern rounded-2xl p-4 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer border border-gray-200/80" onclick="openModal('https://live.staticflickr.com/65535/55607011275_0972dcef7a_c.jpg')">
-                        <div class="overflow-hidden rounded-xl aspect-[3/4] bg-gray-100 mb-5 relative shadow-inner border border-gray-200/50">
-                            <img src="https://live.staticflickr.com/65535/55607011275_0972dcef7a_c.jpg" alt="รายงาน PA 2569-1" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"/>
-                            <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
-                                <span class="text-white text-sm font-semibold px-5 py-2.5 bg-[#8b5cf6] rounded-full shadow-lg flex items-center gap-2">
-                                    <i class="fa-solid fa-expand"></i> ขยายดูภาพ
-                                </span>
+                        <div class="bg-grid-pattern rounded-2xl p-4 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer border border-gray-200/80" onclick="openModal('https://live.staticflickr.com/65535/55605584122_c899f11a10_c.jpg')">
+                            <div class="overflow-hidden rounded-xl aspect-[3/4] bg-gray-100 mb-5 relative shadow-inner border border-gray-200/50">
+                                <img src="https://live.staticflickr.com/65535/55605584122_c899f11a10_c.jpg" alt="รายงาน PA 2568-2" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"/>
+                                <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                                    <span class="text-white text-sm font-semibold px-5 py-2.5 bg-[#8b5cf6] rounded-full shadow-lg flex items-center gap-2">
+                                        <i class="fa-solid fa-expand"></i> ขยายดูภาพ
+                                    </span>
+                                </div>
                             </div>
+                            <h3 class="text-center font-bold text-gray-800 text-lg">ภาคเรียนที่ 2/2568</h3>
                         </div>
-                        <h3 class="text-center font-bold text-gray-800 text-lg">ภาคเรียนที่ 1/2569</h3>
-                    </div>
 
-                    <div class="bg-grid-pattern rounded-2xl p-4 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer border border-gray-200/80" onclick="openModal('https://live.staticflickr.com/65535/55605584117_13df9ff444_c.jpg')">
-                        <div class="overflow-hidden rounded-xl aspect-[3/4] bg-gray-100 mb-5 relative shadow-inner border border-gray-200/50">
-                            <img src="https://live.staticflickr.com/65535/55605584117_13df9ff444_c.jpg" alt="รายงาน PA 2569-2" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"/>
-                            <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
-                                <span class="text-white text-sm font-semibold px-5 py-2.5 bg-[#8b5cf6] rounded-full shadow-lg flex items-center gap-2">
-                                    <i class="fa-solid fa-expand"></i> ขยายดูภาพ
-                                </span>
+                        <div class="bg-grid-pattern rounded-2xl p-4 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer border border-gray-200/80" onclick="openModal('https://live.staticflickr.com/65535/55607011275_0972dcef7a_c.jpg')">
+                            <div class="overflow-hidden rounded-xl aspect-[3/4] bg-gray-100 mb-5 relative shadow-inner border border-gray-200/50">
+                                <img src="https://live.staticflickr.com/65535/55607011275_0972dcef7a_c.jpg" alt="รายงาน PA 2569-1" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"/>
+                                <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                                    <span class="text-white text-sm font-semibold px-5 py-2.5 bg-[#8b5cf6] rounded-full shadow-lg flex items-center gap-2">
+                                        <i class="fa-solid fa-expand"></i> ขยายดูภาพ
+                                    </span>
+                                </div>
                             </div>
+                            <h3 class="text-center font-bold text-gray-800 text-lg">ภาคเรียนที่ 1/2569</h3>
                         </div>
-                        <h3 class="text-center font-bold text-gray-800 text-lg">ภาคเรียนที่ 2/2569</h3>
+
+                        <div class="bg-grid-pattern rounded-2xl p-4 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer border border-gray-200/80" onclick="openModal('https://live.staticflickr.com/65535/55605584117_13df9ff444_c.jpg')">
+                            <div class="overflow-hidden rounded-xl aspect-[3/4] bg-gray-100 mb-5 relative shadow-inner border border-gray-200/50">
+                                <img src="https://live.staticflickr.com/65535/55605584117_13df9ff444_c.jpg" alt="รายงาน PA 2569-2" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"/>
+                                <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                                    <span class="text-white text-sm font-semibold px-5 py-2.5 bg-[#8b5cf6] rounded-full shadow-lg flex items-center gap-2">
+                                        <i class="fa-solid fa-expand"></i> ขยายดูภาพ
+                                    </span>
+                                </div>
+                            </div>
+                            <h3 class="text-center font-bold text-gray-800 text-lg">ภาคเรียนที่ 2/2569</h3>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -722,6 +669,48 @@
                             การพัฒนาบทเรียน เรื่อง การใช้ไฟฟ้าอย่างประหยัดและปลอดภัย โดยใช้ การจัดการเรียนรู้แบบสืบเสาะหาความรู้ (5E)...
                         </h3>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: Class Gallery -->
+        <section id="class_gallery" class="page-section p-3 sm:p-4 md:p-6 lg:p-8 flex-col relative z-10 w-full max-w-full mx-auto flex-grow">
+            <div class="max-w-[1800px] w-full mx-auto flex flex-col gap-6">
+                <!-- Header -->
+                <div class="flex justify-between items-center bg-grid-pattern rounded-2xl shadow-sm px-4 md:px-6 py-3 md:py-4 border border-gray-200/80 flex-wrap gap-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-[#14b8a6]/10 rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-images text-[#14b8a6] text-xl"></i>
+                        </div>
+                        <h2 class="text-xl md:text-2xl font-bold text-gray-800">ภาพบรรยากาศชั้นเรียน</h2>
+                    </div>
+                    <!-- Search Box -->
+                    <div class="relative w-full md:w-auto min-w-[250px] lg:w-[350px]">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        <input type="text" oninput="filterItems('gallery', this.value)" placeholder="ค้นหาภาพกิจกรรม..." class="w-full pl-11 pr-4 py-2.5 bg-white border border-gray-200 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-[#14b8a6]/50 focus:border-[#14b8a6] transition-all shadow-sm font-inter">
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 mx-auto w-full" id="gallery-grid">
+                    
+                    <!-- Card: Gallery 1 -->
+                    <div class="bg-grid-pattern rounded-2xl p-4 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer border border-gray-200/80 flex flex-col" onclick="openModal('https://live.staticflickr.com/65535/55615154941_e1a907b1c5_b.jpg')">
+                        <div class="overflow-hidden rounded-xl aspect-[4/3] bg-gray-100 mb-4 relative shadow-inner border border-gray-200/50">
+                            <img src="https://live.staticflickr.com/65535/55615154941_e1a907b1c5_c.jpg" alt="Ai Lab 17 : การเกิดปฏิกิริยาเคมี - 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+                            <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                                <span class="text-white text-sm font-semibold px-5 py-2.5 bg-[#14b8a6] rounded-full shadow-lg flex items-center gap-2">
+                                    <i class="fa-solid fa-expand"></i> ขยายดูภาพ
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-xs font-bold px-2.5 py-1 bg-[#14b8a6]/10 text-[#14b8a6] rounded-md tracking-wide">สัปดาห์ที่ 1</span>
+                        </div>
+                        <h3 class="font-bold text-gray-800 text-sm leading-snug line-clamp-2" title="Ai Lab 17 : การเกิดปฏิกิริยาเคมี">
+                            Ai Lab 17 : การเกิดปฏิกิริยาเคมี
+                        </h3>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -997,15 +986,13 @@
             constructor() {
                 this.x = Math.random() * width;
                 this.y = Math.random() * height;
-                this.size = Math.random() * 2 + 0.8; // ปรับขนาดให้อ่านง่ายขึ้น
-                this.speedX = (Math.random() - 0.5) * 1.3; // เพิ่มความเร็วให้ไหลลื่นขึ้น
-                this.speedY = (Math.random() - 0.5) * 1.3; // เพิ่มความเร็วให้ไหลลื่นขึ้น
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.8;
+                this.speedY = (Math.random() - 0.5) * 0.8;
             }
             update() {
                 this.x += this.speedX;
                 this.y += this.speedY;
-                
-                // เมื่อชนขอบให้สะท้อนกลับแบบนุ่มนวล
                 if (this.x < 0 || this.x > width) this.speedX *= -1;
                 if (this.y < 0 || this.y > height) this.speedY *= -1;
             }
@@ -1018,8 +1005,7 @@
 
         const initParticles = () => {
             particles = [];
-            // เพิ่มความหนาแน่นของจุดเครือข่าย (จาก 12000 เป็น 9000 และ Max 150)
-            const numberOfParticles = Math.min((width * height) / 9000, 150); 
+            const numberOfParticles = Math.min((width * height) / 12000, 100); 
             for (let i = 0; i < numberOfParticles; i++) {
                 particles.push(new Particle());
             }
@@ -1037,14 +1023,12 @@
                     let dx = particles[i].x - particles[j].x;
                     let dy = particles[i].y - particles[j].y;
                     
-                    // ขยายระยะการเชื่อมต่อเครือข่ายอัตโนมัติให้กว้างขึ้นตอนไม่มีเมาส์
-                    if (Math.abs(dx) < 180 && Math.abs(dy) < 180) { 
+                    if (Math.abs(dx) < 150 && Math.abs(dy) < 150) { 
                         let distance = Math.sqrt(dx * dx + dy * dy);
-                        if (distance < 180) {
+                        if (distance < 150) {
                             ctx.beginPath();
-                            // ปรับเส้นเชื่อมเครือข่ายให้สีเข้มขึ้นเล็กน้อย
-                            ctx.strokeStyle = `rgba(14, 165, 233, ${(1 - distance / 180) * 0.25})`; 
-                            ctx.lineWidth = 0.6;
+                            ctx.strokeStyle = `rgba(14, 165, 233, ${(1 - distance / 150) * 0.15})`; 
+                            ctx.lineWidth = 0.5;
                             ctx.moveTo(particles[i].x, particles[i].y);
                             ctx.lineTo(particles[j].x, particles[j].y);
                             ctx.stroke();
