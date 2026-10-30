@@ -30,7 +30,6 @@
             margin: 0;
             overflow-x: hidden;
             background-color: #f8fafc;
-            padding-bottom: calc(100px + env(safe-area-inset-bottom));
         }
         .font-inter { font-family: 'Inter', sans-serif; }
         
@@ -81,6 +80,47 @@
         .pt-safe { padding-top: env(safe-area-inset-top); }
 
         * { -webkit-tap-highlight-color: transparent; }
+        
+        /* Magic Indicator (Draggable Rainbow Ring) */
+        .magic-indicator {
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            pointer-events: none; /* ให้กดทะลุไปโดนปุ่มด้านหลังได้ */
+            z-index: 0;
+        }
+        /* The glowing blurred shadow */
+        .magic-indicator::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+            filter: blur(6px);
+            opacity: 0.5;
+            z-index: -2;
+            animation: spin-border 2.5s linear infinite;
+        }
+        /* The sharp gradient border */
+        .magic-indicator::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            padding: 1.5px; /* ความหนาของเส้นขอบสีรุ้ง */
+            background: conic-gradient(from 0deg, #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            z-index: -1;
+            animation: spin-border 2.5s linear infinite;
+        }
+        @keyframes spin-border {
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col text-gray-800 relative z-0">
@@ -91,7 +131,7 @@
     <main class="flex-grow relative z-10 w-full flex flex-col">
         
         <!-- SECTION: Home -->
-        <section id="home" class="page-section active border-b border-gray-200/80 relative z-10 w-full min-h-[calc(100dvh-100px)] overflow-hidden m-0 flex-col items-center justify-center">
+        <section id="home" class="page-section active border-b border-gray-200/80 relative z-10 w-full min-h-dvh pb-[100px] overflow-hidden m-0 flex-col items-center justify-center">
             <div class="w-full max-w-[1600px] mx-auto px-5 sm:px-12 lg:px-20 py-10 md:py-16 flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12">
                 <div class="flex-1 text-center md:text-left space-y-4 md:space-y-5">
                     <h2 class="font-inter text-[#0ea5e9] font-bold tracking-widest uppercase text-xs md:text-sm mb-1 start-opacity-0 animate-slide-in-left anim-delay-100">
@@ -130,12 +170,12 @@
         </section>
 
         <!-- SECTION: Ai Lab -->
-        <section id="ailab" class="page-section w-full h-[calc(100dvh-100px)] flex-col relative z-10 p-0 m-0 flex-grow bg-white">
+        <section id="ailab" class="page-section w-full h-dvh flex-col relative z-10 p-0 m-0 flex-grow bg-white">
             <iframe id="iframe-ailab" src="about:blank" data-src="https://ailabv2.vercel.app/" title="Ai Lab Platform" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </section>
 
         <!-- SECTION: Worksheet -->
-        <section id="worksheet" class="page-section p-4 md:p-6 lg:p-8 flex-col relative z-10 w-full max-w-full mx-auto flex-grow">
+        <section id="worksheet" class="page-section p-4 md:p-6 lg:p-8 pb-[120px] md:pb-[120px] lg:pb-[120px] flex-col relative z-10 w-full max-w-full mx-auto flex-grow">
             <div class="max-w-[1800px] w-full mx-auto flex flex-col gap-6">
                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center bg-grid-pattern rounded-2xl shadow-sm px-4 md:px-6 py-4 border border-gray-200/80 gap-4">
                     <div class="flex items-center gap-3 md:gap-4 w-full md:w-auto">
@@ -183,12 +223,12 @@
         </section>
 
         <!-- SECTION: Classroom -->
-        <section id="classroom" class="page-section w-full h-[calc(100dvh-100px)] flex-col relative z-10 p-0 m-0 flex-grow bg-white">
+        <section id="classroom" class="page-section w-full h-dvh flex-col relative z-10 p-0 m-0 flex-grow bg-white">
             <iframe id="iframe-classroom" src="about:blank" data-src="https://proj14.ipst.ac.th/" title="ห้องเรียนอัจฉริยะ Project 14" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </section>
 
         <!-- SECTION: Lesson (E-Learning Topic Style) -->
-        <section id="lesson" class="page-section p-4 md:p-6 lg:p-8 flex-col relative z-10 w-full max-w-full mx-auto flex-grow">
+        <section id="lesson" class="page-section p-4 md:p-6 lg:p-8 pb-[120px] md:pb-[120px] lg:pb-[120px] flex-col relative z-10 w-full max-w-full mx-auto flex-grow">
             <div class="max-w-[1800px] w-full mx-auto flex flex-col gap-6">
                 <!-- Header -->
                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center bg-grid-pattern rounded-2xl shadow-sm px-4 md:px-6 py-4 border border-gray-200/80 gap-4">
@@ -259,7 +299,7 @@
         </section>
 
         <!-- SECTION: Class Gallery -->
-        <section id="class_gallery" class="page-section p-4 md:p-6 lg:p-8 flex-col relative z-10 w-full max-w-full mx-auto flex-grow">
+        <section id="class_gallery" class="page-section p-4 md:p-6 lg:p-8 pb-[120px] md:pb-[120px] lg:pb-[120px] flex-col relative z-10 w-full max-w-full mx-auto flex-grow">
             <div class="max-w-[1800px] w-full mx-auto flex flex-col gap-6">
                 <div class="flex items-center gap-3 md:gap-4 bg-grid-pattern rounded-2xl shadow-sm px-4 md:px-6 py-4 border border-gray-200/80">
                     <div class="w-10 h-10 md:w-12 md:h-12 bg-[#14b8a6]/10 rounded-full flex items-center justify-center shrink-0">
@@ -281,35 +321,38 @@
     </main>
 
     <!-- Bottom Navigation Bar (LINE App Style) -->
-    <div class="fixed bottom-4 sm:bottom-6 left-0 w-full z-50 pb-safe px-4 pointer-events-none flex justify-center">
-        <nav class="bg-[#18181b]/90 backdrop-blur-2xl border border-white/10 rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.6)] p-1.5 flex items-center overflow-x-auto scrollbar-hide touch-pan-x snap-x snap-mandatory pointer-events-auto max-w-full w-auto gap-1">
+    <div class="fixed bottom-4 sm:bottom-6 left-0 w-full z-[999] pb-safe px-4 pointer-events-none flex justify-center">
+        <nav id="bottom-nav" class="relative bg-zinc-800/85 backdrop-blur-[24px] border border-white/20 rounded-full shadow-[0_8px_32px_0_rgba(0,0,0,0.6)] p-1.5 flex items-center overflow-x-auto scrollbar-hide touch-pan-x snap-x snap-mandatory pointer-events-auto max-w-full w-auto gap-1">
             
-            <a href="#" onclick="navigateTo('home', event)" class="nav-link snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group text-white bg-white/15 transition-all duration-200 active:scale-95" data-active-color="text-white" data-active-bg="bg-white/15" data-default-color="text-gray-400" data-default-bg="bg-transparent">
+            <!-- Draggable Magic Indicator -->
+            <div id="magic-indicator" class="magic-indicator"></div>
+
+            <a href="#" onclick="navigateTo('home', event)" class="nav-link relative z-10 snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group text-white bg-transparent transition-all duration-200 active:scale-95" data-active-color="text-white" data-active-bg="bg-transparent" data-default-color="text-gray-300" data-default-bg="bg-transparent">
                 <i class="fa-solid fa-house text-[20px] mb-1 group-hover:-translate-y-0.5 transition-transform duration-300" style="color: inherit;"></i>
                 <span class="text-[10px] font-medium tracking-wide">หน้าแรก</span>
             </a>
 
-            <a href="#" onclick="navigateTo('ailab', event)" class="nav-link snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group text-gray-400 bg-transparent hover:text-white transition-all duration-200 active:scale-95" data-active-color="text-white" data-active-bg="bg-white/15" data-default-color="text-gray-400" data-default-bg="bg-transparent">
+            <a href="#" onclick="navigateTo('ailab', event)" class="nav-link relative z-10 snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group text-gray-300 bg-transparent hover:text-white transition-all duration-200 active:scale-95" data-active-color="text-white" data-active-bg="bg-transparent" data-default-color="text-gray-300" data-default-bg="bg-transparent">
                 <i class="fa-solid fa-flask text-[20px] mb-1 group-hover:-translate-y-0.5 transition-transform duration-300" style="color: inherit;"></i>
                 <span class="text-[10px] font-medium tracking-wide">Ai Lab</span>
             </a>
 
-            <a href="#" onclick="navigateTo('worksheet', event)" class="nav-link snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group text-gray-400 bg-transparent hover:text-white transition-all duration-200 active:scale-95" data-active-color="text-white" data-active-bg="bg-white/15" data-default-color="text-gray-400" data-default-bg="bg-transparent">
+            <a href="#" onclick="navigateTo('worksheet', event)" class="nav-link relative z-10 snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group text-gray-300 bg-transparent hover:text-white transition-all duration-200 active:scale-95" data-active-color="text-white" data-active-bg="bg-transparent" data-default-color="text-gray-300" data-default-bg="bg-transparent">
                 <i class="fa-solid fa-clipboard text-[20px] mb-1 group-hover:-translate-y-0.5 transition-transform duration-300" style="color: inherit;"></i>
                 <span class="text-[10px] font-medium tracking-wide">ใบงาน</span>
             </a>
             
-            <a href="#" onclick="navigateTo('classroom', event)" class="nav-link snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group text-gray-400 bg-transparent hover:text-white transition-all duration-200 active:scale-95" data-active-color="text-white" data-active-bg="bg-white/15" data-default-color="text-gray-400" data-default-bg="bg-transparent">
+            <a href="#" onclick="navigateTo('classroom', event)" class="nav-link relative z-10 snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group text-gray-300 bg-transparent hover:text-white transition-all duration-200 active:scale-95" data-active-color="text-white" data-active-bg="bg-transparent" data-default-color="text-gray-300" data-default-bg="bg-transparent">
                 <i class="fa-solid fa-school-flag text-[20px] mb-1 group-hover:-translate-y-0.5 transition-transform duration-300" style="color: inherit;"></i>
                 <span class="text-[10px] font-medium tracking-wide">ห้องเรียน</span>
             </a>
 
-            <a href="#" onclick="navigateTo('lesson', event)" class="nav-link snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group text-gray-400 bg-transparent hover:text-white transition-all duration-200 active:scale-95" data-active-color="text-white" data-active-bg="bg-white/15" data-default-color="text-gray-400" data-default-bg="bg-transparent">
+            <a href="#" onclick="navigateTo('lesson', event)" class="nav-link relative z-10 snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group text-gray-300 bg-transparent hover:text-white transition-all duration-200 active:scale-95" data-active-color="text-white" data-active-bg="bg-transparent" data-default-color="text-gray-300" data-default-bg="bg-transparent">
                 <i class="fa-solid fa-newspaper text-[20px] mb-1 group-hover:-translate-y-0.5 transition-transform duration-300" style="color: inherit;"></i>
                 <span class="text-[10px] font-medium tracking-wide">บทเรียน</span>
             </a>
 
-            <a href="#" onclick="navigateTo('class_gallery', event)" class="nav-link snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group text-gray-400 bg-transparent hover:text-white transition-all duration-200 active:scale-95" data-active-color="text-white" data-active-bg="bg-white/15" data-default-color="text-gray-400" data-default-bg="bg-transparent">
+            <a href="#" onclick="navigateTo('class_gallery', event)" class="nav-link relative z-10 snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group text-gray-300 bg-transparent hover:text-white transition-all duration-200 active:scale-95" data-active-color="text-white" data-active-bg="bg-transparent" data-default-color="text-gray-300" data-default-bg="bg-transparent">
                 <i class="fa-solid fa-images text-[20px] mb-1 group-hover:-translate-y-0.5 transition-transform duration-300" style="color: inherit;"></i>
                 <span class="text-[10px] font-medium tracking-wide">ชั้นเรียน</span>
             </a>
@@ -665,6 +708,140 @@
             }, 300);
         }
 
+        // --- NEW: Magic Indicator & Drag Logic ---
+        let indicatorElement = null;
+        let bottomNav = null;
+        let isDraggingIndicator = false;
+        let dragStartX = 0;
+        let currentTranslate = 0;
+
+        function moveIndicator(targetLink, instant = false) {
+            if (!targetLink || !indicatorElement) return;
+            const offsetLeft = targetLink.offsetLeft;
+            if (instant) {
+                indicatorElement.style.transition = 'none';
+            } else {
+                indicatorElement.style.transition = 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+            }
+            // แปลงระยะ padding ให้ไฟสีรุ้งครอบตรงปุ่มเป๊ะๆ
+            indicatorElement.style.transform = `translateX(${offsetLeft - 6}px)`;
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            indicatorElement = document.getElementById('magic-indicator');
+            bottomNav = document.getElementById('bottom-nav');
+            
+            // Set initial position
+            const homeLink = document.querySelector('.nav-link[onclick*="home"]');
+            if (homeLink) {
+                homeLink.classList.add('active-menu-item');
+                moveIndicator(homeLink, true);
+            }
+
+            // Function to extract current X transform
+            function getTranslateX() {
+                const transform = window.getComputedStyle(indicatorElement).transform;
+                if (transform !== 'none') {
+                    const values = transform.split('(')[1].split(')')[0].split(',');
+                    return parseFloat(values[4]);
+                }
+                return 0;
+            }
+
+            // Drag Events for Touch (Mobile)
+            bottomNav.addEventListener('touchstart', (e) => {
+                const touch = e.touches[0];
+                const rect = indicatorElement.getBoundingClientRect();
+                
+                // ตรวจสอบว่านิ้วแตะโดนบริเวณวงกลมหรือไม่
+                if (touch.clientX >= rect.left - 10 && touch.clientX <= rect.right + 10 &&
+                    touch.clientY >= rect.top - 10 && touch.clientY <= rect.bottom + 10) {
+                    isDraggingIndicator = true;
+                    dragStartX = touch.clientX;
+                    currentTranslate = getTranslateX();
+                    indicatorElement.style.transition = 'none';
+                }
+            }, { passive: true });
+
+            bottomNav.addEventListener('touchmove', (e) => {
+                if (!isDraggingIndicator) return;
+                e.preventDefault(); // ล็อคหน้าจอไม่ให้เลื่อนเวลาลาก
+                const touch = e.touches[0];
+                const deltaX = touch.clientX - dragStartX;
+                let newTranslate = currentTranslate + deltaX;
+                
+                // กันไม่ให้ลากทะลุขอบซ้าย/ขวา
+                if (newTranslate < 0) newTranslate = 0;
+                const maxScroll = bottomNav.scrollWidth - 72; // ความกว้าง nav หักขนาดปุ่ม
+                if (newTranslate > maxScroll) newTranslate = maxScroll;
+                
+                indicatorElement.style.transform = `translateX(${newTranslate}px)`;
+            }, { passive: false });
+
+            bottomNav.addEventListener('touchend', (e) => {
+                if (!isDraggingIndicator) return;
+                isDraggingIndicator = false;
+                snapIndicatorToClosest();
+            });
+
+            // Drag Events for Mouse (Desktop)
+            bottomNav.addEventListener('mousedown', (e) => {
+                const rect = indicatorElement.getBoundingClientRect();
+                if (e.clientX >= rect.left && e.clientX <= rect.right &&
+                    e.clientY >= rect.top && e.clientY <= rect.bottom) {
+                    isDraggingIndicator = true;
+                    dragStartX = e.clientX;
+                    currentTranslate = getTranslateX();
+                    indicatorElement.style.transition = 'none';
+                }
+            });
+
+            window.addEventListener('mousemove', (e) => {
+                if (!isDraggingIndicator) return;
+                e.preventDefault();
+                const deltaX = e.clientX - dragStartX;
+                let newTranslate = currentTranslate + deltaX;
+                
+                if (newTranslate < 0) newTranslate = 0;
+                const maxScroll = bottomNav.scrollWidth - 72;
+                if (newTranslate > maxScroll) newTranslate = maxScroll;
+                
+                indicatorElement.style.transform = `translateX(${newTranslate}px)`;
+            });
+
+            window.addEventListener('mouseup', (e) => {
+                if (!isDraggingIndicator) return;
+                isDraggingIndicator = false;
+                snapIndicatorToClosest();
+            });
+
+            // Physics snap to nearest menu item
+            function snapIndicatorToClosest() {
+                const indicatorRect = indicatorElement.getBoundingClientRect();
+                const indicatorCenter = indicatorRect.left + indicatorRect.width / 2;
+                
+                let closestLink = null;
+                let minDistance = Infinity;
+                
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    const rect = link.getBoundingClientRect();
+                    const center = rect.left + rect.width / 2;
+                    const distance = Math.abs(center - indicatorCenter);
+                    if (distance < minDistance) {
+                        minDistance = distance;
+                        closestLink = link;
+                    }
+                });
+                
+                if (closestLink) {
+                    closestLink.click(); // ล็อคและเปลี่ยนหน้าเว็บ
+                } else {
+                    const activeLink = document.querySelector('.nav-link.active-menu-item');
+                    if (activeLink) moveIndicator(activeLink);
+                }
+            }
+        });
+
         // Smooth Page Navigation
         function navigateTo(pageId, event = null) {
             if (event) event.preventDefault();
@@ -699,6 +876,7 @@
                 
                 if (activeColor) link.classList.remove(activeColor);
                 if (activeBg) link.classList.remove(activeBg);
+                link.classList.remove('active-menu-item');
                 
                 const icon = link.querySelector('i');
                 if (icon) {
@@ -727,10 +905,23 @@
                         activeLink.classList.add(activeBg);
                     }
                     
+                    activeLink.classList.add('active-menu-item');
+                    moveIndicator(activeLink); // ลากวงแหวนสีรุ้งมาครอบเมื่อกด
+                    
                     const activeIcon = activeLink.querySelector('i');
                     if (activeIcon) {
                         activeIcon.style.color = "inherit";
                     }
+                }
+            } else if (pageId === 'home') {
+                const homeLink = document.querySelector('.nav-link[onclick*="home"]');
+                if(homeLink) {
+                    const defaultColor = homeLink.getAttribute('data-default-color');
+                    const activeColor = homeLink.getAttribute('data-active-color');
+                    if(defaultColor) homeLink.classList.remove(defaultColor);
+                    if(activeColor) homeLink.classList.add(activeColor);
+                    homeLink.classList.add('active-menu-item');
+                    moveIndicator(homeLink); // รีเซ็ตวงแหวนเวลากดโลโก้
                 }
             }
 
