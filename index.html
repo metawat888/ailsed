@@ -722,8 +722,8 @@
             if (instant) {
                 indicatorElement.style.transition = 'none';
             } else {
-                // เปลี่ยน Curve ให้เป็นแบบสปริง (Spring/Bounce) จะดูลื่นไหลและพรีเมียมขึ้น
-                indicatorElement.style.transition = 'transform 0.5s cubic-bezier(0.34, 1.2, 0.64, 1)';
+                // เปลี่ยน Curve ให้สมูทและพรีเมียมขั้นสุดแบบ iOS (Fast out, Bouncy & Slow in)
+                indicatorElement.style.transition = 'transform 0.6s cubic-bezier(0.25, 1.15, 0.3, 1)';
             }
             // ใช้ translate3d แทน translateX เพื่อดึงการทำงานของการ์ดจอ (GPU Acceleration) ให้สมูทขึ้น
             indicatorElement.style.transform = `translate3d(${offsetLeft - 6}px, 0, 0)`;
@@ -764,7 +764,8 @@
                     isDraggingIndicator = true;
                     dragStartX = touch.clientX;
                     currentTranslate = getTranslateX();
-                    indicatorElement.style.transition = 'transform 0.1s ease-out'; // หน่วงนิดนึงตอนเริ่มแตะให้สมูท
+                    // หน่วงนิดนึงตอนเริ่มแตะให้ดูนุ่มนวลแบบมีน้ำหนัก
+                    indicatorElement.style.transition = 'transform 0.15s cubic-bezier(0.2, 0, 0, 1)';
                 }
             }, { passive: true });
 
@@ -780,7 +781,8 @@
                 const maxScroll = bottomNav.scrollWidth - 72; // ความกว้าง nav หักขนาดปุ่ม
                 if (newTranslate > maxScroll) newTranslate = maxScroll;
                 
-                indicatorElement.style.transition = 'transform 0.05s ease-out'; // ทำให้การลากตามนิ้วไม่กระตุก (Smooth follow)
+                // นำ transition ออกเพื่อให้ตามนิ้วแบบ 1:1 (Responsive ขั้นสุด)
+                indicatorElement.style.transition = 'none';
                 indicatorElement.style.transform = `translate3d(${newTranslate}px, 0, 0)`;
             }, { passive: false });
 
@@ -798,7 +800,7 @@
                     isDraggingIndicator = true;
                     dragStartX = e.clientX;
                     currentTranslate = getTranslateX();
-                    indicatorElement.style.transition = 'transform 0.1s ease-out';
+                    indicatorElement.style.transition = 'transform 0.15s cubic-bezier(0.2, 0, 0, 1)';
                 }
             });
 
@@ -812,7 +814,8 @@
                 const maxScroll = bottomNav.scrollWidth - 72;
                 if (newTranslate > maxScroll) newTranslate = maxScroll;
                 
-                indicatorElement.style.transition = 'transform 0.05s ease-out';
+                // นำ transition ออกเพื่อให้ตามเมาส์แบบ 1:1
+                indicatorElement.style.transition = 'none';
                 indicatorElement.style.transform = `translate3d(${newTranslate}px, 0, 0)`;
             });
 
