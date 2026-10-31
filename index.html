@@ -29,7 +29,7 @@
             font-family: 'Sarabun', 'Inter', sans-serif;
             margin: 0;
             overflow-x: hidden;
-            background-color: #f8fafc;
+            background-color: #020617; /* Dark Slate 950 */
         }
         .font-inter { font-family: 'Inter', sans-serif; }
         
@@ -57,8 +57,10 @@
             to { opacity: 1; transform: translateX(0); }
         }
         
-        .bg-grid-pattern {
-            background-color: rgba(255, 255, 255, 0.85);
+        .bg-glass-dark {
+            background-color: rgba(15, 23, 42, 0.6); /* Slate 900 */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
 
         .animate-fade-in-up { animation: fadeInUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; will-change: transform, opacity; }
@@ -89,11 +91,10 @@
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            pointer-events: none; /* ให้กดทะลุไปโดนปุ่มด้านหลังได้ */
+            pointer-events: none;
             z-index: 0;
-            will-change: transform; /* สั่งให้เบราว์เซอร์เตรียม GPU ไว้ล่วงหน้า */
+            will-change: transform;
         }
-        /* The glowing blurred shadow */
         .magic-indicator::after {
             content: '';
             position: absolute;
@@ -105,13 +106,12 @@
             z-index: -2;
             animation: spin-border 2.5s linear infinite;
         }
-        /* The sharp gradient border */
         .magic-indicator::before {
             content: '';
             position: absolute;
             inset: 0;
             border-radius: 50%;
-            padding: 1.5px; /* ความหนาของเส้นขอบสีรุ้ง */
+            padding: 1.5px;
             background: conic-gradient(from 0deg, #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
@@ -124,7 +124,7 @@
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col text-gray-800 relative z-0">
+<body class="min-h-screen flex flex-col text-slate-200 relative z-0">
 
     <!-- Interactive Background Canvas -->
     <canvas id="particle-canvas" class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"></canvas>
@@ -132,34 +132,34 @@
     <main class="flex-grow relative z-10 w-full flex flex-col">
         
         <!-- SECTION: Home -->
-        <section id="home" class="page-section active border-b border-gray-200/80 relative z-10 w-full min-h-dvh pb-[100px] overflow-hidden m-0 flex-col items-center justify-center">
+        <section id="home" class="page-section active border-b border-slate-800/80 relative z-10 w-full min-h-dvh pb-[100px] overflow-hidden m-0 flex-col items-center justify-center">
             <div class="w-full max-w-[1600px] mx-auto px-5 sm:px-12 lg:px-20 py-10 md:py-16 flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12">
                 <div class="flex-1 text-center md:text-left space-y-4 md:space-y-5">
-                    <h2 class="font-inter text-[#0ea5e9] font-bold tracking-widest uppercase text-xs md:text-sm mb-1 start-opacity-0 animate-slide-in-left anim-delay-100">
+                    <h2 class="font-inter text-[#0ea5e9] font-bold tracking-widest uppercase text-xs md:text-sm mb-1 start-opacity-0 animate-slide-in-left anim-delay-100 drop-shadow-md">
                         <i class="fa-solid fa-sparkles mr-2"></i> Inspiring the Future
                     </h2>
-                    <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight md:leading-loose drop-shadow-sm start-opacity-0 animate-fade-in-up anim-delay-200 py-2 md:py-3">
+                    <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight md:leading-loose drop-shadow-lg start-opacity-0 animate-fade-in-up anim-delay-200 py-2 md:py-3">
                         ยินดีต้อนรับสู่ <br class="block md:hidden"/>
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#0ea5e9] to-[#3b82f6] font-black italic tracking-wide inline-block hover:scale-105 transition-transform duration-300 cursor-default px-1 py-1 md:px-2 md:py-3 md:ml-3">
                             ห้องเรียนครูอาร์ม
                         </span>
                     </h1>
-                    <p class="text-base sm:text-lg md:text-xl text-gray-700 font-medium py-1 md:py-2 start-opacity-0 animate-fade-in-up anim-delay-300 leading-relaxed md:leading-loose">
+                    <p class="text-base sm:text-lg md:text-xl text-slate-300 font-medium py-1 md:py-2 start-opacity-0 animate-fade-in-up anim-delay-300 leading-relaxed md:leading-loose drop-shadow">
                         พื้นที่รวบรวม <span class="text-[#f97316] font-bold underline decoration-[#f97316]/40 decoration-4 underline-offset-4 hover:text-[#ea580c] transition-colors cursor-default">นวัตกรรม</span> และ <span class="text-[#0ea5e9] font-bold underline decoration-[#0ea5e9]/40 decoration-4 underline-offset-4 hover:text-[#0284c7] transition-colors cursor-default">ไอเดียการเรียนรู้</span>
                     </p>
-                    <p class="font-inter text-sm md:text-base text-gray-600 leading-loose max-w-2xl mx-auto md:mx-0 border-l-4 border-[#0ea5e9] pl-4 py-3 md:pl-5 md:py-4 bg-white/60 rounded-r-xl shadow-sm backdrop-blur-md start-opacity-0 animate-fade-in-up anim-delay-400 hover:border-l-8 transition-all duration-300">
-                        ผมมีความตั้งใจในการพัฒนาสื่อการสอนเทคโนโลยี <span class="font-semibold text-gray-800">AI Solutions</span> และสร้างสรรค์สถาปัตยกรรมซอฟต์แวร์ใหม่ๆ 
+                    <p class="font-inter text-sm md:text-base text-slate-400 leading-loose max-w-2xl mx-auto md:mx-0 border-l-4 border-[#0ea5e9] pl-4 py-3 md:pl-5 md:py-4 bg-slate-900/60 rounded-r-xl shadow-lg backdrop-blur-md start-opacity-0 animate-fade-in-up anim-delay-400 hover:border-l-8 hover:bg-slate-800/80 transition-all duration-300 border border-transparent hover:border-slate-700/50">
+                        ผมมีความตั้งใจในการพัฒนาสื่อการสอนเทคโนโลยี <span class="font-semibold text-white">AI Solutions</span> และสร้างสรรค์สถาปัตยกรรมซอฟต์แวร์ใหม่ๆ 
                         ที่จะช่วยเปลี่ยนห้องเรียนธรรมดา ให้กลายเป็นพื้นที่แห่งการเรียนรู้ที่สนุกและตอบโจทย์อนาคต
                     </p>
                 </div>
                 
                 <div class="flex-1 flex flex-col items-center justify-center start-opacity-0 animate-fade-in-up anim-delay-500 w-full">
                     <div class="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 hover:scale-105 transition-transform duration-500">
-                        <img src="https://live.staticflickr.com/65535/55605088814_c19d528e89_c.jpg" alt="ครูวิทยาศาสตร์ในห้องเรียนอัจฉริยะ" class="w-full h-full object-cover object-top rounded-full shadow-2xl border-4 border-white relative z-10"/>
+                        <img src="https://live.staticflickr.com/65535/55605088814_c19d528e89_c.jpg" alt="ครูวิทยาศาสตร์ในห้องเรียนอัจฉริยะ" class="w-full h-full object-cover object-top rounded-full shadow-2xl border-4 border-slate-800 relative z-10"/>
                         <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-[#0ea5e9]/40 to-[#f97316]/30 blur-2xl -z-10 animate-pulse"></div>
                     </div>
-                    <div class="mt-6 md:mt-8 text-center bg-white/60 px-5 md:px-6 py-3 rounded-2xl backdrop-blur-xl border border-gray-200/80 shadow-lg hover:shadow-xl transition-shadow w-fit mx-auto">
-                        <h3 class="font-inter text-base sm:text-lg md:text-xl font-bold text-gray-900 tracking-wide whitespace-nowrap">
+                    <div class="mt-6 md:mt-8 text-center bg-slate-900/80 px-5 md:px-6 py-3 rounded-2xl backdrop-blur-xl border border-slate-700/80 shadow-2xl hover:shadow-blue-500/10 transition-shadow w-fit mx-auto">
+                        <h3 class="font-inter text-base sm:text-lg md:text-xl font-bold text-white tracking-wide whitespace-nowrap">
                             Mr. Metawat Phongsaphang
                         </h3>
                         <p class="font-inter text-[10px] sm:text-xs md:text-sm font-bold mt-1 uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#0ea5e9] to-[#f97316] whitespace-nowrap">
@@ -171,75 +171,147 @@
         </section>
 
         <!-- SECTION: Ai Lab -->
-        <section id="ailab" class="page-section w-full h-dvh flex-col relative z-10 p-0 m-0 flex-grow bg-white">
+        <section id="ailab" class="page-section w-full h-dvh flex-col relative z-10 p-0 m-0 flex-grow bg-slate-950">
             <iframe id="iframe-ailab" src="about:blank" data-src="https://ailabv2.vercel.app/" title="Ai Lab Platform" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </section>
 
         <!-- SECTION: Worksheet -->
         <section id="worksheet" class="page-section p-4 md:p-6 lg:p-8 pb-[120px] md:pb-[120px] lg:pb-[120px] flex-col relative z-10 w-full max-w-full mx-auto flex-grow">
             <div class="max-w-[1800px] w-full mx-auto flex flex-col gap-6">
-                <div class="flex flex-col md:flex-row justify-between items-start md:items-center bg-grid-pattern rounded-2xl shadow-sm px-4 md:px-6 py-4 border border-gray-200/80 gap-4">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center bg-glass-dark rounded-2xl shadow-lg px-4 md:px-6 py-4 border border-slate-700/80 gap-4">
                     <div class="flex items-center gap-3 md:gap-4 w-full md:w-auto">
-                        <div class="w-10 h-10 md:w-12 md:h-12 bg-[#f97316]/10 rounded-full flex items-center justify-center shrink-0">
-                            <i class="fa-solid fa-clipboard text-[#f97316] text-lg md:text-xl"></i>
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-[#f97316]/20 rounded-full flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-clipboard text-[#f97316] text-lg md:text-xl drop-shadow"></i>
                         </div>
-                        <h2 class="text-lg md:text-2xl font-bold text-gray-800">คลังใบงาน</h2>
+                        <h2 class="text-lg md:text-2xl font-bold text-white tracking-wide">คลังใบงาน</h2>
                     </div>
                     <div class="relative w-full md:w-auto md:min-w-[300px]">
-                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
-                        <input type="text" oninput="filterItems('worksheet', this.value)" placeholder="ค้นหาใบงาน..." class="w-full pl-11 pr-4 py-2.5 bg-white border border-gray-200 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-[#f97316]/50 focus:border-[#f97316] transition-all shadow-sm font-inter">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                        <input type="text" oninput="filterItems('worksheet', this.value)" placeholder="ค้นหาใบงาน..." class="w-full pl-11 pr-4 py-2.5 bg-slate-800/80 border border-slate-700 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-[#f97316]/50 focus:border-[#f97316] transition-all shadow-inner text-white placeholder-slate-400 font-inter">
                     </div>
                 </div>
                 
                 <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mx-auto w-full" id="worksheet-grid">
-                    <div class="bg-grid-pattern rounded-2xl p-3 md:p-4 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer border border-gray-200/80 flex flex-col" onclick="openIframeModal('https://online.fliphtml5.com/Ailabv2/Genetic-m-3/', 'Genetic ม.3')">
-                        <div class="overflow-hidden rounded-xl aspect-[3/4] bg-gray-100 mb-3 md:mb-5 relative shadow-inner border border-gray-200/50">
+                    <div class="bg-glass-dark rounded-2xl p-3 md:p-4 shadow-xl hover:shadow-2xl hover:shadow-[#f97316]/10 hover:-translate-y-2 transition-all duration-300 group cursor-pointer border border-slate-700/50 hover:border-slate-500/50 flex flex-col" onclick="openIframeModal('https://online.fliphtml5.com/Ailabv2/Genetic-m-3/', 'Genetic ม.3')">
+                        <div class="overflow-hidden rounded-xl aspect-[3/4] bg-slate-900 mb-3 md:mb-5 relative shadow-inner border border-slate-700/50">
                             <img src="https://live.staticflickr.com/65535/55606899404_bd77584533_c.jpg" alt="ภาพปก" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
-                        <h3 class="text-center font-bold text-gray-800 text-sm md:text-lg">Genetic ม.3</h3>
+                        <h3 class="text-center font-bold text-slate-200 text-sm md:text-lg group-hover:text-white transition-colors">Genetic ม.3</h3>
                     </div>
 
-                    <div class="bg-grid-pattern rounded-2xl p-3 md:p-4 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer border border-gray-200/80 flex flex-col" onclick="openIframeModal('https://online.fliphtml5.com/Ailabv2/m-3-Electric/', 'Electric ม.3')">
-                        <div class="overflow-hidden rounded-xl aspect-[3/4] bg-gray-100 mb-3 md:mb-5 relative shadow-inner border border-gray-200/50">
+                    <div class="bg-glass-dark rounded-2xl p-3 md:p-4 shadow-xl hover:shadow-2xl hover:shadow-[#f97316]/10 hover:-translate-y-2 transition-all duration-300 group cursor-pointer border border-slate-700/50 hover:border-slate-500/50 flex flex-col" onclick="openIframeModal('https://online.fliphtml5.com/Ailabv2/m-3-Electric/', 'Electric ม.3')">
+                        <div class="overflow-hidden rounded-xl aspect-[3/4] bg-slate-900 mb-3 md:mb-5 relative shadow-inner border border-slate-700/50">
                             <img src="https://live.staticflickr.com/65535/55606836048_761800db61_c.jpg" alt="ภาพปก" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
-                        <h3 class="text-center font-bold text-gray-800 text-sm md:text-lg">Electric ม.3</h3>
+                        <h3 class="text-center font-bold text-slate-200 text-sm md:text-lg group-hover:text-white transition-colors">Electric ม.3</h3>
                     </div>
 
-                    <div class="bg-grid-pattern rounded-2xl p-3 md:p-4 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer border border-gray-200/80 flex flex-col" onclick="openIframeModal('https://online.fliphtml5.com/Ailabv2/m-3-Ecosystem/', 'Ecosystem ม.3')">
-                        <div class="overflow-hidden rounded-xl aspect-[3/4] bg-gray-100 mb-3 md:mb-5 relative shadow-inner border border-gray-200/50">
+                    <div class="bg-glass-dark rounded-2xl p-3 md:p-4 shadow-xl hover:shadow-2xl hover:shadow-[#f97316]/10 hover:-translate-y-2 transition-all duration-300 group cursor-pointer border border-slate-700/50 hover:border-slate-500/50 flex flex-col" onclick="openIframeModal('https://online.fliphtml5.com/Ailabv2/m-3-Ecosystem/', 'Ecosystem ม.3')">
+                        <div class="overflow-hidden rounded-xl aspect-[3/4] bg-slate-900 mb-3 md:mb-5 relative shadow-inner border border-slate-700/50">
                             <img src="https://live.staticflickr.com/65535/55607329179_6bf3efe9b2_c.jpg" alt="ภาพปก" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
-                        <h3 class="text-center font-bold text-gray-800 text-sm md:text-lg">Ecosystem ม.3</h3>
+                        <h3 class="text-center font-bold text-slate-200 text-sm md:text-lg group-hover:text-white transition-colors">Ecosystem ม.3</h3>
                     </div>
 
-                    <div class="bg-grid-pattern rounded-2xl p-3 md:p-4 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer border border-gray-200/80 flex flex-col" onclick="openIframeModal('https://online.fliphtml5.com/Ailabv2/fsls/', 'รวมใบงาน ม.3')">
-                        <div class="overflow-hidden rounded-xl aspect-[3/4] bg-gray-100 mb-3 md:mb-5 relative shadow-inner border border-gray-200/50">
+                    <div class="bg-glass-dark rounded-2xl p-3 md:p-4 shadow-xl hover:shadow-2xl hover:shadow-[#f97316]/10 hover:-translate-y-2 transition-all duration-300 group cursor-pointer border border-slate-700/50 hover:border-slate-500/50 flex flex-col" onclick="openIframeModal('https://online.fliphtml5.com/Ailabv2/fsls/', 'รวมใบงาน ม.3')">
+                        <div class="overflow-hidden rounded-xl aspect-[3/4] bg-slate-900 mb-3 md:mb-5 relative shadow-inner border border-slate-700/50">
                             <img src="https://live.staticflickr.com/65535/55607338799_0e2063de30_c.jpg" alt="ภาพปก" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
-                        <h3 class="text-center font-bold text-gray-800 text-sm md:text-lg">รวมใบงาน ม.3</h3>
+                        <h3 class="text-center font-bold text-slate-200 text-sm md:text-lg group-hover:text-white transition-colors">รวมใบงาน ม.3</h3>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION: Classroom -->
-        <section id="classroom" class="page-section w-full h-dvh flex-col relative z-10 p-0 m-0 flex-grow bg-white">
-            <iframe id="iframe-classroom" src="about:blank" data-src="https://proj14.ipst.ac.th/" title="ห้องเรียนอัจฉริยะ Project 14" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- SECTION: Tutor Rooms (Replaced Classroom) -->
+        <section id="tutor" class="page-section p-4 md:p-6 lg:p-8 pb-[120px] md:pb-[120px] lg:pb-[120px] flex-col relative z-10 w-full max-w-full mx-auto flex-grow">
+            <div class="max-w-[1800px] w-full mx-auto flex flex-col gap-6">
+                <!-- Header -->
+                <div class="flex items-center gap-3 md:gap-4 bg-glass-dark rounded-2xl shadow-lg px-4 md:px-6 py-4 border border-slate-700/80">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-purple-500/20 rounded-full flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-graduation-cap text-purple-400 text-lg md:text-xl drop-shadow"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-lg md:text-2xl font-bold text-white tracking-wide">ห้องติว (Subject Rooms)</h2>
+                        <p class="text-xs md:text-sm font-medium text-slate-400 mt-0.5">เลือกรายวิชาเพื่อเข้าสู่คลังความรู้</p>
+                    </div>
+                </div>
+
+                <!-- Subject Cards Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mx-auto w-full">
+                    
+                    <!-- Science Card -->
+                    <div class="relative bg-slate-900/60 rounded-3xl p-6 shadow-xl border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300 group cursor-pointer overflow-hidden backdrop-blur-md active:scale-95">
+                        <div class="absolute -right-12 -top-12 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl group-hover:bg-blue-500/30 transition-colors duration-500 pointer-events-none"></div>
+                        <div class="w-14 h-14 rounded-2xl bg-blue-500/20 flex items-center justify-center text-blue-400 text-3xl mb-5 group-hover:scale-110 group-hover:-rotate-12 transition-transform duration-500 shadow-inner">
+                            <i class="fa-solid fa-atom"></i>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-2 tracking-wide">วิทยาศาสตร์</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">สรุปเนื้อหาเข้มข้น ครอบคลุมทั้งฟิสิกส์ เคมี และชีววิทยา พร้อมการทดลองเสมือนจริง</p>
+                        <div class="mt-5 w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+
+                    <!-- Math Card -->
+                    <div class="relative bg-slate-900/60 rounded-3xl p-6 shadow-xl border border-slate-700/50 hover:border-emerald-500/50 transition-all duration-300 group cursor-pointer overflow-hidden backdrop-blur-md active:scale-95">
+                        <div class="absolute -right-12 -top-12 w-40 h-40 bg-emerald-500/20 rounded-full blur-3xl group-hover:bg-emerald-500/30 transition-colors duration-500 pointer-events-none"></div>
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 text-3xl mb-5 group-hover:scale-110 group-hover:-rotate-12 transition-transform duration-500 shadow-inner">
+                            <i class="fa-solid fa-square-root-variable"></i>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-2 tracking-wide">คณิตศาสตร์</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">ตะลุยโจทย์ปัญหา สูตรลัด และเทคนิคการคำนวณขั้นเทพที่เข้าใจง่าย</p>
+                        <div class="mt-5 w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+
+                    <!-- English Card -->
+                    <div class="relative bg-slate-900/60 rounded-3xl p-6 shadow-xl border border-slate-700/50 hover:border-rose-500/50 transition-all duration-300 group cursor-pointer overflow-hidden backdrop-blur-md active:scale-95">
+                        <div class="absolute -right-12 -top-12 w-40 h-40 bg-rose-500/20 rounded-full blur-3xl group-hover:bg-rose-500/30 transition-colors duration-500 pointer-events-none"></div>
+                        <div class="w-14 h-14 rounded-2xl bg-rose-500/20 flex items-center justify-center text-rose-400 text-3xl mb-5 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-500 shadow-inner">
+                            <i class="fa-solid fa-language"></i>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-2 tracking-wide">ภาษาอังกฤษ</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">พัฒนาทักษะไวยากรณ์ (Grammar) คำศัพท์ (Vocab) และการสนทนาในชีวิตจริง</p>
+                        <div class="mt-5 w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-rose-500 group-hover:text-white transition-all duration-300">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+
+                    <!-- Thai Card -->
+                    <div class="relative bg-slate-900/60 rounded-3xl p-6 shadow-xl border border-slate-700/50 hover:border-amber-500/50 transition-all duration-300 group cursor-pointer overflow-hidden backdrop-blur-md active:scale-95">
+                        <div class="absolute -right-12 -top-12 w-40 h-40 bg-amber-500/20 rounded-full blur-3xl group-hover:bg-amber-500/30 transition-colors duration-500 pointer-events-none"></div>
+                        <div class="w-14 h-14 rounded-2xl bg-amber-500/20 flex items-center justify-center text-amber-400 text-3xl mb-5 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-500 shadow-inner">
+                            <i class="fa-solid fa-book-quran"></i>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-2 tracking-wide">ภาษาไทย</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">เจาะลึกหลักการใช้ภาษาไทย วรรณคดีที่สำคัญ และเทคนิคการวิเคราะห์บทความ</p>
+                        <div class="mt-5 w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-amber-500 group-hover:text-white transition-all duration-300">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </section>
 
         <!-- SECTION: Lesson (E-Learning Topic Style) -->
         <section id="lesson" class="page-section p-4 md:p-6 lg:p-8 pb-[120px] md:pb-[120px] lg:pb-[120px] flex-col relative z-10 w-full max-w-full mx-auto flex-grow">
             <div class="max-w-[1800px] w-full mx-auto flex flex-col gap-6">
                 <!-- Header -->
-                <div class="flex flex-col md:flex-row justify-between items-start md:items-center bg-grid-pattern rounded-2xl shadow-sm px-4 md:px-6 py-4 border border-gray-200/80 gap-4">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center bg-glass-dark rounded-2xl shadow-lg px-4 md:px-6 py-4 border border-slate-700/80 gap-4">
                     <div class="flex items-center gap-3 md:gap-4 w-full">
-                        <div class="w-10 h-10 md:w-12 md:h-12 bg-[#eab308]/10 rounded-full flex items-center justify-center shrink-0">
-                            <i class="fa-solid fa-newspaper text-[#eab308] text-lg md:text-xl"></i>
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-[#eab308]/20 rounded-full flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-newspaper text-[#eab308] text-lg md:text-xl drop-shadow"></i>
                         </div>
                         <div>
-                            <h2 class="text-lg md:text-2xl font-bold text-gray-800">บทเรียน</h2>
-                            <p class="text-xs md:text-sm font-medium text-gray-500 mt-0.5 md:mt-1"><i class="fa-solid fa-book-bookmark mr-1 text-[#eab308]"></i>วิทยาศาสตร์ 6 เทอม 2</p>
+                            <h2 class="text-lg md:text-2xl font-bold text-white tracking-wide">บทเรียน</h2>
+                            <p class="text-xs md:text-sm font-medium text-slate-400 mt-0.5 md:mt-1"><i class="fa-solid fa-book-bookmark mr-1 text-[#eab308]"></i>วิทยาศาสตร์ 6 เทอม 2</p>
                         </div>
                     </div>
                 </div>
@@ -248,49 +320,49 @@
                 <div class="flex flex-col gap-3 w-full pb-6 pt-2">
                     
                     <!-- Topic Item 1 -->
-                    <div class="bg-white rounded-2xl p-4 shadow-[0_2px_10px_rgba(0,0,0,0.04)] border border-gray-100 hover:shadow-md hover:border-blue-200 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week1')">
+                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-blue-500/50 hover:shadow-blue-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week1')">
                         <div class="flex items-center gap-4 w-full">
-                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 text-blue-500 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform">
+                            <div class="w-12 h-12 rounded-2xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-blue-500/20">
                                 <i class="fa-solid fa-flask"></i>
                             </div>
                             <div class="flex flex-col gap-1 flex-grow">
-                                <span class="text-[10px] sm:text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-0.5 rounded-md w-fit tracking-wide">สัปดาห์ที่ 1</span>
-                                <h3 class="font-bold text-[15px] sm:text-base text-gray-900 line-clamp-1">ปฏิกิริยาเคมี</h3>
+                                <span class="text-[10px] sm:text-xs font-bold text-blue-400 bg-blue-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-blue-800/50">สัปดาห์ที่ 1</span>
+                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">ปฏิกิริยาเคมี</h3>
                             </div>
                         </div>
-                        <div class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-blue-50 group-hover:text-blue-500 transition-colors shrink-0">
+                        <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-blue-500/30 group-hover:text-blue-300 transition-colors shrink-0">
                             <i class="fa-solid fa-chevron-right text-sm"></i>
                         </div>
                     </div>
                     
                     <!-- Topic Item 2 -->
-                    <div class="bg-white rounded-2xl p-4 shadow-[0_2px_10px_rgba(0,0,0,0.04)] border border-gray-100 hover:shadow-md hover:border-emerald-200 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week2')">
+                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-emerald-500/50 hover:shadow-emerald-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week2')">
                         <div class="flex items-center gap-4 w-full">
-                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100 text-emerald-500 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform">
+                            <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-emerald-500/20">
                                 <i class="fa-solid fa-balance-scale"></i>
                             </div>
                             <div class="flex flex-col gap-1 flex-grow">
-                                <span class="text-[10px] sm:text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-md w-fit tracking-wide">สัปดาห์ที่ 2</span>
-                                <h3 class="font-bold text-[15px] sm:text-base text-gray-900 line-clamp-1">กฎทรงมวล</h3>
+                                <span class="text-[10px] sm:text-xs font-bold text-emerald-400 bg-emerald-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-emerald-800/50">สัปดาห์ที่ 2</span>
+                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">กฎทรงมวล</h3>
                             </div>
                         </div>
-                        <div class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-emerald-50 group-hover:text-emerald-500 transition-colors shrink-0">
+                        <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-emerald-500/30 group-hover:text-emerald-300 transition-colors shrink-0">
                             <i class="fa-solid fa-chevron-right text-sm"></i>
                         </div>
                     </div>
 
                     <!-- Topic Item 3 -->
-                    <div class="bg-white rounded-2xl p-4 shadow-[0_2px_10px_rgba(0,0,0,0.04)] border border-gray-100 hover:shadow-md hover:border-orange-200 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week3')">
+                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-orange-500/50 hover:shadow-orange-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week3')">
                         <div class="flex items-center gap-4 w-full">
-                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-orange-50 to-orange-100 text-orange-500 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform">
+                            <div class="w-12 h-12 rounded-2xl bg-orange-500/20 text-orange-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-orange-500/20">
                                 <i class="fa-solid fa-temperature-half"></i>
                             </div>
                             <div class="flex flex-col gap-1 flex-grow">
-                                <span class="text-[10px] sm:text-xs font-bold text-orange-600 bg-orange-50 px-2.5 py-0.5 rounded-md w-fit tracking-wide">สัปดาห์ที่ 3</span>
-                                <h3 class="font-bold text-[15px] sm:text-base text-gray-900 line-clamp-1">การถ่ายโอนความร้อน</h3>
+                                <span class="text-[10px] sm:text-xs font-bold text-orange-400 bg-orange-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-orange-800/50">สัปดาห์ที่ 3</span>
+                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">การถ่ายโอนความร้อน</h3>
                             </div>
                         </div>
-                        <div class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-orange-50 group-hover:text-orange-500 transition-colors shrink-0">
+                        <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-orange-500/30 group-hover:text-orange-300 transition-colors shrink-0">
                             <i class="fa-solid fa-chevron-right text-sm"></i>
                         </div>
                     </div>
@@ -302,18 +374,19 @@
         <!-- SECTION: Class Gallery -->
         <section id="class_gallery" class="page-section p-4 md:p-6 lg:p-8 pb-[120px] md:pb-[120px] lg:pb-[120px] flex-col relative z-10 w-full max-w-full mx-auto flex-grow">
             <div class="max-w-[1800px] w-full mx-auto flex flex-col gap-6">
-                <div class="flex items-center gap-3 md:gap-4 bg-grid-pattern rounded-2xl shadow-sm px-4 md:px-6 py-4 border border-gray-200/80">
-                    <div class="w-10 h-10 md:w-12 md:h-12 bg-[#14b8a6]/10 rounded-full flex items-center justify-center shrink-0">
-                        <i class="fa-solid fa-images text-[#14b8a6] text-lg md:text-xl"></i>
+                <div class="flex items-center gap-3 md:gap-4 bg-glass-dark rounded-2xl shadow-lg px-4 md:px-6 py-4 border border-slate-700/80">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-[#14b8a6]/20 rounded-full flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-images text-[#14b8a6] text-lg md:text-xl drop-shadow"></i>
                     </div>
-                    <h2 class="text-lg md:text-2xl font-bold text-gray-800">ภาพชั้นเรียน</h2>
+                    <h2 class="text-lg md:text-2xl font-bold text-white tracking-wide">ภาพชั้นเรียน</h2>
                 </div>
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mx-auto w-full">
-                    <div class="bg-grid-pattern rounded-2xl p-3 md:p-4 shadow-lg hover:-translate-y-2 transition-all duration-300 group cursor-pointer border border-gray-200/80 flex flex-col" onclick="openModal('https://live.staticflickr.com/65535/55615154941_e1a907b1c5_b.jpg')">
-                        <div class="overflow-hidden rounded-xl aspect-[4/3] bg-gray-100 mb-3 relative shadow-inner border border-gray-200/50">
+                    <div class="bg-slate-900/80 backdrop-blur-sm rounded-2xl p-3 md:p-4 shadow-xl border border-slate-700/50 hover:border-slate-500 hover:-translate-y-2 transition-all duration-300 group cursor-pointer flex flex-col" onclick="openModal('https://live.staticflickr.com/65535/55615154941_e1a907b1c5_b.jpg')">
+                        <div class="overflow-hidden rounded-xl aspect-[4/3] bg-slate-800 mb-3 relative shadow-inner border border-slate-700/50">
                             <img src="https://live.staticflickr.com/65535/55615154941_e1a907b1c5_c.jpg" alt="ภาพ" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
-                        <h3 class="font-bold text-gray-800 text-xs md:text-sm line-clamp-1">Ai Lab 17</h3>
+                        <h3 class="font-bold text-slate-200 text-xs md:text-sm line-clamp-1 group-hover:text-white transition-colors">Ai Lab 17</h3>
                     </div>
                 </div>
             </div>
@@ -321,39 +394,38 @@
 
     </main>
 
-    <!-- Bottom Navigation Bar (LINE App Style) -->
+    <!-- Bottom Navigation Bar -->
     <div class="fixed bottom-4 sm:bottom-6 left-0 w-full z-[999] pb-safe px-4 pointer-events-none flex justify-center">
-        <nav id="bottom-nav" class="relative bg-zinc-800/85 backdrop-blur-[24px] border border-white/20 rounded-full shadow-[0_8px_32px_0_rgba(0,0,0,0.6)] p-1.5 flex items-center overflow-x-auto overflow-y-hidden scrollbar-hide touch-pan-x snap-x snap-mandatory pointer-events-auto max-w-full w-auto gap-1 select-none" style="touch-action: pan-x; -webkit-user-drag: none;">
+        <nav id="bottom-nav" class="relative bg-zinc-900/85 backdrop-blur-[24px] border border-slate-600/30 rounded-full shadow-[0_8px_32px_0_rgba(0,0,0,0.8)] p-1.5 flex items-center overflow-x-auto overflow-y-hidden scrollbar-hide touch-pan-x snap-x snap-mandatory pointer-events-auto max-w-full w-auto gap-1 select-none" style="touch-action: pan-x; -webkit-user-drag: none;">
             
-            <!-- Draggable Magic Indicator -->
             <div id="magic-indicator" class="magic-indicator"></div>
 
-            <a href="#" draggable="false" onclick="navigateTo('home', event)" class="nav-link select-none relative z-10 snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group text-white bg-transparent transition-all duration-300 ease-out active:scale-90" data-active-color="text-white" data-active-bg="bg-transparent" data-default-color="text-gray-300" data-default-bg="bg-transparent">
+            <a href="#" draggable="false" onclick="navigateTo('home', event)" class="nav-link select-none relative z-10 snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group text-white bg-transparent transition-all duration-300 ease-out active:scale-90" data-active-color="text-white" data-active-bg="bg-transparent" data-default-color="text-slate-400" data-default-bg="bg-transparent">
                 <i class="fa-solid fa-house text-[20px] mb-1 group-hover:-translate-y-0.5 transition-transform duration-300 pointer-events-none" style="color: inherit;"></i>
                 <span class="text-[10px] font-medium tracking-wide pointer-events-none">หน้าแรก</span>
             </a>
 
-            <a href="#" draggable="false" onclick="navigateTo('ailab', event)" class="nav-link select-none relative z-10 snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group text-gray-300 bg-transparent hover:text-white transition-all duration-300 ease-out active:scale-90" data-active-color="text-white" data-active-bg="bg-transparent" data-default-color="text-gray-300" data-default-bg="bg-transparent">
+            <a href="#" draggable="false" onclick="navigateTo('ailab', event)" class="nav-link select-none relative z-10 snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group text-slate-400 bg-transparent hover:text-white transition-all duration-300 ease-out active:scale-90" data-active-color="text-white" data-active-bg="bg-transparent" data-default-color="text-slate-400" data-default-bg="bg-transparent">
                 <i class="fa-solid fa-flask text-[20px] mb-1 group-hover:-translate-y-0.5 transition-transform duration-300 pointer-events-none" style="color: inherit;"></i>
                 <span class="text-[10px] font-medium tracking-wide pointer-events-none">Ai Lab</span>
             </a>
 
-            <a href="#" draggable="false" onclick="navigateTo('worksheet', event)" class="nav-link select-none relative z-10 snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group text-gray-300 bg-transparent hover:text-white transition-all duration-300 ease-out active:scale-90" data-active-color="text-white" data-active-bg="bg-transparent" data-default-color="text-gray-300" data-default-bg="bg-transparent">
+            <a href="#" draggable="false" onclick="navigateTo('worksheet', event)" class="nav-link select-none relative z-10 snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group text-slate-400 bg-transparent hover:text-white transition-all duration-300 ease-out active:scale-90" data-active-color="text-white" data-active-bg="bg-transparent" data-default-color="text-slate-400" data-default-bg="bg-transparent">
                 <i class="fa-solid fa-clipboard text-[20px] mb-1 group-hover:-translate-y-0.5 transition-transform duration-300 pointer-events-none" style="color: inherit;"></i>
                 <span class="text-[10px] font-medium tracking-wide pointer-events-none">ใบงาน</span>
             </a>
             
-            <a href="#" draggable="false" onclick="navigateTo('classroom', event)" class="nav-link select-none relative z-10 snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group text-gray-300 bg-transparent hover:text-white transition-all duration-300 ease-out active:scale-90" data-active-color="text-white" data-active-bg="bg-transparent" data-default-color="text-gray-300" data-default-bg="bg-transparent">
-                <i class="fa-solid fa-school-flag text-[20px] mb-1 group-hover:-translate-y-0.5 transition-transform duration-300 pointer-events-none" style="color: inherit;"></i>
-                <span class="text-[10px] font-medium tracking-wide pointer-events-none">ห้องเรียน</span>
+            <a href="#" draggable="false" onclick="navigateTo('tutor', event)" class="nav-link select-none relative z-10 snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group text-slate-400 bg-transparent hover:text-white transition-all duration-300 ease-out active:scale-90" data-active-color="text-white" data-active-bg="bg-transparent" data-default-color="text-slate-400" data-default-bg="bg-transparent">
+                <i class="fa-solid fa-graduation-cap text-[20px] mb-1 group-hover:-translate-y-0.5 transition-transform duration-300 pointer-events-none" style="color: inherit;"></i>
+                <span class="text-[10px] font-medium tracking-wide pointer-events-none">ห้องติว</span>
             </a>
 
-            <a href="#" draggable="false" onclick="navigateTo('lesson', event)" class="nav-link select-none relative z-10 snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group text-gray-300 bg-transparent hover:text-white transition-all duration-300 ease-out active:scale-90" data-active-color="text-white" data-active-bg="bg-transparent" data-default-color="text-gray-300" data-default-bg="bg-transparent">
+            <a href="#" draggable="false" onclick="navigateTo('lesson', event)" class="nav-link select-none relative z-10 snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group text-slate-400 bg-transparent hover:text-white transition-all duration-300 ease-out active:scale-90" data-active-color="text-white" data-active-bg="bg-transparent" data-default-color="text-slate-400" data-default-bg="bg-transparent">
                 <i class="fa-solid fa-newspaper text-[20px] mb-1 group-hover:-translate-y-0.5 transition-transform duration-300 pointer-events-none" style="color: inherit;"></i>
                 <span class="text-[10px] font-medium tracking-wide pointer-events-none">บทเรียน</span>
             </a>
 
-            <a href="#" draggable="false" onclick="navigateTo('class_gallery', event)" class="nav-link select-none relative z-10 snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group text-gray-300 bg-transparent hover:text-white transition-all duration-300 ease-out active:scale-90" data-active-color="text-white" data-active-bg="bg-transparent" data-default-color="text-gray-300" data-default-bg="bg-transparent">
+            <a href="#" draggable="false" onclick="navigateTo('class_gallery', event)" class="nav-link select-none relative z-10 snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group text-slate-400 bg-transparent hover:text-white transition-all duration-300 ease-out active:scale-90" data-active-color="text-white" data-active-bg="bg-transparent" data-default-color="text-slate-400" data-default-bg="bg-transparent">
                 <i class="fa-solid fa-images text-[20px] mb-1 group-hover:-translate-y-0.5 transition-transform duration-300 pointer-events-none" style="color: inherit;"></i>
                 <span class="text-[10px] font-medium tracking-wide pointer-events-none">ชั้นเรียน</span>
             </a>
@@ -361,103 +433,98 @@
         </nav>
     </div>
 
-    <!-- Lesson Detail Fullscreen Modal (Static HTML version for safety) -->
-    <div id="lesson-detail-modal" class="fixed inset-0 z-[90] bg-slate-50 flex flex-col transition-transform duration-300 translate-x-full">
+    <!-- Lesson Detail Fullscreen Modal (Dark Mode) -->
+    <div id="lesson-detail-modal" class="fixed inset-0 z-[90] bg-slate-950 flex flex-col transition-transform duration-300 translate-x-full">
         <!-- Header -->
-        <div class="bg-white/80 backdrop-blur-xl text-gray-800 h-[65px] flex items-center px-4 shrink-0 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)] border-b border-gray-200/50 pt-safe z-20">
-            <button onclick="closeLessonDetail()" class="w-10 h-10 -ml-1 mr-3 active:scale-90 hover:bg-slate-100 rounded-full transition-all flex items-center justify-center text-slate-600">
+        <div class="bg-slate-900/80 backdrop-blur-xl text-white h-[65px] flex items-center px-4 shrink-0 shadow-lg border-b border-slate-800 pt-safe z-20">
+            <button onclick="closeLessonDetail()" class="w-10 h-10 -ml-1 mr-3 active:scale-90 hover:bg-slate-800 rounded-full transition-all flex items-center justify-center text-slate-300">
                 <i class="fa-solid fa-arrow-left text-lg"></i>
             </button>
             <div class="flex flex-col justify-center">
-                <span id="lesson-detail-subtitle" class="text-[10px] font-bold tracking-wider uppercase mb-0.5 text-slate-600">สัปดาห์</span>
-                <span id="lesson-detail-title" class="font-extrabold text-[16px] text-slate-900 line-clamp-1 leading-tight">บทเรียน</span>
+                <span id="lesson-detail-subtitle" class="text-[10px] font-bold tracking-wider uppercase mb-0.5 text-slate-400">สัปดาห์</span>
+                <span id="lesson-detail-title" class="font-extrabold text-[16px] text-white line-clamp-1 leading-tight">บทเรียน</span>
             </div>
         </div>
 
-        <!-- Detail Body (Scrollable) -->
+        <!-- Detail Body -->
         <div class="flex-grow overflow-y-auto p-4 md:p-6 flex flex-col gap-5 pb-32 relative z-10">
-            <!-- Decorative background elements -->
-            <div class="absolute top-0 right-0 w-64 h-64 bg-blue-400/10 rounded-full blur-3xl -z-10 pointer-events-none"></div>
-            <div class="absolute top-40 left-0 w-48 h-48 bg-orange-400/10 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+            <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+            <div class="absolute top-40 left-0 w-48 h-48 bg-orange-500/10 rounded-full blur-3xl -z-10 pointer-events-none"></div>
 
-            <!-- ================= WEEK 1 CONTENT ================= -->
+            <!-- ================= WEEK 1 ================= -->
             <div id="week1-content" class="week-content hidden flex-col gap-5">
-                <!-- Intro Box -->
-                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100/80 relative overflow-hidden">
+                <div class="bg-slate-900 rounded-3xl p-6 shadow-xl border border-slate-800 relative overflow-hidden">
                     <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-blue-400 to-indigo-500"></div>
                     <div class="flex items-center gap-3.5 mb-4">
-                        <div class="w-10 h-10 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center text-lg shadow-inner ring-1 ring-blue-100/50">
+                        <div class="w-10 h-10 rounded-2xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-lg shadow-inner ring-1 ring-blue-500/30">
                             <i class="fa-solid fa-book-open"></i>
                         </div>
-                        <h3 class="font-bold text-slate-800 text-base md:text-lg">ความหมาย</h3>
+                        <h3 class="font-bold text-white text-base md:text-lg">ความหมาย</h3>
                     </div>
-                    <div class="text-slate-600 text-[14px] leading-relaxed space-y-3">
-                        <p><strong class="text-blue-600 font-semibold text-[15px]">ปฏิกิริยาเคมี</strong> คือ กระบวนการที่สารตั้งต้นเปลี่ยนแปลงเป็นสารใหม่ที่มีสมบัติแตกต่างจากเดิม โดยเกิดจากการจัดเรียงอะตอมใหม่และมีการแตกหรือสร้างพันธะเคมี</p>
-                        <p><strong class="font-semibold text-slate-700">หลักฐานที่บ่งบอกว่าเกิดปฏิกิริยาเคมี ได้แก่:</strong> การเปลี่ยนสี, การเกิดแก๊ส, การเกิดตะกอน, การเปลี่ยนแปลงอุณหภูมิ และการเกิดแสง</p>
-                        <p><strong class="font-semibold text-slate-700">สมการเคมี:</strong> เขียนแทนปฏิกิริยาโดยใช้ สารตั้งต้น &rarr; ผลิตภัณฑ์ (เช่น น้ำส้มสายชู + เบกกิ้งโซดา &rarr; แก๊สคาร์บอนไดออกไซด์)</p>
-                        <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-100 text-[13px] shadow-sm mt-3">
-                            <span class="text-lg mr-1">💡</span> <span class="font-medium text-slate-700">หัวใจสำคัญ:</span> จำนวนอะตอมของแต่ละธาตุต้องเท่ากันทั้งสองข้างของสมการเสมอ
+                    <div class="text-slate-300 text-[14px] leading-relaxed space-y-3">
+                        <p><strong class="text-blue-400 font-semibold text-[15px]">ปฏิกิริยาเคมี</strong> คือ กระบวนการที่สารตั้งต้นเปลี่ยนแปลงเป็นสารใหม่ที่มีสมบัติแตกต่างจากเดิม โดยเกิดจากการจัดเรียงอะตอมใหม่และมีการแตกหรือสร้างพันธะเคมี</p>
+                        <p><strong class="font-semibold text-slate-200">หลักฐานที่บ่งบอกว่าเกิดปฏิกิริยาเคมี ได้แก่:</strong> การเปลี่ยนสี, การเกิดแก๊ส, การเกิดตะกอน, การเปลี่ยนแปลงอุณหภูมิ และการเกิดแสง</p>
+                        <p><strong class="font-semibold text-slate-200">สมการเคมี:</strong> เขียนแทนปฏิกิริยาโดยใช้ สารตั้งต้น &rarr; ผลิตภัณฑ์ (เช่น น้ำส้มสายชู + เบกกิ้งโซดา &rarr; แก๊สคาร์บอนไดออกไซด์)</p>
+                        <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700 text-[13px] shadow-sm mt-3 text-slate-300">
+                            <span class="text-lg mr-1">💡</span> <span class="font-medium text-white">หัวใจสำคัญ:</span> จำนวนอะตอมของแต่ละธาตุต้องเท่ากันทั้งสองข้างของสมการเสมอ
                         </div>
                     </div>
                 </div>
 
-                <!-- Lab Button -->
                 <div class="relative group cursor-pointer active:scale-[0.98] transition-all duration-300" onclick="window.open('https://ailab17.vercel.app/', '_blank')">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-orange-400 via-rose-400 to-amber-400 rounded-3xl blur opacity-40 group-hover:opacity-70 transition duration-500"></div>
-                    <div class="relative bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500 rounded-[24px] p-0.5 overflow-hidden shadow-lg">
-                        <div class="absolute inset-0 bg-white/20 group-hover:translate-x-full transform -translate-x-full transition-transform duration-700 ease-out skew-x-12"></div>
-                        <div class="bg-white/10 backdrop-blur-sm rounded-[22px] px-5 py-4 flex items-center gap-4 border border-white/20">
-                            <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center shadow-inner shrink-0 text-white group-hover:rotate-12 transition-transform duration-300">
-                                <i class="fa-solid fa-flask text-2xl"></i>
+                    <div class="absolute -inset-1 bg-gradient-to-r from-orange-500 via-rose-500 to-amber-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                    <div class="relative bg-gradient-to-r from-amber-600 via-orange-600 to-rose-600 rounded-[24px] p-0.5 overflow-hidden shadow-xl">
+                        <div class="absolute inset-0 bg-white/10 group-hover:translate-x-full transform -translate-x-full transition-transform duration-700 ease-out skew-x-12"></div>
+                        <div class="bg-slate-900/40 backdrop-blur-sm rounded-[22px] px-5 py-4 flex items-center gap-4 border border-white/10">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center shadow-inner shrink-0 text-white group-hover:rotate-12 transition-transform duration-300">
+                                <i class="fa-solid fa-flask text-2xl drop-shadow"></i>
                             </div>
                             <div class="flex flex-col text-left flex-grow">
                                 <span class="text-white font-extrabold text-[16px] tracking-wide drop-shadow-md">เข้าทดลอง Ai Lab 17</span>
-                                <span class="text-white/80 text-[11px] mt-0.5 font-medium tracking-wide">แตะเพื่อเปิดในหน้าต่างใหม่ <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[9px]"></i></span>
+                                <span class="text-slate-300 text-[11px] mt-0.5 font-medium tracking-wide">แตะเพื่อเปิดในหน้าต่างใหม่ <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[9px]"></i></span>
                             </div>
-                            <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+                            <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
                                 <i class="fa-solid fa-chevron-right text-white/90 text-sm group-hover:translate-x-1 transition-transform"></i>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Video -->
-                <div class="bg-white p-5 rounded-3xl shadow-sm border border-slate-100/80 flex flex-col gap-4">
+                <div class="bg-slate-900 p-5 rounded-3xl shadow-xl border border-slate-800 flex flex-col gap-4">
                     <div class="flex items-center gap-3">
-                        <div class="w-9 h-9 rounded-full bg-red-50 text-red-500 flex items-center justify-center">
+                        <div class="w-9 h-9 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center border border-red-500/30">
                             <i class="fa-brands fa-youtube text-base"></i>
                         </div>
-                        <h4 class="font-bold text-slate-800 text-[15px]">วิดีโอสรุปความรู้</h4>
+                        <h4 class="font-bold text-white text-[15px]">วิดีโอสรุปความรู้</h4>
                     </div>
-                    <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-md border border-slate-200/60 bg-slate-900 relative">
+                    <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-inner border border-slate-800 bg-black relative">
                         <iframe id="iframe-w1" class="youtube-iframe w-full h-full relative z-10" data-src="https://www.youtube.com/embed/y4e02W9rYmo" src="" title="วิดีโอสรุปความรู้" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                 </div>
 
-                <!-- Worksheets -->
-                <div class="bg-white p-5 rounded-3xl shadow-sm border border-slate-100/80 flex flex-col gap-4">
+                <div class="bg-slate-900 p-5 rounded-3xl shadow-xl border border-slate-800 flex flex-col gap-4">
                     <div class="flex justify-between items-center">
                         <div class="flex items-center gap-3">
-                            <div class="w-9 h-9 rounded-full bg-indigo-50 text-indigo-500 flex items-center justify-center">
+                            <div class="w-9 h-9 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center border border-indigo-500/30">
                                 <i class="fa-solid fa-file-signature text-sm"></i>
                             </div>
-                            <h4 class="font-bold text-slate-800 text-[15px]">ใบงานประกอบการเรียน</h4>
+                            <h4 class="font-bold text-white text-[15px]">ใบงานประกอบการเรียน</h4>
                         </div>
-                        <span class="text-[10px] font-semibold text-indigo-500 bg-indigo-50 px-2.5 py-1 rounded-lg">แตะเพื่อขยาย</span>
+                        <span class="text-[10px] font-semibold text-indigo-400 bg-indigo-500/20 px-2.5 py-1 rounded-lg border border-indigo-500/30">แตะเพื่อขยาย</span>
                     </div>
                     <div class="grid grid-cols-2 gap-4">
-                        <div class="overflow-hidden rounded-2xl border-2 border-slate-100 shadow-sm cursor-pointer relative bg-slate-50 aspect-[3/4] group hover:border-indigo-200 transition-colors" onclick="openModal('https://live.staticflickr.com/65535/55617214855_2cda1b6c42_c.jpg')">
-                            <img src="https://live.staticflickr.com/65535/55617214855_2cda1b6c42_c.jpg" alt="ใบงาน" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
-                            <div class="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
-                                <div class="bg-white w-12 h-12 rounded-full flex items-center justify-center text-indigo-600 shadow-xl transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                        <div class="overflow-hidden rounded-2xl border-2 border-slate-700 shadow-md cursor-pointer relative bg-slate-800 aspect-[3/4] group hover:border-indigo-500/50 transition-colors" onclick="openModal('https://live.staticflickr.com/65535/55617214855_2cda1b6c42_c.jpg')">
+                            <img src="https://live.staticflickr.com/65535/55617214855_2cda1b6c42_c.jpg" alt="ใบงาน" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" />
+                            <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                                <div class="bg-slate-800/80 w-12 h-12 rounded-full flex items-center justify-center text-indigo-400 border border-indigo-500/50 shadow-2xl transform scale-50 group-hover:scale-100 transition-transform duration-300">
                                     <i class="fa-solid fa-expand text-lg"></i>
                                 </div>
                             </div>
                         </div>
-                        <div class="overflow-hidden rounded-2xl border-2 border-slate-100 shadow-sm cursor-pointer relative bg-slate-50 aspect-[3/4] group hover:border-indigo-200 transition-colors" onclick="openModal('https://live.staticflickr.com/65535/55615788792_6f190000b0_c.jpg')">
-                            <img src="https://live.staticflickr.com/65535/55615788792_6f190000b0_c.jpg" alt="ใบงาน" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
-                            <div class="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
-                                <div class="bg-white w-12 h-12 rounded-full flex items-center justify-center text-indigo-600 shadow-xl transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                        <div class="overflow-hidden rounded-2xl border-2 border-slate-700 shadow-md cursor-pointer relative bg-slate-800 aspect-[3/4] group hover:border-indigo-500/50 transition-colors" onclick="openModal('https://live.staticflickr.com/65535/55615788792_6f190000b0_c.jpg')">
+                            <img src="https://live.staticflickr.com/65535/55615788792_6f190000b0_c.jpg" alt="ใบงาน" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" />
+                            <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                                <div class="bg-slate-800/80 w-12 h-12 rounded-full flex items-center justify-center text-indigo-400 border border-indigo-500/50 shadow-2xl transform scale-50 group-hover:scale-100 transition-transform duration-300">
                                     <i class="fa-solid fa-expand text-lg"></i>
                                 </div>
                             </div>
@@ -466,76 +533,72 @@
                 </div>
             </div>
 
-            <!-- ================= WEEK 2 CONTENT ================= -->
+            <!-- ================= WEEK 2 ================= -->
             <div id="week2-content" class="week-content hidden flex-col gap-5">
-                <!-- Intro Box -->
-                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100/80 relative overflow-hidden">
+                <div class="bg-slate-900 rounded-3xl p-6 shadow-xl border border-slate-800 relative overflow-hidden">
                     <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-emerald-400 to-teal-500"></div>
                     <div class="flex items-center gap-3.5 mb-4">
-                        <div class="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg shadow-inner ring-1 ring-emerald-100/50">
+                        <div class="w-10 h-10 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg shadow-inner ring-1 ring-emerald-500/30">
                             <i class="fa-solid fa-book-open"></i>
                         </div>
-                        <h3 class="font-bold text-slate-800 text-base md:text-lg">ความหมาย</h3>
+                        <h3 class="font-bold text-white text-base md:text-lg">ความหมาย</h3>
                     </div>
-                    <div class="text-slate-600 text-[14px] leading-relaxed space-y-3">
-                        <p><strong class="text-emerald-600 font-semibold text-[15px]">กฎทรงมวล</strong> กล่าวว่า มวลรวมของสารตั้งต้นต้อง "เท่ากับ" มวลรวมของผลิตภัณฑ์เสมอ</p>
+                    <div class="text-slate-300 text-[14px] leading-relaxed space-y-3">
+                        <p><strong class="text-emerald-400 font-semibold text-[15px]">กฎทรงมวล</strong> กล่าวว่า มวลรวมของสารตั้งต้นต้อง "เท่ากับ" มวลรวมของผลิตภัณฑ์เสมอ</p>
                         <p>ในการเกิดปฏิกิริยาเคมี อะตอมจะไม่สูญหายหรือเกิดขึ้นใหม่ แต่จะมีการจัดเรียงอะตอมใหม่ ทำให้เกิดเป็นสารชนิดใหม่ขึ้นมา</p>
                         <p>ในระบบปิด มวลรวมก่อนและหลังเกิดปฏิกิริยาจะคงที่ หากมวลของสารบางชนิดลดลง อาจเกิดจากมีแก๊สหลุดออกจากระบบ (กลายเป็นระบบเปิด)</p>
-                        <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-100 text-[13px] shadow-sm mt-3 flex items-center">
-                            <span class="text-lg mr-2">📌</span> <span class="font-medium text-slate-700 mr-2">สูตรจำง่าย:</span> <code class="bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded">มวลสารตั้งต้น = มวลผลิตภัณฑ์</code>
+                        <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700 text-[13px] shadow-sm mt-3 flex items-center text-slate-300">
+                            <span class="text-lg mr-2">📌</span> <span class="font-medium text-white mr-2">สูตรจำง่าย:</span> <code class="bg-emerald-900/50 text-emerald-400 border border-emerald-800/50 px-2 py-0.5 rounded">มวลสารตั้งต้น = มวลผลิตภัณฑ์</code>
                         </div>
                     </div>
                 </div>
 
-                <!-- Lab Button -->
                 <div class="relative group cursor-pointer active:scale-[0.98] transition-all duration-300" onclick="window.open('https://ailab18.vercel.app/', '_blank')">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 rounded-3xl blur opacity-40 group-hover:opacity-70 transition duration-500"></div>
-                    <div class="relative bg-gradient-to-r from-teal-500 via-emerald-500 to-cyan-500 rounded-[24px] p-0.5 overflow-hidden shadow-lg">
-                        <div class="absolute inset-0 bg-white/20 group-hover:translate-x-full transform -translate-x-full transition-transform duration-700 ease-out skew-x-12"></div>
-                        <div class="bg-white/10 backdrop-blur-sm rounded-[22px] px-5 py-4 flex items-center gap-4 border border-white/20">
-                            <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center shadow-inner shrink-0 text-white group-hover:rotate-12 transition-transform duration-300">
-                                <i class="fa-solid fa-flask text-2xl"></i>
+                    <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                    <div class="relative bg-gradient-to-r from-teal-600 via-emerald-600 to-cyan-600 rounded-[24px] p-0.5 overflow-hidden shadow-xl">
+                        <div class="absolute inset-0 bg-white/10 group-hover:translate-x-full transform -translate-x-full transition-transform duration-700 ease-out skew-x-12"></div>
+                        <div class="bg-slate-900/40 backdrop-blur-sm rounded-[22px] px-5 py-4 flex items-center gap-4 border border-white/10">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center shadow-inner shrink-0 text-white group-hover:rotate-12 transition-transform duration-300">
+                                <i class="fa-solid fa-flask text-2xl drop-shadow"></i>
                             </div>
                             <div class="flex flex-col text-left flex-grow">
                                 <span class="text-white font-extrabold text-[16px] tracking-wide drop-shadow-md">เข้าทดลอง Ai Lab 18</span>
-                                <span class="text-white/80 text-[11px] mt-0.5 font-medium tracking-wide">แตะเพื่อเปิดในหน้าต่างใหม่ <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[9px]"></i></span>
+                                <span class="text-slate-300 text-[11px] mt-0.5 font-medium tracking-wide">แตะเพื่อเปิดในหน้าต่างใหม่ <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[9px]"></i></span>
                             </div>
-                            <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+                            <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
                                 <i class="fa-solid fa-chevron-right text-white/90 text-sm group-hover:translate-x-1 transition-transform"></i>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Video -->
-                <div class="bg-white p-5 rounded-3xl shadow-sm border border-slate-100/80 flex flex-col gap-4">
+                <div class="bg-slate-900 p-5 rounded-3xl shadow-xl border border-slate-800 flex flex-col gap-4">
                     <div class="flex items-center gap-3">
-                        <div class="w-9 h-9 rounded-full bg-red-50 text-red-500 flex items-center justify-center">
+                        <div class="w-9 h-9 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center border border-red-500/30">
                             <i class="fa-brands fa-youtube text-base"></i>
                         </div>
-                        <h4 class="font-bold text-slate-800 text-[15px]">วิดีโอสรุปความรู้</h4>
+                        <h4 class="font-bold text-white text-[15px]">วิดีโอสรุปความรู้</h4>
                     </div>
-                    <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-md border border-slate-200/60 bg-slate-900 relative">
+                    <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-inner border border-slate-800 bg-black relative">
                         <iframe id="iframe-w2" class="youtube-iframe w-full h-full relative z-10" data-src="https://www.youtube.com/embed/KJbddS7dRC0" src="" title="วิดีโอสรุปความรู้" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                 </div>
 
-                <!-- Worksheets -->
-                <div class="bg-white p-5 rounded-3xl shadow-sm border border-slate-100/80 flex flex-col gap-4">
+                <div class="bg-slate-900 p-5 rounded-3xl shadow-xl border border-slate-800 flex flex-col gap-4">
                     <div class="flex justify-between items-center">
                         <div class="flex items-center gap-3">
-                            <div class="w-9 h-9 rounded-full bg-indigo-50 text-indigo-500 flex items-center justify-center">
+                            <div class="w-9 h-9 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center border border-indigo-500/30">
                                 <i class="fa-solid fa-file-signature text-sm"></i>
                             </div>
-                            <h4 class="font-bold text-slate-800 text-[15px]">ใบงานประกอบการเรียน</h4>
+                            <h4 class="font-bold text-white text-[15px]">ใบงานประกอบการเรียน</h4>
                         </div>
-                        <span class="text-[10px] font-semibold text-indigo-500 bg-indigo-50 px-2.5 py-1 rounded-lg">แตะเพื่อขยาย</span>
+                        <span class="text-[10px] font-semibold text-indigo-400 bg-indigo-500/20 px-2.5 py-1 rounded-lg border border-indigo-500/30">แตะเพื่อขยาย</span>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="overflow-hidden rounded-2xl border-2 border-slate-100 shadow-sm cursor-pointer relative bg-slate-50 aspect-[3/4] group hover:border-indigo-200 transition-colors" onclick="openModal('https://live.staticflickr.com/65535/55616821556_1be0601699_c.jpg')">
-                            <img src="https://live.staticflickr.com/65535/55616821556_1be0601699_c.jpg" alt="ใบงาน" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
-                            <div class="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
-                                <div class="bg-white w-12 h-12 rounded-full flex items-center justify-center text-indigo-600 shadow-xl transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                        <div class="overflow-hidden rounded-2xl border-2 border-slate-700 shadow-md cursor-pointer relative bg-slate-800 aspect-[3/4] group hover:border-indigo-500/50 transition-colors" onclick="openModal('https://live.staticflickr.com/65535/55616821556_1be0601699_c.jpg')">
+                            <img src="https://live.staticflickr.com/65535/55616821556_1be0601699_c.jpg" alt="ใบงาน" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" />
+                            <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                                <div class="bg-slate-800/80 w-12 h-12 rounded-full flex items-center justify-center text-indigo-400 border border-indigo-500/50 shadow-2xl transform scale-50 group-hover:scale-100 transition-transform duration-300">
                                     <i class="fa-solid fa-expand text-lg"></i>
                                 </div>
                             </div>
@@ -544,78 +607,74 @@
                 </div>
             </div>
 
-            <!-- ================= WEEK 3 CONTENT ================= -->
+            <!-- ================= WEEK 3 ================= -->
             <div id="week3-content" class="week-content hidden flex-col gap-5">
-                <!-- Intro Box -->
-                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100/80 relative overflow-hidden">
+                <div class="bg-slate-900 rounded-3xl p-6 shadow-xl border border-slate-800 relative overflow-hidden">
                     <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-orange-400 to-red-500"></div>
                     <div class="flex items-center gap-3.5 mb-4">
-                        <div class="w-10 h-10 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center text-lg shadow-inner ring-1 ring-orange-100/50">
+                        <div class="w-10 h-10 rounded-2xl bg-orange-500/20 text-orange-400 flex items-center justify-center text-lg shadow-inner ring-1 ring-orange-500/30">
                             <i class="fa-solid fa-book-open"></i>
                         </div>
-                        <h3 class="font-bold text-slate-800 text-base md:text-lg">ความหมาย</h3>
+                        <h3 class="font-bold text-white text-base md:text-lg">ความหมาย</h3>
                     </div>
-                    <div class="text-slate-600 text-[14px] leading-relaxed space-y-3">
+                    <div class="text-slate-300 text-[14px] leading-relaxed space-y-3">
                         <p>ปฏิกิริยาเคมีมีการถ่ายโอนพลังงานความร้อนระหว่าง "ระบบ" กับ "สิ่งแวดล้อม" ซึ่งแบ่งออกเป็น 2 ประเภทหลัก:</p>
                         <ul class="list-disc pl-5 space-y-2 mt-2">
-                            <li><strong class="text-orange-600">ปฏิกิริยาคายความร้อน:</strong> ปฏิกิริยาที่ปล่อยความร้อนออกสู่สิ่งแวดล้อม ทำให้อุณหภูมิสูงขึ้น (เช่น การเผาไหม้เชื้อเพลิง)</li>
-                            <li><strong class="text-blue-600">ปฏิกิริยาดูดความร้อน:</strong> ปฏิกิริยาที่รับความร้อนจากสิ่งแวดล้อม ทำให้อุณหภูมิลดลง (เช่น ปฏิกิริยาระหว่างเบกกิ้งโซดากับกรดซิตริก)</li>
+                            <li><strong class="text-orange-400">ปฏิกิริยาคายความร้อน:</strong> ปฏิกิริยาที่ปล่อยความร้อนออกสู่สิ่งแวดล้อม ทำให้อุณหภูมิสูงขึ้น (เช่น การเผาไหม้เชื้อเพลิง)</li>
+                            <li><strong class="text-blue-400">ปฏิกิริยาดูดความร้อน:</strong> ปฏิกิริยาที่รับความร้อนจากสิ่งแวดล้อม ทำให้อุณหภูมิลดลง (เช่น ปฏิกิริยาระหว่างเบกกิ้งโซดากับกรดซิตริก)</li>
                         </ul>
-                        <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-100 text-[13px] shadow-sm mt-3">
-                            <span class="text-lg mr-1">🌡️</span> <span class="font-medium text-slate-700">ข้อสังเกต:</span> การสัมผัสหรือวัดการเปลี่ยนแปลงอุณหภูมิช่วยบอกได้ว่าปฏิกิริยามีการดูดหรือคายความร้อน
+                        <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700 text-[13px] shadow-sm mt-3 text-slate-300">
+                            <span class="text-lg mr-1">🌡️</span> <span class="font-medium text-white">ข้อสังเกต:</span> การสัมผัสหรือวัดการเปลี่ยนแปลงอุณหภูมิช่วยบอกได้ว่าปฏิกิริยามีการดูดหรือคายความร้อน
                         </div>
                     </div>
                 </div>
 
-                <!-- Lab Button -->
                 <div class="relative group cursor-pointer active:scale-[0.98] transition-all duration-300" onclick="window.open('https://ailab19-five.vercel.app/', '_blank')">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-red-400 via-orange-400 to-yellow-400 rounded-3xl blur opacity-40 group-hover:opacity-70 transition duration-500"></div>
-                    <div class="relative bg-gradient-to-r from-orange-500 via-red-500 to-amber-500 rounded-[24px] p-0.5 overflow-hidden shadow-lg">
-                        <div class="absolute inset-0 bg-white/20 group-hover:translate-x-full transform -translate-x-full transition-transform duration-700 ease-out skew-x-12"></div>
-                        <div class="bg-white/10 backdrop-blur-sm rounded-[22px] px-5 py-4 flex items-center gap-4 border border-white/20">
-                            <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center shadow-inner shrink-0 text-white group-hover:rotate-12 transition-transform duration-300">
-                                <i class="fa-solid fa-flask text-2xl"></i>
+                    <div class="absolute -inset-1 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                    <div class="relative bg-gradient-to-r from-orange-600 via-red-600 to-amber-600 rounded-[24px] p-0.5 overflow-hidden shadow-xl">
+                        <div class="absolute inset-0 bg-white/10 group-hover:translate-x-full transform -translate-x-full transition-transform duration-700 ease-out skew-x-12"></div>
+                        <div class="bg-slate-900/40 backdrop-blur-sm rounded-[22px] px-5 py-4 flex items-center gap-4 border border-white/10">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center shadow-inner shrink-0 text-white group-hover:rotate-12 transition-transform duration-300">
+                                <i class="fa-solid fa-flask text-2xl drop-shadow"></i>
                             </div>
                             <div class="flex flex-col text-left flex-grow">
                                 <span class="text-white font-extrabold text-[16px] tracking-wide drop-shadow-md">เข้าทดลอง Ai Lab 19</span>
-                                <span class="text-white/80 text-[11px] mt-0.5 font-medium tracking-wide">แตะเพื่อเปิดในหน้าต่างใหม่ <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[9px]"></i></span>
+                                <span class="text-slate-300 text-[11px] mt-0.5 font-medium tracking-wide">แตะเพื่อเปิดในหน้าต่างใหม่ <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[9px]"></i></span>
                             </div>
-                            <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+                            <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
                                 <i class="fa-solid fa-chevron-right text-white/90 text-sm group-hover:translate-x-1 transition-transform"></i>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Video -->
-                <div class="bg-white p-5 rounded-3xl shadow-sm border border-slate-100/80 flex flex-col gap-4">
+                <div class="bg-slate-900 p-5 rounded-3xl shadow-xl border border-slate-800 flex flex-col gap-4">
                     <div class="flex items-center gap-3">
-                        <div class="w-9 h-9 rounded-full bg-red-50 text-red-500 flex items-center justify-center">
+                        <div class="w-9 h-9 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center border border-red-500/30">
                             <i class="fa-brands fa-youtube text-base"></i>
                         </div>
-                        <h4 class="font-bold text-slate-800 text-[15px]">วิดีโอสรุปความรู้</h4>
+                        <h4 class="font-bold text-white text-[15px]">วิดีโอสรุปความรู้</h4>
                     </div>
-                    <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-md border border-slate-200/60 bg-slate-900 relative">
+                    <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-inner border border-slate-800 bg-black relative">
                         <iframe id="iframe-w3" class="youtube-iframe w-full h-full relative z-10" data-src="https://www.youtube.com/embed/twFKtxMdJGM" src="" title="วิดีโอสรุปความรู้" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                 </div>
 
-                <!-- Worksheets -->
-                <div class="bg-white p-5 rounded-3xl shadow-sm border border-slate-100/80 flex flex-col gap-4">
+                <div class="bg-slate-900 p-5 rounded-3xl shadow-xl border border-slate-800 flex flex-col gap-4">
                     <div class="flex justify-between items-center">
                         <div class="flex items-center gap-3">
-                            <div class="w-9 h-9 rounded-full bg-indigo-50 text-indigo-500 flex items-center justify-center">
+                            <div class="w-9 h-9 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center border border-indigo-500/30">
                                 <i class="fa-solid fa-file-signature text-sm"></i>
                             </div>
-                            <h4 class="font-bold text-slate-800 text-[15px]">ใบงานประกอบการเรียน</h4>
+                            <h4 class="font-bold text-white text-[15px]">ใบงานประกอบการเรียน</h4>
                         </div>
-                        <span class="text-[10px] font-semibold text-indigo-500 bg-indigo-50 px-2.5 py-1 rounded-lg">แตะเพื่อขยาย</span>
+                        <span class="text-[10px] font-semibold text-indigo-400 bg-indigo-500/20 px-2.5 py-1 rounded-lg border border-indigo-500/30">แตะเพื่อขยาย</span>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="overflow-hidden rounded-2xl border-2 border-slate-100 shadow-sm cursor-pointer relative bg-slate-50 aspect-[3/4] group hover:border-indigo-200 transition-colors" onclick="openModal('https://live.staticflickr.com/65535/55617037839_22e5dd8fb5_c.jpg')">
-                            <img src="https://live.staticflickr.com/65535/55617037839_22e5dd8fb5_c.jpg" alt="ใบงาน" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
-                            <div class="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
-                                <div class="bg-white w-12 h-12 rounded-full flex items-center justify-center text-indigo-600 shadow-xl transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                        <div class="overflow-hidden rounded-2xl border-2 border-slate-700 shadow-md cursor-pointer relative bg-slate-800 aspect-[3/4] group hover:border-indigo-500/50 transition-colors" onclick="openModal('https://live.staticflickr.com/65535/55617037839_22e5dd8fb5_c.jpg')">
+                            <img src="https://live.staticflickr.com/65535/55617037839_22e5dd8fb5_c.jpg" alt="ใบงาน" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" />
+                            <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                                <div class="bg-slate-800/80 w-12 h-12 rounded-full flex items-center justify-center text-indigo-400 border border-indigo-500/50 shadow-2xl transform scale-50 group-hover:scale-100 transition-transform duration-300">
                                     <i class="fa-solid fa-expand text-lg"></i>
                                 </div>
                             </div>
@@ -627,62 +686,58 @@
         </div>
     </div>
 
-    <!-- Image Modal (Lightbox) -->
-    <div id="image-modal" class="hidden fixed inset-0 z-[100] bg-slate-900/95 backdrop-blur-sm flex items-center justify-center p-2 sm:p-8 transition-opacity duration-300 opacity-0" onclick="closeModal()">
-        <button class="absolute top-4 right-4 sm:top-8 sm:right-8 w-10 h-10 md:w-12 md:h-12 bg-black/40 hover:bg-black/60 border border-white/20 rounded-full text-white text-xl flex items-center justify-center transition-all z-[110] backdrop-blur-md" onclick="closeModal()">
+    <!-- Image Modal -->
+    <div id="image-modal" class="hidden fixed inset-0 z-[100] bg-slate-950/95 backdrop-blur-md flex items-center justify-center p-2 sm:p-8 transition-opacity duration-300 opacity-0" onclick="closeModal()">
+        <button class="absolute top-4 right-4 sm:top-8 sm:right-8 w-10 h-10 md:w-12 md:h-12 bg-slate-900/60 hover:bg-slate-800 border border-slate-700 rounded-full text-white text-xl flex items-center justify-center transition-all z-[110] backdrop-blur-md" onclick="closeModal()">
             <i class="fa-solid fa-xmark"></i>
         </button>
-        <img id="modal-img" src="" alt="ภาพเต็มจอ" class="max-w-full max-h-full object-contain rounded-xl shadow-2xl relative z-[105] transform scale-95 transition-transform duration-300" onclick="event.stopPropagation()"/>
+        <img id="modal-img" src="" alt="ภาพเต็มจอ" class="max-w-full max-h-full object-contain rounded-xl shadow-2xl relative z-[105] transform scale-95 transition-transform duration-300 border border-slate-800" onclick="event.stopPropagation()"/>
     </div>
 
-    <!-- Iframe Modal (Lightbox for Documents) -->
-    <div id="iframe-modal" class="hidden fixed inset-0 z-[100] bg-slate-900/95 backdrop-blur-sm flex items-center justify-center p-2 sm:p-8 md:p-12 transition-opacity duration-300 opacity-0" onclick="closeIframeModal()">
-        <button class="absolute top-2 right-2 sm:top-6 sm:right-6 w-10 h-10 md:w-12 md:h-12 bg-black/40 hover:bg-black/60 border border-white/20 rounded-full text-white text-xl flex items-center justify-center transition-all z-[110] backdrop-blur-md" onclick="closeIframeModal()">
+    <!-- Iframe Modal -->
+    <div id="iframe-modal" class="hidden fixed inset-0 z-[100] bg-slate-950/95 backdrop-blur-md flex items-center justify-center p-2 sm:p-8 md:p-12 transition-opacity duration-300 opacity-0" onclick="closeIframeModal()">
+        <button class="absolute top-2 right-2 sm:top-6 sm:right-6 w-10 h-10 md:w-12 md:h-12 bg-slate-900/60 hover:bg-slate-800 border border-slate-700 rounded-full text-white text-xl flex items-center justify-center transition-all z-[110] backdrop-blur-md" onclick="closeIframeModal()">
             <i class="fa-solid fa-xmark"></i>
         </button>
-        <div id="iframe-modal-content" class="w-full h-full max-w-[1600px] bg-white rounded-xl md:rounded-2xl overflow-hidden shadow-2xl relative z-[105] transform scale-95 transition-transform duration-300 flex flex-col mt-12 sm:mt-0" onclick="event.stopPropagation()">
-            <div class="bg-gray-100 h-10 w-full border-b border-gray-200 flex items-center px-3 md:px-4 shrink-0">
-                <span id="iframe-modal-title" class="text-xs font-medium text-gray-500 font-inter tracking-wide truncate">Document Viewer</span>
+        <div id="iframe-modal-content" class="w-full h-full max-w-[1600px] bg-slate-950 rounded-xl md:rounded-2xl overflow-hidden shadow-2xl relative z-[105] transform scale-95 transition-transform duration-300 flex flex-col mt-12 sm:mt-0 border border-slate-800" onclick="event.stopPropagation()">
+            <div class="bg-slate-900 h-10 w-full border-b border-slate-800 flex items-center px-3 md:px-4 shrink-0">
+                <span id="iframe-modal-title" class="text-xs font-medium text-slate-400 font-inter tracking-wide truncate">Document Viewer</span>
             </div>
-            <iframe id="modal-iframe" src="" class="w-full flex-grow border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe id="modal-iframe" src="" class="w-full flex-grow border-0 bg-slate-950" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
 
     <!-- JavaScript Logic -->
     <script>
-        // Lesson Detail Modal Logic (Static HTML Toggle)
+        // Lesson Detail Modal Logic 
         function openLessonDetail(weekKey) {
-            // Update Header Title based on weekKey
             const titleEl = document.getElementById('lesson-detail-title');
             const subtitleEl = document.getElementById('lesson-detail-subtitle');
             
             if (weekKey === 'week1') {
                 titleEl.innerText = 'ปฏิกิริยาเคมี';
                 subtitleEl.innerText = 'สัปดาห์ที่ 1';
-                subtitleEl.className = 'text-[10px] font-bold text-blue-600 tracking-wider uppercase mb-0.5';
+                subtitleEl.className = 'text-[10px] font-bold text-blue-400 tracking-wider uppercase mb-0.5';
             } else if (weekKey === 'week2') {
                 titleEl.innerText = 'กฎทรงมวล';
                 subtitleEl.innerText = 'สัปดาห์ที่ 2';
-                subtitleEl.className = 'text-[10px] font-bold text-emerald-600 tracking-wider uppercase mb-0.5';
+                subtitleEl.className = 'text-[10px] font-bold text-emerald-400 tracking-wider uppercase mb-0.5';
             } else if (weekKey === 'week3') {
                 titleEl.innerText = 'การถ่ายโอนความร้อน';
                 subtitleEl.innerText = 'สัปดาห์ที่ 3';
-                subtitleEl.className = 'text-[10px] font-bold text-orange-600 tracking-wider uppercase mb-0.5';
+                subtitleEl.className = 'text-[10px] font-bold text-orange-400 tracking-wider uppercase mb-0.5';
             }
 
-            // Hide all contents
             document.querySelectorAll('.week-content').forEach(el => {
                 el.classList.add('hidden');
                 el.classList.remove('flex');
             });
             
-            // Show selected content
             const activeContent = document.getElementById(weekKey + '-content');
             if (activeContent) {
                 activeContent.classList.remove('hidden');
                 activeContent.classList.add('flex');
                 
-                // Load iframe src for this specific week so it doesn't load all at once in background
                 const iframeId = weekKey === 'week1' ? 'iframe-w1' : weekKey === 'week2' ? 'iframe-w2' : 'iframe-w3';
                 const iframe = document.getElementById(iframeId);
                 if (iframe && iframe.src === window.location.href || iframe.src === '') {
@@ -690,7 +745,6 @@
                 }
             }
 
-            // Open Modal
             const modal = document.getElementById('lesson-detail-modal');
             modal.classList.remove('translate-x-full');
         }
@@ -699,35 +753,30 @@
             const modal = document.getElementById('lesson-detail-modal');
             modal.classList.add('translate-x-full');
             
-            // Stop YouTube videos from playing when closed
             setTimeout(() => {
                 document.querySelectorAll('.youtube-iframe').forEach(iframe => {
-                    const dataSrc = iframe.getAttribute('data-src');
-                    // clearing src stops the video
                     iframe.src = '';
                 });
             }, 300);
         }
 
-        // --- NEW: Magic Indicator & Drag Logic ---
+        // Magic Indicator & Drag Logic
         let indicatorElement = null;
         let bottomNav = null;
         let isDraggingIndicator = false;
         let dragStartX = 0;
         let currentTranslate = 0;
-        let dragRAF = null; // เพิ่มตัวแปรจัดการ Frame Rate ให้อนิเมชันสมูท
+        let dragRAF = null; 
 
         function moveIndicator(targetLink, instant = false) {
             if (!targetLink || !indicatorElement) return;
             const offsetLeft = targetLink.offsetLeft;
-            if (dragRAF) cancelAnimationFrame(dragRAF); // ยกเลิกเฟรมค้าง
+            if (dragRAF) cancelAnimationFrame(dragRAF); 
             if (instant) {
                 indicatorElement.style.transition = 'none';
             } else {
-                // เปลี่ยน Curve ให้สมูทและพรีเมียมขั้นสุดแบบ iOS (Fast out, Bouncy & Slow in)
                 indicatorElement.style.transition = 'transform 0.6s cubic-bezier(0.25, 1.15, 0.3, 1)';
             }
-            // ใช้ translate3d แทน translateX เพื่อดึงการทำงานของการ์ดจอ (GPU Acceleration) ให้สมูทขึ้น
             indicatorElement.style.transform = `translate3d(${offsetLeft - 6}px, 0, 0)`;
         }
 
@@ -735,18 +784,15 @@
             indicatorElement = document.getElementById('magic-indicator');
             bottomNav = document.getElementById('bottom-nav');
             
-            // Set initial position
             const homeLink = document.querySelector('.nav-link[onclick*="home"]');
             if (homeLink) {
                 homeLink.classList.add('active-menu-item');
                 moveIndicator(homeLink, true);
             }
 
-            // Function to extract current X transform
             function getTranslateX() {
                 const transform = window.getComputedStyle(indicatorElement).transform;
                 if (transform !== 'none') {
-                    // รองรับทั้ง matrix ปกติและ matrix3d
                     const matrix = transform.match(/^matrix\((.+)\)$/);
                     if (matrix) return parseFloat(matrix[1].split(', ')[4]);
                     const matrix3d = transform.match(/^matrix3d\((.+)\)$/);
@@ -755,36 +801,31 @@
                 return 0;
             }
 
-            // Drag Events for Touch (Mobile)
             bottomNav.addEventListener('touchstart', (e) => {
                 const touch = e.touches[0];
                 const rect = indicatorElement.getBoundingClientRect();
                 
-                // ตรวจสอบว่านิ้วแตะโดนบริเวณวงกลมหรือไม่
                 if (touch.clientX >= rect.left - 10 && touch.clientX <= rect.right + 10 &&
                     touch.clientY >= rect.top - 10 && touch.clientY <= rect.bottom + 10) {
                     isDraggingIndicator = true;
                     dragStartX = touch.clientX;
                     currentTranslate = getTranslateX();
                     if (dragRAF) cancelAnimationFrame(dragRAF);
-                    // หน่วงนิดนึงตอนเริ่มแตะให้ดูนุ่มนวลแบบมีน้ำหนัก
                     indicatorElement.style.transition = 'transform 0.15s cubic-bezier(0.2, 0, 0, 1)';
                 }
             }, { passive: true });
 
             bottomNav.addEventListener('touchmove', (e) => {
                 if (!isDraggingIndicator) return;
-                e.preventDefault(); // ล็อคหน้าจอไม่ให้เลื่อนเวลาลาก
+                e.preventDefault(); 
                 const touch = e.touches[0];
                 const deltaX = touch.clientX - dragStartX;
                 let newTranslate = currentTranslate + deltaX;
                 
-                // กันไม่ให้ลากทะลุขอบซ้าย/ขวา
                 if (newTranslate < 0) newTranslate = 0;
-                const maxScroll = bottomNav.scrollWidth - 72; // ความกว้าง nav หักขนาดปุ่ม
+                const maxScroll = bottomNav.scrollWidth - 72; 
                 if (newTranslate > maxScroll) newTranslate = maxScroll;
                 
-                // ใช้ requestAnimationFrame ซิงค์การวาดภาพบนจอให้สมูทที่สุด ลดการกระตุก
                 if (dragRAF) cancelAnimationFrame(dragRAF);
                 dragRAF = requestAnimationFrame(() => {
                     indicatorElement.style.transition = 'none';
@@ -792,7 +833,6 @@
                 });
             }, { passive: false });
 
-            // แก้ไข: ใช้ window.addEventListener เพื่อให้จับการปล่อยนิ้วได้เสมอแม้นิ้วจะหลุดกรอบเมนู
             window.addEventListener('touchend', (e) => {
                 if (!isDraggingIndicator) return;
                 isDraggingIndicator = false;
@@ -807,7 +847,6 @@
                 snapIndicatorToClosest();
             });
 
-            // Drag Events for Mouse (Desktop)
             bottomNav.addEventListener('mousedown', (e) => {
                 const rect = indicatorElement.getBoundingClientRect();
                 if (e.clientX >= rect.left && e.clientX <= rect.right &&
@@ -830,7 +869,6 @@
                 const maxScroll = bottomNav.scrollWidth - 72;
                 if (newTranslate > maxScroll) newTranslate = maxScroll;
                 
-                // ใช้ requestAnimationFrame ซิงค์การวาดภาพ
                 if (dragRAF) cancelAnimationFrame(dragRAF);
                 dragRAF = requestAnimationFrame(() => {
                     indicatorElement.style.transition = 'none';
@@ -845,7 +883,6 @@
                 snapIndicatorToClosest();
             });
 
-            // Physics snap to nearest menu item
             function snapIndicatorToClosest() {
                 const indicatorRect = indicatorElement.getBoundingClientRect();
                 const indicatorCenter = indicatorRect.left + indicatorRect.width / 2;
@@ -864,8 +901,8 @@
                 });
                 
                 if (closestLink) {
-                    moveIndicator(closestLink); // บังคับให้วงแหวนวิ่งไปล็อคปุ่มที่ใกล้ที่สุดทันที
-                    closestLink.click(); // ล็อคและเปลี่ยนหน้าเว็บ
+                    moveIndicator(closestLink);
+                    closestLink.click(); 
                 } else {
                     const activeLink = document.querySelector('.nav-link.active-menu-item');
                     if (activeLink) moveIndicator(activeLink);
@@ -937,7 +974,7 @@
                     }
                     
                     activeLink.classList.add('active-menu-item');
-                    moveIndicator(activeLink); // ลากวงแหวนสีรุ้งมาครอบเมื่อกด
+                    moveIndicator(activeLink); 
                     
                     const activeIcon = activeLink.querySelector('i');
                     if (activeIcon) {
@@ -952,7 +989,7 @@
                     if(defaultColor) homeLink.classList.remove(defaultColor);
                     if(activeColor) homeLink.classList.add(activeColor);
                     homeLink.classList.add('active-menu-item');
-                    moveIndicator(homeLink); // รีเซ็ตวงแหวนเวลากดโลโก้
+                    moveIndicator(homeLink); 
                 }
             }
 
@@ -961,12 +998,8 @@
                     const iframe = document.getElementById('iframe-ailab');
                     if (iframe && iframe.src.includes('about:blank')) iframe.src = iframe.getAttribute('data-src');
                 }, 400);
-            } else if (pageId === 'classroom') {
-                setTimeout(() => {
-                    const iframe = document.getElementById('iframe-classroom');
-                    if (iframe && iframe.src.includes('about:blank')) iframe.src = iframe.getAttribute('data-src');
-                }, 400);
-            }
+            } 
+            // Note: classroom iframe loading removed as tutor section replaced it.
         }
 
         document.getElementById('home').style.opacity = '1';
@@ -1040,7 +1073,7 @@
             });
         }
 
-        // Particle Background Logic
+        // Particle Background Logic (Dark Mode Colors)
         const canvas = document.getElementById('particle-canvas');
         const ctx = canvas.getContext('2d', { alpha: false }); 
         let particles = [];
@@ -1086,7 +1119,7 @@
                 if (this.y < 0 || this.y > height) this.speedY *= -1;
             }
             draw() {
-                ctx.fillStyle = '#bae6fd'; 
+                ctx.fillStyle = '#334155'; // Slate-700
                 ctx.fillRect(this.x - this.size, this.y - this.size, this.size * 2, this.size * 2);
             }
         }
@@ -1100,7 +1133,7 @@
         };
 
         const animateParticles = () => {
-            ctx.fillStyle = '#f8fafc'; 
+            ctx.fillStyle = '#020617'; // Slate 950 (Dark mode background)
             ctx.fillRect(0, 0, width, height);
             
             for (let i = 0; i < particles.length; i++) {
@@ -1115,7 +1148,8 @@
                         let distance = Math.sqrt(dx * dx + dy * dy);
                         if (distance < 150) {
                             ctx.beginPath();
-                            ctx.strokeStyle = `rgba(14, 165, 233, ${(1 - distance / 150) * 0.15})`; 
+                            // เปลี่ยนสีเส้นเชื่อมเป็นโทนฟ้าสว่าง (Cyan/Blue) แบบ Dark Mode
+                            ctx.strokeStyle = `rgba(56, 189, 248, ${(1 - distance / 150) * 0.25})`; 
                             ctx.lineWidth = 0.5;
                             ctx.moveTo(particles[i].x, particles[i].y);
                             ctx.lineTo(particles[j].x, particles[j].y);
@@ -1131,7 +1165,8 @@
                         let distance = Math.sqrt(dx * dx + dy * dy);
                         if (distance < mouse.radius) {
                             ctx.beginPath();
-                            ctx.strokeStyle = `rgba(249, 115, 22, ${(1 - distance / mouse.radius) * 0.3})`;
+                            // เปลี่ยนสีเชื่อมเมาส์เป็นโทนส้มเรืองแสง (Orange Glow)
+                            ctx.strokeStyle = `rgba(249, 115, 22, ${(1 - distance / mouse.radius) * 0.4})`;
                             ctx.lineWidth = 1;
                             ctx.moveTo(particles[i].x, particles[i].y);
                             ctx.lineTo(mouse.x, mouse.y);
