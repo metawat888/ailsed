@@ -323,7 +323,7 @@
 
     <!-- Bottom Navigation Bar (LINE App Style) -->
     <div class="fixed bottom-4 sm:bottom-6 left-0 w-full z-[999] pb-safe px-4 pointer-events-none flex justify-center">
-        <nav id="bottom-nav" class="relative bg-zinc-800/85 backdrop-blur-[24px] border border-white/20 rounded-full shadow-[0_8px_32px_0_rgba(0,0,0,0.6)] p-1.5 flex items-center overflow-x-auto scrollbar-hide touch-pan-x snap-x snap-mandatory pointer-events-auto max-w-full w-auto gap-1">
+        <nav id="bottom-nav" class="relative bg-zinc-800/85 backdrop-blur-[24px] border border-white/20 rounded-full shadow-[0_8px_32px_0_rgba(0,0,0,0.6)] p-1.5 flex items-center overflow-x-auto overflow-y-hidden scrollbar-hide touch-pan-x snap-x snap-mandatory pointer-events-auto max-w-full w-auto gap-1" style="touch-action: pan-x;">
             
             <!-- Draggable Magic Indicator -->
             <div id="magic-indicator" class="magic-indicator"></div>
@@ -786,7 +786,14 @@
                 indicatorElement.style.transform = `translate3d(${newTranslate}px, 0, 0)`;
             }, { passive: false });
 
-            bottomNav.addEventListener('touchend', (e) => {
+            // แก้ไข: ใช้ window.addEventListener เพื่อให้จับการปล่อยนิ้วได้เสมอแม้นิ้วจะหลุดกรอบเมนู
+            window.addEventListener('touchend', (e) => {
+                if (!isDraggingIndicator) return;
+                isDraggingIndicator = false;
+                snapIndicatorToClosest();
+            });
+            
+            window.addEventListener('touchcancel', (e) => {
                 if (!isDraggingIndicator) return;
                 isDraggingIndicator = false;
                 snapIndicatorToClosest();
@@ -844,6 +851,7 @@
                 });
                 
                 if (closestLink) {
+                    moveIndicator(closestLink); // บังคับให้วงแหวนวิ่งไปล็อคปุ่มที่ใกล้ที่สุดทันที
                     closestLink.click(); // ล็อคและเปลี่ยนหน้าเว็บ
                 } else {
                     const activeLink = document.querySelector('.nav-link.active-menu-item');
