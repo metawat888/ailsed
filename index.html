@@ -65,62 +65,58 @@
 
         .animate-fade-in-up { animation: fadeInUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; will-change: transform, opacity; }
         .animate-slide-in-left { animation: slideInLeft 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; will-change: transform, opacity; }
-        
-        .anim-delay-100 { animation-delay: 0.1s; }
-        .anim-delay-200 { animation-delay: 0.2s; }
-        .anim-delay-300 { animation-delay: 0.3s; }
-        .anim-delay-400 { animation-delay: 0.4s; }
-        .anim-delay-500 { animation-delay: 0.5s; }
-        .start-opacity-0 { opacity: 0; }
-        
-        iframe { background: transparent; }
 
-        .scrollbar-hide::-webkit-scrollbar { display: none; }
-        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-
-        .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
-        .pt-safe { padding-top: env(safe-area-inset-top); }
-
-        * { -webkit-tap-highlight-color: transparent; }
-        
-        /* Magic Indicator (Draggable Rainbow Ring) */
+        /* Magic Indicator (Glowing Blue & White Flowing Light Ring) */
         .magic-indicator {
             position: absolute;
             top: 6px;
             left: 6px;
             width: 60px;
             height: 60px;
-            border-radius: 50%;
+            border-radius: 50% !important;
             pointer-events: none;
             z-index: 0;
             will-change: transform;
+            transition: transform 0.6s cubic-bezier(0.25, 1.15, 0.3, 1);
+            background: transparent;
         }
-        .magic-indicator::after {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            border-radius: 50%;
-            background: conic-gradient(from 0deg, #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
-            filter: blur(6px);
-            opacity: 0.5;
-            z-index: -2;
-            animation: spin-border 2.5s linear infinite;
-        }
+
+        /* Outer Glowing Blue-White Flowing Ring */
         .magic-indicator::before {
             content: '';
             position: absolute;
             inset: 0;
-            border-radius: 50%;
-            padding: 1.5px;
-            background: conic-gradient(from 0deg, #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+            border-radius: 50% !important;
+            padding: 2.5px;
+            background: conic-gradient(from 0deg, #ffffff, #38bdf8, #0ea5e9, #ffffff, #60a5fa, #0284c7, #ffffff);
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
             mask-composite: exclude;
-            z-index: -1;
-            animation: spin-border 2.5s linear infinite;
+            animation: ringSpin 2s linear infinite;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 18px rgba(56, 189, 248, 0.7));
+            z-index: 1;
         }
-        @keyframes spin-border {
+
+        /* Inner Soft Pulsing Blue Aura */
+        .magic-indicator::after {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            border-radius: 50% !important;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(56, 189, 248, 0.2) 40%, rgba(14, 165, 233, 0.05) 75%, transparent 100%);
+            z-index: 0;
+            filter: blur(2px);
+            animation: innerPulse 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes ringSpin {
+            0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
+        }
+
+        @keyframes innerPulse {
+            0% { opacity: 0.6; transform: scale(0.96); }
+            100% { opacity: 1; transform: scale(1.02); }
         }
     </style>
 </head>
@@ -135,6 +131,13 @@
         <section id="home" class="page-section active border-b border-slate-800/80 relative z-10 w-full min-h-dvh pb-[100px] overflow-hidden m-0 flex-col items-center justify-center">
             <div class="w-full max-w-[1600px] mx-auto px-5 sm:px-12 lg:px-20 py-10 md:py-16 flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12">
                 <div class="flex-1 text-center md:text-left space-y-4 md:space-y-5">
+                    <!-- Logo Header Block -->
+                    <div class="mb-4 flex justify-center md:justify-start start-opacity-0 animate-fade-in-up">
+                        <div class="p-2 bg-slate-900/80 border border-slate-700/60 rounded-2xl backdrop-blur-md shadow-xl inline-block hover:scale-105 transition-transform duration-300">
+                            <img src="https://live.staticflickr.com/65535/55608910330_91be335ec1.jpg" alt="AILSED Logo" class="h-12 sm:h-14 md:h-16 w-auto object-contain rounded-xl" />
+                        </div>
+                    </div>
+
                     <h2 class="font-inter text-[#0ea5e9] font-bold tracking-widest uppercase text-xs md:text-sm mb-1 start-opacity-0 animate-slide-in-left anim-delay-100 drop-shadow-md">
                         <i class="fa-solid fa-sparkles mr-2"></i> Inspiring the Future
                     </h2>
@@ -878,7 +881,7 @@
     function navigateTo(pageId, event = null) {
         if (event) event.preventDefault();
 
-        // [แก้ไขปัญหาหน้าจอค้าง] สั่งปิด Modal ทั้งหมดเมื่อมีการกดเปลี่ยนเมนูด้านล่าง
+        // Close all active modals on bottom menu navigation
         closeLessonDetail();
         closeModal();
         closeIframeModal();
@@ -1116,7 +1119,6 @@
                         let distance = Math.sqrt(dx * dx + dy * dy);
                         if (distance < 150) {
                             ctx.beginPath();
-                            // เปลี่ยนสีเส้นเชื่อมเป็นโทนฟ้าสว่าง (Cyan/Blue) แบบ Dark Mode
                             ctx.strokeStyle = `rgba(56, 189, 248, ${(1 - distance / 150) * 0.25})`; 
                             ctx.lineWidth = 0.5;
                             ctx.moveTo(particles[i].x, particles[i].y);
@@ -1133,7 +1135,6 @@
                         let distance = Math.sqrt(dx * dx + dy * dy);
                         if (distance < mouse.radius) {
                             ctx.beginPath();
-                            // เปลี่ยนสีเชื่อมเมาส์เป็นโทนส้มเรืองแสง (Orange Glow)
                             ctx.strokeStyle = `rgba(249, 115, 22, ${(1 - distance / mouse.radius) * 0.4})`;
                             ctx.lineWidth = 1;
                             ctx.moveTo(particles[i].x, particles[i].y);
