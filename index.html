@@ -178,6 +178,41 @@
             <iframe id="iframe-ailab" src="about:blank" data-src="https://ailabv2.vercel.app/" title="Ai Lab Platform" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </section>
 
+        <!-- SECTION: Math Lab -->
+        <section id="mathlab" class="page-section p-4 md:p-6 lg:p-8 pb-[120px] md:pb-[120px] lg:pb-[120px] flex-col relative z-10 w-full max-w-full mx-auto flex-grow">
+            <div class="max-w-[1800px] w-full mx-auto flex flex-col gap-6">
+                <!-- Header -->
+                <div class="flex items-center gap-3 md:gap-4 bg-glass-dark rounded-2xl shadow-lg px-4 md:px-6 py-4 border border-slate-700/80">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-[#38bdf8]/20 rounded-full flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-square-root-variable text-[#38bdf8] text-lg md:text-xl drop-shadow"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-lg md:text-2xl font-bold text-white tracking-wide">Math Lab</h2>
+                        <p class="text-xs md:text-sm font-medium text-slate-400 mt-0.5">คลังเครื่องมือและห้องปฏิบัติการคณิตศาสตร์</p>
+                    </div>
+                </div>
+
+                <!-- Math Lab Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mx-auto w-full">
+                    
+                    <!-- Card 1: IQ Math -->
+                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-5 shadow-lg border border-slate-700/50 hover:border-sky-500/50 hover:shadow-sky-500/10 transition-all duration-300 cursor-pointer flex items-center gap-4 group active:scale-[0.98]" onclick="openIframeModal('https://180iqmath.vercel.app/', '1. IQ math')">
+                        <div class="w-14 h-14 rounded-2xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-2xl shrink-0 border border-sky-500/20 group-hover:scale-105 transition-transform shadow-inner">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <div class="flex flex-col flex-grow">
+                            <h3 class="font-bold text-white text-base md:text-lg line-clamp-1 group-hover:text-sky-300 transition-colors">1. IQ math</h3>
+                            <span class="text-[11px] sm:text-xs text-slate-400 mt-1"><i class="fa-solid fa-globe mr-1 text-slate-500"></i>ฝึกทักษะและคำนวณ 180 IQ</span>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-sky-500/30 group-hover:text-sky-300 transition-colors shrink-0">
+                            <i class="fa-solid fa-chevron-right text-sm"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
         <!-- SECTION: Worksheet -->
         <section id="worksheet" class="page-section p-4 md:p-6 lg:p-8 pb-[120px] md:pb-[120px] lg:pb-[120px] flex-col relative z-10 w-full max-w-full mx-auto flex-grow">
             <div class="max-w-[1800px] w-full mx-auto flex flex-col gap-6">
@@ -380,6 +415,11 @@
             <a href="#" draggable="false" onclick="navigateTo('ailab', event)" class="nav-link select-none relative z-10 snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group text-slate-400 bg-transparent hover:text-white transition-all duration-300 ease-out active:scale-90" data-active-color="text-white" data-active-bg="bg-transparent" data-default-color="text-slate-400" data-default-bg="bg-transparent">
                 <i class="fa-solid fa-flask text-[20px] mb-1 group-hover:-translate-y-0.5 transition-transform duration-300 pointer-events-none" style="color: inherit;"></i>
                 <span class="text-[10px] font-medium tracking-wide pointer-events-none">Ai Lab</span>
+            </a>
+
+            <a href="#" draggable="false" onclick="navigateTo('mathlab', event)" class="nav-link select-none relative z-10 snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group text-slate-400 bg-transparent hover:text-white transition-all duration-300 ease-out active:scale-90" data-active-color="text-white" data-active-bg="bg-transparent" data-default-color="text-slate-400" data-default-bg="bg-transparent">
+                <i class="fa-solid fa-square-root-variable text-[20px] mb-1 group-hover:-translate-y-0.5 transition-transform duration-300 pointer-events-none" style="color: inherit;"></i>
+                <span class="text-[10px] font-medium tracking-wide pointer-events-none">Math Lab</span>
             </a>
 
             <a href="#" draggable="false" onclick="navigateTo('worksheet', event)" class="nav-link select-none relative z-10 snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group text-slate-400 bg-transparent hover:text-white transition-all duration-300 ease-out active:scale-90" data-active-color="text-white" data-active-bg="bg-transparent" data-default-color="text-slate-400" data-default-bg="bg-transparent">
