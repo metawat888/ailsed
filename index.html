@@ -332,6 +332,22 @@
                         </div>
                     </div>
 
+                    <!-- Topic Item 4 -->
+                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-fuchsia-500/50 hover:shadow-fuchsia-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week4')">
+                        <div class="flex items-center gap-4 w-full">
+                            <div class="w-12 h-12 rounded-2xl bg-fuchsia-500/20 text-fuchsia-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-fuchsia-500/20">
+                                <i class="fa-solid fa-vials"></i>
+                            </div>
+                            <div class="flex flex-col gap-1 flex-grow">
+                                <span class="text-[10px] sm:text-xs font-bold text-fuchsia-400 bg-fuchsia-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-fuchsia-800/50">สัปดาห์ที่ 4</span>
+                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">ปฏิกิริยาเคมีในชีวิตประจำวัน</h3>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-fuchsia-500/30 group-hover:text-fuchsia-300 transition-colors shrink-0">
+                                <i class="fa-solid fa-chevron-right text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -509,6 +525,7 @@
                     </div>
                 </div>
 
+                <!-- ใบงานสัปดาห์ที่ 1 -->
                 <div class="bg-slate-900 p-5 rounded-3xl shadow-xl border border-slate-800 flex flex-col gap-4">
                     <div class="flex justify-between items-center">
                         <div class="flex items-center gap-3">
@@ -517,23 +534,88 @@
                             </div>
                             <h4 class="font-bold text-white text-[15px]">ใบงานประกอบการเรียน</h4>
                         </div>
-                        <span class="text-[10px] font-semibold text-indigo-400 bg-indigo-500/20 px-2.5 py-1 rounded-lg border border-indigo-500/30">แตะเพื่อขยาย</span>
+                        <button class="text-[10px] font-semibold text-indigo-400 bg-indigo-500/20 px-2.5 py-1 rounded-lg border border-indigo-500/30 hover:bg-indigo-500/40 transition-colors" onclick="const ws = document.getElementById('worksheet-w1-content'); ws.classList.toggle('hidden');">
+                            แสดง/ซ่อน ใบงาน
+                        </button>
                     </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="overflow-hidden rounded-2xl border-2 border-slate-700 shadow-md cursor-pointer relative bg-slate-800 aspect-[3/4] group hover:border-indigo-500/50 transition-colors" onclick="openModal('https://live.staticflickr.com/65535/55617214855_2cda1b6c42_c.jpg')">
-                            <img src="https://live.staticflickr.com/65535/55617214855_2cda1b6c42_c.jpg" alt="ใบงาน" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" />
-                            <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
-                                <div class="bg-slate-800/80 w-12 h-12 rounded-full flex items-center justify-center text-indigo-400 border border-indigo-500/50 shadow-2xl transform scale-50 group-hover:scale-100 transition-transform duration-300">
-                                    <i class="fa-solid fa-expand text-lg"></i>
-                                </div>
-                            </div>
+                    
+                    <div id="worksheet-w1-content" class="bg-slate-800/60 p-4 sm:p-5 rounded-2xl border border-slate-700/80 text-slate-300 text-[13px] leading-relaxed font-sarabun shadow-inner">
+                        <div class="text-center mb-5">
+                            <h5 class="font-bold text-white text-[15px] sm:text-base">ใบงานการจัดการเรียนรู้ รายวิชาวิทยาศาสตร์ 6 (ว23102)</h5>
+                            <h6 class="font-bold text-slate-200 mt-1">ชั้น ม.3 ภาคเรียนที่ 2</h6>
+                            <h6 class="font-bold text-indigo-400 mt-1">สัปดาห์ที่ 1 : การเกิดปฏิกิริยาเคมีและการเขียนสมการข้อความ</h6>
+                            <p class="text-[11px] sm:text-xs text-slate-400 mt-2 font-medium">ตัวชี้วัด: ว 2.1 ม.3/3 อธิบายการเกิดปฏิกิริยาเคมี รวมถึงการจัดเรียงตัวใหม่ของอะตอม โดยใช้แบบจำลองและสมการข้อความ</p>
                         </div>
-                        <div class="overflow-hidden rounded-2xl border-2 border-slate-700 shadow-md cursor-pointer relative bg-slate-800 aspect-[3/4] group hover:border-indigo-500/50 transition-colors" onclick="openModal('https://live.staticflickr.com/65535/55615788792_6f190000b0_c.jpg')">
-                            <img src="https://live.staticflickr.com/65535/55615788792_6f190000b0_c.jpg" alt="ใบงาน" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" />
-                            <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
-                                <div class="bg-slate-800/80 w-12 h-12 rounded-full flex items-center justify-center text-indigo-400 border border-indigo-500/50 shadow-2xl transform scale-50 group-hover:scale-100 transition-transform duration-300">
-                                    <i class="fa-solid fa-expand text-lg"></i>
-                                </div>
+                        
+                        <div class="flex flex-wrap gap-x-4 gap-y-2 mb-6 text-[12px] text-slate-400 justify-between items-end border-b border-slate-700/80 pb-4">
+                            <div class="flex flex-wrap gap-x-4 gap-y-2 flex-grow">
+                                <span>ชื่อ-สกุล: <span class="border-b border-slate-500 border-dotted inline-block w-32 sm:w-48"></span></span>
+                                <span>ชั้น ม.3/<span class="border-b border-slate-500 border-dotted inline-block w-12"></span></span>
+                                <span>เลขที่: <span class="border-b border-slate-500 border-dotted inline-block w-12"></span></span>
+                                <span>วันที่: <span class="border-b border-slate-500 border-dotted inline-block w-24"></span></span>
+                            </div>
+                            <span class="text-indigo-400 font-bold whitespace-nowrap bg-indigo-500/10 px-3 py-1 rounded border border-indigo-500/20">[ ได้: _____ / 10 ]</span>
+                        </div>
+
+                        <div class="space-y-5">
+                            <!-- ตอนที่ 1 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-indigo-300 mb-2">ตอนที่ 1: ตรวจสอบสัญญาณการเกิดปฏิกิริยาเคมี (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li>1.1 ทำเครื่องหมาย [ / ] หน้าข้อที่เป็นปฏิกิริยาเคมี และ [ X ] หน้าข้อที่เป็นการเปลี่ยนแปลงทางกายภาพ</li>
+                                    <li class="pl-4 grid grid-cols-1 sm:grid-cols-3 gap-2 text-slate-400">
+                                        <span>(......) น้ำเดือดกลายเป็นไอ</span>
+                                        <span>(......) กรดหยดบนเปลือกหอยเกิดฟองแก๊ส</span>
+                                        <span>(......) ตะปูเกิดสนิมสีน้ำตาลแดง</span>
+                                    </li>
+                                    <li>1.2 ระบุหลักฐาน 3 ประการที่แสดงว่าเกิดปฏิกิริยาเคมี: (1)<span class="text-slate-500">.........................</span> (2)<span class="text-slate-500">.........................</span> (3)<span class="text-slate-500">.........................</span></li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 2 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-indigo-300 mb-2">ตอนที่ 2: จำแนกสารตั้งต้นและสารผลิตภัณฑ์ (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-col gap-1">
+                                        <span>2.1 สารตั้งต้น (Reactants) หมายถึง:</span>
+                                        <span class="text-slate-500 pl-4">...................................................................................................................</span>
+                                    </li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>2.2 สารผลิตภัณฑ์ (Products) หมายถึง:</span>
+                                        <span class="text-slate-500 pl-4">..................................................................................................................</span>
+                                    </li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>2.3 จากข้อความ 'เผาถ่านไม้กับออกซิเจนได้ก๊าซคาร์บอนไดออกไซด์' สารตั้งต้นคือ:</span>
+                                        <span class="text-slate-500 pl-4">....................................................</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 3 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-indigo-300 mb-2">ตอนที่ 3: การจัดเรียงตัวของอะตอมในระดับอนุภาค (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-col gap-1">
+                                        <span>3.1 เมื่อเกิดปฏิกิริยาเคมี อะตอมของสารสูญหายหรือเกิดขึ้นใหม่หรือไม่?</span>
+                                        <span class="text-slate-500 pl-4">ตอบ: ...........................................................</span>
+                                    </li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>3.2 อะตอมของสารตั้งต้นเกิดการเปลี่ยนแปลงอย่างไรจึงกลายเป็นสารใหม่?</span>
+                                        <span class="text-slate-500 pl-4">ตอบ: ...................................................................................................................................</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 4 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-indigo-300 mb-2">ตอนที่ 4: การเขียนสมการข้อความ (Word Equation) (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-col gap-1">
+                                        <span>4.1 เขียนสมการข้อความ: แก๊สมีเทนทำปฏิกิริยากับแก๊สออกซิเจน ได้แก๊สคาร์บอนไดออกไซด์และน้ำ</span>
+                                        <span class="text-slate-500 pl-4">ตอบ: ...................................................................................................................................</span>
+                                    </li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>4.2 เขียนสมการข้อความ: โลหะสังกะสีทำปฏิกิริยากับกรดไฮโดรคลอริก ได้ซิงค์คลอไรด์และแก๊สไฮโดรเจน</span>
+                                        <span class="text-slate-500 pl-4">ตอบ: ...................................................................................................................................</span>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -591,6 +673,7 @@
                     </div>
                 </div>
 
+                <!-- ใบงานสัปดาห์ที่ 2 -->
                 <div class="bg-slate-900 p-5 rounded-3xl shadow-xl border border-slate-800 flex flex-col gap-4">
                     <div class="flex justify-between items-center">
                         <div class="flex items-center gap-3">
@@ -599,15 +682,81 @@
                             </div>
                             <h4 class="font-bold text-white text-[15px]">ใบงานประกอบการเรียน</h4>
                         </div>
-                        <span class="text-[10px] font-semibold text-indigo-400 bg-indigo-500/20 px-2.5 py-1 rounded-lg border border-indigo-500/30">แตะเพื่อขยาย</span>
+                        <button class="text-[10px] font-semibold text-indigo-400 bg-indigo-500/20 px-2.5 py-1 rounded-lg border border-indigo-500/30 hover:bg-indigo-500/40 transition-colors" onclick="const ws = document.getElementById('worksheet-w2-content'); ws.classList.toggle('hidden');">
+                            แสดง/ซ่อน ใบงาน
+                        </button>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="overflow-hidden rounded-2xl border-2 border-slate-700 shadow-md cursor-pointer relative bg-slate-800 aspect-[3/4] group hover:border-indigo-500/50 transition-colors" onclick="openModal('https://live.staticflickr.com/65535/55616821556_1be0601699_c.jpg')">
-                            <img src="https://live.staticflickr.com/65535/55616821556_1be0601699_c.jpg" alt="ใบงาน" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" />
-                            <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
-                                <div class="bg-slate-800/80 w-12 h-12 rounded-full flex items-center justify-center text-indigo-400 border border-indigo-500/50 shadow-2xl transform scale-50 group-hover:scale-100 transition-transform duration-300">
-                                    <i class="fa-solid fa-expand text-lg"></i>
-                                </div>
+                    
+                    <div id="worksheet-w2-content" class="bg-slate-800/60 p-4 sm:p-5 rounded-2xl border border-slate-700/80 text-slate-300 text-[13px] leading-relaxed font-sarabun shadow-inner">
+                        <div class="text-center mb-5">
+                            <h5 class="font-bold text-white text-[15px] sm:text-base">ใบงานการจัดการเรียนรู้ รายวิชาวิทยาศาสตร์ 6 (ว23102)</h5>
+                            <h6 class="font-bold text-slate-200 mt-1">ชั้น ม.3 ภาคเรียนที่ 2</h6>
+                            <h6 class="font-bold text-emerald-400 mt-1">สัปดาห์ที่ 2 : กฎทรงมวลและมวลของสารในปฏิกิริยาเคมี</h6>
+                            <p class="text-[11px] sm:text-xs text-slate-400 mt-2 font-medium">ตัวชี้วัด: ว 2.1 ม.3/4 อธิบายกฎทรงมวล โดยใช้หลักฐานเชิงประจักษ์</p>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-x-4 gap-y-2 mb-6 text-[12px] text-slate-400 justify-between items-end border-b border-slate-700/80 pb-4">
+                            <div class="flex flex-wrap gap-x-4 gap-y-2 flex-grow">
+                                <span>ชื่อ-สกุล: <span class="border-b border-slate-500 border-dotted inline-block w-32 sm:w-48"></span></span>
+                                <span>ชั้น ม.3/<span class="border-b border-slate-500 border-dotted inline-block w-12"></span></span>
+                                <span>เลขที่: <span class="border-b border-slate-500 border-dotted inline-block w-12"></span></span>
+                                <span>วันที่: <span class="border-b border-slate-500 border-dotted inline-block w-24"></span></span>
+                            </div>
+                            <span class="text-emerald-400 font-bold whitespace-nowrap bg-emerald-500/10 px-3 py-1 rounded border border-emerald-500/20">[ ได้: _____ / 10 ]</span>
+                        </div>
+
+                        <div class="space-y-5">
+                            <!-- ตอนที่ 1 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-emerald-300 mb-2">ตอนที่ 1: นิยามกฎทรงมวลและระบบ (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-col gap-1">
+                                        <span>1.1 'กฎทรงมวล' (Law of Conservation of Mass) มีใจความสำคัญว่าอย่างไร?</span>
+                                        <span class="text-slate-500 pl-4">ตอบ: ...................................................................................................................................</span>
+                                    </li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>1.2 ระบบเปิด (Open System) แตกต่างจาก ระบบปิด (Closed System) อย่างไรในแง่ของมวลสาร?</span>
+                                        <span class="text-slate-500 pl-4">ตอบ: ...................................................................................................................................</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 2 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-emerald-300 mb-2">ตอนที่ 2: จำแนกระบบในการทดลอง (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li>2.1 ระบุว่าเหตุการณ์ต่อไปนี้เป็นการทดลองใน 'ระบบเปิด' หรือ 'ระบบปิด':</li>
+                                    <li class="pl-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                        <span>ก) จุดเทียนไขในห้องกว้าง: <span class="text-slate-500">...................................</span></span>
+                                        <span>ข) ต้มน้ำในหม้อต้มความดันที่ปิดวาล์ว: <span class="text-slate-500">...................................</span></span>
+                                        <span>ค) ผสมกรดกับหินปูนในขวดรูปกรวยที่ปิดจุกยางแน่น: <span class="text-slate-500">.......................</span></span>
+                                        <span>ง) เผาเศษกระดาษในจานกระเบื้อง: <span class="text-slate-500">.......................</span></span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 3 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-emerald-300 mb-2">ตอนที่ 3: วิเคราะห์ผลการทดลองเชิงประจักษ์ (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-col gap-1">
+                                        <span>3.1 นำเบกกิ้งโซดาผสมน้ำส้มสายชูในบีกเกอร์เปิด ปรากฏว่ามวลหลังปฏิกิริยาลดลง ปฏิกิริยานี้ขัดแย้งกับกฎทรงมวลหรือไม่ เพราะเหตุใด?</span>
+                                        <span class="text-slate-500 pl-4">ตอบ: ...................................................................................................................................</span>
+                                        <span class="text-slate-500 pl-4">..................................................................................................................................................</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 4 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-emerald-300 mb-2">ตอนที่ 4: แสดงวิธีคำนวณตามกฎทรงมวล (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-col gap-1">
+                                        <span>4.1 สาร A 40 กรัม ทำปฏิกิริยาพอดีกับสาร B 25 กรัม ในระบบปิด จะได้สารผลิตภัณฑ์ C รวมมีมวลกี่กรัม?</span>
+                                        <span class="text-slate-500 pl-4">วิธีคิดและตอบ: .........................................................................................................................</span>
+                                    </li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>4.2 เผาแถบแมกนีเซียม 4.8 กรัม ในระบบปิดที่มีออกซิเจน 3.2 กรัม ได้แมกนีเซียมออกไซด์กี่กรัม?</span>
+                                        <span class="text-slate-500 pl-4">วิธีคิดและตอบ: .........................................................................................................................</span>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -675,15 +824,219 @@
                             </div>
                             <h4 class="font-bold text-white text-[15px]">ใบงานประกอบการเรียน</h4>
                         </div>
-                        <span class="text-[10px] font-semibold text-indigo-400 bg-indigo-500/20 px-2.5 py-1 rounded-lg border border-indigo-500/30">แตะเพื่อขยาย</span>
+                        <button class="text-[10px] font-semibold text-indigo-400 bg-indigo-500/20 px-2.5 py-1 rounded-lg border border-indigo-500/30 hover:bg-indigo-500/40 transition-colors" onclick="const ws = document.getElementById('worksheet-w3-content'); ws.classList.toggle('hidden');">
+                            แสดง/ซ่อน ใบงาน
+                        </button>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="overflow-hidden rounded-2xl border-2 border-slate-700 shadow-md cursor-pointer relative bg-slate-800 aspect-[3/4] group hover:border-indigo-500/50 transition-colors" onclick="openModal('https://live.staticflickr.com/65535/55617037839_22e5dd8fb5_c.jpg')">
-                            <img src="https://live.staticflickr.com/65535/55617037839_22e5dd8fb5_c.jpg" alt="ใบงาน" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" />
-                            <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
-                                <div class="bg-slate-800/80 w-12 h-12 rounded-full flex items-center justify-center text-indigo-400 border border-indigo-500/50 shadow-2xl transform scale-50 group-hover:scale-100 transition-transform duration-300">
-                                    <i class="fa-solid fa-expand text-lg"></i>
-                                </div>
+                    
+                    <div id="worksheet-w3-content" class="bg-slate-800/60 p-4 sm:p-5 rounded-2xl border border-slate-700/80 text-slate-300 text-[13px] leading-relaxed font-sarabun shadow-inner">
+                        <div class="text-center mb-5">
+                            <h5 class="font-bold text-white text-[15px] sm:text-base">ใบงานการจัดการเรียนรู้ รายวิชาวิทยาศาสตร์ 6 (ว23102)</h5>
+                            <h6 class="font-bold text-slate-200 mt-1">ชั้น ม.3 ภาคเรียนที่ 2</h6>
+                            <h6 class="font-bold text-orange-400 mt-1">สัปดาห์ที่ 3 : การถ่ายโอนความร้อนในปฏิกิริยาเคมี (ดูด-คายความร้อน)</h6>
+                            <p class="text-[11px] sm:text-xs text-slate-400 mt-2 font-medium">ตัวชี้วัด: ว 2.1 ม.3/5 วิเคราะห์ปฏิกิริยาดูดความร้อนและคายความร้อน จากการเปลี่ยนแปลงพลังงานความร้อน</p>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-x-4 gap-y-2 mb-6 text-[12px] text-slate-400 justify-between items-end border-b border-slate-700/80 pb-4">
+                            <div class="flex flex-wrap gap-x-4 gap-y-2 flex-grow">
+                                <span>ชื่อ-สกุล: <span class="border-b border-slate-500 border-dotted inline-block w-32 sm:w-48"></span></span>
+                                <span>ชั้น ม.3/<span class="border-b border-slate-500 border-dotted inline-block w-12"></span></span>
+                                <span>เลขที่: <span class="border-b border-slate-500 border-dotted inline-block w-12"></span></span>
+                                <span>วันที่: <span class="border-b border-slate-500 border-dotted inline-block w-24"></span></span>
+                            </div>
+                            <span class="text-orange-400 font-bold whitespace-nowrap bg-orange-500/10 px-3 py-1 rounded border border-orange-500/20">[ ได้: _____ / 10 ]</span>
+                        </div>
+
+                        <div class="space-y-5">
+                            <!-- ตอนที่ 1 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-orange-300 mb-2">ตอนที่ 1: ตรวจสอบมโนทัศน์ดูดความร้อนและคายความร้อน (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li>1.1 ปฏิกิริยาดูดความร้อน: ระบบจะ <span class="text-slate-500">.....................</span> ความร้อนจากสิ่งแวดล้อม ส่งผลให้อุณหภูมิสิ่งแวดล้อม <span class="text-slate-500">.....................</span></li>
+                                    <li>1.2 ปฏิกิริยาคายความร้อน: ระบบจะ <span class="text-slate-500">.....................</span> ความร้อนสู่สิ่งแวดล้อม ส่งผลให้อุณหภูมิสิ่งแวดล้อม <span class="text-slate-500">.....................</span></li>
+                                    <li>1.3 เมื่อเอามือจับบีกเกอร์ที่เกิดปฏิกิริยาดูดความร้อน จะรู้สึก <span class="text-slate-500">.....................</span> และคายความร้อนจะรู้สึก <span class="text-slate-500">.....................</span></li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 2 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-orange-300 mb-2">ตอนที่ 2: จำแนกปฏิกิริยาในชีวิตประจำวัน (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li>2.1 ระบุว่าเหตุการณ์ต่อไปนี้เป็น 'ดูดความร้อน' หรือ 'คายความร้อน':</li>
+                                    <li class="pl-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                        <span>ก) การเผาไหม้ของถ่านหิน: <span class="text-slate-500">..............................</span></span>
+                                        <span>ข) การสังเคราะห์ด้วยแสงของพืช: <span class="text-slate-500">..............................</span></span>
+                                        <span>ค) การระเบิดของดินปืน: <span class="text-slate-500">..............................</span></span>
+                                        <span>ง) การละลายแอมโมเนียมคลอไรด์ในน้ำ: <span class="text-slate-500">..............................</span></span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 3 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-orange-300 mb-2">ตอนที่ 3: เปรียบเทียบพลังงานของสาร (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li>3.1 ในปฏิกิริยาดูดความร้อน พลังงานของสารผลิตภัณฑ์จะ (สูงกว่า / ต่ำกว่า) <span class="text-slate-500">........................................</span> สารตั้งต้น</li>
+                                    <li>3.2 ในปฏิกิริยาคายความร้อน พลังงานของสารผลิตภัณฑ์จะ (สูงกว่า / ต่ำกว่า) <span class="text-slate-500">........................................</span> สารตั้งต้น</li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>3.3 พลังงานที่ถ่ายโอนเข้าหรือออกจากระบบระหว่างเกิดปฏิกิริยา อยู่ในรูปของพลังงานใด?</span>
+                                        <span class="text-slate-500 pl-4">ตอบ: ...................................................................................................................................</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 4 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-orange-300 mb-2">ตอนที่ 4: การประยุกต์ใช้ในชีวิตจริง (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-col gap-1">
+                                        <span>4.1 อธิบายหลักการทำงานของ 'ถุงประคบร้อนสำเร็จรูป' ที่ใช้ในการปฐมพยาบาล:</span>
+                                        <span class="text-slate-500 pl-4">ตอบ: ...................................................................................................................................</span>
+                                    </li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>4.2 อธิบายหลักการทำงานของ 'ถุงประคบเย็นสำเร็จรูป' ว่าเกิดการเปลี่ยนแปลงพลังงานอย่างไร?</span>
+                                        <span class="text-slate-500 pl-4">ตอบ: ...................................................................................................................................</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= WEEK 4 ================= -->
+            <div id="week4-content" class="week-content hidden flex-col gap-5">
+                <div class="bg-slate-900 rounded-3xl p-6 shadow-xl border border-slate-800 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-fuchsia-400 to-purple-500"></div>
+                    <div class="flex items-center gap-3.5 mb-4">
+                        <div class="w-10 h-10 rounded-2xl bg-fuchsia-500/20 text-fuchsia-400 flex items-center justify-center text-lg shadow-inner ring-1 ring-fuchsia-500/30">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-base md:text-lg">ความหมายและตัวอย่าง</h3>
+                    </div>
+                    <div class="text-slate-300 text-[14px] leading-relaxed space-y-3">
+                        <p>ปฏิกิริยาเคมีในชีวิตประจำวัน มีหลากหลายรูปแบบที่พบเจอได้รอบตัวเรา ได้แก่:</p>
+                        <ul class="list-disc pl-5 space-y-2 mt-2">
+                            <li><strong class="text-fuchsia-400">ปฏิกิริยาระหว่างกรดกับเบส:</strong> (ปฏิกิริยาสะเทิน) เช่น การย่อยอาหาร การใช้ยาลดกรด</li>
+                            <li><strong class="text-blue-400">ปฏิกิริยาระหว่างกรดกับโลหะ:</strong> เกิดแก๊สไฮโดรเจนและการผุกร่อนของโลหะ</li>
+                            <li><strong class="text-emerald-400">ปฏิกิริยาระหว่างเบสกับโลหะ:</strong> (โลหะบางชนิด) เกิดแก๊สไฮโดรเจน</li>
+                            <li><strong class="text-orange-400">การเกิดสนิมเหล็ก:</strong> ปฏิกิริยาระหว่างเหล็ก น้ำ และออกซิเจน</li>
+                            <li><strong class="text-red-400">การเผาไหม้:</strong> ปฏิกิริยาของเชื้อเพลิงกับออกซิเจนที่ให้ความร้อนและแสงสว่าง</li>
+                        </ul>
+                        <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700 text-[13px] shadow-sm mt-3 text-slate-300">
+                            <span class="text-lg mr-1">📌</span> <span class="font-medium text-white">ตัวชี้วัด:</span> ว 2.1 ม.3/6 อธิบายปฏิกิริยาเคมีในชีวิตประจำวัน
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group cursor-pointer active:scale-[0.98] transition-all duration-300" onclick="window.open('https://ailab21.vercel.app/', '_blank')">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-fuchsia-500 via-purple-500 to-pink-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                    <div class="relative bg-gradient-to-r from-purple-600 via-fuchsia-600 to-pink-600 rounded-[24px] p-0.5 overflow-hidden shadow-xl">
+                        <div class="absolute inset-0 bg-white/10 group-hover:translate-x-full transform -translate-x-full transition-transform duration-700 ease-out skew-x-12"></div>
+                        <div class="bg-slate-900/40 backdrop-blur-sm rounded-[22px] px-5 py-4 flex items-center gap-4 border border-white/10">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center shadow-inner shrink-0 text-white group-hover:rotate-12 transition-transform duration-300">
+                                <i class="fa-solid fa-flask-vial text-2xl drop-shadow"></i>
+                            </div>
+                            <div class="flex flex-col text-left flex-grow">
+                                <span class="text-white font-extrabold text-[16px] tracking-wide drop-shadow-md">เข้าทดลอง Ai Lab 21</span>
+                                <span class="text-slate-200 text-[11px] mt-0.5 font-medium tracking-wide">การทดลองปฏิกิริยาของกรด-เบสกับสารต่างๆ <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[9px]"></i></span>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-chevron-right text-white/90 text-sm group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 p-5 rounded-3xl shadow-xl border border-slate-800 flex flex-col gap-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center border border-red-500/30">
+                            <i class="fa-brands fa-youtube text-base"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-[15px]">วิดีโอสรุปความรู้</h4>
+                    </div>
+                    <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-inner border border-slate-800 bg-black relative">
+                        <iframe id="iframe-w4" class="youtube-iframe w-full h-full relative z-10" data-src="https://www.youtube.com/embed/Lvbm8horG1U" src="" title="Chemical Reactions" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!-- ใบงานสัปดาห์ที่ 4 -->
+                <div class="bg-slate-900 p-5 rounded-3xl shadow-xl border border-slate-800 flex flex-col gap-4">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center border border-indigo-500/30">
+                                <i class="fa-solid fa-file-signature text-sm"></i>
+                            </div>
+                            <h4 class="font-bold text-white text-[15px]">ใบงานประกอบการเรียน</h4>
+                        </div>
+                        <button class="text-[10px] font-semibold text-indigo-400 bg-indigo-500/20 px-2.5 py-1 rounded-lg border border-indigo-500/30 hover:bg-indigo-500/40 transition-colors" onclick="const ws = document.getElementById('worksheet-w4-content'); ws.classList.toggle('hidden');">
+                            แสดง/ซ่อน ใบงาน
+                        </button>
+                    </div>
+                    
+                    <div id="worksheet-w4-content" class="bg-slate-800/60 p-4 sm:p-5 rounded-2xl border border-slate-700/80 text-slate-300 text-[13px] leading-relaxed font-sarabun shadow-inner">
+                        <div class="text-center mb-5">
+                            <h5 class="font-bold text-white text-[15px] sm:text-base">ใบงานการจัดการเรียนรู้ รายวิชาวิทยาศาสตร์ 6 (ว23102)</h5>
+                            <h6 class="font-bold text-slate-200 mt-1">ชั้น ม.3 ภาคเรียนที่ 2</h6>
+                            <h6 class="font-bold text-fuchsia-400 mt-1">สัปดาห์ที่ 4 : ปฏิกิริยาเคมีในชีวิตประจำวัน</h6>
+                            <p class="text-[11px] sm:text-xs text-slate-400 mt-2 font-medium">ตัวชี้วัด: ว 2.1 ม.3/6 อธิบายปฏิกิริยาการเกิดสนิม ปฏิกิริยากรดกับโลหะ กรดกับเบส เบสกับโลหะ และการเผาไหม้</p>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-x-4 gap-y-2 mb-6 text-[12px] text-slate-400 justify-between items-end border-b border-slate-700/80 pb-4">
+                            <div class="flex flex-wrap gap-x-4 gap-y-2 flex-grow">
+                                <span>ชื่อ-สกุล: <span class="border-b border-slate-500 border-dotted inline-block w-32 sm:w-48"></span></span>
+                                <span>ชั้น ม.3/<span class="border-b border-slate-500 border-dotted inline-block w-12"></span></span>
+                                <span>เลขที่: <span class="border-b border-slate-500 border-dotted inline-block w-12"></span></span>
+                                <span>วันที่: <span class="border-b border-slate-500 border-dotted inline-block w-24"></span></span>
+                            </div>
+                            <span class="text-fuchsia-400 font-bold whitespace-nowrap bg-fuchsia-500/10 px-3 py-1 rounded border border-fuchsia-500/20">[ ได้: _____ / 10 ]</span>
+                        </div>
+
+                        <div class="space-y-5">
+                            <!-- ตอนที่ 1 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-fuchsia-300 mb-2">ตอนที่ 1: ปฏิกิริยาสะเทิน (Neutralization) (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li>1.1 ปฏิกิริยาสะเทินเกิดจาก: กรด + เบส &rarr; <span class="text-slate-500">..................................................</span> + <span class="text-slate-500">..................................................</span></li>
+                                    <li>1.2 เขียนสมการข้อความ: กรดไฮโดรคลอริก + โซเดียมไฮดรอกไซด์ &rarr; <span class="text-slate-500">...........................................................................</span></li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>1.3 ยาลดกรดในกระเพาะอาหาร จัดเป็นสารเคมีกลุ่มใด (กรด / เบส) และออกฤทธิ์อย่างไร?</span>
+                                        <span class="text-slate-500 pl-4">ตอบ: ...................................................................................................................................</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 2 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-fuchsia-300 mb-2">ตอนที่ 2: ปฏิกิริยากับโลหะ (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-col gap-1">
+                                        <span>2.1 เมื่อกรดทำปฏิกิริยากับสังกะสี จะเกิดแก๊สชนิดใด และทดสอบสมบัติติดไฟอย่างไร?</span>
+                                        <span class="text-slate-500 pl-4">ตอบ: ...................................................................................................................................</span>
+                                    </li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>2.2 โลหะอะลูมิเนียมเมื่อทำปฏิกิริยากับเบสแก่ เช่น โซเดียมไฮดรอกไซด์ จะเกิดแก๊สใด?</span>
+                                        <span class="text-slate-500 pl-4">ตอบ: ...................................................................................................................................</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 3 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-fuchsia-300 mb-2">ตอนที่ 3: การเกิดสนิมเหล็กและการป้องกัน (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li>3.1 สนิมเหล็กเกิดขึ้นจากปัจจัย 3 ประการร่วมกัน ได้แก่: (1)<span class="text-slate-500">.........................</span> (2)<span class="text-slate-500">.........................</span> (3)<span class="text-slate-500">.........................</span></li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>3.2 บอกวิธีป้องกันการเกิดสนิมเหล็กในชีวิตประจำวันมา 2 วิธี:</span>
+                                        <span class="text-slate-500 pl-4">ตอบ: ...................................................................................................................................</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 4 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-fuchsia-300 mb-2">ตอนที่ 4: การเผาไหม้สมบูรณ์และไม่สมบูรณ์ (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li>4.1 การเผาไหม้สมบูรณ์ของแก๊สหุงต้ม: สารผลิตภัณฑ์คือ <span class="text-slate-500">...................................................</span> และ <span class="text-slate-500">...................................................</span></li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>4.2 การเผาไหม้ไม่สมบูรณ์ทำให้เกิดแก๊สพิษชนิดใด และมีอันตรายต่อสิ่งมีชีวิตอย่างไร?</span>
+                                        <span class="text-slate-500 pl-4">ตอบ: ...................................................................................................................................</span>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -733,6 +1086,10 @@
                 titleEl.innerText = 'การถ่ายโอนความร้อน';
                 subtitleEl.innerText = 'สัปดาห์ที่ 3';
                 subtitleEl.className = 'text-[10px] font-bold text-orange-400 tracking-wider uppercase mb-0.5';
+            } else if (weekKey === 'week4') {
+                titleEl.innerText = 'ปฏิกิริยาเคมีในชีวิตประจำวัน';
+                subtitleEl.innerText = 'สัปดาห์ที่ 4';
+                subtitleEl.className = 'text-[10px] font-bold text-fuchsia-400 tracking-wider uppercase mb-0.5';
             }
 
             document.querySelectorAll('.week-content').forEach(el => {
@@ -745,7 +1102,7 @@
                 activeContent.classList.remove('hidden');
                 activeContent.classList.add('flex');
                 
-                const iframeId = weekKey === 'week1' ? 'iframe-w1' : weekKey === 'week2' ? 'iframe-w2' : 'iframe-w3';
+                const iframeId = weekKey === 'week1' ? 'iframe-w1' : weekKey === 'week2' ? 'iframe-w2' : weekKey === 'week3' ? 'iframe-w3' : 'iframe-w4';
                 const iframe = document.getElementById(iframeId);
                 if (iframe && iframe.src === window.location.href || iframe.src === '') {
                      iframe.src = iframe.getAttribute('data-src');
