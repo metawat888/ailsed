@@ -431,6 +431,38 @@
                         </div>
                     </div>
 
+                    <!-- สัปดาห์ที่ 11 -->
+                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-lime-500/50 hover:shadow-lime-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week11')">
+                        <div class="flex items-center gap-4 w-full">
+                            <div class="w-12 h-12 rounded-2xl bg-lime-500/20 text-lime-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-lime-500/20">
+                                <i class="fa-solid fa-project-diagram"></i>
+                            </div>
+                            <div class="flex flex-col gap-1 flex-grow">
+                                <span class="text-[10px] sm:text-xs font-bold text-lime-400 bg-lime-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-lime-800/50">สัปดาห์ที่ 11</span>
+                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">การต่อตัวต้านทานอนุกรมและขนาน</h3>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-lime-500/30 group-hover:text-lime-300 transition-colors shrink-0">
+                                <i class="fa-solid fa-chevron-right text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- สัปดาห์ที่ 12 -->
+                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-pink-500/50 hover:shadow-pink-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week12')">
+                        <div class="flex items-center gap-4 w-full">
+                            <div class="w-12 h-12 rounded-2xl bg-pink-500/20 text-pink-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-pink-500/20">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <div class="flex flex-col gap-1 flex-grow">
+                                <span class="text-[10px] sm:text-xs font-bold text-pink-400 bg-pink-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-pink-800/50">สัปดาห์ที่ 12</span>
+                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">ชิ้นส่วนและวงจรอิเล็กทรอนิกส์เบื้องต้น</h3>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-pink-500/30 group-hover:text-pink-300 transition-colors shrink-0">
+                                <i class="fa-solid fa-chevron-right text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- สัปดาห์ที่ 13 -->
                     <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-indigo-500/50 hover:shadow-indigo-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week13')">
                         <div class="flex items-center gap-4 w-full">
@@ -2467,6 +2499,298 @@
                 </div>
             </div>
 
+            <!-- ================= WEEK 11 ================= -->
+            <div id="week11-content" class="week-content hidden flex-col gap-5">
+                <div class="bg-slate-900 rounded-3xl p-6 shadow-xl border border-slate-800 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-lime-400 to-green-500"></div>
+                    <div class="flex items-center gap-3.5 mb-4">
+                        <div class="w-10 h-10 rounded-2xl bg-lime-500/20 text-lime-400 flex items-center justify-center text-lg shadow-inner ring-1 ring-lime-500/30">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-base md:text-lg">การต่อวงจรไฟฟ้า</h3>
+                    </div>
+                    <div class="text-slate-300 text-[14px] leading-relaxed space-y-3">
+                        <ul class="list-disc pl-5 space-y-2 mt-2">
+                            <li><strong class="text-lime-400">การต่อแบบอนุกรม:</strong> ต่อเรียงกันไป กระแสไฟฟ้า (I) เท่ากันทั้งวงจร ความต่างศักย์ (V) รวมเท่ากับผลรวมของแต่ละตัว ถ้าอุปกรณ์ตัวหนึ่งขาด วงจรจะเปิด (ไฟดับทั้งหมด)</li>
+                            <li><strong class="text-emerald-400">การต่อแบบขนาน:</strong> ต่อคร่อมกัน ความต่างศักย์ (V) เท่ากันทุกสาย กระแสไฟฟ้า (I) รวมเท่ากับผลรวมของแต่ละสาย ถ้าอุปกรณ์ตัวหนึ่งขาด ตัวอื่นยังคงทำงานได้ตามปกติ (นิยมใช้ในบ้านเรือน)</li>
+                        </ul>
+                        <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700 text-[13px] shadow-sm mt-3 text-slate-300">
+                            <span class="text-lg mr-1">📌</span> <span class="font-medium text-white">ตัวชี้วัด:</span> ว 2.3 ม.3/4 วิเคราะห์ความต่างศักย์และกระแสไฟฟ้า, ว 2.3 ม.3/5 เขียนแผนภาพ...
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group cursor-pointer active:scale-[0.98] transition-all duration-300" onclick="window.open('https://ailab11.vercel.app/', '_blank')">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-lime-500 via-green-500 to-emerald-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                    <div class="relative bg-gradient-to-r from-green-600 via-lime-600 to-emerald-600 rounded-[24px] p-0.5 overflow-hidden shadow-xl">
+                        <div class="absolute inset-0 bg-white/10 group-hover:translate-x-full transform -translate-x-full transition-transform duration-700 ease-out skew-x-12"></div>
+                        <div class="bg-slate-900/40 backdrop-blur-sm rounded-[22px] px-5 py-4 flex items-center gap-4 border border-white/10">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center shadow-inner shrink-0 text-white group-hover:rotate-12 transition-transform duration-300">
+                                <i class="fa-solid fa-project-diagram text-2xl drop-shadow"></i>
+                            </div>
+                            <div class="flex flex-col text-left flex-grow">
+                                <span class="text-white font-extrabold text-[16px] tracking-wide drop-shadow-md">เข้าทดลอง Ai Lab 11</span>
+                                <span class="text-slate-200 text-[11px] mt-0.5 font-medium tracking-wide">กิจกรรมการต่อตัวต้านทานแบบอนุกรมและแบบขนาน <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[9px]"></i></span>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-chevron-right text-white/90 text-sm group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 p-5 rounded-3xl shadow-xl border border-slate-800 flex flex-col gap-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center border border-red-500/30">
+                            <i class="fa-brands fa-youtube text-base"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-[15px]">วิดีโอสรุปความรู้</h4>
+                    </div>
+                    <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-inner border border-slate-800 bg-black relative">
+                        <iframe id="iframe-w11" class="youtube-iframe w-full h-full relative z-10" data-src="https://www.youtube.com/embed/iZi4EGufHnc" src="" title="วิดีโอสรุปความรู้" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!-- ใบงานสัปดาห์ที่ 11 -->
+                <div class="bg-slate-900 p-5 rounded-3xl shadow-xl border border-slate-800 flex flex-col gap-4">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center border border-indigo-500/30">
+                                <i class="fa-solid fa-file-signature text-sm"></i>
+                            </div>
+                            <h4 class="font-bold text-white text-[15px]">ใบงานประกอบการเรียน</h4>
+                        </div>
+                        <button class="text-[10px] font-semibold text-indigo-400 bg-indigo-500/20 px-2.5 py-1 rounded-lg border border-indigo-500/30 hover:bg-indigo-500/40 transition-colors" onclick="const ws = document.getElementById('worksheet-w11-content'); ws.classList.toggle('hidden');">
+                            แสดง/ซ่อน ใบงาน
+                        </button>
+                    </div>
+                    
+                    <div id="worksheet-w11-content" class="bg-slate-800/60 p-4 sm:p-5 rounded-2xl border border-slate-700/80 text-slate-300 text-[13px] leading-relaxed font-sarabun shadow-inner">
+                        <div class="text-center mb-5">
+                            <h5 class="font-bold text-white text-[15px] sm:text-base">ใบงานการจัดการเรียนรู้ รายวิชาวิทยาศาสตร์ 6 (ว23102)</h5>
+                            <h6 class="font-bold text-slate-200 mt-1">ชั้น ม.3 ภาคเรียนที่ 2</h6>
+                            <h6 class="font-bold text-lime-400 mt-1">สัปดาห์ที่ 11 : การต่อตัวต้านทานแบบอนุกรมและแบบขนาน</h6>
+                            <p class="text-[11px] sm:text-xs text-slate-400 mt-2 font-medium">ตัวชี้วัด: ว 2.3 ม.3/4 วิเคราะห์ความต่างศักย์และกระแสไฟฟ้า, ว 2.3 ม.3/5 เขียนแผนภาพ...</p>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-x-4 gap-y-2 mb-6 text-[12px] text-slate-400 justify-between items-end border-b border-slate-700/80 pb-4">
+                            <div class="flex flex-wrap gap-x-4 gap-y-2 flex-grow">
+                                <span>ชื่อ-สกุล: <span class="border-b border-slate-500 border-dotted inline-block w-32 sm:w-48"></span></span>
+                                <span>ชั้น ม.3/<span class="border-b border-slate-500 border-dotted inline-block w-12"></span></span>
+                                <span>เลขที่: <span class="border-b border-slate-500 border-dotted inline-block w-12"></span></span>
+                                <span>วันที่: <span class="border-b border-slate-500 border-dotted inline-block w-24"></span></span>
+                            </div>
+                            <span class="text-lime-400 font-bold whitespace-nowrap bg-lime-500/10 px-3 py-1 rounded border border-lime-500/20">[ ได้: _____ / 10 ]</span>
+                        </div>
+
+                        <div class="space-y-5">
+                            <!-- ตอนที่ 1 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-lime-300 mb-2">ตอนที่ 1: วงจรตัวต้านทานแบบอนุกรม (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-col gap-1">
+                                        <span>1.1 กระแสไฟฟ้า (I) ในแต่ละจุดของวงจรอนุกรมมีค่า:</span>
+                                        <div class="pl-4 border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div>
+                                    </li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>1.2 สูตรความต้านทานรวมของวงจรอนุกรม: Rรวม =</span>
+                                        <div class="pl-4 border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div>
+                                    </li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>1.3 ถ้าหลอดไฟดวงใดดวงหนึ่งในวงจรอนุกรมขาด หลอดที่เหลือจะ:</span>
+                                        <div class="pl-4 border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 2 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-lime-300 mb-2">ตอนที่ 2: วงจรตัวต้านทานแบบขนาน (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-col gap-1">
+                                        <span>2.1 ความต่างศักย์ (V) ตกคร่อมตัวต้านทานแต่ละสายในวงจรขนานมีค่า:</span>
+                                        <div class="pl-4 border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div>
+                                    </li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>2.2 สูตรความต้านทานรวมของวงจรขนาน: 1/Rรวม =</span>
+                                        <div class="pl-4 border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div>
+                                    </li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>2.3 ถ้าหลอดไฟดวงใดดวงหนึ่งในวงจรขนานขาด หลอดที่เหลือจะ:</span>
+                                        <div class="pl-4 border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 3 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-lime-300 mb-2">ตอนที่ 3: การประยุกต์ใช้งานในชีวิตประจำวัน (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-col gap-1">
+                                        <span>3.1 วงจรไฟฟ้าในบ้านเรือนต่อแบบใด เพราะเหตุใด?</span>
+                                        <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
+                                    </li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>3.2 ไฟประดับต้นคริสต์มาสแบบโบราณมักต่อแบบใด และมีข้อเสียอย่างไร?</span>
+                                        <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 4 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-lime-300 mb-2">ตอนที่ 4: การคำนวณวงจรไฟฟ้า (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-wrap items-end gap-1">4.1 ตัวต้านทาน 20 โอห์ม และ 30 โอห์ม ต่ออนุกรมกัน ความต้านทานรวม = <div class="border-b border-dotted border-slate-500 w-16 inline-block"></div> โอห์ม</li>
+                                    <li class="flex flex-wrap items-end gap-1">4.2 ตัวต้านทาน 20 โอห์ม และ 20 โอห์ม ต่อขนานกัน ความต้านทานรวม = <div class="border-b border-dotted border-slate-500 w-16 inline-block"></div> โอห์ม</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= WEEK 12 ================= -->
+            <div id="week12-content" class="week-content hidden flex-col gap-5">
+                <div class="bg-slate-900 rounded-3xl p-6 shadow-xl border border-slate-800 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-pink-400 to-rose-500"></div>
+                    <div class="flex items-center gap-3.5 mb-4">
+                        <div class="w-10 h-10 rounded-2xl bg-pink-500/20 text-pink-400 flex items-center justify-center text-lg shadow-inner ring-1 ring-pink-500/30">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-base md:text-lg">ชิ้นส่วนอิเล็กทรอนิกส์</h3>
+                    </div>
+                    <div class="text-slate-300 text-[14px] leading-relaxed space-y-3">
+                        <ul class="list-disc pl-5 space-y-2 mt-2">
+                            <li><strong class="text-pink-400">ไดโอด (Diode):</strong> ยอมให้กระแสไฟฟ้าไหลผ่านทิศทางเดียว ป้องกันกระแสไหลย้อนกลับ</li>
+                            <li><strong class="text-rose-400">LED (Light Emitting Diode):</strong> ไดโอดเปล่งแสง ต้องต่อให้ถูกขั้ว และต้องต่อตัวต้านทานเพื่อป้องกันกระแสเกิน</li>
+                            <li><strong class="text-fuchsia-400">ตัวเก็บประจุ (Capacitor):</strong> ทำหน้าที่สะสมและคายประจุไฟฟ้า</li>
+                            <li><strong class="text-blue-400">LDR (ตัวต้านทานไวแสง):</strong> ความต้านทานเปลี่ยนตามความเข้มแสง (สว่าง -> R น้อย, มืด -> R มาก)</li>
+                            <li><strong class="text-emerald-400">ทรานซิสเตอร์ (Transistor):</strong> ทำหน้าที่เป็นสวิตช์อิเล็กทรอนิกส์ หรือขยายสัญญาณ</li>
+                        </ul>
+                        <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700 text-[13px] shadow-sm mt-3 text-slate-300">
+                            <span class="text-lg mr-1">📌</span> <span class="font-medium text-white">ตัวชี้วัด:</span> ว 2.3 ม.3/6 บรรยายการทำงานของชิ้นส่วนอิเล็กทรอนิกส์, ว 2.3 ม.3/7 เขียนแผนภาพ...
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group cursor-pointer active:scale-[0.98] transition-all duration-300" onclick="window.open('https://ailab15.vercel.app/', '_blank')">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-pink-500 via-rose-500 to-fuchsia-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                    <div class="relative bg-gradient-to-r from-rose-600 via-pink-600 to-fuchsia-600 rounded-[24px] p-0.5 overflow-hidden shadow-xl">
+                        <div class="absolute inset-0 bg-white/10 group-hover:translate-x-full transform -translate-x-full transition-transform duration-700 ease-out skew-x-12"></div>
+                        <div class="bg-slate-900/40 backdrop-blur-sm rounded-[22px] px-5 py-4 flex items-center gap-4 border border-white/10">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center shadow-inner shrink-0 text-white group-hover:rotate-12 transition-transform duration-300">
+                                <i class="fa-solid fa-microchip text-2xl drop-shadow"></i>
+                            </div>
+                            <div class="flex flex-col text-left flex-grow">
+                                <span class="text-white font-extrabold text-[16px] tracking-wide drop-shadow-md">เข้าทดลอง Ai Lab 15</span>
+                                <span class="text-slate-200 text-[11px] mt-0.5 font-medium tracking-wide">ปฏิบัติการต่อวงจรตรวจจับแสง/สวิตช์อัตโนมัติอย่างง่าย <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[9px]"></i></span>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-chevron-right text-white/90 text-sm group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 p-5 rounded-3xl shadow-xl border border-slate-800 flex flex-col gap-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center border border-red-500/30">
+                            <i class="fa-brands fa-youtube text-base"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-[15px]">วิดีโอสรุปความรู้</h4>
+                    </div>
+                    <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-inner border border-slate-800 bg-black relative">
+                        <iframe id="iframe-w12" class="youtube-iframe w-full h-full relative z-10" data-src="https://www.youtube.com/embed/1FOn_Dse4XI?list=PLNVMHcWfAKDytTerTHsRCm1ud6AZyO_Xp" src="" title="วิดีโอสรุปความรู้" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!-- ใบงานสัปดาห์ที่ 12 -->
+                <div class="bg-slate-900 p-5 rounded-3xl shadow-xl border border-slate-800 flex flex-col gap-4">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center border border-indigo-500/30">
+                                <i class="fa-solid fa-file-signature text-sm"></i>
+                            </div>
+                            <h4 class="font-bold text-white text-[15px]">ใบงานประกอบการเรียน</h4>
+                        </div>
+                        <button class="text-[10px] font-semibold text-indigo-400 bg-indigo-500/20 px-2.5 py-1 rounded-lg border border-indigo-500/30 hover:bg-indigo-500/40 transition-colors" onclick="const ws = document.getElementById('worksheet-w12-content'); ws.classList.toggle('hidden');">
+                            แสดง/ซ่อน ใบงาน
+                        </button>
+                    </div>
+                    
+                    <div id="worksheet-w12-content" class="bg-slate-800/60 p-4 sm:p-5 rounded-2xl border border-slate-700/80 text-slate-300 text-[13px] leading-relaxed font-sarabun shadow-inner">
+                        <div class="text-center mb-5">
+                            <h5 class="font-bold text-white text-[15px] sm:text-base">ใบงานการจัดการเรียนรู้ รายวิชาวิทยาศาสตร์ 6 (ว23102)</h5>
+                            <h6 class="font-bold text-slate-200 mt-1">ชั้น ม.3 ภาคเรียนที่ 2</h6>
+                            <h6 class="font-bold text-pink-400 mt-1">สัปดาห์ที่ 12 : ชิ้นส่วนและวงจรอิเล็กทรอนิกส์เบื้องต้น</h6>
+                            <p class="text-[11px] sm:text-xs text-slate-400 mt-2 font-medium">ตัวชี้วัด: ว 2.3 ม.3/6 บรรยายการทำงานของชิ้นส่วนอิเล็กทรอนิกส์อย่างง่าย, ว 2.3 ม.3/7 เขียนแผนภาพ...</p>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-x-4 gap-y-2 mb-6 text-[12px] text-slate-400 justify-between items-end border-b border-slate-700/80 pb-4">
+                            <div class="flex flex-wrap gap-x-4 gap-y-2 flex-grow">
+                                <span>ชื่อ-สกุล: <span class="border-b border-slate-500 border-dotted inline-block w-32 sm:w-48"></span></span>
+                                <span>ชั้น ม.3/<span class="border-b border-slate-500 border-dotted inline-block w-12"></span></span>
+                                <span>เลขที่: <span class="border-b border-slate-500 border-dotted inline-block w-12"></span></span>
+                                <span>วันที่: <span class="border-b border-slate-500 border-dotted inline-block w-24"></span></span>
+                            </div>
+                            <span class="text-pink-400 font-bold whitespace-nowrap bg-pink-500/10 px-3 py-1 rounded border border-pink-500/20">[ ได้: _____ / 10 ]</span>
+                        </div>
+
+                        <div class="space-y-5">
+                            <!-- ตอนที่ 1 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-pink-300 mb-2">ตอนที่ 1: สัญลักษณ์และหน้าที่ของอุปกรณ์ (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-col gap-1">
+                                        <span>1.1 ไดโอด (Diode) ทำหน้าที่:</span>
+                                        <div class="pl-4 border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div>
+                                    </li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>1.2 ไดโอดเปล่งแสง (LED) มีข้อดีกว่าหลอดไฟไส้ธรรมดาอย่างไร?</span>
+                                        <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
+                                    </li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>1.3 ตัวเก็บประจุ (Capacitor) ทำหน้าที่:</span>
+                                        <div class="pl-4 border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 2 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-pink-300 mb-2">ตอนที่ 2: ตัวต้านทานไวแสง (LDR) (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-wrap items-end gap-1">2.1 LDR ย่อมาจาก Light Dependent Resistor เมื่อมีแสงสว่างส่อง ค่าความต้านทานจะ (เพิ่มขึ้น / ลดลง) <div class="border-b border-dotted border-slate-500 flex-grow min-w-[50px]"></div></li>
+                                    <li class="flex flex-wrap items-end gap-1">2.2 เมื่ออยู่ในที่มืดสนิท ค่าความต้านทานของ LDR จะ (เพิ่มขึ้น / ลดลง) <div class="border-b border-dotted border-slate-500 flex-grow min-w-[50px]"></div></li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 3 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-pink-300 mb-2">ตอนที่ 3: การทำงานของทรานซิสเตอร์ (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-wrap items-end gap-1">3.1 ทรานซิสเตอร์มี 3 ขา ได้แก่ ขาเบส (B), ขาคอลเล็กเตอร์ (C) และขา <div class="border-b border-dotted border-slate-500 flex-grow min-w-[50px]"></div> (E)</li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>3.2 ในวงจรอิเล็กทรอนิกส์ ทรานซิสเตอร์นิยมนำมาทำหน้าที่หลักเป็น:</span>
+                                        <div class="pl-4 border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 4 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-pink-300 mb-2">ตอนที่ 4: การประยุกต์ใช้วงจรอิเล็กทรอนิกส์ (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-col gap-1">
+                                        <span>4.1 อธิบายการทำงานของวงจรเปิดไฟอัตโนมัติเมื่อมืด (ใช้ LDR ร่วมกับทรานซิสเตอร์):</span>
+                                        <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
+                                    </li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>4.2 เพราะเหตุใดจึงต้องต่อตัวต้านทานอนุกรมป้องกันไว้หน้าหลอด LED เสมอ?</span>
+                                        <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- ================= WEEK 13 ================= -->
             <div id="week13-content" class="week-content hidden flex-col gap-5">
                 <div class="bg-slate-900 rounded-3xl p-6 shadow-xl border border-slate-800 relative overflow-hidden">
@@ -3581,6 +3905,14 @@
                 titleEl.innerText = 'ทบทวนและวัดผลกลางภาค';
                 subtitleEl.innerText = 'สัปดาห์ที่ 10';
                 subtitleEl.className = 'text-[10px] font-bold text-red-400 tracking-wider uppercase mb-0.5';
+            } else if (weekKey === 'week11') {
+                titleEl.innerText = 'การต่อตัวต้านทานอนุกรมและขนาน';
+                subtitleEl.innerText = 'สัปดาห์ที่ 11';
+                subtitleEl.className = 'text-[10px] font-bold text-lime-400 tracking-wider uppercase mb-0.5';
+            } else if (weekKey === 'week12') {
+                titleEl.innerText = 'ชิ้นส่วนและวงจรอิเล็กทรอนิกส์เบื้องต้น';
+                subtitleEl.innerText = 'สัปดาห์ที่ 12';
+                subtitleEl.className = 'text-[10px] font-bold text-pink-400 tracking-wider uppercase mb-0.5';
             } else if (weekKey === 'week13') {
                 titleEl.innerText = 'กำลังไฟฟ้าและพลังงานไฟฟ้า';
                 subtitleEl.innerText = 'สัปดาห์ที่ 13';
@@ -3625,7 +3957,7 @@
                 activeContent.classList.remove('hidden');
                 activeContent.classList.add('flex');
                 
-                const iframeId = weekKey === 'week1' ? 'iframe-w1' : weekKey === 'week2' ? 'iframe-w2' : weekKey === 'week3' ? 'iframe-w3' : weekKey === 'week4' ? 'iframe-w4' : weekKey === 'week5' ? 'iframe-w5' : weekKey === 'week6' ? 'iframe-w6' : weekKey === 'week7' ? 'iframe-w7' : weekKey === 'week8' ? 'iframe-w8' : weekKey === 'week9' ? 'iframe-w9' : weekKey === 'week13' ? 'iframe-w13' : weekKey === 'week14' ? 'iframe-w14' : weekKey === 'week15' ? 'iframe-w15' : weekKey === 'week16' ? 'iframe-w16' : weekKey === 'week17' ? 'iframe-w17' : weekKey === 'week18' ? 'iframe-w18' : weekKey === 'week19' ? 'iframe-w19' : 'iframe-w9';
+                const iframeId = weekKey === 'week1' ? 'iframe-w1' : weekKey === 'week2' ? 'iframe-w2' : weekKey === 'week3' ? 'iframe-w3' : weekKey === 'week4' ? 'iframe-w4' : weekKey === 'week5' ? 'iframe-w5' : weekKey === 'week6' ? 'iframe-w6' : weekKey === 'week7' ? 'iframe-w7' : weekKey === 'week8' ? 'iframe-w8' : weekKey === 'week9' ? 'iframe-w9' : weekKey === 'week11' ? 'iframe-w11' : weekKey === 'week12' ? 'iframe-w12' : weekKey === 'week13' ? 'iframe-w13' : weekKey === 'week14' ? 'iframe-w14' : weekKey === 'week15' ? 'iframe-w15' : weekKey === 'week16' ? 'iframe-w16' : weekKey === 'week17' ? 'iframe-w17' : weekKey === 'week18' ? 'iframe-w18' : weekKey === 'week19' ? 'iframe-w19' : 'iframe-w9';
                 const iframe = document.getElementById(iframeId);
                 if (iframe && iframe.src === window.location.href || iframe.src === '') {
                      iframe.src = iframe.getAttribute('data-src');
