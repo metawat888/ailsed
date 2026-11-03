@@ -370,66 +370,64 @@
                         </div>
                     </div>
 
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION: Exam (Replaced Class Gallery) -->
-        <section id="exam" class="page-section p-4 md:p-6 lg:p-8 pb-[120px] md:pb-[120px] lg:pb-[120px] flex-col relative z-10 w-full max-w-full mx-auto flex-grow">
-            <div class="max-w-[1800px] w-full mx-auto flex flex-col gap-6">
-                <!-- Header -->
-                <div class="flex items-center gap-3 md:gap-4 bg-glass-dark rounded-2xl shadow-lg px-4 md:px-6 py-4 border border-slate-700/80">
-                    <div class="w-10 h-10 md:w-12 md:h-12 bg-[#ef4444]/20 rounded-full flex items-center justify-center shrink-0">
-                        <i class="fa-solid fa-file-signature text-[#ef4444] text-lg md:text-xl drop-shadow"></i>
-                    </div>
-                    <div>
-                        <h2 class="text-lg md:text-2xl font-bold text-white tracking-wide">คลังข้อสอบ</h2>
-                        <p class="text-xs md:text-sm font-medium text-slate-400 mt-0.5">รวมแบบทดสอบและข้อสอบย้อนหลัง</p>
-                    </div>
-                </div>
-
-                <!-- Exam Cards Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mx-auto w-full">
-                    
-                    <!-- Card 1 -->
-                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-5 shadow-lg border border-slate-700/50 hover:border-red-500/50 hover:shadow-red-500/10 transition-all duration-300 cursor-pointer flex items-center gap-4 group active:scale-[0.98]" onclick="openIframeModal('about:blank', 'ข้อสอบกลางภาค ม.3')">
-                        <div class="w-14 h-14 rounded-2xl bg-red-500/10 text-red-400 flex items-center justify-center text-2xl shrink-0 border border-red-500/20 group-hover:scale-105 transition-transform shadow-inner">
-                            <i class="fa-solid fa-file-pen"></i>
-                        </div>
-                        <div class="flex flex-col flex-grow">
-                            <h3 class="font-bold text-white text-base md:text-lg line-clamp-1 group-hover:text-red-300 transition-colors">ข้อสอบกลางภาค ม.3</h3>
-                            <span class="text-[11px] sm:text-xs text-slate-400 mt-1"><i class="fa-regular fa-clock mr-1 text-slate-500"></i>60 นาที • 40 ข้อ</span>
-                        </div>
-                        <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-red-500/30 group-hover:text-red-300 transition-colors shrink-0">
-                            <i class="fa-solid fa-chevron-right text-sm"></i>
+                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-rose-500/50 hover:shadow-rose-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week7')">
+                        <div class="flex items-center gap-4 w-full">
+                            <div class="w-12 h-12 rounded-2xl bg-rose-500/20 text-rose-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-rose-500/20">
+                                <i class="fa-solid fa-lightbulb"></i>
+                            </div>
+                            <div class="flex flex-col gap-1 flex-grow">
+                                <span class="text-[10px] sm:text-xs font-bold text-rose-400 bg-rose-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-rose-800/50">สัปดาห์ที่ 7</span>
+                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">STEM การแก้ปัญหาเคมี</h3>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-rose-500/30 group-hover:text-rose-300 transition-colors shrink-0">
+                                <i class="fa-solid fa-chevron-right text-sm"></i>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Card 2 -->
-                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-5 shadow-lg border border-slate-700/50 hover:border-red-500/50 hover:shadow-red-500/10 transition-all duration-300 cursor-pointer flex items-center gap-4 group active:scale-[0.98]" onclick="openIframeModal('about:blank', 'ข้อสอบปลายภาค ม.3')">
-                        <div class="w-14 h-14 rounded-2xl bg-red-500/10 text-red-400 flex items-center justify-center text-2xl shrink-0 border border-red-500/20 group-hover:scale-105 transition-transform shadow-inner">
-                            <i class="fa-solid fa-file-circle-check"></i>
-                        </div>
-                        <div class="flex flex-col flex-grow">
-                            <h3 class="font-bold text-white text-base md:text-lg line-clamp-1 group-hover:text-red-300 transition-colors">ข้อสอบปลายภาค ม.3</h3>
-                            <span class="text-[11px] sm:text-xs text-slate-400 mt-1"><i class="fa-regular fa-clock mr-1 text-slate-500"></i>60 นาที • 40 ข้อ</span>
-                        </div>
-                        <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-red-500/30 group-hover:text-red-300 transition-colors shrink-0">
-                            <i class="fa-solid fa-chevron-right text-sm"></i>
+                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-amber-500/50 hover:shadow-amber-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week8')">
+                        <div class="flex items-center gap-4 w-full">
+                            <div class="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-amber-500/20">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <div class="flex flex-col gap-1 flex-grow">
+                                <span class="text-[10px] sm:text-xs font-bold text-amber-400 bg-amber-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-amber-800/50">สัปดาห์ที่ 8</span>
+                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">ปริมาณทางไฟฟ้าและกฎโอห์ม</h3>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-amber-500/30 group-hover:text-amber-300 transition-colors shrink-0">
+                                <i class="fa-solid fa-chevron-right text-sm"></i>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Card 3 -->
-                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-5 shadow-lg border border-slate-700/50 hover:border-red-500/50 hover:shadow-red-500/10 transition-all duration-300 cursor-pointer flex items-center gap-4 group active:scale-[0.98]" onclick="openIframeModal('about:blank', 'O-NET วิทยาศาสตร์')">
-                        <div class="w-14 h-14 rounded-2xl bg-red-500/10 text-red-400 flex items-center justify-center text-2xl shrink-0 border border-red-500/20 group-hover:scale-105 transition-transform shadow-inner">
-                            <i class="fa-solid fa-award"></i>
+                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-teal-500/50 hover:shadow-teal-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week9')">
+                        <div class="flex items-center gap-4 w-full">
+                            <div class="w-12 h-12 rounded-2xl bg-teal-500/20 text-teal-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-teal-500/20">
+                                <i class="fa-solid fa-gauge-high"></i>
+                            </div>
+                            <div class="flex flex-col gap-1 flex-grow">
+                                <span class="text-[10px] sm:text-xs font-bold text-teal-400 bg-teal-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-teal-800/50">สัปดาห์ที่ 9</span>
+                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">เครื่องมือวัดทางไฟฟ้า</h3>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-teal-500/30 group-hover:text-teal-300 transition-colors shrink-0">
+                                <i class="fa-solid fa-chevron-right text-sm"></i>
+                            </div>
                         </div>
-                        <div class="flex flex-col flex-grow">
-                            <h3 class="font-bold text-white text-base md:text-lg line-clamp-1 group-hover:text-red-300 transition-colors">O-NET วิทยาศาสตร์</h3>
-                            <span class="text-[11px] sm:text-xs text-slate-400 mt-1"><i class="fa-solid fa-layer-group mr-1 text-slate-500"></i>รวมข้อสอบย้อนหลัง</span>
-                        </div>
-                        <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-red-500/30 group-hover:text-red-300 transition-colors shrink-0">
-                            <i class="fa-solid fa-chevron-right text-sm"></i>
+                    </div>
+
+                    <!-- สัปดาห์ที่ 10 -->
+                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-red-500/50 hover:shadow-red-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week10')">
+                        <div class="flex items-center gap-4 w-full">
+                            <div class="w-12 h-12 rounded-2xl bg-red-500/20 text-red-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-red-500/20">
+                                <i class="fa-solid fa-file-pen"></i>
+                            </div>
+                            <div class="flex flex-col gap-1 flex-grow">
+                                <span class="text-[10px] sm:text-xs font-bold text-red-400 bg-red-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-red-800/50">สัปดาห์ที่ 10</span>
+                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">ทบทวนและวัดผลกลางภาค</h3>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-red-500/30 group-hover:text-red-300 transition-colors shrink-0">
+                                <i class="fa-solid fa-chevron-right text-sm"></i>
+                            </div>
                         </div>
                     </div>
 
@@ -1373,6 +1371,500 @@
                 </div>
             </div>
 
+            <!-- ================= WEEK 7 ================= -->
+            <div id="week7-content" class="week-content hidden flex-col gap-5">
+                <div class="bg-slate-900 rounded-3xl p-6 shadow-xl border border-slate-800 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-rose-400 to-pink-500"></div>
+                    <div class="flex items-center gap-3.5 mb-4">
+                        <div class="w-10 h-10 rounded-2xl bg-rose-500/20 text-rose-400 flex items-center justify-center text-lg shadow-inner ring-1 ring-rose-500/30">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-base md:text-lg">ความหมายและกระบวนการ</h3>
+                    </div>
+                    <div class="text-slate-300 text-[14px] leading-relaxed space-y-3">
+                        <ul class="list-disc pl-5 space-y-2 mt-2">
+                            <li><strong class="text-rose-400">สะเต็มศึกษา (STEM Education):</strong> เป็นการบูรณาการความรู้ 4 สาขาวิชา ได้แก่ วิทยาศาสตร์ (Science), เทคโนโลยี (Technology), วิศวกรรมศาสตร์ (Engineering) และคณิตศาสตร์ (Mathematics)</li>
+                            <li><strong class="text-blue-400">กระบวนการแก้ปัญหา:</strong> วิเคราะห์ปัญหา ทำความเข้าใจปฏิกิริยาเคมีที่เกี่ยวข้อง แล้วเลือกใช้สารเคมีและเทคโนโลยีที่เหมาะสมในการสร้างหรือออกแบบวิธีการแก้ปัญหา</li>
+                            <li><strong class="text-emerald-400">ตัวอย่างการประยุกต์ใช้:</strong> การบำบัดน้ำเสียจากโรงอาหารโดยใช้ปฏิกิริยาสะเทินปรับค่า pH การออกแบบถังดักไขมัน</li>
+                        </ul>
+                        <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700 text-[13px] shadow-sm mt-3 text-slate-300">
+                            <span class="text-lg mr-1">📌</span> <span class="font-medium text-white">ตัวชี้วัด:</span> ว 2.1 ม.3/8 ออกแบบวิธีแก้ปัญหาในชีวิตประจำวัน โดยใช้ความรู้ปฏิกิริยาเคมี บูรณาการ STEM
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group cursor-pointer active:scale-[0.98] transition-all duration-300" onclick="window.open('https://ailab20.vercel.app/', '_blank')">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-rose-500 via-pink-500 to-red-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                    <div class="relative bg-gradient-to-r from-pink-600 via-rose-600 to-red-600 rounded-[24px] p-0.5 overflow-hidden shadow-xl">
+                        <div class="absolute inset-0 bg-white/10 group-hover:translate-x-full transform -translate-x-full transition-transform duration-700 ease-out skew-x-12"></div>
+                        <div class="bg-slate-900/40 backdrop-blur-sm rounded-[22px] px-5 py-4 flex items-center gap-4 border border-white/10">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center shadow-inner shrink-0 text-white group-hover:rotate-12 transition-transform duration-300">
+                                <i class="fa-solid fa-flask-vial text-2xl drop-shadow"></i>
+                            </div>
+                            <div class="flex flex-col text-left flex-grow">
+                                <span class="text-white font-extrabold text-[16px] tracking-wide drop-shadow-md">เข้าทดลอง Ai Lab 20</span>
+                                <span class="text-slate-200 text-[11px] mt-0.5 font-medium tracking-wide">กิจกรรมออกแบบชิ้นงานแก้ปัญหาจากปฏิกิริยาเคมี <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[9px]"></i></span>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-chevron-right text-white/90 text-sm group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 p-5 rounded-3xl shadow-xl border border-slate-800 flex flex-col gap-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center border border-red-500/30">
+                            <i class="fa-brands fa-youtube text-base"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-[15px]">วิดีโอสรุปความรู้</h4>
+                    </div>
+                    <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-inner border border-slate-800 bg-black relative">
+                        <iframe id="iframe-w7" class="youtube-iframe w-full h-full relative z-10" data-src="https://www.youtube.com/embed/Xsp580hKaGY?list=PLLdRpXXfHAWahU29pe8l8b005oMZXzaMn" src="" title="วิดีโอสรุปความรู้" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!-- ใบงานสัปดาห์ที่ 7 -->
+                <div class="bg-slate-900 p-5 rounded-3xl shadow-xl border border-slate-800 flex flex-col gap-4">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center border border-indigo-500/30">
+                                <i class="fa-solid fa-file-signature text-sm"></i>
+                            </div>
+                            <h4 class="font-bold text-white text-[15px]">ใบงานประกอบการเรียน</h4>
+                        </div>
+                        <button class="text-[10px] font-semibold text-indigo-400 bg-indigo-500/20 px-2.5 py-1 rounded-lg border border-indigo-500/30 hover:bg-indigo-500/40 transition-colors" onclick="const ws = document.getElementById('worksheet-w7-content'); ws.classList.toggle('hidden');">
+                            แสดง/ซ่อน ใบงาน
+                        </button>
+                    </div>
+                    
+                    <div id="worksheet-w7-content" class="bg-slate-800/60 p-4 sm:p-5 rounded-2xl border border-slate-700/80 text-slate-300 text-[13px] leading-relaxed font-sarabun shadow-inner">
+                        <div class="text-center mb-5">
+                            <h5 class="font-bold text-white text-[15px] sm:text-base">ใบงานการจัดการเรียนรู้ รายวิชาวิทยาศาสตร์ 6 (ว23102)</h5>
+                            <h6 class="font-bold text-slate-200 mt-1">ชั้น ม.3 ภาคเรียนที่ 2</h6>
+                            <h6 class="font-bold text-rose-400 mt-1">สัปดาห์ที่ 7 : การแก้ปัญหาด้วยความรู้ทางเคมี (STEM Integration)</h6>
+                            <p class="text-[11px] sm:text-xs text-slate-400 mt-2 font-medium">ตัวชี้วัด: ว 2.1 ม.3/8 ออกแบบวิธีแก้ปัญหาในชีวิตประจำวัน โดยใช้ความรู้ปฏิกิริยาเคมี บูรณาการ STEM</p>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-x-4 gap-y-2 mb-6 text-[12px] text-slate-400 justify-between items-end border-b border-slate-700/80 pb-4">
+                            <div class="flex flex-wrap gap-x-4 gap-y-2 flex-grow">
+                                <span>ชื่อ-สกุล: <span class="border-b border-slate-500 border-dotted inline-block w-32 sm:w-48"></span></span>
+                                <span>ชั้น ม.3/<span class="border-b border-slate-500 border-dotted inline-block w-12"></span></span>
+                                <span>เลขที่: <span class="border-b border-slate-500 border-dotted inline-block w-12"></span></span>
+                                <span>วันที่: <span class="border-b border-slate-500 border-dotted inline-block w-24"></span></span>
+                            </div>
+                            <span class="text-rose-400 font-bold whitespace-nowrap bg-rose-500/10 px-3 py-1 rounded border border-rose-500/20">[ ได้: _____ / 10 ]</span>
+                        </div>
+
+                        <div class="space-y-5">
+                            <!-- ตอนที่ 1 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-rose-300 mb-2">ตอนที่ 1: วิเคราะห์ปัญหา (S - Science) (2.5 คะแนน)</h6>
+                                <p class="text-slate-400 mb-2 text-[12px]"><span class="text-white font-medium">สถานการณ์:</span> น้ำทิ้งจากโรงอาหารมีความเป็นกรดจากเศษอาหารบูดเน่า และมีคราบไขมันอุดตันท่อระบายน้ำ</p>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-col gap-1">
+                                        <span>1.1 สาเหตุที่ทำให้น้ำทิ้งมีค่า pH ต่ำกว่า 7 (เป็นกรด) เกิดจาก:</span>
+                                        <div class="pl-4 border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div>
+                                    </li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>1.2 ผลกระทบต่อสิ่งแวดล้อมและท่อระบายน้ำ คือ:</span>
+                                        <div class="pl-4 border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 2 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-rose-300 mb-2">ตอนที่ 2: เลือกใช้สารเคมีและเทคโนโลยี (T & M) (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-col gap-1">
+                                        <span>2.1 จะใช้ปฏิกิริยาเคมีใดเพื่อปรับสภาพน้ำกรดให้เป็นกลาง?</span>
+                                        <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
+                                    </li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>2.2 สารในครัวเรือนที่มีสมบัติเป็นเบส ปลอดภัย และหาได้ง่ายเพื่อใช้สะเทินกรด คือ:</span>
+                                        <div class="pl-4 border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 3 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-rose-300 mb-2">ตอนที่ 3: กระบวนการออกแบบเชิงวิศวกรรม (E - Engineering) (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li>3.1 ออกแบบขั้นตอนการทำงานของถังบำบัดน้ำเสีย 2 ขั้นตอนหลัก:</li>
+                                    <li class="pl-4 grid grid-cols-1 sm:grid-cols-2 gap-2 text-slate-400">
+                                        <span class="flex items-end gap-1">ขั้นที่ 1 (ดักไขมัน): <div class="border-b border-dotted border-slate-500 flex-grow"></div></span>
+                                        <span class="flex items-end gap-1">ขั้นที่ 2 (ปรับสภาพกรด): <div class="border-b border-dotted border-slate-500 flex-grow"></div></span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 4 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-rose-300 mb-2">ตอนที่ 4: การประเมินผลและการพัฒนา (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-col gap-1">
+                                        <span>4.1 วิธีการทดสอบว่าน้ำที่ผ่านการบำบัดแล้วมีสภาพเป็นกลางจริงหรือไม่ ทำได้อย่างไร?</span>
+                                        <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= WEEK 8 ================= -->
+            <div id="week8-content" class="week-content hidden flex-col gap-5">
+                <div class="bg-slate-900 rounded-3xl p-6 shadow-xl border border-slate-800 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-amber-400 to-yellow-500"></div>
+                    <div class="flex items-center gap-3.5 mb-4">
+                        <div class="w-10 h-10 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg shadow-inner ring-1 ring-amber-500/30">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-base md:text-lg">ความหมายและกฎของโอห์ม</h3>
+                    </div>
+                    <div class="text-slate-300 text-[14px] leading-relaxed space-y-3">
+                        <ul class="list-disc pl-5 space-y-2 mt-2">
+                            <li><strong class="text-blue-400">กระแสไฟฟ้า (I):</strong> ปริมาณประจุไฟฟ้าที่เคลื่อนที่ผ่านพื้นที่หน้าตัดใน 1 หน่วยเวลา (หน่วย: แอมแปร์)</li>
+                            <li><strong class="text-amber-400">ความต่างศักย์ไฟฟ้า (V):</strong> พลังงานที่ใช้ในการเคลื่อนย้ายประจุไฟฟ้าระหว่างจุด 2 จุด (หน่วย: โวลต์)</li>
+                            <li><strong class="text-red-400">ความต้านทานไฟฟ้า (R):</strong> สมบัติการต้านการไหลของกระแสไฟฟ้าของตัวนำ (หน่วย: โอห์ม)</li>
+                            <li><strong class="text-emerald-400">กฎของโอห์ม (Ohm's Law):</strong> อธิบายความสัมพันธ์ระหว่าง V, I และ R โดยมีสูตรคือ <code class="bg-amber-900/50 text-amber-400 px-1 py-0.5 rounded border border-amber-800/50">V = IR</code></li>
+                        </ul>
+                        <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700 text-[13px] shadow-sm mt-3 text-slate-300">
+                            <span class="text-lg mr-1">📌</span> <span class="font-medium text-white">ตัวชี้วัด:</span> ว 2.3 ม.3/1, ม.3/2 วิเคราะห์ความสัมพันธ์ V, I, R และเขียนกราฟ
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="relative group cursor-pointer active:scale-[0.98] transition-all duration-300 h-full" onclick="window.open('https://ailab09.vercel.app/', '_blank')">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 via-yellow-500 to-orange-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                        <div class="relative bg-gradient-to-r from-yellow-600 via-amber-600 to-orange-600 rounded-[24px] p-0.5 overflow-hidden shadow-xl h-full">
+                            <div class="absolute inset-0 bg-white/10 group-hover:translate-x-full transform -translate-x-full transition-transform duration-700 ease-out skew-x-12"></div>
+                            <div class="bg-slate-900/40 backdrop-blur-sm rounded-[22px] px-4 py-4 flex items-center gap-3 border border-white/10 h-full">
+                                <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center shadow-inner shrink-0 text-white group-hover:rotate-12 transition-transform duration-300">
+                                    <i class="fa-solid fa-bolt text-xl drop-shadow"></i>
+                                </div>
+                                <div class="flex flex-col text-left flex-grow">
+                                    <span class="text-white font-extrabold text-[14px] sm:text-[15px] tracking-wide drop-shadow-md">เข้าทดลอง Ai Lab 09</span>
+                                    <span class="text-slate-200 text-[10px] mt-0.5 font-medium tracking-wide line-clamp-1">กฎของโอห์ม (V=IR) <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[8px]"></i></span>
+                                </div>
+                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-chevron-right text-white/90 text-[10px] group-hover:translate-x-1 transition-transform"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative group cursor-pointer active:scale-[0.98] transition-all duration-300 h-full" onclick="window.open('https://ailab14.vercel.app/', '_blank')">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 via-yellow-500 to-orange-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                        <div class="relative bg-gradient-to-r from-yellow-600 via-amber-600 to-orange-600 rounded-[24px] p-0.5 overflow-hidden shadow-xl h-full">
+                            <div class="absolute inset-0 bg-white/10 group-hover:translate-x-full transform -translate-x-full transition-transform duration-700 ease-out skew-x-12"></div>
+                            <div class="bg-slate-900/40 backdrop-blur-sm rounded-[22px] px-4 py-4 flex items-center gap-3 border border-white/10 h-full">
+                                <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center shadow-inner shrink-0 text-white group-hover:rotate-12 transition-transform duration-300">
+                                    <i class="fa-solid fa-plug text-xl drop-shadow"></i>
+                                </div>
+                                <div class="flex flex-col text-left flex-grow">
+                                    <span class="text-white font-extrabold text-[14px] sm:text-[15px] tracking-wide drop-shadow-md">เข้าทดลอง Ai Lab 14</span>
+                                    <span class="text-slate-200 text-[10px] mt-0.5 font-medium tracking-wide line-clamp-1">วงจรไฟฟ้าและการต่อวงจร <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[8px]"></i></span>
+                                </div>
+                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-chevron-right text-white/90 text-[10px] group-hover:translate-x-1 transition-transform"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 p-5 rounded-3xl shadow-xl border border-slate-800 flex flex-col gap-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center border border-red-500/30">
+                            <i class="fa-brands fa-youtube text-base"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-[15px]">วิดีโอสรุปความรู้</h4>
+                    </div>
+                    <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-inner border border-slate-800 bg-black relative">
+                        <iframe id="iframe-w8" class="youtube-iframe w-full h-full relative z-10" data-src="https://www.youtube.com/embed/C_AricAZoX8" src="" title="วิดีโอสรุปความรู้" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!-- ใบงานสัปดาห์ที่ 8 -->
+                <div class="bg-slate-900 p-5 rounded-3xl shadow-xl border border-slate-800 flex flex-col gap-4">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center border border-indigo-500/30">
+                                <i class="fa-solid fa-file-signature text-sm"></i>
+                            </div>
+                            <h4 class="font-bold text-white text-[15px]">ใบงานประกอบการเรียน</h4>
+                        </div>
+                        <button class="text-[10px] font-semibold text-indigo-400 bg-indigo-500/20 px-2.5 py-1 rounded-lg border border-indigo-500/30 hover:bg-indigo-500/40 transition-colors" onclick="const ws = document.getElementById('worksheet-w8-content'); ws.classList.toggle('hidden');">
+                            แสดง/ซ่อน ใบงาน
+                        </button>
+                    </div>
+                    
+                    <div id="worksheet-w8-content" class="bg-slate-800/60 p-4 sm:p-5 rounded-2xl border border-slate-700/80 text-slate-300 text-[13px] leading-relaxed font-sarabun shadow-inner">
+                        <div class="text-center mb-5">
+                            <h5 class="font-bold text-white text-[15px] sm:text-base">ใบงานการจัดการเรียนรู้ รายวิชาวิทยาศาสตร์ 6 (ว23102)</h5>
+                            <h6 class="font-bold text-slate-200 mt-1">ชั้น ม.3 ภาคเรียนที่ 2</h6>
+                            <h6 class="font-bold text-amber-400 mt-1">สัปดาห์ที่ 8 : ปริมาณทางไฟฟ้าและกฎของโอห์ม (V = IR)</h6>
+                            <p class="text-[11px] sm:text-xs text-slate-400 mt-2 font-medium">ตัวชี้วัด: ว 2.3 ม.3/1 วิเคราะห์ความสัมพันธ์ V, I, R และคำนวณโดยใช้ V = IR, ว 2.3 ม.3/2 เขียนกราฟ...</p>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-x-4 gap-y-2 mb-6 text-[12px] text-slate-400 justify-between items-end border-b border-slate-700/80 pb-4">
+                            <div class="flex flex-wrap gap-x-4 gap-y-2 flex-grow">
+                                <span>ชื่อ-สกุล: <span class="border-b border-slate-500 border-dotted inline-block w-32 sm:w-48"></span></span>
+                                <span>ชั้น ม.3/<span class="border-b border-slate-500 border-dotted inline-block w-12"></span></span>
+                                <span>เลขที่: <span class="border-b border-slate-500 border-dotted inline-block w-12"></span></span>
+                                <span>วันที่: <span class="border-b border-slate-500 border-dotted inline-block w-24"></span></span>
+                            </div>
+                            <span class="text-amber-400 font-bold whitespace-nowrap bg-amber-500/10 px-3 py-1 rounded border border-amber-500/20">[ ได้: _____ / 10 ]</span>
+                        </div>
+
+                        <div class="space-y-5">
+                            <!-- ตอนที่ 1 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-amber-300 mb-2">ตอนที่ 1: ปริมาณทางไฟฟ้าและหน่วยวัด (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-wrap items-end gap-1">1.1 กระแสไฟฟ้า (I) มีหน่วยเป็น: <div class="border-b border-dotted border-slate-500 flex-grow min-w-[50px]"></div> สัญลักษณ์หน่วยคือ: <div class="border-b border-dotted border-slate-500 flex-grow min-w-[50px]"></div></li>
+                                    <li class="flex flex-wrap items-end gap-1">1.2 ความต่างศักย์ไฟฟ้า (V) มีหน่วยเป็น: <div class="border-b border-dotted border-slate-500 flex-grow min-w-[50px]"></div> สัญลักษณ์หน่วยคือ: <div class="border-b border-dotted border-slate-500 flex-grow min-w-[50px]"></div></li>
+                                    <li class="flex flex-wrap items-end gap-1">1.3 ความต้านทานไฟฟ้า (R) มีหน่วยเป็น: <div class="border-b border-dotted border-slate-500 flex-grow min-w-[50px]"></div> สัญลักษณ์หน่วยคือ: <div class="border-b border-dotted border-slate-500 flex-grow min-w-[50px]"></div></li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 2 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-amber-300 mb-2">ตอนที่ 2: ความสัมพันธ์ตามกฎของโอห์ม (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-col gap-1">
+                                        <span>2.1 เขียนสูตรความสัมพันธ์ตามกฎของโอห์ม:</span>
+                                        <div class="pl-4 border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div>
+                                    </li>
+                                    <li class="flex flex-wrap items-end gap-1">2.2 ถ้าความต้านทานคงที่ เมื่อความต่างศักย์เพิ่มขึ้น กระแสไฟฟ้าจะ (เพิ่มขึ้น / ลดลง) <div class="border-b border-dotted border-slate-500 flex-grow min-w-[50px]"></div></li>
+                                    <li class="flex flex-wrap items-end gap-1">2.3 ถ้าความต่างศักย์คงที่ เมื่อเพิ่มความต้านทานขึ้น กระแสไฟฟ้าจะ (เพิ่มขึ้น / ลดลง) <div class="border-b border-dotted border-slate-500 flex-grow min-w-[50px]"></div></li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 3 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-amber-300 mb-2">ตอนที่ 3: การแปลความหมายจากกราฟ (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-col gap-1">
+                                        <span>3.1 กราฟความสัมพันธ์ระหว่างความต่างศักย์ (V) บนแกนตั้ง และกระแสไฟฟ้า (I) บนแกนนอน จะมีลักษณะเป็นเส้นแบบใด?</span>
+                                        <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
+                                    </li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>3.2 ความชัน (Slope) ของกราฟ V-I แสดงถึงปริมาณใดทางไฟฟ้า?</span>
+                                        <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 4 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-amber-300 mb-2">ตอนที่ 4: การคำนวณตามกฎของโอห์ม (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-col gap-1">
+                                        <span>4.1 หลอดไฟ 50 โอห์ม ต่อกับแหล่งกำเนิด 220 โวลต์ มีกระแสไหลผ่านเท่าใด?</span>
+                                        <div class="pl-4 grid grid-cols-1 sm:grid-cols-2 gap-2 text-slate-400">
+                                            <span class="flex items-end gap-1">วิธีคิด: <div class="border-b border-dotted border-slate-500 flex-grow"></div></span>
+                                            <span class="flex items-end gap-1">ตอบ: <div class="border-b border-dotted border-slate-500 flex-grow"></div></span>
+                                        </div>
+                                    </li>
+                                    <li class="flex flex-col gap-1 mt-2">
+                                        <span>4.2 ลวดความร้อนมีกระแสไหลผ่าน 2 แอมแปร์ เมื่อวัดความต่างศักย์ได้ 24 โวลต์ ลวดนี้มีความต้านทานกี่โอห์ม?</span>
+                                        <div class="pl-4 grid grid-cols-1 sm:grid-cols-2 gap-2 text-slate-400">
+                                            <span class="flex items-end gap-1">วิธีคิด: <div class="border-b border-dotted border-slate-500 flex-grow"></div></span>
+                                            <span class="flex items-end gap-1">ตอบ: <div class="border-b border-dotted border-slate-500 flex-grow"></div></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= WEEK 9 ================= -->
+            <div id="week9-content" class="week-content hidden flex-col gap-5">
+                <div class="bg-slate-900 rounded-3xl p-6 shadow-xl border border-slate-800 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-teal-400 to-emerald-500"></div>
+                    <div class="flex items-center gap-3.5 mb-4">
+                        <div class="w-10 h-10 rounded-2xl bg-teal-500/20 text-teal-400 flex items-center justify-center text-lg shadow-inner ring-1 ring-teal-500/30">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-base md:text-lg">ความหมายและการใช้งาน</h3>
+                    </div>
+                    <div class="text-slate-300 text-[14px] leading-relaxed space-y-3">
+                        <ul class="list-disc pl-5 space-y-2 mt-2">
+                            <li><strong class="text-teal-400">แอมมิเตอร์ (Ammeter):</strong> ใช้สำหรับวัดปริมาณ <span class="text-white font-medium">กระแสไฟฟ้า</span> ในวงจร โดยต้องต่อแบบ <span class="text-rose-400 font-medium">อนุกรม (Series)</span> กับอุปกรณ์เสมอ (ห้ามต่อขนานกับแหล่งกำเนิด)</li>
+                            <li><strong class="text-cyan-400">โวลต์มิเตอร์ (Voltmeter):</strong> ใช้สำหรับวัด <span class="text-white font-medium">ความต่างศักย์ไฟฟ้า</span> หรือแรงดันไฟฟ้า โดยต้องต่อแบบ <span class="text-emerald-400 font-medium">ขนาน (Parallel)</span> คร่อมจุดหรืออุปกรณ์ที่ต้องการวัดเสมอ</li>
+                            <li><strong class="text-amber-400">มัลติมิเตอร์ (Multimeter):</strong> เครื่องมือวัดที่รวมความสามารถของทั้งแอมมิเตอร์ โวลต์มิเตอร์ และโอห์มมิเตอร์ ไว้ในเครื่องเดียว สะดวกต่อการใช้งาน</li>
+                        </ul>
+                        <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700 text-[13px] shadow-sm mt-3 text-slate-300">
+                            <span class="text-lg mr-1">📌</span> <span class="font-medium text-white">ตัวชี้วัด:</span> ว 2.3 ม.3/3 ใช้โวลต์มิเตอร์ แอมมิเตอร์ในการวัดปริมาณทางไฟฟ้า
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group cursor-pointer active:scale-[0.98] transition-all duration-300" onclick="window.open('https://ailab10.vercel.app/', '_blank')">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-teal-500 via-emerald-500 to-cyan-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                    <div class="relative bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 rounded-[24px] p-0.5 overflow-hidden shadow-xl">
+                        <div class="absolute inset-0 bg-white/10 group-hover:translate-x-full transform -translate-x-full transition-transform duration-700 ease-out skew-x-12"></div>
+                        <div class="bg-slate-900/40 backdrop-blur-sm rounded-[22px] px-5 py-4 flex items-center gap-4 border border-white/10">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center shadow-inner shrink-0 text-white group-hover:rotate-12 transition-transform duration-300">
+                                <i class="fa-solid fa-gauge-high text-2xl drop-shadow"></i>
+                            </div>
+                            <div class="flex flex-col text-left flex-grow">
+                                <span class="text-white font-extrabold text-[16px] tracking-wide drop-shadow-md">เข้าทดลอง Ai Lab 10</span>
+                                <span class="text-slate-200 text-[11px] mt-0.5 font-medium tracking-wide">ปฏิบัติการใช้แอมมิเตอร์และโวลต์มิเตอร์ <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[9px]"></i></span>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-chevron-right text-white/90 text-sm group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 p-5 rounded-3xl shadow-xl border border-slate-800 flex flex-col gap-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center border border-red-500/30">
+                            <i class="fa-brands fa-youtube text-base"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-[15px]">วิดีโอสรุปความรู้</h4>
+                    </div>
+                    <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-inner border border-slate-800 bg-black relative">
+                        <iframe id="iframe-w9" class="youtube-iframe w-full h-full relative z-10" data-src="https://www.youtube.com/embed/_AhVi6DxaF8" src="" title="วิดีโอสรุปความรู้" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!-- ใบงานสัปดาห์ที่ 9 -->
+                <div class="bg-slate-900 p-5 rounded-3xl shadow-xl border border-slate-800 flex flex-col gap-4">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center border border-indigo-500/30">
+                                <i class="fa-solid fa-file-signature text-sm"></i>
+                            </div>
+                            <h4 class="font-bold text-white text-[15px]">ใบงานประกอบการเรียน</h4>
+                        </div>
+                        <button class="text-[10px] font-semibold text-indigo-400 bg-indigo-500/20 px-2.5 py-1 rounded-lg border border-indigo-500/30 hover:bg-indigo-500/40 transition-colors" onclick="const ws = document.getElementById('worksheet-w9-content'); ws.classList.toggle('hidden');">
+                            แสดง/ซ่อน ใบงาน
+                        </button>
+                    </div>
+                    
+                    <div id="worksheet-w9-content" class="bg-slate-800/60 p-4 sm:p-5 rounded-2xl border border-slate-700/80 text-slate-300 text-[13px] leading-relaxed font-sarabun shadow-inner">
+                        <div class="text-center mb-5">
+                            <h5 class="font-bold text-white text-[15px] sm:text-base">ใบงานการจัดการเรียนรู้ รายวิชาวิทยาศาสตร์ 6 (ว23102)</h5>
+                            <h6 class="font-bold text-slate-200 mt-1">ชั้น ม.3 ภาคเรียนที่ 2</h6>
+                            <h6 class="font-bold text-teal-400 mt-1">สัปดาห์ที่ 9 : เครื่องมือวัดทางไฟฟ้า (แอมมิเตอร์และโวลต์มิเตอร์)</h6>
+                            <p class="text-[11px] sm:text-xs text-slate-400 mt-2 font-medium">ตัวชี้วัด: ว 2.3 ม.3/3 ใช้โวลต์มิเตอร์ แอมมิเตอร์ในการวัดปริมาณทางไฟฟ้า</p>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-x-4 gap-y-2 mb-6 text-[12px] text-slate-400 justify-between items-end border-b border-slate-700/80 pb-4">
+                            <div class="flex flex-wrap gap-x-4 gap-y-2 flex-grow">
+                                <span>ชื่อ-สกุล: <span class="border-b border-slate-500 border-dotted inline-block w-32 sm:w-48"></span></span>
+                                <span>ชั้น ม.3/<span class="border-b border-slate-500 border-dotted inline-block w-12"></span></span>
+                                <span>เลขที่: <span class="border-b border-slate-500 border-dotted inline-block w-12"></span></span>
+                                <span>วันที่: <span class="border-b border-slate-500 border-dotted inline-block w-24"></span></span>
+                            </div>
+                            <span class="text-teal-400 font-bold whitespace-nowrap bg-teal-500/10 px-3 py-1 rounded border border-teal-500/20">[ ได้: _____ / 10 ]</span>
+                        </div>
+
+                        <div class="space-y-5">
+                            <!-- ตอนที่ 1 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-teal-300 mb-2">ตอนที่ 1: หน้าที่และสัญลักษณ์เครื่องมือวัด (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-wrap items-end gap-1">1.1 แอมมิเตอร์ (Ammeter) ใช้วัด: <div class="border-b border-dotted border-slate-500 flex-grow min-w-[50px]"></div> สัญลักษณ์ในวงจร: <div class="border-b border-dotted border-slate-500 flex-grow min-w-[50px]"></div></li>
+                                    <li class="flex flex-wrap items-end gap-1">1.2 โวลต์มิเตอร์ (Voltmeter) ใช้วัด: <div class="border-b border-dotted border-slate-500 flex-grow min-w-[50px]"></div> สัญลักษณ์ในวงจร: <div class="border-b border-dotted border-slate-500 flex-grow min-w-[50px]"></div></li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>1.3 เครื่องมือวัดรวมที่วัดได้ทั้ง V, I, R ในเครื่องเดียวกัน เรียกว่า:</span>
+                                        <div class="pl-4 border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 2 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-teal-300 mb-2">ตอนที่ 2: การต่อเครื่องมือวัดในวงจร (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-wrap items-end gap-1">2.1 การต่อแอมมิเตอร์ต้องต่อแบบ: <div class="border-b border-dotted border-slate-500 flex-grow min-w-[50px]"></div> (อนุกรม / ขนาน) กับอุปกรณ์ที่ต้องการวัด</li>
+                                    <li class="flex flex-wrap items-end gap-1">2.2 การต่อโวลต์มิเตอร์ต้องต่อแบบ: <div class="border-b border-dotted border-slate-500 flex-grow min-w-[50px]"></div> (อนุกรม / ขนาน) คร่อมอุปกรณ์ที่ต้องการวัด</li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>2.3 เพราะเหตุใดจึงห้ามนำแอมมิเตอร์ไปต่อขนานกับแหล่งกำเนิดไฟฟ้า?</span>
+                                        <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 3 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-teal-300 mb-2">ตอนที่ 3: การอ่านค่าหน้าปัดแบบเข็ม (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-col gap-1">
+                                        <span>3.1 ตั้งย่านวัดกระแสสูงสุดไว้ที่ 5 A หากเข็มชี้ที่เลข 4 ในสเกลเต็ม 10 ค่ากระแสที่วัดได้คือเท่าใด?</span>
+                                        <div class="pl-4 grid grid-cols-1 sm:grid-cols-2 gap-2 text-slate-400">
+                                            <span class="flex items-end gap-1">วิธีคิด: <div class="border-b border-dotted border-slate-500 flex-grow"></div></span>
+                                            <span class="flex items-end gap-1">ตอบ: <div class="border-b border-dotted border-slate-500 flex-grow"></div></span>
+                                        </div>
+                                    </li>
+                                    <li class="flex flex-col gap-1 mt-2">
+                                        <span>3.2 ตั้งย่านวัดแรงดันสูงสุดไว้ที่ 300 V หากเข็มชี้ที่กึ่งกลางสเกล ค่าความต่างศักย์คือ:</span>
+                                        <div class="pl-4 border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 4 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-teal-300 mb-2">ตอนที่ 4: การวาดแผนภาพวงจรไฟฟ้า (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-col gap-1">
+                                        <span>4.1 จงวาดสัญลักษณ์แสดงการต่อวงจรไฟฟ้าอย่างง่าย ประกอบด้วย ถ่านไฟฉาย สวิตช์ หลอดไฟ แอมมิเตอร์ และโวลต์มิเตอร์:</span>
+                                        <div class="pl-2 mt-2 w-full">
+                                            <div class="border-2 border-dashed border-slate-600 rounded-xl bg-slate-900/30 min-h-[160px] sm:min-h-[200px] flex items-center justify-center text-slate-500 text-xs">
+                                                [ วาดแผนภาพสัญลักษณ์วงจรในกรอบด้านล่าง ]
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= WEEK 10 ================= -->
+            <div id="week10-content" class="week-content hidden flex-col gap-5">
+                <div class="bg-slate-900 rounded-3xl p-6 shadow-xl border border-slate-800 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-red-400 to-rose-600"></div>
+                    <div class="flex items-center gap-3.5 mb-4">
+                        <div class="w-10 h-10 rounded-2xl bg-red-500/20 text-red-400 flex items-center justify-center text-lg shadow-inner ring-1 ring-red-500/30">
+                            <i class="fa-solid fa-list-check"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-base md:text-lg">สรุปทบทวนเนื้อหาเพื่อสอบกลางภาค</h3>
+                    </div>
+                    <div class="text-slate-300 text-[14px] leading-relaxed space-y-3">
+                        <p class="font-medium text-white mb-2">ขอบข่ายเนื้อหาที่ใช้ในการสอบวัดผลกลางภาคเรียน (Midterm Examination):</p>
+                        <ul class="list-disc pl-5 space-y-2 mt-2">
+                            <li><strong class="text-blue-400">หน่วยที่ 1 วัสดุและปฏิกิริยาเคมี:</strong> สมบัติวัสดุ (พอลิเมอร์, เซรามิก, โลหะ, วัสดุผสม), กฎทรงมวล, การถ่ายโอนความร้อน (ดูด-คาย), ปฏิกิริยาเคมีในชีวิตประจำวัน (กรด-เบส-โลหะ-สนิม-การเผาไหม้) และผลกระทบต่อสิ่งแวดล้อม</li>
+                            <li><strong class="text-amber-400">หน่วยที่ 6 ไฟฟ้าเบื้องต้น:</strong> ปริมาณทางไฟฟ้า (กระแส, ความต่างศักย์, ความต้านทาน), กฎของโอห์ม ($V = IR$), การอ่านค่าและการใช้งานเครื่องมือวัด (แอมมิเตอร์และโวลต์มิเตอร์)</li>
+                        </ul>
+                        <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700 text-[13px] shadow-sm mt-4 text-slate-300">
+                            <span class="text-lg mr-1">🎯</span> <span class="font-medium text-white">ตัวชี้วัดที่ประเมิน:</span> ว 2.1 ม.3/1-8 และ ว 2.3 ม.3/1-3
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group cursor-pointer active:scale-[0.98] transition-all duration-300" onclick="navigateTo('exam', event); closeLessonDetail();">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-red-500 via-rose-500 to-pink-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500 animate-pulse"></div>
+                    <div class="relative bg-gradient-to-r from-rose-600 via-red-600 to-pink-600 rounded-[24px] p-0.5 overflow-hidden shadow-xl">
+                        <div class="absolute inset-0 bg-white/10 group-hover:translate-x-full transform -translate-x-full transition-transform duration-700 ease-out skew-x-12"></div>
+                        <div class="bg-slate-900/40 backdrop-blur-sm rounded-[22px] px-5 py-5 flex items-center gap-4 border border-white/10">
+                            <div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center shadow-inner shrink-0 text-white group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-file-pen text-3xl drop-shadow"></i>
+                            </div>
+                            <div class="flex flex-col text-left flex-grow">
+                                <span class="text-white font-extrabold text-[16px] sm:text-[18px] tracking-wide drop-shadow-md">แบบทดสอบวัดผลการเรียนรู้กลางภาคเรียน</span>
+                                <span class="text-rose-200 text-[12px] mt-1 font-medium tracking-wide">แตะเพื่อเข้าสู่เมนู "ข้อสอบ" (Midterm Exam) <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -1394,11 +1886,7 @@
                 <span id="iframe-modal-title" class="text-xs font-medium text-slate-400 font-inter tracking-wide truncate">Document Viewer</span>
             </div>
             <iframe id="modal-iframe" src="" class="w-full flex-grow border-0 bg-slate-950" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-    </div>
-
-    <!-- JavaScript Logic -->
-    <script>
+        <script>
         // Lesson Detail Modal Logic 
         function openLessonDetail(weekKey) {
             const titleEl = document.getElementById('lesson-detail-title');
@@ -1428,6 +1916,22 @@
                 titleEl.innerText = 'วัสดุในชีวิตประจำวัน';
                 subtitleEl.innerText = 'สัปดาห์ที่ 6';
                 subtitleEl.className = 'text-[10px] font-bold text-cyan-400 tracking-wider uppercase mb-0.5';
+            } else if (weekKey === 'week7') {
+                titleEl.innerText = 'STEM การแก้ปัญหาเคมี';
+                subtitleEl.innerText = 'สัปดาห์ที่ 7';
+                subtitleEl.className = 'text-[10px] font-bold text-rose-400 tracking-wider uppercase mb-0.5';
+            } else if (weekKey === 'week8') {
+                titleEl.innerText = 'ปริมาณทางไฟฟ้าและกฎของโอห์ม';
+                subtitleEl.innerText = 'สัปดาห์ที่ 8';
+                subtitleEl.className = 'text-[10px] font-bold text-amber-400 tracking-wider uppercase mb-0.5';
+            } else if (weekKey === 'week9') {
+                titleEl.innerText = 'เครื่องมือวัดทางไฟฟ้า';
+                subtitleEl.innerText = 'สัปดาห์ที่ 9';
+                subtitleEl.className = 'text-[10px] font-bold text-teal-400 tracking-wider uppercase mb-0.5';
+            } else if (weekKey === 'week10') {
+                titleEl.innerText = 'ทบทวนและวัดผลกลางภาค';
+                subtitleEl.innerText = 'สัปดาห์ที่ 10';
+                subtitleEl.className = 'text-[10px] font-bold text-red-400 tracking-wider uppercase mb-0.5';
             }
 
             document.querySelectorAll('.week-content').forEach(el => {
@@ -1440,7 +1944,7 @@
                 activeContent.classList.remove('hidden');
                 activeContent.classList.add('flex');
                 
-                const iframeId = weekKey === 'week1' ? 'iframe-w1' : weekKey === 'week2' ? 'iframe-w2' : weekKey === 'week3' ? 'iframe-w3' : weekKey === 'week4' ? 'iframe-w4' : weekKey === 'week5' ? 'iframe-w5' : 'iframe-w6';
+                const iframeId = weekKey === 'week1' ? 'iframe-w1' : weekKey === 'week2' ? 'iframe-w2' : weekKey === 'week3' ? 'iframe-w3' : weekKey === 'week4' ? 'iframe-w4' : weekKey === 'week5' ? 'iframe-w5' : weekKey === 'week6' ? 'iframe-w6' : weekKey === 'week7' ? 'iframe-w7' : weekKey === 'week8' ? 'iframe-w8' : 'iframe-w9';
                 const iframe = document.getElementById(iframeId);
                 if (iframe && iframe.src === window.location.href || iframe.src === '') {
                      iframe.src = iframe.getAttribute('data-src');
