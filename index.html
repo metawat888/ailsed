@@ -183,32 +183,28 @@
             <div class="max-w-[1800px] w-full mx-auto flex flex-col gap-6">
                 <!-- Header -->
                 <div class="flex items-center gap-3 md:gap-4 bg-glass-dark rounded-2xl shadow-lg px-4 md:px-6 py-4 border border-slate-700/80">
-                    <div class="w-10 h-10 md:w-12 md:h-12 bg-[#38bdf8]/20 rounded-full flex items-center justify-center shrink-0">
-                        <i class="fa-solid fa-square-root-variable text-[#38bdf8] text-lg md:text-xl drop-shadow"></i>
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-pink-500/20 rounded-full flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-square-root-variable text-pink-500 text-lg md:text-xl drop-shadow"></i>
                     </div>
                     <div>
                         <h2 class="text-lg md:text-2xl font-bold text-white tracking-wide">Math Lab</h2>
-                        <p class="text-xs md:text-sm font-medium text-slate-400 mt-0.5">คลังเครื่องมือและห้องปฏิบัติการคณิตศาสตร์</p>
+                        <p class="text-xs md:text-sm font-medium text-slate-400 mt-0.5">ห้องปฏิบัติการคณิตศาสตร์</p>
                     </div>
                 </div>
-
-                <!-- Math Lab Cards Grid -->
+                <!-- Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mx-auto w-full">
-                    
-                    <!-- Card 1: IQ Math -->
-                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-5 shadow-lg border border-slate-700/50 hover:border-sky-500/50 hover:shadow-sky-500/10 transition-all duration-300 cursor-pointer flex items-center gap-4 group active:scale-[0.98]" onclick="openIframeModal('https://180iqmath.vercel.app/', '1. IQ math')">
-                        <div class="w-14 h-14 rounded-2xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-2xl shrink-0 border border-sky-500/20 group-hover:scale-105 transition-transform shadow-inner">
+                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-5 shadow-lg border border-slate-700/50 hover:border-pink-500/50 hover:shadow-pink-500/10 transition-all duration-300 cursor-pointer flex items-center gap-4 group active:scale-[0.98]" onclick="window.open('https://180iqmath.vercel.app/', '_blank')">
+                        <div class="w-14 h-14 rounded-2xl bg-pink-500/10 text-pink-400 flex items-center justify-center text-2xl shrink-0 border border-pink-500/20 group-hover:scale-105 transition-transform shadow-inner">
                             <i class="fa-solid fa-brain"></i>
                         </div>
                         <div class="flex flex-col flex-grow">
-                            <h3 class="font-bold text-white text-base md:text-lg line-clamp-1 group-hover:text-sky-300 transition-colors">1. IQ math</h3>
-                            <span class="text-[11px] sm:text-xs text-slate-400 mt-1"><i class="fa-solid fa-globe mr-1 text-slate-500"></i>ฝึกทักษะและคำนวณ 180 IQ</span>
+                            <h3 class="font-bold text-white text-base md:text-lg line-clamp-1 group-hover:text-pink-300 transition-colors">1. IQ math</h3>
+                            <span class="text-[11px] sm:text-xs text-slate-400 mt-1"><i class="fa-solid fa-calculator mr-1 text-slate-500"></i>เกมฝึกสมองคณิตศาสตร์</span>
                         </div>
-                        <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-sky-500/30 group-hover:text-sky-300 transition-colors shrink-0">
+                        <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-pink-500/30 group-hover:text-pink-300 transition-colors shrink-0">
                             <i class="fa-solid fa-chevron-right text-sm"></i>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -265,7 +261,7 @@
             </div>
         </section>
 
-        <!-- SECTION: Lesson (E-Learning Topic Style) -->
+        <!-- SECTION: Lesson -->
         <section id="lesson" class="page-section p-4 md:p-6 lg:p-8 pb-[120px] md:pb-[120px] lg:pb-[120px] flex-col relative z-10 w-full max-w-full mx-auto flex-grow">
             <div class="max-w-[1800px] w-full mx-auto flex flex-col gap-6">
                 <!-- Header -->
@@ -284,7 +280,6 @@
                 <!-- Topic List Container -->
                 <div class="flex flex-col gap-3 w-full pb-6 pt-2">
                     
-                    <!-- Topic Item 1 -->
                     <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-blue-500/50 hover:shadow-blue-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week1')">
                         <div class="flex items-center gap-4 w-full">
                             <div class="w-12 h-12 rounded-2xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-blue-500/20">
@@ -300,7 +295,6 @@
                         </div>
                     </div>
 
-                    <!-- Topic Item 2 -->
                     <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-emerald-500/50 hover:shadow-emerald-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week2')">
                         <div class="flex items-center gap-4 w-full">
                             <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-emerald-500/20">
@@ -316,7 +310,6 @@
                         </div>
                     </div>
 
-                    <!-- Topic Item 3 -->
                     <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-orange-500/50 hover:shadow-orange-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week3')">
                         <div class="flex items-center gap-4 w-full">
                             <div class="w-12 h-12 rounded-2xl bg-orange-500/20 text-orange-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-orange-500/20">
@@ -332,11 +325,10 @@
                         </div>
                     </div>
 
-                    <!-- Topic Item 4 -->
                     <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-fuchsia-500/50 hover:shadow-fuchsia-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week4')">
                         <div class="flex items-center gap-4 w-full">
                             <div class="w-12 h-12 rounded-2xl bg-fuchsia-500/20 text-fuchsia-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-fuchsia-500/20">
-                                <i class="fa-solid fa-vials"></i>
+                                <i class="fa-solid fa-vial-virus"></i>
                             </div>
                             <div class="flex flex-col gap-1 flex-grow">
                                 <span class="text-[10px] sm:text-xs font-bold text-fuchsia-400 bg-fuchsia-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-fuchsia-800/50">สัปดาห์ที่ 4</span>
@@ -348,7 +340,6 @@
                         </div>
                     </div>
 
-                    <!-- Topic Item 5 -->
                     <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-violet-500/50 hover:shadow-violet-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week5')">
                         <div class="flex items-center gap-4 w-full">
                             <div class="w-12 h-12 rounded-2xl bg-violet-500/20 text-violet-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-violet-500/20">
@@ -359,6 +350,21 @@
                                 <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">ผลกระทบต่อสิ่งแวดล้อม</h3>
                             </div>
                             <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-violet-500/30 group-hover:text-violet-300 transition-colors shrink-0">
+                                <i class="fa-solid fa-chevron-right text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-cyan-500/50 hover:shadow-cyan-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week6')">
+                        <div class="flex items-center gap-4 w-full">
+                            <div class="w-12 h-12 rounded-2xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-cyan-500/20">
+                                <i class="fa-solid fa-cubes"></i>
+                            </div>
+                            <div class="flex flex-col gap-1 flex-grow">
+                                <span class="text-[10px] sm:text-xs font-bold text-cyan-400 bg-cyan-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-cyan-800/50">สัปดาห์ที่ 6</span>
+                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">วัสดุในชีวิตประจำวัน</h3>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-cyan-500/30 group-hover:text-cyan-300 transition-colors shrink-0">
                                 <i class="fa-solid fa-chevron-right text-sm"></i>
                             </div>
                         </div>
@@ -1205,6 +1211,168 @@
                 </div>
             </div>
 
+            <!-- ================= WEEK 6 ================= -->
+            <div id="week6-content" class="week-content hidden flex-col gap-5">
+                <div class="bg-slate-900 rounded-3xl p-6 shadow-xl border border-slate-800 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-cyan-400 to-blue-500"></div>
+                    <div class="flex items-center gap-3.5 mb-4">
+                        <div class="w-10 h-10 rounded-2xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-lg shadow-inner ring-1 ring-cyan-500/30">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-base md:text-lg">ความหมายและการใช้ประโยชน์</h3>
+                    </div>
+                    <div class="text-slate-300 text-[14px] leading-relaxed space-y-3">
+                        <ul class="list-disc pl-5 space-y-2 mt-2">
+                            <li><strong class="text-emerald-400">พอลิเมอร์:</strong> น้ำหนักเบา เป็นฉนวนไฟฟ้า (เช่น พลาสติก ยาง เส้นใย)</li>
+                            <li><strong class="text-orange-400">เซรามิก:</strong> แข็งแต่เปราะ ทนความร้อนสูง ทนต่อการกัดกร่อน (เช่น แก้ว กระเบื้อง)</li>
+                            <li><strong class="text-blue-400">โลหะ:</strong> นำไฟฟ้าและความร้อนได้ดี แข็งแรง เหนียว ตีเป็นแผ่นได้ (เช่น เหล็ก ทองแดง)</li>
+                            <li><strong class="text-cyan-400">วัสดุผสม (Composites):</strong> การนำวัสดุตั้งแต่ 2 ชนิดขึ้นไปมาผสมกันเพื่อให้ได้สมบัติที่ดีขึ้น (เช่น ไฟเบอร์กลาส คอนกรีตเสริมเหล็ก)</li>
+                            <li><strong class="text-fuchsia-400">หลัก 3R:</strong> Reduce (ลดการใช้), Reuse (ใช้ซ้ำ), Recycle (นำกลับมาใช้ใหม่)</li>
+                        </ul>
+                        <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700 text-[13px] shadow-sm mt-3 text-slate-300">
+                            <span class="text-lg mr-1">📌</span> <span class="font-medium text-white">ตัวชี้วัด:</span> ว 2.1 ม.3/1, ม.3/2 สมบัติของวัสดุ และการใช้วัสดุอย่างประหยัดและคุ้มค่า
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="relative group cursor-pointer active:scale-[0.98] transition-all duration-300" onclick="window.open('https://ailab22.vercel.app/', '_blank')">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-teal-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                        <div class="relative bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 rounded-[24px] p-0.5 overflow-hidden shadow-xl h-full">
+                            <div class="absolute inset-0 bg-white/10 group-hover:translate-x-full transform -translate-x-full transition-transform duration-700 ease-out skew-x-12"></div>
+                            <div class="bg-slate-900/40 backdrop-blur-sm rounded-[22px] px-4 py-4 flex items-center gap-3 border border-white/10 h-full">
+                                <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center shadow-inner shrink-0 text-white group-hover:rotate-12 transition-transform duration-300">
+                                    <i class="fa-solid fa-flask-vial text-xl drop-shadow"></i>
+                                </div>
+                                <div class="flex flex-col text-left flex-grow">
+                                    <span class="text-white font-extrabold text-[14px] sm:text-[15px] tracking-wide drop-shadow-md">เข้าทดลอง Ai Lab 22</span>
+                                </div>
+                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-chevron-right text-white/90 text-[10px] group-hover:translate-x-1 transition-transform"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative group cursor-pointer active:scale-[0.98] transition-all duration-300" onclick="window.open('https://ailab23.vercel.app/', '_blank')">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-teal-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                        <div class="relative bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 rounded-[24px] p-0.5 overflow-hidden shadow-xl h-full">
+                            <div class="absolute inset-0 bg-white/10 group-hover:translate-x-full transform -translate-x-full transition-transform duration-700 ease-out skew-x-12"></div>
+                            <div class="bg-slate-900/40 backdrop-blur-sm rounded-[22px] px-4 py-4 flex items-center gap-3 border border-white/10 h-full">
+                                <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center shadow-inner shrink-0 text-white group-hover:rotate-12 transition-transform duration-300">
+                                    <i class="fa-solid fa-flask-vial text-xl drop-shadow"></i>
+                                </div>
+                                <div class="flex flex-col text-left flex-grow">
+                                    <span class="text-white font-extrabold text-[14px] sm:text-[15px] tracking-wide drop-shadow-md">เข้าทดลอง Ai Lab 23</span>
+                                </div>
+                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-chevron-right text-white/90 text-[10px] group-hover:translate-x-1 transition-transform"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 p-5 rounded-3xl shadow-xl border border-slate-800 flex flex-col gap-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center border border-red-500/30">
+                            <i class="fa-brands fa-youtube text-base"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-[15px]">วิดีโอสรุปความรู้</h4>
+                    </div>
+                    <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-inner border border-slate-800 bg-black relative">
+                        <iframe id="iframe-w6" class="youtube-iframe w-full h-full relative z-10" data-src="https://www.youtube.com/embed/UKK1LdzA65o" src="" title="วิดีโอสรุปความรู้" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!-- ใบงานสัปดาห์ที่ 6 -->
+                <div class="bg-slate-900 p-5 rounded-3xl shadow-xl border border-slate-800 flex flex-col gap-4">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center border border-indigo-500/30">
+                                <i class="fa-solid fa-file-signature text-sm"></i>
+                            </div>
+                            <h4 class="font-bold text-white text-[15px]">ใบงานประกอบการเรียน</h4>
+                        </div>
+                        <button class="text-[10px] font-semibold text-indigo-400 bg-indigo-500/20 px-2.5 py-1 rounded-lg border border-indigo-500/30 hover:bg-indigo-500/40 transition-colors" onclick="const ws = document.getElementById('worksheet-w6-content'); ws.classList.toggle('hidden');">
+                            แสดง/ซ่อน ใบงาน
+                        </button>
+                    </div>
+                    
+                    <div id="worksheet-w6-content" class="bg-slate-800/60 p-4 sm:p-5 rounded-2xl border border-slate-700/80 text-slate-300 text-[13px] leading-relaxed font-sarabun shadow-inner">
+                        <div class="text-center mb-5">
+                            <h5 class="font-bold text-white text-[15px] sm:text-base">ใบงานการจัดการเรียนรู้ รายวิชาวิทยาศาสตร์ 6 (ว23102)</h5>
+                            <h6 class="font-bold text-slate-200 mt-1">ชั้น ม.3 ภาคเรียนที่ 2</h6>
+                            <h6 class="font-bold text-cyan-400 mt-1">สัปดาห์ที่ 6 : วัสดุในชีวิตประจำวัน (พอลิเมอร์ เซรามิก โลหะ วัสดุผสม)</h6>
+                            <p class="text-[11px] sm:text-xs text-slate-400 mt-2 font-medium">ตัวชี้วัด: ว 2.1 ม.3/1 ระบุสมบัติการใช้วัสดุพอลิเมอร์ เซรามิก โลหะ วัสดุผสม, ว 2.1 ม.3/2 ตระหนักถึงคุณค่าการใช้วัสดุ</p>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-x-4 gap-y-2 mb-6 text-[12px] text-slate-400 justify-between items-end border-b border-slate-700/80 pb-4">
+                            <div class="flex flex-wrap gap-x-4 gap-y-2 flex-grow">
+                                <span>ชื่อ-สกุล: <span class="border-b border-slate-500 border-dotted inline-block w-32 sm:w-48"></span></span>
+                                <span>ชั้น ม.3/<span class="border-b border-slate-500 border-dotted inline-block w-12"></span></span>
+                                <span>เลขที่: <span class="border-b border-slate-500 border-dotted inline-block w-12"></span></span>
+                                <span>วันที่: <span class="border-b border-slate-500 border-dotted inline-block w-24"></span></span>
+                            </div>
+                            <span class="text-cyan-400 font-bold whitespace-nowrap bg-cyan-500/10 px-3 py-1 rounded border border-cyan-500/20">[ ได้: _____ / 10 ]</span>
+                        </div>
+
+                        <div class="space-y-5">
+                            <!-- ตอนที่ 1 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-cyan-300 mb-2">ตอนที่ 1: การจำแนกประเภทวัสดุ (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li>1.1 นำอักษร (A: พอลิเมอร์, B: เซรามิก, C: โลหะ, D: วัสดุผสม) เติมหน้าข้อความให้ถูกต้อง:</li>
+                                    <li class="pl-4 grid grid-cols-1 sm:grid-cols-2 gap-2 text-slate-400">
+                                        <span class="flex items-end gap-2">(<span class="border-b border-dotted border-slate-500 w-8 inline-block"></span>) แก้วน้ำ จานกระเบื้อง อิฐมอญ</span>
+                                        <span class="flex items-end gap-2">(<span class="border-b border-dotted border-slate-500 w-8 inline-block"></span>) ท่อพีวีซี ขวดน้ำดื่ม ยางรถยนต์</span>
+                                        <span class="flex items-end gap-2">(<span class="border-b border-dotted border-slate-500 w-8 inline-block"></span>) สายไฟทองแดง แผ่นสังกะสี</span>
+                                        <span class="flex items-end gap-2">(<span class="border-b border-dotted border-slate-500 w-8 inline-block"></span>) คอนกรีตเสริมเหล็ก ไฟเบอร์กลาส</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 2 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-cyan-300 mb-2">ตอนที่ 2: สมบัติทางกายภาพของวัสดุ (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-wrap items-end gap-1">2.1 วัสดุที่มีสมบัตินำไฟฟ้าและความร้อนได้ดี เหนียว ผิวมันวาว คือ: <div class="border-b border-dotted border-slate-500 flex-grow min-w-[50px]"></div></li>
+                                    <li class="flex flex-wrap items-end gap-1">2.2 วัสดุที่ทนความร้อนสูง แข็งแต่เปราะ เป็นฉนวนไฟฟ้า คือ: <div class="border-b border-dotted border-slate-500 flex-grow min-w-[50px]"></div></li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>2.3 วัสดุผสม (Composites) เกิดขึ้นจากวัตถุประสงค์ใด?</span>
+                                        <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 3 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-cyan-300 mb-2">ตอนที่ 3: การเลือกใช้วัสดุในงานเฉพาะทาง (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-col gap-1">
+                                        <span>3.1 ด้ามจับกระทะควรทำจากวัสดุประเภทใด เพราะเหตุใด?</span>
+                                        <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
+                                    </li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>3.2 โครงสร้างเครื่องบินยุคใหม่นิยมใช้วัสดุผสมคาร์บอนไฟเบอร์แทนโลหะเพราะเหตุใด?</span>
+                                        <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 4 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-cyan-300 mb-2">ตอนที่ 4: การจัดการขยะวัสดุตามหลัก 3R (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-wrap items-end gap-1">4.1 ยกตัวอย่างพฤติกรรม 3R: Reduce: <div class="border-b border-dotted border-slate-500 flex-grow min-w-[50px]"></div> Reuse: <div class="border-b border-dotted border-slate-500 flex-grow min-w-[50px]"></div></li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>4.2 Recycle แตกต่างจาก Reuse อย่างไร?</span>
+                                        <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -1256,6 +1424,10 @@
                 titleEl.innerText = 'ผลกระทบต่อสิ่งแวดล้อม';
                 subtitleEl.innerText = 'สัปดาห์ที่ 5';
                 subtitleEl.className = 'text-[10px] font-bold text-violet-400 tracking-wider uppercase mb-0.5';
+            } else if (weekKey === 'week6') {
+                titleEl.innerText = 'วัสดุในชีวิตประจำวัน';
+                subtitleEl.innerText = 'สัปดาห์ที่ 6';
+                subtitleEl.className = 'text-[10px] font-bold text-cyan-400 tracking-wider uppercase mb-0.5';
             }
 
             document.querySelectorAll('.week-content').forEach(el => {
@@ -1268,7 +1440,7 @@
                 activeContent.classList.remove('hidden');
                 activeContent.classList.add('flex');
                 
-                const iframeId = weekKey === 'week1' ? 'iframe-w1' : weekKey === 'week2' ? 'iframe-w2' : weekKey === 'week3' ? 'iframe-w3' : weekKey === 'week4' ? 'iframe-w4' : 'iframe-w5';
+                const iframeId = weekKey === 'week1' ? 'iframe-w1' : weekKey === 'week2' ? 'iframe-w2' : weekKey === 'week3' ? 'iframe-w3' : weekKey === 'week4' ? 'iframe-w4' : weekKey === 'week5' ? 'iframe-w5' : 'iframe-w6';
                 const iframe = document.getElementById(iframeId);
                 if (iframe && iframe.src === window.location.href || iframe.src === '') {
                      iframe.src = iframe.getAttribute('data-src');
@@ -1543,6 +1715,7 @@
         function openModal(imgSrc) {
             const modal = document.getElementById('image-modal');
             const modalImg = document.getElementById('modal-img');
+            if (!modal || !modalImg) return;
             modalImg.src = imgSrc;
             modal.classList.remove('hidden');
             setTimeout(() => {
@@ -1555,6 +1728,7 @@
         function closeModal() {
             const modal = document.getElementById('image-modal');
             const modalImg = document.getElementById('modal-img');
+            if (!modal || !modalImg) return;
             modal.classList.add('opacity-0');
             modalImg.classList.remove('scale-100');
             modalImg.classList.add('scale-95');
@@ -1568,6 +1742,7 @@
             const modal = document.getElementById('iframe-modal');
             const iframe = document.getElementById('modal-iframe');
             const modalTitle = document.getElementById('iframe-modal-title');
+            if (!modal || !iframe || !modalTitle) return;
             iframe.src = url;
             if (title) modalTitle.textContent = title;
             modal.classList.remove('hidden');
@@ -1581,6 +1756,7 @@
         function closeIframeModal() {
             const modal = document.getElementById('iframe-modal');
             const content = document.getElementById('iframe-modal-content');
+            if (!modal || !content) return;
             modal.classList.add('opacity-0');
             content.classList.remove('scale-100');
             content.classList.add('scale-95');
