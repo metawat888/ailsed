@@ -278,316 +278,445 @@
                 </div>
 
                 <!-- Topic List Container -->
-                <div class="flex flex-col gap-3 w-full pb-6 pt-2">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-5 w-full pb-6 pt-2">
                     
-                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-blue-500/50 hover:shadow-blue-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week1')">
-                        <div class="flex items-center gap-4 w-full">
-                            <div class="w-12 h-12 rounded-2xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-blue-500/20">
-                                <i class="fa-solid fa-flask"></i>
+                    <div class="bg-slate-900/40 backdrop-blur-xl rounded-3xl p-5 shadow-lg border border-slate-700/50 hover:border-blue-500/50 hover:bg-slate-800/60 hover:shadow-[0_8px_30px_rgba(59,130,246,0.15)] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[150px] group relative overflow-hidden active:scale-[0.98]" onclick="openLessonDetail('week1')">
+                        <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-blue-400 to-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"></div>
+                        <div class="absolute inset-0 z-0">
+                            <img src="https://live.staticflickr.com/2543/3958837368_96c3f0bffa.jpg" class="w-full h-full object-cover opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-transform duration-700 ease-out mix-blend-luminosity" alt="Chemistry">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"></div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl group-hover:bg-blue-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
+                        
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-600/5 text-blue-400 flex items-center justify-center text-2xl shadow-inner border border-blue-500/20 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-flask drop-shadow-sm"></i>
                             </div>
-                            <div class="flex flex-col gap-1 flex-grow">
-                                <span class="text-[10px] sm:text-xs font-bold text-blue-400 bg-blue-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-blue-800/50">สัปดาห์ที่ 1</span>
-                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">ปฏิกิริยาเคมี</h3>
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-blue-500/20 group-hover:text-blue-300 transition-all duration-300 border border-transparent group-hover:border-blue-500/30 backdrop-blur-md">
+                                <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
-                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-blue-500/30 group-hover:text-blue-300 transition-colors shrink-0">
-                                <i class="fa-solid fa-chevron-right text-sm"></i>
-                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-blue-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 1</span>
+                            <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">ปฏิกิริยาเคมี</h3>
                         </div>
                     </div>
 
-                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-emerald-500/50 hover:shadow-emerald-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week2')">
-                        <div class="flex items-center gap-4 w-full">
-                            <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-emerald-500/20">
-                                <i class="fa-solid fa-scale-balanced"></i>
+                    <div class="bg-slate-900/40 backdrop-blur-xl rounded-3xl p-5 shadow-lg border border-slate-700/50 hover:border-emerald-500/50 hover:bg-slate-800/60 hover:shadow-[0_8px_30px_rgba(16,185,129,0.15)] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[150px] group relative overflow-hidden active:scale-[0.98]" onclick="openLessonDetail('week2')">
+                        <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-emerald-400 to-teal-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"></div>
+                        <div class="absolute inset-0 z-0">
+                            <img src="https://live.staticflickr.com/2543/3958837368_96c3f0bffa.jpg" class="w-full h-full object-cover opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-transform duration-700 ease-out mix-blend-luminosity" alt="Chemistry">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"></div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-emerald-500/5 rounded-full blur-2xl group-hover:bg-emerald-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
+                        
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-emerald-600/5 text-emerald-400 flex items-center justify-center text-2xl shadow-inner border border-emerald-500/20 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-scale-balanced drop-shadow-sm"></i>
                             </div>
-                            <div class="flex flex-col gap-1 flex-grow">
-                                <span class="text-[10px] sm:text-xs font-bold text-emerald-400 bg-emerald-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-emerald-800/50">สัปดาห์ที่ 2</span>
-                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">กฎทรงมวล</h3>
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-emerald-500/20 group-hover:text-emerald-300 transition-all duration-300 border border-transparent group-hover:border-emerald-500/30 backdrop-blur-md">
+                                <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
-                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-emerald-500/30 group-hover:text-emerald-300 transition-colors shrink-0">
-                                <i class="fa-solid fa-chevron-right text-sm"></i>
-                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-emerald-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 2</span>
+                            <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">กฎทรงมวล</h3>
                         </div>
                     </div>
 
-                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-orange-500/50 hover:shadow-orange-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week3')">
-                        <div class="flex items-center gap-4 w-full">
-                            <div class="w-12 h-12 rounded-2xl bg-orange-500/20 text-orange-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-orange-500/20">
-                                <i class="fa-solid fa-fire-flame-curved"></i>
+                    <div class="bg-slate-900/40 backdrop-blur-xl rounded-3xl p-5 shadow-lg border border-slate-700/50 hover:border-orange-500/50 hover:bg-slate-800/60 hover:shadow-[0_8px_30px_rgba(249,115,22,0.15)] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[150px] group relative overflow-hidden active:scale-[0.98]" onclick="openLessonDetail('week3')">
+                        <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-orange-400 to-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"></div>
+                        <div class="absolute inset-0 z-0">
+                            <img src="https://live.staticflickr.com/2543/3958837368_96c3f0bffa.jpg" class="w-full h-full object-cover opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-transform duration-700 ease-out mix-blend-luminosity" alt="Chemistry">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"></div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-orange-500/5 rounded-full blur-2xl group-hover:bg-orange-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
+                        
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500/20 to-orange-600/5 text-orange-400 flex items-center justify-center text-2xl shadow-inner border border-orange-500/20 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-fire-flame-curved drop-shadow-sm"></i>
                             </div>
-                            <div class="flex flex-col gap-1 flex-grow">
-                                <span class="text-[10px] sm:text-xs font-bold text-orange-400 bg-orange-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-orange-800/50">สัปดาห์ที่ 3</span>
-                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">การถ่ายโอนความร้อน</h3>
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-orange-500/20 group-hover:text-orange-300 transition-all duration-300 border border-transparent group-hover:border-orange-500/30 backdrop-blur-md">
+                                <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
-                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-orange-500/30 group-hover:text-orange-300 transition-colors shrink-0">
-                                <i class="fa-solid fa-chevron-right text-sm"></i>
-                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-orange-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 3</span>
+                            <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">การถ่ายโอนความร้อน</h3>
                         </div>
                     </div>
 
-                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-fuchsia-500/50 hover:shadow-fuchsia-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week4')">
-                        <div class="flex items-center gap-4 w-full">
-                            <div class="w-12 h-12 rounded-2xl bg-fuchsia-500/20 text-fuchsia-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-fuchsia-500/20">
-                                <i class="fa-solid fa-vial-virus"></i>
+                    <div class="bg-slate-900/40 backdrop-blur-xl rounded-3xl p-5 shadow-lg border border-slate-700/50 hover:border-fuchsia-500/50 hover:bg-slate-800/60 hover:shadow-[0_8px_30px_rgba(217,70,239,0.15)] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[150px] group relative overflow-hidden active:scale-[0.98]" onclick="openLessonDetail('week4')">
+                        <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-fuchsia-400 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"></div>
+                        <div class="absolute inset-0 z-0">
+                            <img src="https://live.staticflickr.com/2543/3958837368_96c3f0bffa.jpg" class="w-full h-full object-cover opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-transform duration-700 ease-out mix-blend-luminosity" alt="Chemistry">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"></div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-fuchsia-500/5 rounded-full blur-2xl group-hover:bg-fuchsia-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
+                        
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-fuchsia-500/20 to-fuchsia-600/5 text-fuchsia-400 flex items-center justify-center text-2xl shadow-inner border border-fuchsia-500/20 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-vial-virus drop-shadow-sm"></i>
                             </div>
-                            <div class="flex flex-col gap-1 flex-grow">
-                                <span class="text-[10px] sm:text-xs font-bold text-fuchsia-400 bg-fuchsia-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-fuchsia-800/50">สัปดาห์ที่ 4</span>
-                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">ปฏิกิริยาเคมีในชีวิตประจำวัน</h3>
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-fuchsia-500/20 group-hover:text-fuchsia-300 transition-all duration-300 border border-transparent group-hover:border-fuchsia-500/30 backdrop-blur-md">
+                                <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
-                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-fuchsia-500/30 group-hover:text-fuchsia-300 transition-colors shrink-0">
-                                <i class="fa-solid fa-chevron-right text-sm"></i>
-                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-fuchsia-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 4</span>
+                            <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">ปฏิกิริยาเคมีในชีวิตประจำวัน</h3>
                         </div>
                     </div>
 
-                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-violet-500/50 hover:shadow-violet-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week5')">
-                        <div class="flex items-center gap-4 w-full">
-                            <div class="w-12 h-12 rounded-2xl bg-violet-500/20 text-violet-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-violet-500/20">
-                                <i class="fa-solid fa-leaf"></i>
+                    <div class="bg-slate-900/40 backdrop-blur-xl rounded-3xl p-5 shadow-lg border border-slate-700/50 hover:border-violet-500/50 hover:bg-slate-800/60 hover:shadow-[0_8px_30px_rgba(139,92,246,0.15)] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[150px] group relative overflow-hidden active:scale-[0.98]" onclick="openLessonDetail('week5')">
+                        <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-violet-400 to-fuchsia-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"></div>
+                        <div class="absolute inset-0 z-0">
+                            <img src="https://live.staticflickr.com/2543/3958837368_96c3f0bffa.jpg" class="w-full h-full object-cover opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-transform duration-700 ease-out mix-blend-luminosity" alt="Chemistry">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"></div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-violet-500/5 rounded-full blur-2xl group-hover:bg-violet-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
+                        
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500/20 to-violet-600/5 text-violet-400 flex items-center justify-center text-2xl shadow-inner border border-violet-500/20 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-leaf drop-shadow-sm"></i>
                             </div>
-                            <div class="flex flex-col gap-1 flex-grow">
-                                <span class="text-[10px] sm:text-xs font-bold text-violet-400 bg-violet-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-violet-800/50">สัปดาห์ที่ 5</span>
-                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">ผลกระทบต่อสิ่งแวดล้อม</h3>
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-violet-500/20 group-hover:text-violet-300 transition-all duration-300 border border-transparent group-hover:border-violet-500/30 backdrop-blur-md">
+                                <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
-                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-violet-500/30 group-hover:text-violet-300 transition-colors shrink-0">
-                                <i class="fa-solid fa-chevron-right text-sm"></i>
-                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-violet-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 5</span>
+                            <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">ผลกระทบต่อสิ่งแวดล้อม</h3>
                         </div>
                     </div>
 
-                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-cyan-500/50 hover:shadow-cyan-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week6')">
-                        <div class="flex items-center gap-4 w-full">
-                            <div class="w-12 h-12 rounded-2xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-cyan-500/20">
-                                <i class="fa-solid fa-cubes"></i>
+                    <div class="bg-slate-900/40 backdrop-blur-xl rounded-3xl p-5 shadow-lg border border-slate-700/50 hover:border-cyan-500/50 hover:bg-slate-800/60 hover:shadow-[0_8px_30px_rgba(6,182,212,0.15)] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[150px] group relative overflow-hidden active:scale-[0.98]" onclick="openLessonDetail('week6')">
+                        <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"></div>
+                        <div class="absolute inset-0 z-0">
+                            <img src="https://live.staticflickr.com/2543/3958837368_96c3f0bffa.jpg" class="w-full h-full object-cover opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-transform duration-700 ease-out mix-blend-luminosity" alt="Chemistry">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"></div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-cyan-500/5 rounded-full blur-2xl group-hover:bg-cyan-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
+                        
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-cyan-600/5 text-cyan-400 flex items-center justify-center text-2xl shadow-inner border border-cyan-500/20 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-cubes drop-shadow-sm"></i>
                             </div>
-                            <div class="flex flex-col gap-1 flex-grow">
-                                <span class="text-[10px] sm:text-xs font-bold text-cyan-400 bg-cyan-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-cyan-800/50">สัปดาห์ที่ 6</span>
-                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">วัสดุในชีวิตประจำวัน</h3>
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-cyan-500/20 group-hover:text-cyan-300 transition-all duration-300 border border-transparent group-hover:border-cyan-500/30 backdrop-blur-md">
+                                <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
-                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-cyan-500/30 group-hover:text-cyan-300 transition-colors shrink-0">
-                                <i class="fa-solid fa-chevron-right text-sm"></i>
-                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-cyan-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 6</span>
+                            <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">วัสดุในชีวิตประจำวัน</h3>
                         </div>
                     </div>
 
-                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-rose-500/50 hover:shadow-rose-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week7')">
-                        <div class="flex items-center gap-4 w-full">
-                            <div class="w-12 h-12 rounded-2xl bg-rose-500/20 text-rose-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-rose-500/20">
-                                <i class="fa-solid fa-lightbulb"></i>
+                    <div class="bg-slate-900/40 backdrop-blur-xl rounded-3xl p-5 shadow-lg border border-slate-700/50 hover:border-rose-500/50 hover:bg-slate-800/60 hover:shadow-[0_8px_30px_rgba(244,63,94,0.15)] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[150px] group relative overflow-hidden active:scale-[0.98]" onclick="openLessonDetail('week7')">
+                        <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-rose-400 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"></div>
+                        <div class="absolute inset-0 z-0">
+                            <img src="https://live.staticflickr.com/2543/3958837368_96c3f0bffa.jpg" class="w-full h-full object-cover opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-transform duration-700 ease-out mix-blend-luminosity" alt="Chemistry">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"></div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-rose-500/5 rounded-full blur-2xl group-hover:bg-rose-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
+                        
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500/20 to-rose-600/5 text-rose-400 flex items-center justify-center text-2xl shadow-inner border border-rose-500/20 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-lightbulb drop-shadow-sm"></i>
                             </div>
-                            <div class="flex flex-col gap-1 flex-grow">
-                                <span class="text-[10px] sm:text-xs font-bold text-rose-400 bg-rose-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-rose-800/50">สัปดาห์ที่ 7</span>
-                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">STEM การแก้ปัญหาเคมี</h3>
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-rose-500/20 group-hover:text-rose-300 transition-all duration-300 border border-transparent group-hover:border-rose-500/30 backdrop-blur-md">
+                                <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
-                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-rose-500/30 group-hover:text-rose-300 transition-colors shrink-0">
-                                <i class="fa-solid fa-chevron-right text-sm"></i>
-                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-rose-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 7</span>
+                            <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">STEM การแก้ปัญหาเคมี</h3>
                         </div>
                     </div>
 
-                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-amber-500/50 hover:shadow-amber-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week8')">
-                        <div class="flex items-center gap-4 w-full">
-                            <div class="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-amber-500/20">
-                                <i class="fa-solid fa-bolt"></i>
+                    <div class="bg-slate-900/40 backdrop-blur-xl rounded-3xl p-5 shadow-lg border border-slate-700/50 hover:border-amber-500/50 hover:bg-slate-800/60 hover:shadow-[0_8px_30px_rgba(245,158,11,0.15)] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[150px] group relative overflow-hidden active:scale-[0.98]" onclick="openLessonDetail('week8')">
+                        <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-amber-400 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"></div>
+                        <div class="absolute inset-0 z-0">
+                            <img src="https://live.staticflickr.com/3470/3945941981_7dd11a45b4.jpg" class="w-full h-full object-cover opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-transform duration-700 ease-out mix-blend-luminosity" alt="Electric">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"></div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-amber-500/5 rounded-full blur-2xl group-hover:bg-amber-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
+                        
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500/20 to-amber-600/5 text-amber-400 flex items-center justify-center text-2xl shadow-inner border border-amber-500/20 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-bolt drop-shadow-sm"></i>
                             </div>
-                            <div class="flex flex-col gap-1 flex-grow">
-                                <span class="text-[10px] sm:text-xs font-bold text-amber-400 bg-amber-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-amber-800/50">สัปดาห์ที่ 8</span>
-                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">ปริมาณทางไฟฟ้าและกฎโอห์ม</h3>
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-amber-500/20 group-hover:text-amber-300 transition-all duration-300 border border-transparent group-hover:border-amber-500/30 backdrop-blur-md">
+                                <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
-                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-amber-500/30 group-hover:text-amber-300 transition-colors shrink-0">
-                                <i class="fa-solid fa-chevron-right text-sm"></i>
-                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-amber-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 8</span>
+                            <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">ปริมาณทางไฟฟ้าและกฎโอห์ม</h3>
                         </div>
                     </div>
 
-                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-teal-500/50 hover:shadow-teal-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week9')">
-                        <div class="flex items-center gap-4 w-full">
-                            <div class="w-12 h-12 rounded-2xl bg-teal-500/20 text-teal-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-teal-500/20">
-                                <i class="fa-solid fa-gauge-high"></i>
+                    <div class="bg-slate-900/40 backdrop-blur-xl rounded-3xl p-5 shadow-lg border border-slate-700/50 hover:border-teal-500/50 hover:bg-slate-800/60 hover:shadow-[0_8px_30px_rgba(20,184,166,0.15)] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[150px] group relative overflow-hidden active:scale-[0.98]" onclick="openLessonDetail('week9')">
+                        <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-teal-400 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"></div>
+                        <div class="absolute inset-0 z-0">
+                            <img src="https://live.staticflickr.com/3470/3945941981_7dd11a45b4.jpg" class="w-full h-full object-cover opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-transform duration-700 ease-out mix-blend-luminosity" alt="Electric">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"></div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-teal-500/5 rounded-full blur-2xl group-hover:bg-teal-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
+                        
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-teal-500/20 to-teal-600/5 text-teal-400 flex items-center justify-center text-2xl shadow-inner border border-teal-500/20 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-gauge-high drop-shadow-sm"></i>
                             </div>
-                            <div class="flex flex-col gap-1 flex-grow">
-                                <span class="text-[10px] sm:text-xs font-bold text-teal-400 bg-teal-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-teal-800/50">สัปดาห์ที่ 9</span>
-                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">เครื่องมือวัดทางไฟฟ้า</h3>
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-teal-500/20 group-hover:text-teal-300 transition-all duration-300 border border-transparent group-hover:border-teal-500/30 backdrop-blur-md">
+                                <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
-                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-teal-500/30 group-hover:text-teal-300 transition-colors shrink-0">
-                                <i class="fa-solid fa-chevron-right text-sm"></i>
-                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-teal-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 9</span>
+                            <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">เครื่องมือวัดทางไฟฟ้า</h3>
                         </div>
                     </div>
 
-                    <!-- สัปดาห์ที่ 10 -->
-                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-red-500/50 hover:shadow-red-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week10')">
-                        <div class="flex items-center gap-4 w-full">
-                            <div class="w-12 h-12 rounded-2xl bg-red-500/20 text-red-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-red-500/20">
-                                <i class="fa-solid fa-file-pen"></i>
+                    <div class="bg-slate-900/40 backdrop-blur-xl rounded-3xl p-5 shadow-lg border border-slate-700/50 hover:border-red-500/50 hover:bg-slate-800/60 hover:shadow-[0_8px_30px_rgba(239,68,68,0.15)] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[150px] group relative overflow-hidden active:scale-[0.98]" onclick="openLessonDetail('week10')">
+                        <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-red-400 to-rose-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"></div>
+                        <div class="absolute inset-0 z-0">
+                            <img src="https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-transform duration-700 ease-out mix-blend-luminosity" alt="Exam">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"></div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-red-500/5 rounded-full blur-2xl group-hover:bg-red-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
+                        
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-500/20 to-red-600/5 text-red-400 flex items-center justify-center text-2xl shadow-inner border border-red-500/20 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-file-pen drop-shadow-sm"></i>
                             </div>
-                            <div class="flex flex-col gap-1 flex-grow">
-                                <span class="text-[10px] sm:text-xs font-bold text-red-400 bg-red-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-red-800/50">สัปดาห์ที่ 10</span>
-                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">ทบทวนและวัดผลกลางภาค</h3>
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-red-500/20 group-hover:text-red-300 transition-all duration-300 border border-transparent group-hover:border-red-500/30 backdrop-blur-md">
+                                <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
-                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-red-500/30 group-hover:text-red-300 transition-colors shrink-0">
-                                <i class="fa-solid fa-chevron-right text-sm"></i>
-                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-red-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 10</span>
+                            <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">ทบทวนและวัดผลกลางภาค</h3>
                         </div>
                     </div>
 
-                    <!-- สัปดาห์ที่ 11 -->
-                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-lime-500/50 hover:shadow-lime-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week11')">
-                        <div class="flex items-center gap-4 w-full">
-                            <div class="w-12 h-12 rounded-2xl bg-lime-500/20 text-lime-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-lime-500/20">
-                                <i class="fa-solid fa-project-diagram"></i>
+                    <div class="bg-slate-900/40 backdrop-blur-xl rounded-3xl p-5 shadow-lg border border-slate-700/50 hover:border-lime-500/50 hover:bg-slate-800/60 hover:shadow-[0_8px_30px_rgba(132,204,22,0.15)] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[150px] group relative overflow-hidden active:scale-[0.98]" onclick="openLessonDetail('week11')">
+                        <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-lime-400 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"></div>
+                        <div class="absolute inset-0 z-0">
+                            <img src="https://live.staticflickr.com/3470/3945941981_7dd11a45b4.jpg" class="w-full h-full object-cover opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-transform duration-700 ease-out mix-blend-luminosity" alt="Electric">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"></div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-lime-500/5 rounded-full blur-2xl group-hover:bg-lime-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
+                        
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-lime-500/20 to-lime-600/5 text-lime-400 flex items-center justify-center text-2xl shadow-inner border border-lime-500/20 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-project-diagram drop-shadow-sm"></i>
                             </div>
-                            <div class="flex flex-col gap-1 flex-grow">
-                                <span class="text-[10px] sm:text-xs font-bold text-lime-400 bg-lime-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-lime-800/50">สัปดาห์ที่ 11</span>
-                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">การต่อตัวต้านทานอนุกรมและขนาน</h3>
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-lime-500/20 group-hover:text-lime-300 transition-all duration-300 border border-transparent group-hover:border-lime-500/30 backdrop-blur-md">
+                                <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
-                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-lime-500/30 group-hover:text-lime-300 transition-colors shrink-0">
-                                <i class="fa-solid fa-chevron-right text-sm"></i>
-                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-lime-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 11</span>
+                            <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">การต่อตัวต้านทานอนุกรมและขนาน</h3>
                         </div>
                     </div>
 
-                    <!-- สัปดาห์ที่ 12 -->
-                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-pink-500/50 hover:shadow-pink-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week12')">
-                        <div class="flex items-center gap-4 w-full">
-                            <div class="w-12 h-12 rounded-2xl bg-pink-500/20 text-pink-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-pink-500/20">
-                                <i class="fa-solid fa-microchip"></i>
+                    <div class="bg-slate-900/40 backdrop-blur-xl rounded-3xl p-5 shadow-lg border border-slate-700/50 hover:border-pink-500/50 hover:bg-slate-800/60 hover:shadow-[0_8px_30px_rgba(236,72,153,0.15)] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[150px] group relative overflow-hidden active:scale-[0.98]" onclick="openLessonDetail('week12')">
+                        <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"></div>
+                        <div class="absolute inset-0 z-0">
+                            <img src="https://live.staticflickr.com/3470/3945941981_7dd11a45b4.jpg" class="w-full h-full object-cover opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-transform duration-700 ease-out mix-blend-luminosity" alt="Electric">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"></div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-pink-500/5 rounded-full blur-2xl group-hover:bg-pink-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
+                        
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500/20 to-pink-600/5 text-pink-400 flex items-center justify-center text-2xl shadow-inner border border-pink-500/20 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-microchip drop-shadow-sm"></i>
                             </div>
-                            <div class="flex flex-col gap-1 flex-grow">
-                                <span class="text-[10px] sm:text-xs font-bold text-pink-400 bg-pink-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-pink-800/50">สัปดาห์ที่ 12</span>
-                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">ชิ้นส่วนและวงจรอิเล็กทรอนิกส์เบื้องต้น</h3>
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-pink-500/20 group-hover:text-pink-300 transition-all duration-300 border border-transparent group-hover:border-pink-500/30 backdrop-blur-md">
+                                <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
-                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-pink-500/30 group-hover:text-pink-300 transition-colors shrink-0">
-                                <i class="fa-solid fa-chevron-right text-sm"></i>
-                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-pink-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 12</span>
+                            <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">ชิ้นส่วนและวงจรอิเล็กทรอนิกส์เบื้องต้น</h3>
                         </div>
                     </div>
 
-                    <!-- สัปดาห์ที่ 13 -->
-                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-indigo-500/50 hover:shadow-indigo-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week13')">
-                        <div class="flex items-center gap-4 w-full">
-                            <div class="w-12 h-12 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-indigo-500/20">
-                                <i class="fa-solid fa-plug"></i>
+                    <div class="bg-slate-900/40 backdrop-blur-xl rounded-3xl p-5 shadow-lg border border-slate-700/50 hover:border-indigo-500/50 hover:bg-slate-800/60 hover:shadow-[0_8px_30px_rgba(99,102,241,0.15)] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[150px] group relative overflow-hidden active:scale-[0.98]" onclick="openLessonDetail('week13')">
+                        <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-indigo-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"></div>
+                        <div class="absolute inset-0 z-0">
+                            <img src="https://live.staticflickr.com/3470/3945941981_7dd11a45b4.jpg" class="w-full h-full object-cover opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-transform duration-700 ease-out mix-blend-luminosity" alt="Electric">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"></div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-indigo-500/5 rounded-full blur-2xl group-hover:bg-indigo-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
+                        
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-indigo-600/5 text-indigo-400 flex items-center justify-center text-2xl shadow-inner border border-indigo-500/20 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-plug drop-shadow-sm"></i>
                             </div>
-                            <div class="flex flex-col gap-1 flex-grow">
-                                <span class="text-[10px] sm:text-xs font-bold text-indigo-400 bg-indigo-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-indigo-800/50">สัปดาห์ที่ 13</span>
-                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">กำลังไฟฟ้าและพลังงานไฟฟ้า</h3>
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-indigo-500/20 group-hover:text-indigo-300 transition-all duration-300 border border-transparent group-hover:border-indigo-500/30 backdrop-blur-md">
+                                <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
-                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-indigo-500/30 group-hover:text-indigo-300 transition-colors shrink-0">
-                                <i class="fa-solid fa-chevron-right text-sm"></i>
-                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-indigo-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 13</span>
+                            <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">กำลังไฟฟ้าและพลังงานไฟฟ้า</h3>
                         </div>
                     </div>
 
-                    <!-- สัปดาห์ที่ 14 -->
-                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-sky-500/50 hover:shadow-sky-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week14')">
-                        <div class="flex items-center gap-4 w-full">
-                            <div class="w-12 h-12 rounded-2xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-sky-500/20">
-                                <i class="fa-solid fa-file-invoice-dollar"></i>
+                    <div class="bg-slate-900/40 backdrop-blur-xl rounded-3xl p-5 shadow-lg border border-slate-700/50 hover:border-sky-500/50 hover:bg-slate-800/60 hover:shadow-[0_8px_30px_rgba(14,165,233,0.15)] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[150px] group relative overflow-hidden active:scale-[0.98]" onclick="openLessonDetail('week14')">
+                        <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-sky-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"></div>
+                        <div class="absolute inset-0 z-0">
+                            <img src="https://live.staticflickr.com/3470/3945941981_7dd11a45b4.jpg" class="w-full h-full object-cover opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-transform duration-700 ease-out mix-blend-luminosity" alt="Electric">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"></div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-sky-500/5 rounded-full blur-2xl group-hover:bg-sky-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
+                        
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-sky-500/20 to-sky-600/5 text-sky-400 flex items-center justify-center text-2xl shadow-inner border border-sky-500/20 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-file-invoice-dollar drop-shadow-sm"></i>
                             </div>
-                            <div class="flex flex-col gap-1 flex-grow">
-                                <span class="text-[10px] sm:text-xs font-bold text-sky-400 bg-sky-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-sky-800/50">สัปดาห์ที่ 14</span>
-                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">การคำนวณค่าไฟฟ้าและความปลอดภัย</h3>
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-sky-500/20 group-hover:text-sky-300 transition-all duration-300 border border-transparent group-hover:border-sky-500/30 backdrop-blur-md">
+                                <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
-                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-sky-500/30 group-hover:text-sky-300 transition-colors shrink-0">
-                                <i class="fa-solid fa-chevron-right text-sm"></i>
-                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-sky-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 14</span>
+                            <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">การคำนวณค่าไฟฟ้าและความปลอดภัย</h3>
                         </div>
                     </div>
 
-                    <!-- สัปดาห์ที่ 15 -->
-                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-green-500/50 hover:shadow-green-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week15')">
-                        <div class="flex items-center gap-4 w-full">
-                            <div class="w-12 h-12 rounded-2xl bg-green-500/20 text-green-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-green-500/20">
-                                <i class="fa-solid fa-tree"></i>
+                    <div class="bg-slate-900/40 backdrop-blur-xl rounded-3xl p-5 shadow-lg border border-slate-700/50 hover:border-green-500/50 hover:bg-slate-800/60 hover:shadow-[0_8px_30px_rgba(34,197,94,0.15)] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[150px] group relative overflow-hidden active:scale-[0.98]" onclick="openLessonDetail('week15')">
+                        <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-green-400 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"></div>
+                        <div class="absolute inset-0 z-0">
+                            <img src="https://live.staticflickr.com/65535/54608071262_22dfabcc11.jpg" class="w-full h-full object-cover opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-transform duration-700 ease-out mix-blend-luminosity" alt="Ecosystem">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"></div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-green-500/5 rounded-full blur-2xl group-hover:bg-green-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
+                        
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500/20 to-green-600/5 text-green-400 flex items-center justify-center text-2xl shadow-inner border border-green-500/20 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-tree drop-shadow-sm"></i>
                             </div>
-                            <div class="flex flex-col gap-1 flex-grow">
-                                <span class="text-[10px] sm:text-xs font-bold text-green-400 bg-green-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-green-800/50">สัปดาห์ที่ 15</span>
-                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">องค์ประกอบระบบนิเวศ</h3>
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-green-500/20 group-hover:text-green-300 transition-all duration-300 border border-transparent group-hover:border-green-500/30 backdrop-blur-md">
+                                <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
-                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-green-500/30 group-hover:text-green-300 transition-colors shrink-0">
-                                <i class="fa-solid fa-chevron-right text-sm"></i>
-                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-green-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 15</span>
+                            <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">องค์ประกอบระบบนิเวศ</h3>
                         </div>
                     </div>
 
-                    <!-- สัปดาห์ที่ 16 -->
-                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-lime-500/50 hover:shadow-lime-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week16')">
-                        <div class="flex items-center gap-4 w-full">
-                            <div class="w-12 h-12 rounded-2xl bg-lime-500/20 text-lime-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-lime-500/20">
-                                <i class="fa-solid fa-handshake-angle"></i>
+                    <div class="bg-slate-900/40 backdrop-blur-xl rounded-3xl p-5 shadow-lg border border-slate-700/50 hover:border-lime-500/50 hover:bg-slate-800/60 hover:shadow-[0_8px_30px_rgba(132,204,22,0.15)] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[150px] group relative overflow-hidden active:scale-[0.98]" onclick="openLessonDetail('week16')">
+                        <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-lime-400 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"></div>
+                        <div class="absolute inset-0 z-0">
+                            <img src="https://live.staticflickr.com/65535/54608071262_22dfabcc11.jpg" class="w-full h-full object-cover opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-transform duration-700 ease-out mix-blend-luminosity" alt="Ecosystem">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"></div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-lime-500/5 rounded-full blur-2xl group-hover:bg-lime-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
+                        
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-lime-500/20 to-lime-600/5 text-lime-400 flex items-center justify-center text-2xl shadow-inner border border-lime-500/20 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-handshake-angle drop-shadow-sm"></i>
                             </div>
-                            <div class="flex flex-col gap-1 flex-grow">
-                                <span class="text-[10px] sm:text-xs font-bold text-lime-400 bg-lime-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-lime-800/50">สัปดาห์ที่ 16</span>
-                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">ความสัมพันธ์ระหว่างสิ่งมีชีวิต</h3>
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-lime-500/20 group-hover:text-lime-300 transition-all duration-300 border border-transparent group-hover:border-lime-500/30 backdrop-blur-md">
+                                <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
-                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-lime-500/30 group-hover:text-lime-300 transition-colors shrink-0">
-                                <i class="fa-solid fa-chevron-right text-sm"></i>
-                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-lime-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 16</span>
+                            <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">ความสัมพันธ์ระหว่างสิ่งมีชีวิต</h3>
                         </div>
                     </div>
 
-                    <!-- สัปดาห์ที่ 17 -->
-                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-yellow-500/50 hover:shadow-yellow-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week17')">
-                        <div class="flex items-center gap-4 w-full">
-                            <div class="w-12 h-12 rounded-2xl bg-yellow-500/20 text-yellow-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-yellow-500/20">
-                                <i class="fa-solid fa-network-wired"></i>
+                    <div class="bg-slate-900/40 backdrop-blur-xl rounded-3xl p-5 shadow-lg border border-slate-700/50 hover:border-yellow-500/50 hover:bg-slate-800/60 hover:shadow-[0_8px_30px_rgba(234,179,8,0.15)] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[150px] group relative overflow-hidden active:scale-[0.98]" onclick="openLessonDetail('week17')">
+                        <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-yellow-400 to-amber-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"></div>
+                        <div class="absolute inset-0 z-0">
+                            <img src="https://live.staticflickr.com/65535/54608071262_22dfabcc11.jpg" class="w-full h-full object-cover opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-transform duration-700 ease-out mix-blend-luminosity" alt="Ecosystem">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"></div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-yellow-500/5 rounded-full blur-2xl group-hover:bg-yellow-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
+                        
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-yellow-500/20 to-yellow-600/5 text-yellow-400 flex items-center justify-center text-2xl shadow-inner border border-yellow-500/20 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-network-wired drop-shadow-sm"></i>
                             </div>
-                            <div class="flex flex-col gap-1 flex-grow">
-                                <span class="text-[10px] sm:text-xs font-bold text-yellow-400 bg-yellow-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-yellow-800/50">สัปดาห์ที่ 17</span>
-                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">การถ่ายทอดพลังงานและสายใยอาหาร</h3>
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-yellow-500/20 group-hover:text-yellow-300 transition-all duration-300 border border-transparent group-hover:border-yellow-500/30 backdrop-blur-md">
+                                <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
-                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-yellow-500/30 group-hover:text-yellow-300 transition-colors shrink-0">
-                                <i class="fa-solid fa-chevron-right text-sm"></i>
-                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-yellow-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 17</span>
+                            <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">การถ่ายทอดพลังงานและสายใยอาหาร</h3>
                         </div>
                     </div>
 
-                    <!-- สัปดาห์ที่ 18 -->
-                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-purple-500/50 hover:shadow-purple-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week18')">
-                        <div class="flex items-center gap-4 w-full">
-                            <div class="w-12 h-12 rounded-2xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-purple-500/20">
-                                <i class="fa-solid fa-biohazard"></i>
+                    <div class="bg-slate-900/40 backdrop-blur-xl rounded-3xl p-5 shadow-lg border border-slate-700/50 hover:border-purple-500/50 hover:bg-slate-800/60 hover:shadow-[0_8px_30px_rgba(168,85,247,0.15)] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[150px] group relative overflow-hidden active:scale-[0.98]" onclick="openLessonDetail('week18')">
+                        <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-purple-400 to-fuchsia-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"></div>
+                        <div class="absolute inset-0 z-0">
+                            <img src="https://live.staticflickr.com/65535/54608071262_22dfabcc11.jpg" class="w-full h-full object-cover opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-transform duration-700 ease-out mix-blend-luminosity" alt="Ecosystem">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"></div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-purple-500/5 rounded-full blur-2xl group-hover:bg-purple-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
+                        
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-600/5 text-purple-400 flex items-center justify-center text-2xl shadow-inner border border-purple-500/20 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-biohazard drop-shadow-sm"></i>
                             </div>
-                            <div class="flex flex-col gap-1 flex-grow">
-                                <span class="text-[10px] sm:text-xs font-bold text-purple-400 bg-purple-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-purple-800/50">สัปดาห์ที่ 18</span>
-                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">การสะสมสารพิษและสมดุลระบบนิเวศ</h3>
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-purple-500/20 group-hover:text-purple-300 transition-all duration-300 border border-transparent group-hover:border-purple-500/30 backdrop-blur-md">
+                                <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
-                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-purple-500/30 group-hover:text-purple-300 transition-colors shrink-0">
-                                <i class="fa-solid fa-chevron-right text-sm"></i>
-                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-purple-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 18</span>
+                            <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">การสะสมสารพิษและสมดุลระบบนิเวศ</h3>
                         </div>
                     </div>
 
-                    <!-- สัปดาห์ที่ 19 -->
-                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-pink-500/50 hover:shadow-pink-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week19')">
-                        <div class="flex items-center gap-4 w-full">
-                            <div class="w-12 h-12 rounded-2xl bg-pink-500/20 text-pink-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-pink-500/20">
-                                <i class="fa-solid fa-earth-asia"></i>
+                    <div class="bg-slate-900/40 backdrop-blur-xl rounded-3xl p-5 shadow-lg border border-slate-700/50 hover:border-pink-500/50 hover:bg-slate-800/60 hover:shadow-[0_8px_30px_rgba(236,72,153,0.15)] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[150px] group relative overflow-hidden active:scale-[0.98]" onclick="openLessonDetail('week19')">
+                        <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-pink-400 to-rose-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"></div>
+                        <div class="absolute inset-0 z-0">
+                            <img src="https://live.staticflickr.com/65535/54608071262_22dfabcc11.jpg" class="w-full h-full object-cover opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-transform duration-700 ease-out mix-blend-luminosity" alt="Ecosystem">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"></div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-pink-500/5 rounded-full blur-2xl group-hover:bg-pink-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
+                        
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500/20 to-pink-600/5 text-pink-400 flex items-center justify-center text-2xl shadow-inner border border-pink-500/20 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-earth-asia drop-shadow-sm"></i>
                             </div>
-                            <div class="flex flex-col gap-1 flex-grow">
-                                <span class="text-[10px] sm:text-xs font-bold text-pink-400 bg-pink-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-pink-800/50">สัปดาห์ที่ 19</span>
-                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">ความหลากหลายทางชีวภาพ</h3>
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-pink-500/20 group-hover:text-pink-300 transition-all duration-300 border border-transparent group-hover:border-pink-500/30 backdrop-blur-md">
+                                <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
-                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-pink-500/30 group-hover:text-pink-300 transition-colors shrink-0">
-                                <i class="fa-solid fa-chevron-right text-sm"></i>
-                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-pink-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 19</span>
+                            <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">ความหลากหลายทางชีวภาพ</h3>
                         </div>
                     </div>
 
-                    <!-- สัปดาห์ที่ 20 -->
-                    <div class="bg-slate-900/60 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-slate-700/50 hover:border-rose-500/50 hover:shadow-rose-500/10 transition-all duration-300 cursor-pointer flex items-center justify-between group active:scale-[0.98]" onclick="openLessonDetail('week20')">
-                        <div class="flex items-center gap-4 w-full">
-                            <div class="w-12 h-12 rounded-2xl bg-rose-500/20 text-rose-400 flex items-center justify-center text-xl shrink-0 shadow-inner group-hover:scale-105 transition-transform border border-rose-500/20">
-                                <i class="fa-solid fa-graduation-cap"></i>
+                    <div class="bg-slate-900/40 backdrop-blur-xl rounded-3xl p-5 shadow-lg border border-slate-700/50 hover:border-rose-500/50 hover:bg-slate-800/60 hover:shadow-[0_8px_30px_rgba(244,63,94,0.15)] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[150px] group relative overflow-hidden active:scale-[0.98]" onclick="openLessonDetail('week20')">
+                        <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-rose-400 to-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"></div>
+                        <div class="absolute inset-0 z-0">
+                            <img src="https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&w=500&q=80" class="w-full h-full object-cover opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-transform duration-700 ease-out mix-blend-luminosity" alt="Exam">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"></div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-rose-500/5 rounded-full blur-2xl group-hover:bg-rose-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
+                        
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500/20 to-rose-600/5 text-rose-400 flex items-center justify-center text-2xl shadow-inner border border-rose-500/20 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-graduation-cap drop-shadow-sm"></i>
                             </div>
-                            <div class="flex flex-col gap-1 flex-grow">
-                                <span class="text-[10px] sm:text-xs font-bold text-rose-400 bg-rose-900/40 px-2.5 py-0.5 rounded-md w-fit tracking-wide border border-rose-800/50">สัปดาห์ที่ 20</span>
-                                <h3 class="font-bold text-[15px] sm:text-base text-white line-clamp-1">ทบทวนและวัดผลปลายภาค</h3>
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-rose-500/20 group-hover:text-rose-300 transition-all duration-300 border border-transparent group-hover:border-rose-500/30 backdrop-blur-md">
+                                <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
-                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 group-hover:bg-rose-500/30 group-hover:text-rose-300 transition-colors shrink-0">
-                                <i class="fa-solid fa-chevron-right text-sm"></i>
-                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-rose-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 20</span>
+                            <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">ทบทวนและวัดผลปลายภาค</h3>
                         </div>
                     </div>
 
