@@ -265,18 +265,14 @@
         <section id="lesson" class="page-section p-4 md:p-6 lg:p-8 pb-[120px] md:pb-[120px] lg:pb-[120px] flex-col relative z-10 w-full max-w-full mx-auto flex-grow">
             <div class="max-w-[1800px] w-full mx-auto flex flex-col gap-6">
                 <!-- Header -->
-                <div class="relative flex flex-col md:flex-row justify-between items-start md:items-center rounded-2xl shadow-lg border border-slate-700/80 gap-4 overflow-hidden min-h-[90px] md:min-h-[110px]">
-                    <div class="absolute inset-0 z-0 pointer-events-none">
-                        <img src="https://live.staticflickr.com/8146/7339344552_5e5c819e4e.jpg" alt="Light" class="w-full h-full object-cover object-center">
-                        <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/50 to-transparent"></div>
-                    </div>
-                    <div class="relative z-10 flex items-center gap-3 md:gap-4 w-full px-4 md:px-6 py-4">
-                        <div class="w-10 h-10 md:w-12 md:h-12 bg-[#eab308]/30 backdrop-blur-md rounded-full flex items-center justify-center shrink-0 border border-[#eab308]/40 shadow-lg">
-                            <i class="fa-solid fa-newspaper text-white text-lg md:text-xl drop-shadow"></i>
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center bg-glass-dark rounded-2xl shadow-lg px-4 md:px-6 py-4 border border-slate-700/80 gap-4">
+                    <div class="flex items-center gap-3 md:gap-4 w-full">
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-[#eab308]/20 rounded-full flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-newspaper text-[#eab308] text-lg md:text-xl drop-shadow"></i>
                         </div>
                         <div>
-                            <h2 class="text-lg md:text-2xl font-bold text-white tracking-wide drop-shadow-md">บทเรียน</h2>
-                            <p class="text-xs md:text-sm font-medium text-slate-200 mt-0.5 md:mt-1 drop-shadow-md"><i class="fa-solid fa-book-bookmark mr-1 text-[#eab308]"></i>วิทยาศาสตร์ 6 เทอม 2</p>
+                            <h2 class="text-lg md:text-2xl font-bold text-white tracking-wide">บทเรียน</h2>
+                            <p class="text-xs md:text-sm font-medium text-slate-400 mt-0.5 md:mt-1"><i class="fa-solid fa-book-bookmark mr-1 text-[#eab308]"></i>วิทยาศาสตร์ 6 เทอม 2</p>
                         </div>
                     </div>
                 </div>
@@ -292,18 +288,16 @@
                         </div>
                         <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl group-hover:bg-blue-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
                         
-                        <div class="flex items-center justify-between w-full mb-auto relative z-10">
-                            <div class="w-[68px] h-[68px] rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-600/5 text-blue-400 flex items-center justify-center text-3xl shadow-inner border border-blue-500/20 group-hover:scale-110 transition-transform duration-300 relative z-20">
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-600/5 text-blue-400 flex items-center justify-center text-2xl shadow-inner border border-blue-500/20 group-hover:scale-110 transition-transform duration-300">
                                 <i class="fa-solid fa-flask drop-shadow-sm"></i>
                             </div>
-                            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10 flex justify-center w-full">
-                                <span class="text-[15px] sm:text-[16px] font-extrabold text-blue-400 tracking-wider uppercase bg-slate-900/80 px-4 py-1.5 rounded-full border border-blue-500/30 backdrop-blur-md shadow-sm">สัปดาห์ที่ 1</span>
-                            </div>
-                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-blue-500/20 group-hover:text-blue-300 transition-all duration-300 border border-transparent group-hover:border-blue-500/30 backdrop-blur-md relative z-20">
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-blue-500/20 group-hover:text-blue-300 transition-all duration-300 border border-transparent group-hover:border-blue-500/30 backdrop-blur-md">
                                 <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="mt-5 relative z-10 w-full text-center">
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-blue-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 1</span>
                             <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">ปฏิกิริยาเคมี</h3>
                         </div>
                     </div>
@@ -316,18 +310,16 @@
                         </div>
                         <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-emerald-500/5 rounded-full blur-2xl group-hover:bg-emerald-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
                         
-                        <div class="flex items-center justify-between w-full mb-auto relative z-10">
-                            <div class="w-[68px] h-[68px] rounded-2xl bg-gradient-to-br from-emerald-500/20 to-emerald-600/5 text-emerald-400 flex items-center justify-center text-3xl shadow-inner border border-emerald-500/20 group-hover:scale-110 transition-transform duration-300 relative z-20">
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-emerald-600/5 text-emerald-400 flex items-center justify-center text-2xl shadow-inner border border-emerald-500/20 group-hover:scale-110 transition-transform duration-300">
                                 <i class="fa-solid fa-scale-balanced drop-shadow-sm"></i>
                             </div>
-                            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10 flex justify-center w-full">
-                                <span class="text-[15px] sm:text-[16px] font-extrabold text-emerald-400 tracking-wider uppercase bg-slate-900/80 px-4 py-1.5 rounded-full border border-emerald-500/30 backdrop-blur-md shadow-sm">สัปดาห์ที่ 2</span>
-                            </div>
-                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-emerald-500/20 group-hover:text-emerald-300 transition-all duration-300 border border-transparent group-hover:border-emerald-500/30 backdrop-blur-md relative z-20">
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-emerald-500/20 group-hover:text-emerald-300 transition-all duration-300 border border-transparent group-hover:border-emerald-500/30 backdrop-blur-md">
                                 <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="mt-5 relative z-10 w-full text-center">
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-emerald-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 2</span>
                             <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">กฎทรงมวล</h3>
                         </div>
                     </div>
@@ -340,18 +332,16 @@
                         </div>
                         <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-orange-500/5 rounded-full blur-2xl group-hover:bg-orange-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
                         
-                        <div class="flex items-center justify-between w-full mb-auto relative z-10">
-                            <div class="w-[68px] h-[68px] rounded-2xl bg-gradient-to-br from-orange-500/20 to-orange-600/5 text-orange-400 flex items-center justify-center text-3xl shadow-inner border border-orange-500/20 group-hover:scale-110 transition-transform duration-300 relative z-20">
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500/20 to-orange-600/5 text-orange-400 flex items-center justify-center text-2xl shadow-inner border border-orange-500/20 group-hover:scale-110 transition-transform duration-300">
                                 <i class="fa-solid fa-fire-flame-curved drop-shadow-sm"></i>
                             </div>
-                            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10 flex justify-center w-full">
-                                <span class="text-[15px] sm:text-[16px] font-extrabold text-orange-400 tracking-wider uppercase bg-slate-900/80 px-4 py-1.5 rounded-full border border-orange-500/30 backdrop-blur-md shadow-sm">สัปดาห์ที่ 3</span>
-                            </div>
-                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-orange-500/20 group-hover:text-orange-300 transition-all duration-300 border border-transparent group-hover:border-orange-500/30 backdrop-blur-md relative z-20">
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-orange-500/20 group-hover:text-orange-300 transition-all duration-300 border border-transparent group-hover:border-orange-500/30 backdrop-blur-md">
                                 <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="mt-5 relative z-10 w-full text-center">
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-orange-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 3</span>
                             <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">การถ่ายโอนความร้อน</h3>
                         </div>
                     </div>
@@ -364,18 +354,16 @@
                         </div>
                         <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-fuchsia-500/5 rounded-full blur-2xl group-hover:bg-fuchsia-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
                         
-                        <div class="flex items-center justify-between w-full mb-auto relative z-10">
-                            <div class="w-[68px] h-[68px] rounded-2xl bg-gradient-to-br from-fuchsia-500/20 to-fuchsia-600/5 text-fuchsia-400 flex items-center justify-center text-3xl shadow-inner border border-fuchsia-500/20 group-hover:scale-110 transition-transform duration-300 relative z-20">
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-fuchsia-500/20 to-fuchsia-600/5 text-fuchsia-400 flex items-center justify-center text-2xl shadow-inner border border-fuchsia-500/20 group-hover:scale-110 transition-transform duration-300">
                                 <i class="fa-solid fa-vial-virus drop-shadow-sm"></i>
                             </div>
-                            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10 flex justify-center w-full">
-                                <span class="text-[15px] sm:text-[16px] font-extrabold text-fuchsia-400 tracking-wider uppercase bg-slate-900/80 px-4 py-1.5 rounded-full border border-fuchsia-500/30 backdrop-blur-md shadow-sm">สัปดาห์ที่ 4</span>
-                            </div>
-                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-fuchsia-500/20 group-hover:text-fuchsia-300 transition-all duration-300 border border-transparent group-hover:border-fuchsia-500/30 backdrop-blur-md relative z-20">
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-fuchsia-500/20 group-hover:text-fuchsia-300 transition-all duration-300 border border-transparent group-hover:border-fuchsia-500/30 backdrop-blur-md">
                                 <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="mt-5 relative z-10 w-full text-center">
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-fuchsia-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 4</span>
                             <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">ปฏิกิริยาเคมีในชีวิตประจำวัน</h3>
                         </div>
                     </div>
@@ -388,18 +376,16 @@
                         </div>
                         <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-violet-500/5 rounded-full blur-2xl group-hover:bg-violet-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
                         
-                        <div class="flex items-center justify-between w-full mb-auto relative z-10">
-                            <div class="w-[68px] h-[68px] rounded-2xl bg-gradient-to-br from-violet-500/20 to-violet-600/5 text-violet-400 flex items-center justify-center text-3xl shadow-inner border border-violet-500/20 group-hover:scale-110 transition-transform duration-300 relative z-20">
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500/20 to-violet-600/5 text-violet-400 flex items-center justify-center text-2xl shadow-inner border border-violet-500/20 group-hover:scale-110 transition-transform duration-300">
                                 <i class="fa-solid fa-leaf drop-shadow-sm"></i>
                             </div>
-                            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10 flex justify-center w-full">
-                                <span class="text-[15px] sm:text-[16px] font-extrabold text-violet-400 tracking-wider uppercase bg-slate-900/80 px-4 py-1.5 rounded-full border border-violet-500/30 backdrop-blur-md shadow-sm">สัปดาห์ที่ 5</span>
-                            </div>
-                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-violet-500/20 group-hover:text-violet-300 transition-all duration-300 border border-transparent group-hover:border-violet-500/30 backdrop-blur-md relative z-20">
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-violet-500/20 group-hover:text-violet-300 transition-all duration-300 border border-transparent group-hover:border-violet-500/30 backdrop-blur-md">
                                 <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="mt-5 relative z-10 w-full text-center">
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-violet-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 5</span>
                             <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">ผลกระทบต่อสิ่งแวดล้อม</h3>
                         </div>
                     </div>
@@ -412,18 +398,16 @@
                         </div>
                         <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-cyan-500/5 rounded-full blur-2xl group-hover:bg-cyan-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
                         
-                        <div class="flex items-center justify-between w-full mb-auto relative z-10">
-                            <div class="w-[68px] h-[68px] rounded-2xl bg-gradient-to-br from-cyan-500/20 to-cyan-600/5 text-cyan-400 flex items-center justify-center text-3xl shadow-inner border border-cyan-500/20 group-hover:scale-110 transition-transform duration-300 relative z-20">
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-cyan-600/5 text-cyan-400 flex items-center justify-center text-2xl shadow-inner border border-cyan-500/20 group-hover:scale-110 transition-transform duration-300">
                                 <i class="fa-solid fa-cubes drop-shadow-sm"></i>
                             </div>
-                            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10 flex justify-center w-full">
-                                <span class="text-[15px] sm:text-[16px] font-extrabold text-cyan-400 tracking-wider uppercase bg-slate-900/80 px-4 py-1.5 rounded-full border border-cyan-500/30 backdrop-blur-md shadow-sm">สัปดาห์ที่ 6</span>
-                            </div>
-                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-cyan-500/20 group-hover:text-cyan-300 transition-all duration-300 border border-transparent group-hover:border-cyan-500/30 backdrop-blur-md relative z-20">
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-cyan-500/20 group-hover:text-cyan-300 transition-all duration-300 border border-transparent group-hover:border-cyan-500/30 backdrop-blur-md">
                                 <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="mt-5 relative z-10 w-full text-center">
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-cyan-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 6</span>
                             <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">วัสดุในชีวิตประจำวัน</h3>
                         </div>
                     </div>
@@ -436,18 +420,16 @@
                         </div>
                         <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-rose-500/5 rounded-full blur-2xl group-hover:bg-rose-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
                         
-                        <div class="flex items-center justify-between w-full mb-auto relative z-10">
-                            <div class="w-[68px] h-[68px] rounded-2xl bg-gradient-to-br from-rose-500/20 to-rose-600/5 text-rose-400 flex items-center justify-center text-3xl shadow-inner border border-rose-500/20 group-hover:scale-110 transition-transform duration-300 relative z-20">
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500/20 to-rose-600/5 text-rose-400 flex items-center justify-center text-2xl shadow-inner border border-rose-500/20 group-hover:scale-110 transition-transform duration-300">
                                 <i class="fa-solid fa-lightbulb drop-shadow-sm"></i>
                             </div>
-                            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10 flex justify-center w-full">
-                                <span class="text-[15px] sm:text-[16px] font-extrabold text-rose-400 tracking-wider uppercase bg-slate-900/80 px-4 py-1.5 rounded-full border border-rose-500/30 backdrop-blur-md shadow-sm">สัปดาห์ที่ 7</span>
-                            </div>
-                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-rose-500/20 group-hover:text-rose-300 transition-all duration-300 border border-transparent group-hover:border-rose-500/30 backdrop-blur-md relative z-20">
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-rose-500/20 group-hover:text-rose-300 transition-all duration-300 border border-transparent group-hover:border-rose-500/30 backdrop-blur-md">
                                 <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="mt-5 relative z-10 w-full text-center">
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-rose-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 7</span>
                             <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">STEM การแก้ปัญหาเคมี</h3>
                         </div>
                     </div>
@@ -460,18 +442,16 @@
                         </div>
                         <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-amber-500/5 rounded-full blur-2xl group-hover:bg-amber-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
                         
-                        <div class="flex items-center justify-between w-full mb-auto relative z-10">
-                            <div class="w-[68px] h-[68px] rounded-2xl bg-gradient-to-br from-amber-500/20 to-amber-600/5 text-amber-400 flex items-center justify-center text-3xl shadow-inner border border-amber-500/20 group-hover:scale-110 transition-transform duration-300 relative z-20">
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500/20 to-amber-600/5 text-amber-400 flex items-center justify-center text-2xl shadow-inner border border-amber-500/20 group-hover:scale-110 transition-transform duration-300">
                                 <i class="fa-solid fa-bolt drop-shadow-sm"></i>
                             </div>
-                            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10 flex justify-center w-full">
-                                <span class="text-[15px] sm:text-[16px] font-extrabold text-amber-400 tracking-wider uppercase bg-slate-900/80 px-4 py-1.5 rounded-full border border-amber-500/30 backdrop-blur-md shadow-sm">สัปดาห์ที่ 8</span>
-                            </div>
-                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-amber-500/20 group-hover:text-amber-300 transition-all duration-300 border border-transparent group-hover:border-amber-500/30 backdrop-blur-md relative z-20">
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-amber-500/20 group-hover:text-amber-300 transition-all duration-300 border border-transparent group-hover:border-amber-500/30 backdrop-blur-md">
                                 <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="mt-5 relative z-10 w-full text-center">
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-amber-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 8</span>
                             <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">ปริมาณทางไฟฟ้าและกฎโอห์ม</h3>
                         </div>
                     </div>
@@ -484,18 +464,16 @@
                         </div>
                         <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-teal-500/5 rounded-full blur-2xl group-hover:bg-teal-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
                         
-                        <div class="flex items-center justify-between w-full mb-auto relative z-10">
-                            <div class="w-[68px] h-[68px] rounded-2xl bg-gradient-to-br from-teal-500/20 to-teal-600/5 text-teal-400 flex items-center justify-center text-3xl shadow-inner border border-teal-500/20 group-hover:scale-110 transition-transform duration-300 relative z-20">
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-teal-500/20 to-teal-600/5 text-teal-400 flex items-center justify-center text-2xl shadow-inner border border-teal-500/20 group-hover:scale-110 transition-transform duration-300">
                                 <i class="fa-solid fa-gauge-high drop-shadow-sm"></i>
                             </div>
-                            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10 flex justify-center w-full">
-                                <span class="text-[15px] sm:text-[16px] font-extrabold text-teal-400 tracking-wider uppercase bg-slate-900/80 px-4 py-1.5 rounded-full border border-teal-500/30 backdrop-blur-md shadow-sm">สัปดาห์ที่ 9</span>
-                            </div>
-                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-teal-500/20 group-hover:text-teal-300 transition-all duration-300 border border-transparent group-hover:border-teal-500/30 backdrop-blur-md relative z-20">
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-teal-500/20 group-hover:text-teal-300 transition-all duration-300 border border-transparent group-hover:border-teal-500/30 backdrop-blur-md">
                                 <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="mt-5 relative z-10 w-full text-center">
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-teal-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 9</span>
                             <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">เครื่องมือวัดทางไฟฟ้า</h3>
                         </div>
                     </div>
@@ -508,18 +486,16 @@
                         </div>
                         <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-red-500/5 rounded-full blur-2xl group-hover:bg-red-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
                         
-                        <div class="flex items-center justify-between w-full mb-auto relative z-10">
-                            <div class="w-[68px] h-[68px] rounded-2xl bg-gradient-to-br from-red-500/20 to-red-600/5 text-red-400 flex items-center justify-center text-3xl shadow-inner border border-red-500/20 group-hover:scale-110 transition-transform duration-300 relative z-20">
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-500/20 to-red-600/5 text-red-400 flex items-center justify-center text-2xl shadow-inner border border-red-500/20 group-hover:scale-110 transition-transform duration-300">
                                 <i class="fa-solid fa-file-pen drop-shadow-sm"></i>
                             </div>
-                            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10 flex justify-center w-full">
-                                <span class="text-[15px] sm:text-[16px] font-extrabold text-red-400 tracking-wider uppercase bg-slate-900/80 px-4 py-1.5 rounded-full border border-red-500/30 backdrop-blur-md shadow-sm">สัปดาห์ที่ 10</span>
-                            </div>
-                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-red-500/20 group-hover:text-red-300 transition-all duration-300 border border-transparent group-hover:border-red-500/30 backdrop-blur-md relative z-20">
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-red-500/20 group-hover:text-red-300 transition-all duration-300 border border-transparent group-hover:border-red-500/30 backdrop-blur-md">
                                 <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="mt-5 relative z-10 w-full text-center">
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-red-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 10</span>
                             <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">ทบทวนและวัดผลกลางภาค</h3>
                         </div>
                     </div>
@@ -532,18 +508,16 @@
                         </div>
                         <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-lime-500/5 rounded-full blur-2xl group-hover:bg-lime-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
                         
-                        <div class="flex items-center justify-between w-full mb-auto relative z-10">
-                            <div class="w-[68px] h-[68px] rounded-2xl bg-gradient-to-br from-lime-500/20 to-lime-600/5 text-lime-400 flex items-center justify-center text-3xl shadow-inner border border-lime-500/20 group-hover:scale-110 transition-transform duration-300 relative z-20">
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-lime-500/20 to-lime-600/5 text-lime-400 flex items-center justify-center text-2xl shadow-inner border border-lime-500/20 group-hover:scale-110 transition-transform duration-300">
                                 <i class="fa-solid fa-project-diagram drop-shadow-sm"></i>
                             </div>
-                            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10 flex justify-center w-full">
-                                <span class="text-[15px] sm:text-[16px] font-extrabold text-lime-400 tracking-wider uppercase bg-slate-900/80 px-4 py-1.5 rounded-full border border-lime-500/30 backdrop-blur-md shadow-sm">สัปดาห์ที่ 11</span>
-                            </div>
-                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-lime-500/20 group-hover:text-lime-300 transition-all duration-300 border border-transparent group-hover:border-lime-500/30 backdrop-blur-md relative z-20">
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-lime-500/20 group-hover:text-lime-300 transition-all duration-300 border border-transparent group-hover:border-lime-500/30 backdrop-blur-md">
                                 <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="mt-5 relative z-10 w-full text-center">
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-lime-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 11</span>
                             <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">การต่อตัวต้านทานอนุกรมและขนาน</h3>
                         </div>
                     </div>
@@ -556,18 +530,16 @@
                         </div>
                         <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-pink-500/5 rounded-full blur-2xl group-hover:bg-pink-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
                         
-                        <div class="flex items-center justify-between w-full mb-auto relative z-10">
-                            <div class="w-[68px] h-[68px] rounded-2xl bg-gradient-to-br from-pink-500/20 to-pink-600/5 text-pink-400 flex items-center justify-center text-3xl shadow-inner border border-pink-500/20 group-hover:scale-110 transition-transform duration-300 relative z-20">
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500/20 to-pink-600/5 text-pink-400 flex items-center justify-center text-2xl shadow-inner border border-pink-500/20 group-hover:scale-110 transition-transform duration-300">
                                 <i class="fa-solid fa-microchip drop-shadow-sm"></i>
                             </div>
-                            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10 flex justify-center w-full">
-                                <span class="text-[15px] sm:text-[16px] font-extrabold text-pink-400 tracking-wider uppercase bg-slate-900/80 px-4 py-1.5 rounded-full border border-pink-500/30 backdrop-blur-md shadow-sm">สัปดาห์ที่ 12</span>
-                            </div>
-                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-pink-500/20 group-hover:text-pink-300 transition-all duration-300 border border-transparent group-hover:border-pink-500/30 backdrop-blur-md relative z-20">
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-pink-500/20 group-hover:text-pink-300 transition-all duration-300 border border-transparent group-hover:border-pink-500/30 backdrop-blur-md">
                                 <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="mt-5 relative z-10 w-full text-center">
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-pink-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 12</span>
                             <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">ชิ้นส่วนและวงจรอิเล็กทรอนิกส์เบื้องต้น</h3>
                         </div>
                     </div>
@@ -580,18 +552,16 @@
                         </div>
                         <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-indigo-500/5 rounded-full blur-2xl group-hover:bg-indigo-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
                         
-                        <div class="flex items-center justify-between w-full mb-auto relative z-10">
-                            <div class="w-[68px] h-[68px] rounded-2xl bg-gradient-to-br from-indigo-500/20 to-indigo-600/5 text-indigo-400 flex items-center justify-center text-3xl shadow-inner border border-indigo-500/20 group-hover:scale-110 transition-transform duration-300 relative z-20">
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-indigo-600/5 text-indigo-400 flex items-center justify-center text-2xl shadow-inner border border-indigo-500/20 group-hover:scale-110 transition-transform duration-300">
                                 <i class="fa-solid fa-plug drop-shadow-sm"></i>
                             </div>
-                            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10 flex justify-center w-full">
-                                <span class="text-[15px] sm:text-[16px] font-extrabold text-indigo-400 tracking-wider uppercase bg-slate-900/80 px-4 py-1.5 rounded-full border border-indigo-500/30 backdrop-blur-md shadow-sm">สัปดาห์ที่ 13</span>
-                            </div>
-                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-indigo-500/20 group-hover:text-indigo-300 transition-all duration-300 border border-transparent group-hover:border-indigo-500/30 backdrop-blur-md relative z-20">
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-indigo-500/20 group-hover:text-indigo-300 transition-all duration-300 border border-transparent group-hover:border-indigo-500/30 backdrop-blur-md">
                                 <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="mt-5 relative z-10 w-full text-center">
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-indigo-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 13</span>
                             <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">กำลังไฟฟ้าและพลังงานไฟฟ้า</h3>
                         </div>
                     </div>
@@ -604,18 +574,16 @@
                         </div>
                         <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-sky-500/5 rounded-full blur-2xl group-hover:bg-sky-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
                         
-                        <div class="flex items-center justify-between w-full mb-auto relative z-10">
-                            <div class="w-[68px] h-[68px] rounded-2xl bg-gradient-to-br from-sky-500/20 to-sky-600/5 text-sky-400 flex items-center justify-center text-3xl shadow-inner border border-sky-500/20 group-hover:scale-110 transition-transform duration-300 relative z-20">
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-sky-500/20 to-sky-600/5 text-sky-400 flex items-center justify-center text-2xl shadow-inner border border-sky-500/20 group-hover:scale-110 transition-transform duration-300">
                                 <i class="fa-solid fa-file-invoice-dollar drop-shadow-sm"></i>
                             </div>
-                            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10 flex justify-center w-full">
-                                <span class="text-[15px] sm:text-[16px] font-extrabold text-sky-400 tracking-wider uppercase bg-slate-900/80 px-4 py-1.5 rounded-full border border-sky-500/30 backdrop-blur-md shadow-sm">สัปดาห์ที่ 14</span>
-                            </div>
-                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-sky-500/20 group-hover:text-sky-300 transition-all duration-300 border border-transparent group-hover:border-sky-500/30 backdrop-blur-md relative z-20">
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-sky-500/20 group-hover:text-sky-300 transition-all duration-300 border border-transparent group-hover:border-sky-500/30 backdrop-blur-md">
                                 <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="mt-5 relative z-10 w-full text-center">
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-sky-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 14</span>
                             <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">การคำนวณค่าไฟฟ้าและความปลอดภัย</h3>
                         </div>
                     </div>
@@ -628,18 +596,16 @@
                         </div>
                         <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-green-500/5 rounded-full blur-2xl group-hover:bg-green-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
                         
-                        <div class="flex items-center justify-between w-full mb-auto relative z-10">
-                            <div class="w-[68px] h-[68px] rounded-2xl bg-gradient-to-br from-green-500/20 to-green-600/5 text-green-400 flex items-center justify-center text-3xl shadow-inner border border-green-500/20 group-hover:scale-110 transition-transform duration-300 relative z-20">
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500/20 to-green-600/5 text-green-400 flex items-center justify-center text-2xl shadow-inner border border-green-500/20 group-hover:scale-110 transition-transform duration-300">
                                 <i class="fa-solid fa-tree drop-shadow-sm"></i>
                             </div>
-                            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10 flex justify-center w-full">
-                                <span class="text-[15px] sm:text-[16px] font-extrabold text-green-400 tracking-wider uppercase bg-slate-900/80 px-4 py-1.5 rounded-full border border-green-500/30 backdrop-blur-md shadow-sm">สัปดาห์ที่ 15</span>
-                            </div>
-                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-green-500/20 group-hover:text-green-300 transition-all duration-300 border border-transparent group-hover:border-green-500/30 backdrop-blur-md relative z-20">
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-green-500/20 group-hover:text-green-300 transition-all duration-300 border border-transparent group-hover:border-green-500/30 backdrop-blur-md">
                                 <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="mt-5 relative z-10 w-full text-center">
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-green-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 15</span>
                             <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">องค์ประกอบระบบนิเวศ</h3>
                         </div>
                     </div>
@@ -652,18 +618,16 @@
                         </div>
                         <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-lime-500/5 rounded-full blur-2xl group-hover:bg-lime-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
                         
-                        <div class="flex items-center justify-between w-full mb-auto relative z-10">
-                            <div class="w-[68px] h-[68px] rounded-2xl bg-gradient-to-br from-lime-500/20 to-lime-600/5 text-lime-400 flex items-center justify-center text-3xl shadow-inner border border-lime-500/20 group-hover:scale-110 transition-transform duration-300 relative z-20">
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-lime-500/20 to-lime-600/5 text-lime-400 flex items-center justify-center text-2xl shadow-inner border border-lime-500/20 group-hover:scale-110 transition-transform duration-300">
                                 <i class="fa-solid fa-handshake-angle drop-shadow-sm"></i>
                             </div>
-                            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10 flex justify-center w-full">
-                                <span class="text-[15px] sm:text-[16px] font-extrabold text-lime-400 tracking-wider uppercase bg-slate-900/80 px-4 py-1.5 rounded-full border border-lime-500/30 backdrop-blur-md shadow-sm">สัปดาห์ที่ 16</span>
-                            </div>
-                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-lime-500/20 group-hover:text-lime-300 transition-all duration-300 border border-transparent group-hover:border-lime-500/30 backdrop-blur-md relative z-20">
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-lime-500/20 group-hover:text-lime-300 transition-all duration-300 border border-transparent group-hover:border-lime-500/30 backdrop-blur-md">
                                 <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="mt-5 relative z-10 w-full text-center">
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-lime-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 16</span>
                             <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">ความสัมพันธ์ระหว่างสิ่งมีชีวิต</h3>
                         </div>
                     </div>
@@ -676,18 +640,16 @@
                         </div>
                         <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-yellow-500/5 rounded-full blur-2xl group-hover:bg-yellow-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
                         
-                        <div class="flex items-center justify-between w-full mb-auto relative z-10">
-                            <div class="w-[68px] h-[68px] rounded-2xl bg-gradient-to-br from-yellow-500/20 to-yellow-600/5 text-yellow-400 flex items-center justify-center text-3xl shadow-inner border border-yellow-500/20 group-hover:scale-110 transition-transform duration-300 relative z-20">
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-yellow-500/20 to-yellow-600/5 text-yellow-400 flex items-center justify-center text-2xl shadow-inner border border-yellow-500/20 group-hover:scale-110 transition-transform duration-300">
                                 <i class="fa-solid fa-network-wired drop-shadow-sm"></i>
                             </div>
-                            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10 flex justify-center w-full">
-                                <span class="text-[15px] sm:text-[16px] font-extrabold text-yellow-400 tracking-wider uppercase bg-slate-900/80 px-4 py-1.5 rounded-full border border-yellow-500/30 backdrop-blur-md shadow-sm">สัปดาห์ที่ 17</span>
-                            </div>
-                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-yellow-500/20 group-hover:text-yellow-300 transition-all duration-300 border border-transparent group-hover:border-yellow-500/30 backdrop-blur-md relative z-20">
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-yellow-500/20 group-hover:text-yellow-300 transition-all duration-300 border border-transparent group-hover:border-yellow-500/30 backdrop-blur-md">
                                 <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="mt-5 relative z-10 w-full text-center">
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-yellow-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 17</span>
                             <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">การถ่ายทอดพลังงานและสายใยอาหาร</h3>
                         </div>
                     </div>
@@ -700,18 +662,16 @@
                         </div>
                         <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-purple-500/5 rounded-full blur-2xl group-hover:bg-purple-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
                         
-                        <div class="flex items-center justify-between w-full mb-auto relative z-10">
-                            <div class="w-[68px] h-[68px] rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-600/5 text-purple-400 flex items-center justify-center text-3xl shadow-inner border border-purple-500/20 group-hover:scale-110 transition-transform duration-300 relative z-20">
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-600/5 text-purple-400 flex items-center justify-center text-2xl shadow-inner border border-purple-500/20 group-hover:scale-110 transition-transform duration-300">
                                 <i class="fa-solid fa-biohazard drop-shadow-sm"></i>
                             </div>
-                            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10 flex justify-center w-full">
-                                <span class="text-[15px] sm:text-[16px] font-extrabold text-purple-400 tracking-wider uppercase bg-slate-900/80 px-4 py-1.5 rounded-full border border-purple-500/30 backdrop-blur-md shadow-sm">สัปดาห์ที่ 18</span>
-                            </div>
-                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-purple-500/20 group-hover:text-purple-300 transition-all duration-300 border border-transparent group-hover:border-purple-500/30 backdrop-blur-md relative z-20">
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-purple-500/20 group-hover:text-purple-300 transition-all duration-300 border border-transparent group-hover:border-purple-500/30 backdrop-blur-md">
                                 <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="mt-5 relative z-10 w-full text-center">
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-purple-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 18</span>
                             <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">การสะสมสารพิษและสมดุลระบบนิเวศ</h3>
                         </div>
                     </div>
@@ -724,18 +684,16 @@
                         </div>
                         <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-pink-500/5 rounded-full blur-2xl group-hover:bg-pink-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
                         
-                        <div class="flex items-center justify-between w-full mb-auto relative z-10">
-                            <div class="w-[68px] h-[68px] rounded-2xl bg-gradient-to-br from-pink-500/20 to-pink-600/5 text-pink-400 flex items-center justify-center text-3xl shadow-inner border border-pink-500/20 group-hover:scale-110 transition-transform duration-300 relative z-20">
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500/20 to-pink-600/5 text-pink-400 flex items-center justify-center text-2xl shadow-inner border border-pink-500/20 group-hover:scale-110 transition-transform duration-300">
                                 <i class="fa-solid fa-earth-asia drop-shadow-sm"></i>
                             </div>
-                            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10 flex justify-center w-full">
-                                <span class="text-[15px] sm:text-[16px] font-extrabold text-pink-400 tracking-wider uppercase bg-slate-900/80 px-4 py-1.5 rounded-full border border-pink-500/30 backdrop-blur-md shadow-sm">สัปดาห์ที่ 19</span>
-                            </div>
-                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-pink-500/20 group-hover:text-pink-300 transition-all duration-300 border border-transparent group-hover:border-pink-500/30 backdrop-blur-md relative z-20">
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-pink-500/20 group-hover:text-pink-300 transition-all duration-300 border border-transparent group-hover:border-pink-500/30 backdrop-blur-md">
                                 <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="mt-5 relative z-10 w-full text-center">
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-pink-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 19</span>
                             <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">ความหลากหลายทางชีวภาพ</h3>
                         </div>
                     </div>
@@ -748,18 +706,16 @@
                         </div>
                         <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-rose-500/5 rounded-full blur-2xl group-hover:bg-rose-500/10 transition-colors duration-300 pointer-events-none z-0"></div>
                         
-                        <div class="flex items-center justify-between w-full mb-auto relative z-10">
-                            <div class="w-[68px] h-[68px] rounded-2xl bg-gradient-to-br from-rose-500/20 to-rose-600/5 text-rose-400 flex items-center justify-center text-3xl shadow-inner border border-rose-500/20 group-hover:scale-110 transition-transform duration-300 relative z-20">
+                        <div class="flex items-start justify-between w-full mb-4 relative z-10">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500/20 to-rose-600/5 text-rose-400 flex items-center justify-center text-2xl shadow-inner border border-rose-500/20 group-hover:scale-110 transition-transform duration-300">
                                 <i class="fa-solid fa-graduation-cap drop-shadow-sm"></i>
                             </div>
-                            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10 flex justify-center w-full">
-                                <span class="text-[15px] sm:text-[16px] font-extrabold text-rose-400 tracking-wider uppercase bg-slate-900/80 px-4 py-1.5 rounded-full border border-rose-500/30 backdrop-blur-md shadow-sm">สัปดาห์ที่ 20</span>
-                            </div>
-                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-rose-500/20 group-hover:text-rose-300 transition-all duration-300 border border-transparent group-hover:border-rose-500/30 backdrop-blur-md relative z-20">
+                            <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 group-hover:bg-rose-500/20 group-hover:text-rose-300 transition-all duration-300 border border-transparent group-hover:border-rose-500/30 backdrop-blur-md">
                                 <i class="fa-solid fa-arrow-right -rotate-45 text-sm group-hover:rotate-0 transition-transform duration-300"></i>
                             </div>
                         </div>
-                        <div class="mt-5 relative z-10 w-full text-center">
+                        <div class="flex flex-col gap-1 relative z-10">
+                            <span class="text-[10px] font-extrabold text-rose-400 tracking-wider uppercase mb-0.5">สัปดาห์ที่ 20</span>
                             <h3 class="font-bold text-[15px] sm:text-base text-slate-200 group-hover:text-white line-clamp-2 leading-tight transition-colors">ทบทวนและวัดผลปลายภาค</h3>
                         </div>
                     </div>
@@ -1291,7 +1247,7 @@
                 <i class="fa-solid fa-arrow-left text-lg"></i>
             </button>
             <div class="flex flex-col justify-center">
-                <span id="lesson-detail-subtitle" class="text-[14px] font-bold tracking-wider uppercase mb-0.5 text-slate-400">สัปดาห์</span>
+                <span id="lesson-detail-subtitle" class="text-[10px] font-bold tracking-wider uppercase mb-0.5 text-slate-400">สัปดาห์</span>
                 <span id="lesson-detail-title" class="font-extrabold text-[16px] text-white line-clamp-1 leading-tight">บทเรียน</span>
             </div>
         </div>
@@ -1309,30 +1265,29 @@
                         <div class="w-10 h-10 rounded-2xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-lg shadow-inner ring-1 ring-blue-500/30">
                             <i class="fa-solid fa-book-open"></i>
                         </div>
-                        <h3 class="font-bold text-white text-base md:text-lg">ความหมายและตัวอย่าง</h3>
+                        <h3 class="font-bold text-white text-base md:text-lg">ความหมาย</h3>
                     </div>
                     <div class="text-slate-300 text-[14px] leading-relaxed space-y-3">
-                        <ul class="list-disc pl-5 space-y-2 mt-2">
-                            <li><strong class="text-blue-400">ปฏิกิริยาเคมี (Chemical Reaction):</strong> กระบวนการที่สารตั้งต้นเปลี่ยนเป็นสารใหม่ โดยมีการจัดเรียงตัวของอะตอมใหม่</li>
-                            <li><strong class="text-indigo-400">หลักฐานการเกิดปฏิกิริยา:</strong> เกิดฟองแก๊ส, เกิดตะกอน, สีเปลี่ยน, อุณหภูมิเปลี่ยน, หรือมีกลิ่นใหม่</li>
-                        </ul>
+                        <p><strong class="text-blue-400 font-semibold text-[15px]">ปฏิกิริยาเคมี</strong> คือ กระบวนการที่สารตั้งต้นเปลี่ยนแปลงเป็นสารใหม่ที่มีสมบัติแตกต่างจากเดิม โดยเกิดจากการจัดเรียงอะตอมใหม่และมีการแตกหรือสร้างพันธะเคมี</p>
+                        <p><strong class="font-semibold text-slate-200">หลักฐานที่บ่งบอกว่าเกิดปฏิกิริยาเคมี ได้แก่:</strong> การเปลี่ยนสี, การเกิดแก๊ส, การเกิดตะกอน, การเปลี่ยนแปลงอุณหภูมิ และการเกิดแสง</p>
+                        <p><strong class="font-semibold text-slate-200">สมการเคมี:</strong> เขียนแทนปฏิกิริยาโดยใช้ สารตั้งต้น &rarr; ผลิตภัณฑ์ (เช่น น้ำส้มสายชู + เบกกิ้งโซดา &rarr; แก๊สคาร์บอนไดออกไซด์)</p>
                         <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700 text-[13px] shadow-sm mt-3 text-slate-300">
-                            <span class="text-lg mr-1">📌</span> <span class="font-medium text-white">ตัวชี้วัด:</span> ว 2.1 ม.3/3 อธิบายการเกิดปฏิกิริยาเคมี และการจัดเรียงตัวใหม่ของอะตอม
+                            <span class="text-lg mr-1">💡</span> <span class="font-medium text-white">หัวใจสำคัญ:</span> จำนวนอะตอมของแต่ละธาตุต้องเท่ากันทั้งสองข้างของสมการเสมอ
                         </div>
                     </div>
                 </div>
 
-                <div class="relative group cursor-pointer active:scale-[0.98] transition-all duration-300" onclick="window.open('https://ailab16.vercel.app/', '_blank')">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
-                    <div class="relative bg-gradient-to-r from-indigo-600 via-blue-600 to-purple-600 rounded-[24px] p-0.5 overflow-hidden shadow-xl">
+                <div class="relative group cursor-pointer active:scale-[0.98] transition-all duration-300" onclick="window.open('https://ailab17.vercel.app/', '_blank')">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-orange-500 via-rose-500 to-amber-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                    <div class="relative bg-gradient-to-r from-amber-600 via-orange-600 to-rose-600 rounded-[24px] p-0.5 overflow-hidden shadow-xl">
                         <div class="absolute inset-0 bg-white/10 group-hover:translate-x-full transform -translate-x-full transition-transform duration-700 ease-out skew-x-12"></div>
                         <div class="bg-slate-900/40 backdrop-blur-sm rounded-[22px] px-5 py-4 flex items-center gap-4 border border-white/10">
                             <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center shadow-inner shrink-0 text-white group-hover:rotate-12 transition-transform duration-300">
                                 <i class="fa-solid fa-flask text-2xl drop-shadow"></i>
                             </div>
                             <div class="flex flex-col text-left flex-grow">
-                                <span class="text-white font-extrabold text-[16px] tracking-wide drop-shadow-md">เข้าทดลอง Ai Lab 16</span>
-                                <span class="text-slate-200 text-[11px] mt-0.5 font-medium tracking-wide">กิจกรรมตรวจสอบการเกิดปฏิกิริยาเคมี <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[9px]"></i></span>
+                                <span class="text-white font-extrabold text-[16px] tracking-wide drop-shadow-md">เข้าทดลอง Ai Lab 17</span>
+                                <span class="text-slate-300 text-[11px] mt-0.5 font-medium tracking-wide">แตะเพื่อเปิดในหน้าต่างใหม่ <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[9px]"></i></span>
                             </div>
                             <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
                                 <i class="fa-solid fa-chevron-right text-white/90 text-sm group-hover:translate-x-1 transition-transform"></i>
@@ -1436,9 +1391,12 @@
                                 <h6 class="font-bold text-indigo-300 mb-2">ตอนที่ 4: การเขียนสมการข้อความ (Word Equation) (2.5 คะแนน)</h6>
                                 <ul class="space-y-2.5 text-slate-300">
                                     <li class="flex flex-col gap-1">
-                                        <span>4.1 จงเขียนสมการข้อความจาก "กรดไฮโดรคลอริกทำปฏิกิริยากับโซเดียมคาร์บอเนต เกิดเป็นโซเดียมคลอไรด์ แก๊สคาร์บอนไดออกไซด์ และน้ำ"</span>
-                                        <div class="pl-4 mt-2 border-b border-dotted border-slate-500 w-full min-h-[1.5rem]"></div>
-                                        <div class="pl-4 border-b border-dotted border-slate-500 w-full min-h-[1.5rem]"></div>
+                                        <span>4.1 เขียนสมการข้อความ: แก๊สมีเทนทำปฏิกิริยากับแก๊สออกซิเจน ได้แก๊สคาร์บอนไดออกไซด์และน้ำ</span>
+                                        <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
+                                    </li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>4.2 เขียนสมการข้อความ: โลหะสังกะสีทำปฏิกิริยากับกรดไฮโดรคลอริก ได้ซิงค์คลอไรด์และแก๊สไฮโดรเจน</span>
+                                        <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
                                     </li>
                                 </ul>
                             </div>
@@ -1455,30 +1413,29 @@
                         <div class="w-10 h-10 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg shadow-inner ring-1 ring-emerald-500/30">
                             <i class="fa-solid fa-book-open"></i>
                         </div>
-                        <h3 class="font-bold text-white text-base md:text-lg">กฎทรงมวล</h3>
+                        <h3 class="font-bold text-white text-base md:text-lg">ความหมาย</h3>
                     </div>
                     <div class="text-slate-300 text-[14px] leading-relaxed space-y-3">
-                        <ul class="list-disc pl-5 space-y-2 mt-2">
-                            <li><strong class="text-emerald-400">กฎทรงมวล:</strong> มวลรวมของสารก่อนเกิดปฏิกิริยา เท่ากับมวลรวมของสารหลังเกิดปฏิกิริยา</li>
-                            <li><strong class="text-teal-400">ระบบปิด:</strong> มวลสารไม่สามารถเข้าหรือออกจากระบบได้</li>
-                        </ul>
-                        <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700 text-[13px] shadow-sm mt-3 text-slate-300">
-                            <span class="text-lg mr-1">📌</span> <span class="font-medium text-white">ตัวชี้วัด:</span> ว 2.1 ม.3/4 อธิบายกฎทรงมวล
+                        <p><strong class="text-emerald-400 font-semibold text-[15px]">กฎทรงมวล</strong> กล่าวว่า มวลรวมของสารตั้งต้นต้อง "เท่ากับ" มวลรวมของผลิตภัณฑ์เสมอ</p>
+                        <p>ในการเกิดปฏิกิริยาเคมี อะตอมจะไม่สูญหายหรือเกิดขึ้นใหม่ แต่จะมีการจัดเรียงอะตอมใหม่ ทำให้เกิดเป็นสารชนิดใหม่ขึ้นมา</p>
+                        <p>ในระบบปิด มวลรวมก่อนและหลังเกิดปฏิกิริยาจะคงที่ หากมวลของสารบางชนิดลดลง อาจเกิดจากมีแก๊สหลุดออกจากระบบ (กลายเป็นระบบเปิด)</p>
+                        <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700 text-[13px] shadow-sm mt-3 flex items-center text-slate-300">
+                            <span class="text-lg mr-2">📌</span> <span class="font-medium text-white mr-2">สูตรจำง่าย:</span> <code class="bg-emerald-900/50 text-emerald-400 border border-emerald-800/50 px-2 py-0.5 rounded">มวลสารตั้งต้น = มวลผลิตภัณฑ์</code>
                         </div>
                     </div>
                 </div>
 
-                <div class="relative group cursor-pointer active:scale-[0.98] transition-all duration-300" onclick="window.open('https://ailab17.vercel.app/', '_blank')">
+                <div class="relative group cursor-pointer active:scale-[0.98] transition-all duration-300" onclick="window.open('https://ailab18.vercel.app/', '_blank')">
                     <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
                     <div class="relative bg-gradient-to-r from-teal-600 via-emerald-600 to-cyan-600 rounded-[24px] p-0.5 overflow-hidden shadow-xl">
                         <div class="absolute inset-0 bg-white/10 group-hover:translate-x-full transform -translate-x-full transition-transform duration-700 ease-out skew-x-12"></div>
                         <div class="bg-slate-900/40 backdrop-blur-sm rounded-[22px] px-5 py-4 flex items-center gap-4 border border-white/10">
                             <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center shadow-inner shrink-0 text-white group-hover:rotate-12 transition-transform duration-300">
-                                <i class="fa-solid fa-scale-balanced text-2xl drop-shadow"></i>
+                                <i class="fa-solid fa-flask text-2xl drop-shadow"></i>
                             </div>
                             <div class="flex flex-col text-left flex-grow">
-                                <span class="text-white font-extrabold text-[16px] tracking-wide drop-shadow-md">เข้าทดลอง Ai Lab 17</span>
-                                <span class="text-slate-200 text-[11px] mt-0.5 font-medium tracking-wide">กิจกรรมทดลองกฎทรงมวล <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[9px]"></i></span>
+                                <span class="text-white font-extrabold text-[16px] tracking-wide drop-shadow-md">เข้าทดลอง Ai Lab 18</span>
+                                <span class="text-slate-300 text-[11px] mt-0.5 font-medium tracking-wide">แตะเพื่อเปิดในหน้าต่างใหม่ <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[9px]"></i></span>
                             </div>
                             <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
                                 <i class="fa-solid fa-chevron-right text-white/90 text-sm group-hover:translate-x-1 transition-transform"></i>
@@ -1575,11 +1532,12 @@
                                 <h6 class="font-bold text-emerald-300 mb-2">ตอนที่ 4: แสดงวิธีคำนวณตามกฎทรงมวล (2.5 คะแนน)</h6>
                                 <ul class="space-y-2.5 text-slate-300">
                                     <li class="flex flex-col gap-1">
-                                        <span>4.1 ผสมสาร A 20 กรัม กับสาร B 30 กรัม ในขวดปิดสนิท เกิดตะกอน C และแก๊ส D หากตะกอน C หนัก 45 กรัม แก๊ส D จะมีมวลเท่าใด?</span>
-                                        <div class="pl-4 grid grid-cols-1 sm:grid-cols-2 gap-2 text-slate-400">
-                                            <span class="flex items-end gap-1">วิธีคิด: <div class="border-b border-dotted border-slate-500 flex-grow"></div></span>
-                                            <span class="flex items-end gap-1">ตอบ: <div class="border-b border-dotted border-slate-500 flex-grow"></div></span>
-                                        </div>
+                                        <span>4.1 สาร A 40 กรัม ทำปฏิกิริยาพอดีกับสาร B 25 กรัม ในระบบปิด จะได้สารผลิตภัณฑ์ C รวมมีมวลกี่กรัม?</span>
+                                        <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">วิธีคิดและตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
+                                    </li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>4.2 เผาแถบแมกนีเซียม 4.8 กรัม ในระบบปิดที่มีออกซิเจน 3.2 กรัม ได้แมกนีเซียมออกไซด์กี่กรัม?</span>
+                                        <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">วิธีคิดและตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
                                     </li>
                                 </ul>
                             </div>
@@ -1596,30 +1554,31 @@
                         <div class="w-10 h-10 rounded-2xl bg-orange-500/20 text-orange-400 flex items-center justify-center text-lg shadow-inner ring-1 ring-orange-500/30">
                             <i class="fa-solid fa-book-open"></i>
                         </div>
-                        <h3 class="font-bold text-white text-base md:text-lg">ปฏิกิริยาดูด-คายความร้อน</h3>
+                        <h3 class="font-bold text-white text-base md:text-lg">ความหมาย</h3>
                     </div>
                     <div class="text-slate-300 text-[14px] leading-relaxed space-y-3">
+                        <p>ปฏิกิริยาเคมีมีการถ่ายโอนพลังงานความร้อนระหว่าง "ระบบ" กับ "สิ่งแวดล้อม" ซึ่งแบ่งออกเป็น 2 ประเภทหลัก:</p>
                         <ul class="list-disc pl-5 space-y-2 mt-2">
-                            <li><strong class="text-orange-400">ปฏิกิริยาดูดความร้อน:</strong> ระบบดูดพลังงานเข้าไป อุณหภูมิสิ่งแวดล้อมลดลง (เช่น การสังเคราะห์ด้วยแสง, ถุงประคบเย็น)</li>
-                            <li><strong class="text-red-400">ปฏิกิริยาคายความร้อน:</strong> ระบบปล่อยพลังงานออกมา อุณหภูมิสิ่งแวดล้อมสูงขึ้น (เช่น การเผาไหม้, ถ่านไฟฉาย)</li>
+                            <li><strong class="text-orange-400">ปฏิกิริยาคายความร้อน:</strong> ปฏิกิริยาที่ปล่อยความร้อนออกสู่สิ่งแวดล้อม ทำให้อุณหภูมิสูงขึ้น (เช่น การเผาไหม้เชื้อเพลิง)</li>
+                            <li><strong class="text-blue-400">ปฏิกิริยาดูดความร้อน:</strong> ปฏิกิริยาที่รับความร้อนจากสิ่งแวดล้อม ทำให้อุณหภูมิลดลง (เช่น ปฏิกิริยาระหว่างเบกกิ้งโซดากับกรดซิตริก)</li>
                         </ul>
                         <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700 text-[13px] shadow-sm mt-3 text-slate-300">
-                            <span class="text-lg mr-1">📌</span> <span class="font-medium text-white">ตัวชี้วัด:</span> ว 2.1 ม.3/5 วิเคราะห์ปฏิกิริยาดูดความร้อนและคายความร้อน
+                            <span class="text-lg mr-1">🌡️</span> <span class="font-medium text-white">ข้อสังเกต:</span> การสัมผัสหรือวัดการเปลี่ยนแปลงอุณหภูมิช่วยบอกได้ว่าปฏิกิริยามีการดูดหรือคายความร้อน
                         </div>
                     </div>
                 </div>
 
-                <div class="relative group cursor-pointer active:scale-[0.98] transition-all duration-300" onclick="window.open('https://ailab18.vercel.app/', '_blank')">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-orange-500 via-red-500 to-rose-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
-                    <div class="relative bg-gradient-to-r from-red-600 via-orange-600 to-rose-600 rounded-[24px] p-0.5 overflow-hidden shadow-xl">
+                <div class="relative group cursor-pointer active:scale-[0.98] transition-all duration-300" onclick="window.open('https://ailab19-five.vercel.app/', '_blank')">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                    <div class="relative bg-gradient-to-r from-orange-600 via-red-600 to-amber-600 rounded-[24px] p-0.5 overflow-hidden shadow-xl">
                         <div class="absolute inset-0 bg-white/10 group-hover:translate-x-full transform -translate-x-full transition-transform duration-700 ease-out skew-x-12"></div>
                         <div class="bg-slate-900/40 backdrop-blur-sm rounded-[22px] px-5 py-4 flex items-center gap-4 border border-white/10">
                             <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center shadow-inner shrink-0 text-white group-hover:rotate-12 transition-transform duration-300">
-                                <i class="fa-solid fa-fire-flame-curved text-2xl drop-shadow"></i>
+                                <i class="fa-solid fa-flask text-2xl drop-shadow"></i>
                             </div>
                             <div class="flex flex-col text-left flex-grow">
-                                <span class="text-white font-extrabold text-[16px] tracking-wide drop-shadow-md">เข้าทดลอง Ai Lab 18</span>
-                                <span class="text-slate-200 text-[11px] mt-0.5 font-medium tracking-wide">กิจกรรมทดลองการถ่ายโอนความร้อน <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[9px]"></i></span>
+                                <span class="text-white font-extrabold text-[16px] tracking-wide drop-shadow-md">เข้าทดลอง Ai Lab 19</span>
+                                <span class="text-slate-300 text-[11px] mt-0.5 font-medium tracking-wide">แตะเพื่อเปิดในหน้าต่างใหม่ <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[9px]"></i></span>
                             </div>
                             <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
                                 <i class="fa-solid fa-chevron-right text-white/90 text-sm group-hover:translate-x-1 transition-transform"></i>
@@ -1640,7 +1599,6 @@
                     </div>
                 </div>
 
-                <!-- ใบงานสัปดาห์ที่ 3 -->
                 <div class="bg-slate-900 p-5 rounded-3xl shadow-xl border border-slate-800 flex flex-col gap-4">
                     <div class="flex justify-between items-center">
                         <div class="flex items-center gap-3">
@@ -1712,7 +1670,11 @@
                                 <h6 class="font-bold text-orange-300 mb-2">ตอนที่ 4: การประยุกต์ใช้ในชีวิตจริง (2.5 คะแนน)</h6>
                                 <ul class="space-y-2.5 text-slate-300">
                                     <li class="flex flex-col gap-1">
-                                        <span>4.1 ถุงประคบเย็น (Cold pack) ใช้ปฏิกิริยาประเภทใด และมีประโยชน์อย่างไร?</span>
+                                        <span>4.1 อธิบายหลักการทำงานของ 'ถุงประคบร้อนสำเร็จรูป' ที่ใช้ในการปฐมพยาบาล:</span>
+                                        <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
+                                    </li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>4.2 อธิบายหลักการทำงานของ 'ถุงประคบเย็นสำเร็จรูป' ว่าเกิดการเปลี่ยนแปลงพลังงานอย่างไร?</span>
                                         <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
                                     </li>
                                 </ul>
@@ -1730,13 +1692,16 @@
                         <div class="w-10 h-10 rounded-2xl bg-fuchsia-500/20 text-fuchsia-400 flex items-center justify-center text-lg shadow-inner ring-1 ring-fuchsia-500/30">
                             <i class="fa-solid fa-book-open"></i>
                         </div>
-                        <h3 class="font-bold text-white text-base md:text-lg">ปฏิกิริยาเคมีในชีวิตประจำวัน</h3>
+                        <h3 class="font-bold text-white text-base md:text-lg">ความหมายและตัวอย่าง</h3>
                     </div>
                     <div class="text-slate-300 text-[14px] leading-relaxed space-y-3">
+                        <p>ปฏิกิริยาเคมีในชีวิตประจำวัน มีหลากหลายรูปแบบที่พบเจอได้รอบตัวเรา ได้แก่:</p>
                         <ul class="list-disc pl-5 space-y-2 mt-2">
-                            <li><strong class="text-fuchsia-400">ปฏิกิริยาการเกิดสนิม:</strong> เหล็ก + น้ำ + แก๊สออกซิเจน -> สนิมเหล็ก</li>
-                            <li><strong class="text-purple-400">ปฏิกิริยาสะเทิน:</strong> กรด + เบส -> เกลือ + น้ำ (เช่น ยาลดกรด)</li>
-                            <li><strong class="text-blue-400">ปฏิกิริยาของกรด:</strong> กรด + โลหะ -> แก๊สไฮโดรเจน, กรด + หินปูน -> แก๊สคาร์บอนไดออกไซด์</li>
+                            <li><strong class="text-fuchsia-400">ปฏิกิริยาระหว่างกรดกับเบส:</strong> (ปฏิกิริยาสะเทิน) เช่น การย่อยอาหาร การใช้ยาลดกรด</li>
+                            <li><strong class="text-blue-400">ปฏิกิริยาระหว่างกรดกับโลหะ:</strong> เกิดแก๊สไฮโดรเจนและการผุกร่อนของโลหะ</li>
+                            <li><strong class="text-emerald-400">ปฏิกิริยาระหว่างเบสกับโลหะ:</strong> (โลหะบางชนิด) เกิดแก๊สไฮโดรเจน</li>
+                            <li><strong class="text-orange-400">การเกิดสนิมเหล็ก:</strong> ปฏิกิริยาระหว่างเหล็ก น้ำ และออกซิเจน</li>
+                            <li><strong class="text-red-400">การเผาไหม้:</strong> ปฏิกิริยาของเชื้อเพลิงกับออกซิเจนที่ให้ความร้อนและแสงสว่าง</li>
                         </ul>
                         <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700 text-[13px] shadow-sm mt-3 text-slate-300">
                             <span class="text-lg mr-1">📌</span> <span class="font-medium text-white">ตัวชี้วัด:</span> ว 2.1 ม.3/6 อธิบายปฏิกิริยาเคมีในชีวิตประจำวัน
@@ -1744,17 +1709,17 @@
                     </div>
                 </div>
 
-                <div class="relative group cursor-pointer active:scale-[0.98] transition-all duration-300" onclick="window.open('https://ailab19-five.vercel.app/', '_blank')">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-fuchsia-500 via-purple-500 to-indigo-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
-                    <div class="relative bg-gradient-to-r from-purple-600 via-fuchsia-600 to-indigo-600 rounded-[24px] p-0.5 overflow-hidden shadow-xl">
+                <div class="relative group cursor-pointer active:scale-[0.98] transition-all duration-300" onclick="window.open('https://ailab21.vercel.app/', '_blank')">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-fuchsia-500 via-purple-500 to-pink-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                    <div class="relative bg-gradient-to-r from-purple-600 via-fuchsia-600 to-pink-600 rounded-[24px] p-0.5 overflow-hidden shadow-xl">
                         <div class="absolute inset-0 bg-white/10 group-hover:translate-x-full transform -translate-x-full transition-transform duration-700 ease-out skew-x-12"></div>
                         <div class="bg-slate-900/40 backdrop-blur-sm rounded-[22px] px-5 py-4 flex items-center gap-4 border border-white/10">
                             <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center shadow-inner shrink-0 text-white group-hover:rotate-12 transition-transform duration-300">
-                                <i class="fa-solid fa-vial text-2xl drop-shadow"></i>
+                                <i class="fa-solid fa-flask-vial text-2xl drop-shadow"></i>
                             </div>
                             <div class="flex flex-col text-left flex-grow">
-                                <span class="text-white font-extrabold text-[16px] tracking-wide drop-shadow-md">เข้าทดลอง Ai Lab 19</span>
-                                <span class="text-slate-200 text-[11px] mt-0.5 font-medium tracking-wide">กิจกรรมทดลองปฏิกิริยาเคมีในชีวิตประจำวัน <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[9px]"></i></span>
+                                <span class="text-white font-extrabold text-[16px] tracking-wide drop-shadow-md">เข้าทดลอง Ai Lab 21</span>
+                                <span class="text-slate-200 text-[11px] mt-0.5 font-medium tracking-wide">การทดลองปฏิกิริยาของกรด-เบสกับสารต่างๆ <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[9px]"></i></span>
                             </div>
                             <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
                                 <i class="fa-solid fa-chevron-right text-white/90 text-sm group-hover:translate-x-1 transition-transform"></i>
@@ -1771,7 +1736,7 @@
                         <h4 class="font-bold text-white text-[15px]">วิดีโอสรุปความรู้</h4>
                     </div>
                     <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-inner border border-slate-800 bg-black relative">
-                        <iframe id="iframe-w4" class="youtube-iframe w-full h-full relative z-10" data-src="https://www.youtube.com/embed/Lvbm8horG1U" src="" title="วิดีโอสรุปความรู้" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <iframe id="iframe-w4" class="youtube-iframe w-full h-full relative z-10" data-src="https://www.youtube.com/embed/Lvbm8horG1U" src="" title="Chemical Reactions" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                 </div>
 
@@ -1845,6 +1810,17 @@
                                     </li>
                                 </ul>
                             </div>
+                            <!-- ตอนที่ 4 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-fuchsia-300 mb-2">ตอนที่ 4: การเผาไหม้สมบูรณ์และไม่สมบูรณ์ (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-wrap items-end gap-1">4.1 การเผาไหม้สมบูรณ์ของแก๊สหุงต้ม: สารผลิตภัณฑ์คือ <div class="border-b border-dotted border-slate-500 flex-grow min-w-[80px]"></div> และ <div class="border-b border-dotted border-slate-500 flex-grow min-w-[80px]"></div></li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>4.2 การเผาไหม้ไม่สมบูรณ์ทำให้เกิดแก๊สพิษชนิดใด และมีอันตรายต่อสิ่งมีชีวิตอย่างไร?</span>
+                                        <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1858,30 +1834,32 @@
                         <div class="w-10 h-10 rounded-2xl bg-violet-500/20 text-violet-400 flex items-center justify-center text-lg shadow-inner ring-1 ring-violet-500/30">
                             <i class="fa-solid fa-book-open"></i>
                         </div>
-                        <h3 class="font-bold text-white text-base md:text-lg">ผลกระทบของปฏิกิริยาเคมี</h3>
+                        <h3 class="font-bold text-white text-base md:text-lg">ความหมายและผลกระทบ</h3>
                     </div>
                     <div class="text-slate-300 text-[14px] leading-relaxed space-y-3">
                         <ul class="list-disc pl-5 space-y-2 mt-2">
-                            <li><strong class="text-violet-400">ประโยชน์:</strong> การเผาไหม้เชื้อเพลิงเพื่อพลังงาน, ยารักษาโรค, การสังเคราะห์ด้วยแสงของพืชที่ให้ออกซิเจน</li>
-                            <li><strong class="text-indigo-400">โทษและผลกระทบ:</strong> ฝนกรด (Acid Rain) เกิดจากแก๊สซัลเฟอร์ไดออกไซด์ (SO2) และไนโตรเจนไดออกไซด์ (NO2) ทำปฏิกิริยากับน้ำฝน, ภาวะโลกร้อนจากการเผาไหม้ที่เพิ่ม CO2</li>
+                            <li><strong class="text-emerald-400">ปฏิกิริยาการสังเคราะห์ด้วยแสง:</strong> กระบวนการสร้างอาหารของพืชที่ช่วยลดปริมาณแก๊สคาร์บอนไดออกไซด์ในบรรยากาศ</li>
+                            <li><strong class="text-violet-400">การเกิดฝนกรด:</strong> ปฏิกิริยาของแก๊สพิษกับน้ำฝน ส่งผลเสียต่อสิ่งปลูกสร้าง โลหะ และระบบนิเวศแหล่งน้ำ</li>
+                            <li><strong class="text-blue-400">ประโยชน์และโทษ:</strong> ปฏิกิริยาเคมีมีทั้งด้านที่นำมาใช้ประโยชน์ในชีวิตและอุตสาหกรรม แต่ก็สร้างมลพิษหากไม่ควบคุม</li>
+                            <li><strong class="text-orange-400">แนวทางการแก้ไข:</strong> การลดการปล่อยมลพิษจากโรงงาน และการเลือกใช้พลังงานทดแทนสะอาด</li>
                         </ul>
                         <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700 text-[13px] shadow-sm mt-3 text-slate-300">
-                            <span class="text-lg mr-1">📌</span> <span class="font-medium text-white">ตัวชี้วัด:</span> ว 2.1 ม.3/6, ม.3/7 ระบุประโยชน์และโทษของปฏิกิริยาเคมี และแนวทางการป้องกัน
+                            <span class="text-lg mr-1">📌</span> <span class="font-medium text-white">ตัวชี้วัด:</span> ว 2.1 ม.3/6, ม.3/7 ประโยชน์ โทษ และแนวทางแก้ไขปัญหาสิ่งแวดล้อม
                         </div>
                     </div>
                 </div>
 
-                <div class="relative group cursor-pointer active:scale-[0.98] transition-all duration-300" onclick="window.open('https://ailab21.vercel.app/', '_blank')">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-violet-500 via-purple-500 to-fuchsia-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
-                    <div class="relative bg-gradient-to-r from-purple-600 via-violet-600 to-fuchsia-600 rounded-[24px] p-0.5 overflow-hidden shadow-xl">
+                <div class="relative group cursor-pointer active:scale-[0.98] transition-all duration-300" onclick="window.open('https://ailab24.vercel.app/', '_blank')">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-violet-500 via-purple-500 to-indigo-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                    <div class="relative bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 rounded-[24px] p-0.5 overflow-hidden shadow-xl">
                         <div class="absolute inset-0 bg-white/10 group-hover:translate-x-full transform -translate-x-full transition-transform duration-700 ease-out skew-x-12"></div>
                         <div class="bg-slate-900/40 backdrop-blur-sm rounded-[22px] px-5 py-4 flex items-center gap-4 border border-white/10">
                             <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center shadow-inner shrink-0 text-white group-hover:rotate-12 transition-transform duration-300">
-                                <i class="fa-solid fa-cloud-showers-heavy text-2xl drop-shadow"></i>
+                                <i class="fa-solid fa-flask-vial text-2xl drop-shadow"></i>
                             </div>
                             <div class="flex flex-col text-left flex-grow">
-                                <span class="text-white font-extrabold text-[16px] tracking-wide drop-shadow-md">เข้าทดลอง Ai Lab 21</span>
-                                <span class="text-slate-200 text-[11px] mt-0.5 font-medium tracking-wide">กิจกรรมจำลองการเกิดฝนกรดและผลกระทบ <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[9px]"></i></span>
+                                <span class="text-white font-extrabold text-[16px] tracking-wide drop-shadow-md">เข้าทดลอง Ai Lab 24</span>
+                                <span class="text-slate-200 text-[11px] mt-0.5 font-medium tracking-wide">สืบค้นผลกระทบฝนกรดและภาวะเรือนกระจก <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[9px]"></i></span>
                             </div>
                             <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
                                 <i class="fa-solid fa-chevron-right text-white/90 text-sm group-hover:translate-x-1 transition-transform"></i>
@@ -1898,7 +1876,7 @@
                         <h4 class="font-bold text-white text-[15px]">วิดีโอสรุปความรู้</h4>
                     </div>
                     <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-inner border border-slate-800 bg-black relative">
-                        <iframe id="iframe-w5" class="youtube-iframe w-full h-full relative z-10" data-src="https://www.youtube.com/embed/ehYcyRbEuS0" src="" title="วิดีโอสรุปความรู้" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <iframe id="iframe-w5" class="youtube-iframe w-full h-full relative z-10" data-src="https://www.youtube.com/embed/ehYcyRbEuS0" src="" title="EP.22 ประโยชน์และโทษของปฏิกิริยาทางเคมี (ม.3)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                 </div>
 
@@ -1920,8 +1898,8 @@
                         <div class="text-center mb-5">
                             <h5 class="font-bold text-white text-[15px] sm:text-base">ใบงานการจัดการเรียนรู้ รายวิชาวิทยาศาสตร์ 6 (ว23102)</h5>
                             <h6 class="font-bold text-slate-200 mt-1">ชั้น ม.3 ภาคเรียนที่ 2</h6>
-                            <h6 class="font-bold text-violet-400 mt-1">สัปดาห์ที่ 5 : ผลกระทบของปฏิกิริยาเคมีต่อสิ่งแวดล้อม</h6>
-                            <p class="text-[11px] sm:text-xs text-slate-400 mt-2 font-medium">ตัวชี้วัด: ว 2.1 ม.3/6, ม.3/7 ระบุประโยชน์และโทษของปฏิกิริยาเคมี และอธิบายแนวทางการป้องกัน</p>
+                            <h6 class="font-bold text-violet-400 mt-1">สัปดาห์ที่ 5 : ผลกระทบของปฏิกิริยาเคมีต่อสิ่งแวดล้อมและฝนกรด</h6>
+                            <p class="text-[11px] sm:text-xs text-slate-400 mt-2 font-medium">ตัวชี้วัด: ว 2.1 ม.3/6, ม.3/7 ระบุประโยชน์และโทษของปฏิกิริยาเคมี และแนวทางการป้องกันแก้ไขปัญหา</p>
                         </div>
                         
                         <div class="flex flex-wrap gap-x-4 gap-y-2 mb-6 text-[12px] text-slate-400 justify-between items-end border-b border-slate-700/80 pb-4">
@@ -1937,32 +1915,54 @@
                         <div class="space-y-5">
                             <!-- ตอนที่ 1 -->
                             <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
-                                <h6 class="font-bold text-violet-300 mb-2">ตอนที่ 1: ผลกระทบของปฏิกิริยาเคมี (5 คะแนน)</h6>
+                                <h6 class="font-bold text-violet-300 mb-2">ตอนที่ 1: ปรากฏการณ์ฝนกรด (Acid Rain) (2.5 คะแนน)</h6>
                                 <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-wrap items-end gap-1">1.1 แก๊สสำคัญที่ทำให้เกิดฝนกรด ได้แก่ แก๊ส <div class="border-b border-dotted border-slate-500 flex-grow min-w-[50px]"></div> และแก๊ส <div class="border-b border-dotted border-slate-500 flex-grow min-w-[50px]"></div></li>
                                     <li class="flex flex-col gap-1">
-                                        <span>1.1 ฝนกรด (Acid Rain) เกิดจากแก๊สใดทำปฏิกิริยากับน้ำฝนในอากาศ?</span>
+                                        <span>1.2 แก๊สเหล่านี้เกิดจากกิจกรรมใดของมนุษย์เป็นหลัก?</span>
                                         <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
                                     </li>
-                                    <li class="flex flex-col gap-1">
-                                        <span>1.2 ฝนกรดส่งผลกระทบต่อสิ่งก่อสร้างที่ทำจากหินปูนอย่างไร?</span>
-                                        <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
-                                    </li>
-                                    <li class="flex flex-col gap-1">
-                                        <span>1.3 ปรากฏการณ์เรือนกระจกเกิดจากการสะสมของแก๊สใดมากที่สุด และส่งผลต่อโลกอย่างไร?</span>
-                                        <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
-                                    </li>
+                                    <li class="flex flex-wrap items-end gap-1">1.3 ค่า pH ของฝนกรดมีค่า (มากกว่า / น้อยกว่า) <div class="border-b border-dotted border-slate-500 flex-grow min-w-[50px]"></div> 5.6</li>
                                 </ul>
                             </div>
                             <!-- ตอนที่ 2 -->
                             <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
-                                <h6 class="font-bold text-violet-300 mb-2">ตอนที่ 2: แนวทางการลดปัญหาและป้องกัน (5 คะแนน)</h6>
+                                <h6 class="font-bold text-violet-300 mb-2">ตอนที่ 2: ผลกระทบของฝนกรด (2.5 คะแนน)</h6>
                                 <ul class="space-y-2.5 text-slate-300">
                                     <li class="flex flex-col gap-1">
-                                        <span>2.1 เสนอวิธีลดการเกิดแก๊สคาร์บอนมอนอกไซด์ (CO) จากเครื่องยนต์มา 1 วิธี:</span>
+                                        <span>2.1 ฝนกรดส่งผลกระทบต่อสิ่งก่อสร้างและรูปปั้นที่ทำจากหินปูนอย่างไร?</span>
                                         <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
                                     </li>
                                     <li class="flex flex-col gap-1">
-                                        <span>2.2 ในฐานะนักเรียน จะมีส่วนช่วยลดการเกิดภาวะโลกร้อนในชีวิตประจำวันได้อย่างไรบ้าง (บอกมา 2 วิธี)?</span>
+                                        <span>2.2 ฝนกรดส่งผลกระทบต่อระบบนิเวศในแหล่งน้ำและดินอย่างไร?</span>
+                                        <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 3 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-violet-300 mb-2">ตอนที่ 3: ปฏิกิริยาการสังเคราะห์ด้วยแสง (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-col gap-1">
+                                        <span>3.1 เขียนสมการข้อความแสดงการสังเคราะห์ด้วยแสง:</span>
+                                        <div class="pl-4 border-b border-dotted border-slate-500 w-full min-h-[1.5rem]"></div>
+                                    </li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>3.2 กระบวนการนี้ช่วยลดแก๊สเรือนกระจกชนิดใดในบรรยากาศ?</span>
+                                        <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 4 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-violet-300 mb-2">ตอนที่ 4: แนวทางการแก้ไขและลดมลพิษ (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-col gap-1">
+                                        <span>4.1 เสนอแนวทางลดการปล่อยแก๊สซัลเฟอร์ไดออกไซด์จากโรงไฟฟ้าหรือโรงงานอุตสาหกรรมมา 1 ข้อ:</span>
+                                        <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
+                                    </li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>4.2 พฤติกรรมในชีวิตประจำวันของนักเรียนที่ช่วยลดมลพิษทางอากาศได้ 1 ข้อ:</span>
                                         <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
                                     </li>
                                 </ul>
@@ -1980,35 +1980,55 @@
                         <div class="w-10 h-10 rounded-2xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-lg shadow-inner ring-1 ring-cyan-500/30">
                             <i class="fa-solid fa-book-open"></i>
                         </div>
-                        <h3 class="font-bold text-white text-base md:text-lg">วัสดุในชีวิตประจำวัน (วัสดุประเภทต่างๆ)</h3>
+                        <h3 class="font-bold text-white text-base md:text-lg">ความหมายและการใช้ประโยชน์</h3>
                     </div>
                     <div class="text-slate-300 text-[14px] leading-relaxed space-y-3">
                         <ul class="list-disc pl-5 space-y-2 mt-2">
-                            <li><strong class="text-cyan-400">พอลิเมอร์:</strong> น้ำหนักเบา, ยืดหยุ่น, ไม่นำไฟฟ้า (เช่น พลาสติก, ยาง, เส้นใย)</li>
-                            <li><strong class="text-blue-400">เซรามิก:</strong> แข็ง, เปราะ, ทนความร้อนสูง, ไม่นำไฟฟ้า (เช่น แก้ว, กระเบื้อง, อิฐ)</li>
-                            <li><strong class="text-indigo-400">โลหะ:</strong> นำไฟฟ้าและความร้อนได้ดี, เหนียวตีเป็นแผ่นได้ (เช่น เหล็ก, ทองแดง, อลูมิเนียม)</li>
-                            <li><strong class="text-emerald-400">วัสดุผสม:</strong> การนำวัสดุตั้งแต่ 2 ชนิดขึ้นไปมาผสมกันเพื่อให้ได้สมบัติที่ดีขึ้น (เช่น คอนกรีตเสริมเหล็ก, ไฟเบอร์กลาส)</li>
+                            <li><strong class="text-emerald-400">พอลิเมอร์:</strong> น้ำหนักเบา เป็นฉนวนไฟฟ้า (เช่น พลาสติก ยาง เส้นใย)</li>
+                            <li><strong class="text-orange-400">เซรามิก:</strong> แข็งแต่เปราะ ทนความร้อนสูง ทนต่อการกัดกร่อน (เช่น แก้ว กระเบื้อง)</li>
+                            <li><strong class="text-blue-400">โลหะ:</strong> นำไฟฟ้าและความร้อนได้ดี แข็งแรง เหนียว ตีเป็นแผ่นได้ (เช่น เหล็ก ทองแดง)</li>
+                            <li><strong class="text-cyan-400">วัสดุผสม (Composites):</strong> การนำวัสดุตั้งแต่ 2 ชนิดขึ้นไปมาผสมกันเพื่อให้ได้สมบัติที่ดีขึ้น (เช่น ไฟเบอร์กลาส คอนกรีตเสริมเหล็ก)</li>
+                            <li><strong class="text-fuchsia-400">หลัก 3R:</strong> Reduce (ลดการใช้), Reuse (ใช้ซ้ำ), Recycle (นำกลับมาใช้ใหม่)</li>
                         </ul>
                         <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700 text-[13px] shadow-sm mt-3 text-slate-300">
-                            <span class="text-lg mr-1">📌</span> <span class="font-medium text-white">ตัวชี้วัด:</span> ว 2.1 ม.3/1 ระบุสมบัติการใช้วัสดุพอลิเมอร์ เซรามิก โลหะ วัสดุผสม
+                            <span class="text-lg mr-1">📌</span> <span class="font-medium text-white">ตัวชี้วัด:</span> ว 2.1 ม.3/1, ม.3/2 สมบัติของวัสดุ และการใช้วัสดุอย่างประหยัดและคุ้มค่า
                         </div>
                     </div>
                 </div>
 
-                <div class="relative group cursor-pointer active:scale-[0.98] transition-all duration-300" onclick="window.open('https://ailab22.vercel.app/', '_blank')">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
-                    <div class="relative bg-gradient-to-r from-blue-600 via-cyan-600 to-indigo-600 rounded-[24px] p-0.5 overflow-hidden shadow-xl">
-                        <div class="absolute inset-0 bg-white/10 group-hover:translate-x-full transform -translate-x-full transition-transform duration-700 ease-out skew-x-12"></div>
-                        <div class="bg-slate-900/40 backdrop-blur-sm rounded-[22px] px-5 py-4 flex items-center gap-4 border border-white/10">
-                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center shadow-inner shrink-0 text-white group-hover:rotate-12 transition-transform duration-300">
-                                <i class="fa-solid fa-cubes text-2xl drop-shadow"></i>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="relative group cursor-pointer active:scale-[0.98] transition-all duration-300" onclick="window.open('https://ailab22.vercel.app/', '_blank')">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-teal-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                        <div class="relative bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 rounded-[24px] p-0.5 overflow-hidden shadow-xl h-full">
+                            <div class="absolute inset-0 bg-white/10 group-hover:translate-x-full transform -translate-x-full transition-transform duration-700 ease-out skew-x-12"></div>
+                            <div class="bg-slate-900/40 backdrop-blur-sm rounded-[22px] px-4 py-4 flex items-center gap-3 border border-white/10 h-full">
+                                <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center shadow-inner shrink-0 text-white group-hover:rotate-12 transition-transform duration-300">
+                                    <i class="fa-solid fa-flask-vial text-xl drop-shadow"></i>
+                                </div>
+                                <div class="flex flex-col text-left flex-grow">
+                                    <span class="text-white font-extrabold text-[14px] sm:text-[15px] tracking-wide drop-shadow-md">เข้าทดลอง Ai Lab 22</span>
+                                </div>
+                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-chevron-right text-white/90 text-[10px] group-hover:translate-x-1 transition-transform"></i>
+                                </div>
                             </div>
-                            <div class="flex flex-col text-left flex-grow">
-                                <span class="text-white font-extrabold text-[16px] tracking-wide drop-shadow-md">เข้าทดลอง Ai Lab 22</span>
-                                <span class="text-slate-200 text-[11px] mt-0.5 font-medium tracking-wide">กิจกรรมตรวจสอบสมบัติของวัสดุประเภทต่างๆ <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[9px]"></i></span>
-                            </div>
-                            <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-                                <i class="fa-solid fa-chevron-right text-white/90 text-sm group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+
+                    <div class="relative group cursor-pointer active:scale-[0.98] transition-all duration-300" onclick="window.open('https://ailab23.vercel.app/', '_blank')">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-teal-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                        <div class="relative bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 rounded-[24px] p-0.5 overflow-hidden shadow-xl h-full">
+                            <div class="absolute inset-0 bg-white/10 group-hover:translate-x-full transform -translate-x-full transition-transform duration-700 ease-out skew-x-12"></div>
+                            <div class="bg-slate-900/40 backdrop-blur-sm rounded-[22px] px-4 py-4 flex items-center gap-3 border border-white/10 h-full">
+                                <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center shadow-inner shrink-0 text-white group-hover:rotate-12 transition-transform duration-300">
+                                    <i class="fa-solid fa-flask-vial text-xl drop-shadow"></i>
+                                </div>
+                                <div class="flex flex-col text-left flex-grow">
+                                    <span class="text-white font-extrabold text-[14px] sm:text-[15px] tracking-wide drop-shadow-md">เข้าทดลอง Ai Lab 23</span>
+                                </div>
+                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-chevron-right text-white/90 text-[10px] group-hover:translate-x-1 transition-transform"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -2044,8 +2064,8 @@
                         <div class="text-center mb-5">
                             <h5 class="font-bold text-white text-[15px] sm:text-base">ใบงานการจัดการเรียนรู้ รายวิชาวิทยาศาสตร์ 6 (ว23102)</h5>
                             <h6 class="font-bold text-slate-200 mt-1">ชั้น ม.3 ภาคเรียนที่ 2</h6>
-                            <h6 class="font-bold text-cyan-400 mt-1">สัปดาห์ที่ 6 : วัสดุประเภท พอลิเมอร์ เซรามิก โลหะ และวัสดุผสม</h6>
-                            <p class="text-[11px] sm:text-xs text-slate-400 mt-2 font-medium">ตัวชี้วัด: ว 2.1 ม.3/1 ระบุสมบัติการใช้วัสดุในชีวิตประจำวัน</p>
+                            <h6 class="font-bold text-cyan-400 mt-1">สัปดาห์ที่ 6 : วัสดุในชีวิตประจำวัน (พอลิเมอร์ เซรามิก โลหะ วัสดุผสม)</h6>
+                            <p class="text-[11px] sm:text-xs text-slate-400 mt-2 font-medium">ตัวชี้วัด: ว 2.1 ม.3/1 ระบุสมบัติการใช้วัสดุพอลิเมอร์ เซรามิก โลหะ วัสดุผสม, ว 2.1 ม.3/2 ตระหนักถึงคุณค่าการใช้วัสดุ</p>
                         </div>
                         
                         <div class="flex flex-wrap gap-x-4 gap-y-2 mb-6 text-[12px] text-slate-400 justify-between items-end border-b border-slate-700/80 pb-4">
@@ -2061,27 +2081,50 @@
                         <div class="space-y-5">
                             <!-- ตอนที่ 1 -->
                             <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
-                                <h6 class="font-bold text-cyan-300 mb-2">ตอนที่ 1: การจำแนกประเภทของวัสดุ (5 คะแนน)</h6>
+                                <h6 class="font-bold text-cyan-300 mb-2">ตอนที่ 1: การจำแนกประเภทวัสดุ (2.5 คะแนน)</h6>
                                 <ul class="space-y-2.5 text-slate-300">
-                                    <li>1.1 ให้นำคำที่กำหนดให้เติมลงในช่องว่างให้ตรงกับสมบัติ (พอลิเมอร์, เซรามิก, โลหะ, วัสดุผสม)</li>
+                                    <li>1.1 นำอักษร (A: พอลิเมอร์, B: เซรามิก, C: โลหะ, D: วัสดุผสม) เติมหน้าข้อความให้ถูกต้อง:</li>
                                     <li class="pl-4 grid grid-cols-1 sm:grid-cols-2 gap-2 text-slate-400">
-                                        <span class="flex items-end gap-1">ก) นำไฟฟ้าได้ดี ตีเป็นแผ่นได้: <div class="border-b border-dotted border-slate-500 flex-grow"></div></span>
-                                        <span class="flex items-end gap-1">ข) ทนความร้อนสูง แตกหักง่าย: <div class="border-b border-dotted border-slate-500 flex-grow"></div></span>
-                                        <span class="flex items-end gap-1">ค) น้ำหนักเบา ยืดหยุ่น ไม่นำไฟฟ้า: <div class="border-b border-dotted border-slate-500 flex-grow"></div></span>
-                                        <span class="flex items-end gap-1">ง) รวมสมบัติของวัสดุ 2 ชนิดเข้าด้วยกัน: <div class="border-b border-dotted border-slate-500 flex-grow"></div></span>
+                                        <span class="flex items-end gap-2">(<span class="border-b border-dotted border-slate-500 w-8 inline-block"></span>) แก้วน้ำ จานกระเบื้อง อิฐมอญ</span>
+                                        <span class="flex items-end gap-2">(<span class="border-b border-dotted border-slate-500 w-8 inline-block"></span>) ท่อพีวีซี ขวดน้ำดื่ม ยางรถยนต์</span>
+                                        <span class="flex items-end gap-2">(<span class="border-b border-dotted border-slate-500 w-8 inline-block"></span>) สายไฟทองแดง แผ่นสังกะสี</span>
+                                        <span class="flex items-end gap-2">(<span class="border-b border-dotted border-slate-500 w-8 inline-block"></span>) คอนกรีตเสริมเหล็ก ไฟเบอร์กลาส</span>
                                     </li>
                                 </ul>
                             </div>
                             <!-- ตอนที่ 2 -->
                             <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
-                                <h6 class="font-bold text-cyan-300 mb-2">ตอนที่ 2: การเลือกใช้วัสดุในชีวิตประจำวัน (5 คะแนน)</h6>
+                                <h6 class="font-bold text-cyan-300 mb-2">ตอนที่ 2: สมบัติทางกายภาพของวัสดุ (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-wrap items-end gap-1">2.1 วัสดุที่มีสมบัตินำไฟฟ้าและความร้อนได้ดี เหนียว ผิวมันวาว คือ: <div class="border-b border-dotted border-slate-500 flex-grow min-w-[50px]"></div></li>
+                                    <li class="flex flex-wrap items-end gap-1">2.2 วัสดุที่ทนความร้อนสูง แข็งแต่เปราะ เป็นฉนวนไฟฟ้า คือ: <div class="border-b border-dotted border-slate-500 flex-grow min-w-[50px]"></div></li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>2.3 วัสดุผสม (Composites) เกิดขึ้นจากวัตถุประสงค์ใด?</span>
+                                        <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 3 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-cyan-300 mb-2">ตอนที่ 3: การเลือกใช้วัสดุในงานเฉพาะทาง (2.5 คะแนน)</h6>
                                 <ul class="space-y-2.5 text-slate-300">
                                     <li class="flex flex-col gap-1">
-                                        <span>2.1 หากต้องการทำหูจับหม้อต้มน้ำ ควรเลือกใช้วัสดุประเภทใด เพราะเหตุใด?</span>
+                                        <span>3.1 ด้ามจับกระทะควรทำจากวัสดุประเภทใด เพราะเหตุใด?</span>
                                         <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
                                     </li>
                                     <li class="flex flex-col gap-1">
-                                        <span>2.2 "ไฟเบอร์กลาส" (พลาสติกเสริมใยแก้ว) จัดเป็นวัสดุประเภทใด และมีจุดเด่นอย่างไร?</span>
+                                        <span>3.2 โครงสร้างเครื่องบินยุคใหม่นิยมใช้วัสดุผสมคาร์บอนไฟเบอร์แทนโลหะเพราะเหตุใด?</span>
+                                        <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ตอนที่ 4 -->
+                            <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-700/50">
+                                <h6 class="font-bold text-cyan-300 mb-2">ตอนที่ 4: การจัดการขยะวัสดุตามหลัก 3R (2.5 คะแนน)</h6>
+                                <ul class="space-y-2.5 text-slate-300">
+                                    <li class="flex flex-wrap items-end gap-1">4.1 ยกตัวอย่างพฤติกรรม 3R: Reduce: <div class="border-b border-dotted border-slate-500 flex-grow min-w-[50px]"></div> Reuse: <div class="border-b border-dotted border-slate-500 flex-grow min-w-[50px]"></div></li>
+                                    <li class="flex flex-col gap-1">
+                                        <span>4.2 Recycle แตกต่างจาก Reuse อย่างไร?</span>
                                         <div class="flex items-end gap-2 pl-4"><span class="shrink-0 text-slate-500">ตอบ:</span> <div class="border-b border-dotted border-slate-500 flex-grow min-h-[1.5rem]"></div></div>
                                     </li>
                                 </ul>
@@ -2097,14 +2140,37 @@
                     <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-rose-400 to-pink-500"></div>
                     <div class="flex items-center gap-3.5 mb-4">
                         <div class="w-10 h-10 rounded-2xl bg-rose-500/20 text-rose-400 flex items-center justify-center text-lg shadow-inner ring-1 ring-rose-500/30">
-                            <i class="fa-solid fa-lightbulb"></i>
+                            <i class="fa-solid fa-book-open"></i>
                         </div>
-                        <h3 class="font-bold text-white text-base md:text-lg">STEM การแก้ปัญหาด้วยปฏิกิริยาเคมี</h3>
+                        <h3 class="font-bold text-white text-base md:text-lg">ความหมายและกระบวนการ</h3>
                     </div>
                     <div class="text-slate-300 text-[14px] leading-relaxed space-y-3">
-                        <p>การนำความรู้เกี่ยวกับปฏิกิริยาเคมีมาประยุกต์ใช้ในการแก้ปัญหาในชีวิตประจำวัน ผ่านกระบวนการออกแบบเชิงวิศวกรรม (Engineering Design Process) เช่น การบำบัดน้ำเสีย, การลดปัญหาผลกระทบต่อสิ่งแวดล้อม</p>
+                        <ul class="list-disc pl-5 space-y-2 mt-2">
+                            <li><strong class="text-rose-400">สะเต็มศึกษา (STEM Education):</strong> เป็นการบูรณาการความรู้ 4 สาขาวิชา ได้แก่ วิทยาศาสตร์ (Science), เทคโนโลยี (Technology), วิศวกรรมศาสตร์ (Engineering) และคณิตศาสตร์ (Mathematics)</li>
+                            <li><strong class="text-blue-400">กระบวนการแก้ปัญหา:</strong> วิเคราะห์ปัญหา ทำความเข้าใจปฏิกิริยาเคมีที่เกี่ยวข้อง แล้วเลือกใช้สารเคมีและเทคโนโลยีที่เหมาะสมในการสร้างหรือออกแบบวิธีการแก้ปัญหา</li>
+                            <li><strong class="text-emerald-400">ตัวอย่างการประยุกต์ใช้:</strong> การบำบัดน้ำเสียจากโรงอาหารโดยใช้ปฏิกิริยาสะเทินปรับค่า pH การออกแบบถังดักไขมัน</li>
+                        </ul>
                         <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700 text-[13px] shadow-sm mt-3 text-slate-300">
-                            <span class="text-lg mr-1">📌</span> <span class="font-medium text-white">ตัวชี้วัด:</span> ว 2.1 ม.3/8 ออกแบบวิธีแก้ปัญหาในชีวิตประจำวัน โดยใช้ความรู้เกี่ยวกับปฏิกิริยาเคมี
+                            <span class="text-lg mr-1">📌</span> <span class="font-medium text-white">ตัวชี้วัด:</span> ว 2.1 ม.3/8 ออกแบบวิธีแก้ปัญหาในชีวิตประจำวัน โดยใช้ความรู้ปฏิกิริยาเคมี บูรณาการ STEM
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group cursor-pointer active:scale-[0.98] transition-all duration-300" onclick="window.open('https://ailab20.vercel.app/', '_blank')">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-rose-500 via-pink-500 to-red-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                    <div class="relative bg-gradient-to-r from-pink-600 via-rose-600 to-red-600 rounded-[24px] p-0.5 overflow-hidden shadow-xl">
+                        <div class="absolute inset-0 bg-white/10 group-hover:translate-x-full transform -translate-x-full transition-transform duration-700 ease-out skew-x-12"></div>
+                        <div class="bg-slate-900/40 backdrop-blur-sm rounded-[22px] px-5 py-4 flex items-center gap-4 border border-white/10">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center shadow-inner shrink-0 text-white group-hover:rotate-12 transition-transform duration-300">
+                                <i class="fa-solid fa-flask-vial text-2xl drop-shadow"></i>
+                            </div>
+                            <div class="flex flex-col text-left flex-grow">
+                                <span class="text-white font-extrabold text-[16px] tracking-wide drop-shadow-md">เข้าทดลอง Ai Lab 20</span>
+                                <span class="text-slate-200 text-[11px] mt-0.5 font-medium tracking-wide">กิจกรรมออกแบบชิ้นงานแก้ปัญหาจากปฏิกิริยาเคมี <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[9px]"></i></span>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-chevron-right text-white/90 text-sm group-hover:translate-x-1 transition-transform"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -2208,6 +2274,7 @@
                     </div>
                 </div>
             </div>
+
             <!-- ================= WEEK 8 ================= -->
             <div id="week8-content" class="week-content hidden flex-col gap-5">
                 <div class="bg-slate-900 rounded-3xl p-6 shadow-xl border border-slate-800 relative overflow-hidden">
@@ -2382,15 +2449,15 @@
                     <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-teal-400 to-emerald-500"></div>
                     <div class="flex items-center gap-3.5 mb-4">
                         <div class="w-10 h-10 rounded-2xl bg-teal-500/20 text-teal-400 flex items-center justify-center text-lg shadow-inner ring-1 ring-teal-500/30">
-                            <i class="fa-solid fa-gauge-high"></i>
+                            <i class="fa-solid fa-book-open"></i>
                         </div>
-                        <h3 class="font-bold text-white text-base md:text-lg">เครื่องมือวัดทางไฟฟ้า</h3>
+                        <h3 class="font-bold text-white text-base md:text-lg">ความหมายและการใช้งาน</h3>
                     </div>
                     <div class="text-slate-300 text-[14px] leading-relaxed space-y-3">
                         <ul class="list-disc pl-5 space-y-2 mt-2">
-                            <li><strong class="text-teal-400">แอมมิเตอร์ (Ammeter):</strong> ใช้สำหรับวัดกระแสไฟฟ้า (I) ในวงจร <span class="text-white bg-teal-500/20 px-1 py-0.5 rounded text-xs border border-teal-500/30">ต้องต่อแบบอนุกรม</span> เสมอ</li>
-                            <li><strong class="text-emerald-400">โวลต์มิเตอร์ (Voltmeter):</strong> ใช้สำหรับวัดความต่างศักย์ไฟฟ้า (V) <span class="text-white bg-emerald-500/20 px-1 py-0.5 rounded text-xs border border-emerald-500/30">ต้องต่อแบบขนาน</span> คร่อมอุปกรณ์</li>
-                            <li><strong class="text-cyan-400">มัลติมิเตอร์ (Multimeter):</strong> เครื่องมือวัดที่รวมการวัด V, I, R ไว้ในเครื่องเดียวกัน</li>
+                            <li><strong class="text-teal-400">แอมมิเตอร์ (Ammeter):</strong> ใช้สำหรับวัดปริมาณ <span class="text-white font-medium">กระแสไฟฟ้า</span> ในวงจร โดยต้องต่อแบบ <span class="text-rose-400 font-medium">อนุกรม (Series)</span> กับอุปกรณ์เสมอ (ห้ามต่อขนานกับแหล่งกำเนิด)</li>
+                            <li><strong class="text-cyan-400">โวลต์มิเตอร์ (Voltmeter):</strong> ใช้สำหรับวัด <span class="text-white font-medium">ความต่างศักย์ไฟฟ้า</span> หรือแรงดันไฟฟ้า โดยต้องต่อแบบ <span class="text-emerald-400 font-medium">ขนาน (Parallel)</span> คร่อมจุดหรืออุปกรณ์ที่ต้องการวัดเสมอ</li>
+                            <li><strong class="text-amber-400">มัลติมิเตอร์ (Multimeter):</strong> เครื่องมือวัดที่รวมความสามารถของทั้งแอมมิเตอร์ โวลต์มิเตอร์ และโอห์มมิเตอร์ ไว้ในเครื่องเดียว สะดวกต่อการใช้งาน</li>
                         </ul>
                         <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700 text-[13px] shadow-sm mt-3 text-slate-300">
                             <span class="text-lg mr-1">📌</span> <span class="font-medium text-white">ตัวชี้วัด:</span> ว 2.3 ม.3/3 ใช้โวลต์มิเตอร์ แอมมิเตอร์ในการวัดปริมาณทางไฟฟ้า
@@ -2404,11 +2471,11 @@
                         <div class="absolute inset-0 bg-white/10 group-hover:translate-x-full transform -translate-x-full transition-transform duration-700 ease-out skew-x-12"></div>
                         <div class="bg-slate-900/40 backdrop-blur-sm rounded-[22px] px-5 py-4 flex items-center gap-4 border border-white/10">
                             <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center shadow-inner shrink-0 text-white group-hover:rotate-12 transition-transform duration-300">
-                                <i class="fa-solid fa-tachometer-alt text-2xl drop-shadow"></i>
+                                <i class="fa-solid fa-gauge-high text-2xl drop-shadow"></i>
                             </div>
                             <div class="flex flex-col text-left flex-grow">
                                 <span class="text-white font-extrabold text-[16px] tracking-wide drop-shadow-md">เข้าทดลอง Ai Lab 10</span>
-                                <span class="text-slate-200 text-[11px] mt-0.5 font-medium tracking-wide">กิจกรรมการใช้เครื่องมือวัดทางไฟฟ้าเบื้องต้น <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[9px]"></i></span>
+                                <span class="text-slate-200 text-[11px] mt-0.5 font-medium tracking-wide">ปฏิบัติการใช้แอมมิเตอร์และโวลต์มิเตอร์ <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[9px]"></i></span>
                             </div>
                             <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
                                 <i class="fa-solid fa-chevron-right text-white/90 text-sm group-hover:translate-x-1 transition-transform"></i>
@@ -2521,6 +2588,7 @@
                     </div>
                 </div>
             </div>
+
             <!-- ================= WEEK 10 ================= -->
             <div id="week10-content" class="week-content hidden flex-col gap-5">
                 <div class="bg-slate-900 rounded-3xl p-6 shadow-xl border border-slate-800 relative overflow-hidden">
@@ -2534,7 +2602,7 @@
                     <div class="text-slate-300 text-[14px] leading-relaxed space-y-3">
                         <p class="font-medium text-white mb-2">ขอบข่ายเนื้อหาที่ใช้ในการสอบวัดผลกลางภาคเรียน (Midterm Examination):</p>
                         <ul class="list-disc pl-5 space-y-2 mt-2">
-                            <li><strong class="text-blue-400">หน่วยที่ 5 วัสดุและปฏิกิริยาเคมี:</strong> สมบัติวัสดุ (พอลิเมอร์, เซรามิก, โลหะ, วัสดุผสม), กฎทรงมวล, การถ่ายโอนความร้อน (ดูด-คาย), ปฏิกิริยาเคมีในชีวิตประจำวัน (กรด-เบส-โลหะ-สนิม-การเผาไหม้) และผลกระทบต่อสิ่งแวดล้อม</li>
+                            <li><strong class="text-blue-400">หน่วยที่ 1 วัสดุและปฏิกิริยาเคมี:</strong> สมบัติวัสดุ (พอลิเมอร์, เซรามิก, โลหะ, วัสดุผสม), กฎทรงมวล, การถ่ายโอนความร้อน (ดูด-คาย), ปฏิกิริยาเคมีในชีวิตประจำวัน (กรด-เบส-โลหะ-สนิม-การเผาไหม้) และผลกระทบต่อสิ่งแวดล้อม</li>
                             <li><strong class="text-amber-400">หน่วยที่ 6 ไฟฟ้าเบื้องต้น:</strong> ปริมาณทางไฟฟ้า (กระแส, ความต่างศักย์, ความต้านทาน), กฎของโอห์ม ($V = IR$), การอ่านค่าและการใช้งานเครื่องมือวัด (แอมมิเตอร์และโวลต์มิเตอร์)</li>
                         </ul>
                         <div class="bg-slate-800 p-3.5 rounded-2xl border border-slate-700 text-[13px] shadow-sm mt-4 text-slate-300">
@@ -3890,7 +3958,7 @@
                     <div class="text-slate-300 text-[14px] leading-relaxed space-y-3">
                         <p class="font-medium text-white mb-2">ขอบข่ายเนื้อหาที่ใช้ในการสอบวัดผลปลายภาคเรียน (Final Examination):</p>
                         <ul class="list-disc pl-5 space-y-2 mt-2">
-                            <li><strong class="text-fuchsia-400">หน่วยที่ 5 วัสดุและปฏิกิริยาเคมี:</strong> (ทบทวนความรู้เดิมที่เกี่ยวข้อง)</li>
+                            <li><strong class="text-fuchsia-400">หน่วยที่ 1 วัสดุและปฏิกิริยาเคมี:</strong> (ทบทวนความรู้เดิมที่เกี่ยวข้อง)</li>
                             <li><strong class="text-amber-400">หน่วยที่ 6 ไฟฟ้าและอิเล็กทรอนิกส์:</strong> การต่อวงจร (อนุกรม, ขนาน), ชิ้นส่วนอิเล็กทรอนิกส์เบื้องต้น, กำลังไฟฟ้าและพลังงานไฟฟ้า, การคำนวณค่าไฟฟ้า, และความปลอดภัยทางไฟฟ้า</li>
                             <li><strong class="text-green-400">หน่วยที่ 7 ระบบนิเวศและความหลากหลายทางชีวภาพ:</strong> องค์ประกอบและไบโอม, รูปแบบความสัมพันธ์ของสิ่งมีชีวิต, การถ่ายทอดพลังงาน (สายใยอาหาร), การสะสมสารพิษ, และความหลากหลายทางชีวภาพ</li>
                         </ul>
@@ -3920,7 +3988,7 @@
         </div>
     </div>
 
-        <script>
+    <script>
         // Lesson Detail Logic
         function openLessonDetail(weekKey) {
             const titleEl = document.getElementById('lesson-detail-title');
@@ -3929,83 +3997,83 @@
             if (weekKey === 'week1') {
                 titleEl.innerText = 'ปฏิกิริยาเคมี';
                 subtitleEl.innerText = 'สัปดาห์ที่ 1';
-                subtitleEl.className = 'text-[14px] font-bold text-blue-400 tracking-wider uppercase mb-0.5';
+                subtitleEl.className = 'text-[10px] font-bold text-blue-400 tracking-wider uppercase mb-0.5';
             } else if (weekKey === 'week2') {
                 titleEl.innerText = 'กฎทรงมวล';
                 subtitleEl.innerText = 'สัปดาห์ที่ 2';
-                subtitleEl.className = 'text-[14px] font-bold text-emerald-400 tracking-wider uppercase mb-0.5';
+                subtitleEl.className = 'text-[10px] font-bold text-emerald-400 tracking-wider uppercase mb-0.5';
             } else if (weekKey === 'week3') {
                 titleEl.innerText = 'การถ่ายโอนความร้อน';
                 subtitleEl.innerText = 'สัปดาห์ที่ 3';
-                subtitleEl.className = 'text-[14px] font-bold text-orange-400 tracking-wider uppercase mb-0.5';
+                subtitleEl.className = 'text-[10px] font-bold text-orange-400 tracking-wider uppercase mb-0.5';
             } else if (weekKey === 'week4') {
                 titleEl.innerText = 'ปฏิกิริยาเคมีในชีวิตประจำวัน';
                 subtitleEl.innerText = 'สัปดาห์ที่ 4';
-                subtitleEl.className = 'text-[14px] font-bold text-fuchsia-400 tracking-wider uppercase mb-0.5';
+                subtitleEl.className = 'text-[10px] font-bold text-fuchsia-400 tracking-wider uppercase mb-0.5';
             } else if (weekKey === 'week5') {
                 titleEl.innerText = 'ผลกระทบต่อสิ่งแวดล้อม';
                 subtitleEl.innerText = 'สัปดาห์ที่ 5';
-                subtitleEl.className = 'text-[14px] font-bold text-violet-400 tracking-wider uppercase mb-0.5';
+                subtitleEl.className = 'text-[10px] font-bold text-violet-400 tracking-wider uppercase mb-0.5';
             } else if (weekKey === 'week6') {
                 titleEl.innerText = 'วัสดุในชีวิตประจำวัน';
                 subtitleEl.innerText = 'สัปดาห์ที่ 6';
-                subtitleEl.className = 'text-[14px] font-bold text-cyan-400 tracking-wider uppercase mb-0.5';
+                subtitleEl.className = 'text-[10px] font-bold text-cyan-400 tracking-wider uppercase mb-0.5';
             } else if (weekKey === 'week7') {
                 titleEl.innerText = 'STEM การแก้ปัญหาเคมี';
                 subtitleEl.innerText = 'สัปดาห์ที่ 7';
-                subtitleEl.className = 'text-[14px] font-bold text-rose-400 tracking-wider uppercase mb-0.5';
+                subtitleEl.className = 'text-[10px] font-bold text-rose-400 tracking-wider uppercase mb-0.5';
             } else if (weekKey === 'week8') {
                 titleEl.innerText = 'ปริมาณทางไฟฟ้าและกฎของโอห์ม';
                 subtitleEl.innerText = 'สัปดาห์ที่ 8';
-                subtitleEl.className = 'text-[14px] font-bold text-amber-400 tracking-wider uppercase mb-0.5';
+                subtitleEl.className = 'text-[10px] font-bold text-amber-400 tracking-wider uppercase mb-0.5';
             } else if (weekKey === 'week9') {
                 titleEl.innerText = 'เครื่องมือวัดทางไฟฟ้า';
                 subtitleEl.innerText = 'สัปดาห์ที่ 9';
-                subtitleEl.className = 'text-[14px] font-bold text-teal-400 tracking-wider uppercase mb-0.5';
+                subtitleEl.className = 'text-[10px] font-bold text-teal-400 tracking-wider uppercase mb-0.5';
             } else if (weekKey === 'week10') {
                 titleEl.innerText = 'ทบทวนและวัดผลกลางภาค';
                 subtitleEl.innerText = 'สัปดาห์ที่ 10';
-                subtitleEl.className = 'text-[14px] font-bold text-red-400 tracking-wider uppercase mb-0.5';
+                subtitleEl.className = 'text-[10px] font-bold text-red-400 tracking-wider uppercase mb-0.5';
             } else if (weekKey === 'week11') {
                 titleEl.innerText = 'การต่อตัวต้านทานอนุกรมและขนาน';
                 subtitleEl.innerText = 'สัปดาห์ที่ 11';
-                subtitleEl.className = 'text-[14px] font-bold text-lime-400 tracking-wider uppercase mb-0.5';
+                subtitleEl.className = 'text-[10px] font-bold text-lime-400 tracking-wider uppercase mb-0.5';
             } else if (weekKey === 'week12') {
                 titleEl.innerText = 'ชิ้นส่วนและวงจรอิเล็กทรอนิกส์เบื้องต้น';
                 subtitleEl.innerText = 'สัปดาห์ที่ 12';
-                subtitleEl.className = 'text-[14px] font-bold text-pink-400 tracking-wider uppercase mb-0.5';
+                subtitleEl.className = 'text-[10px] font-bold text-pink-400 tracking-wider uppercase mb-0.5';
             } else if (weekKey === 'week13') {
                 titleEl.innerText = 'กำลังไฟฟ้าและพลังงานไฟฟ้า';
                 subtitleEl.innerText = 'สัปดาห์ที่ 13';
-                subtitleEl.className = 'text-[14px] font-bold text-indigo-400 tracking-wider uppercase mb-0.5';
+                subtitleEl.className = 'text-[10px] font-bold text-indigo-400 tracking-wider uppercase mb-0.5';
             } else if (weekKey === 'week14') {
                 titleEl.innerText = 'การคำนวณค่าไฟฟ้าและความปลอดภัย';
                 subtitleEl.innerText = 'สัปดาห์ที่ 14';
-                subtitleEl.className = 'text-[14px] font-bold text-sky-400 tracking-wider uppercase mb-0.5';
+                subtitleEl.className = 'text-[10px] font-bold text-sky-400 tracking-wider uppercase mb-0.5';
             } else if (weekKey === 'week15') {
                 titleEl.innerText = 'องค์ประกอบระบบนิเวศ';
                 subtitleEl.innerText = 'สัปดาห์ที่ 15';
-                subtitleEl.className = 'text-[14px] font-bold text-green-400 tracking-wider uppercase mb-0.5';
+                subtitleEl.className = 'text-[10px] font-bold text-green-400 tracking-wider uppercase mb-0.5';
             } else if (weekKey === 'week16') {
                 titleEl.innerText = 'ความสัมพันธ์ระหว่างสิ่งมีชีวิต';
                 subtitleEl.innerText = 'สัปดาห์ที่ 16';
-                subtitleEl.className = 'text-[14px] font-bold text-lime-400 tracking-wider uppercase mb-0.5';
+                subtitleEl.className = 'text-[10px] font-bold text-lime-400 tracking-wider uppercase mb-0.5';
             } else if (weekKey === 'week17') {
                 titleEl.innerText = 'การถ่ายทอดพลังงานและสายใยอาหาร';
                 subtitleEl.innerText = 'สัปดาห์ที่ 17';
-                subtitleEl.className = 'text-[14px] font-bold text-yellow-400 tracking-wider uppercase mb-0.5';
+                subtitleEl.className = 'text-[10px] font-bold text-yellow-400 tracking-wider uppercase mb-0.5';
             } else if (weekKey === 'week18') {
                 titleEl.innerText = 'การสะสมสารพิษและสมดุลระบบนิเวศ';
                 subtitleEl.innerText = 'สัปดาห์ที่ 18';
-                subtitleEl.className = 'text-[14px] font-bold text-purple-400 tracking-wider uppercase mb-0.5';
+                subtitleEl.className = 'text-[10px] font-bold text-purple-400 tracking-wider uppercase mb-0.5';
             } else if (weekKey === 'week19') {
                 titleEl.innerText = 'ความหลากหลายทางชีวภาพและการอนุรักษ์';
                 subtitleEl.innerText = 'สัปดาห์ที่ 19';
-                subtitleEl.className = 'text-[14px] font-bold text-pink-400 tracking-wider uppercase mb-0.5';
+                subtitleEl.className = 'text-[10px] font-bold text-pink-400 tracking-wider uppercase mb-0.5';
             } else if (weekKey === 'week20') {
                 titleEl.innerText = 'ทบทวนและวัดผลปลายภาค';
                 subtitleEl.innerText = 'สัปดาห์ที่ 20';
-                subtitleEl.className = 'text-[14px] font-bold text-rose-400 tracking-wider uppercase mb-0.5';
+                subtitleEl.className = 'text-[10px] font-bold text-rose-400 tracking-wider uppercase mb-0.5';
             }
 
             document.querySelectorAll('.week-content').forEach(el => {
@@ -4018,12 +4086,9 @@
                 activeContent.classList.remove('hidden');
                 activeContent.classList.add('flex');
                 
-                // ใช้การแทนที่ string เพื่อหา ID ของ iframe แทนการเขียน if-else ยาวๆ
-                const iframeId = 'iframe-' + weekKey.replace('week', 'w');
+                const iframeId = weekKey === 'week1' ? 'iframe-w1' : weekKey === 'week2' ? 'iframe-w2' : weekKey === 'week3' ? 'iframe-w3' : weekKey === 'week4' ? 'iframe-w4' : weekKey === 'week5' ? 'iframe-w5' : weekKey === 'week6' ? 'iframe-w6' : weekKey === 'week7' ? 'iframe-w7' : weekKey === 'week8' ? 'iframe-w8' : weekKey === 'week9' ? 'iframe-w9' : weekKey === 'week11' ? 'iframe-w11' : weekKey === 'week12' ? 'iframe-w12' : weekKey === 'week13' ? 'iframe-w13' : weekKey === 'week14' ? 'iframe-w14' : weekKey === 'week15' ? 'iframe-w15' : weekKey === 'week16' ? 'iframe-w16' : weekKey === 'week17' ? 'iframe-w17' : weekKey === 'week18' ? 'iframe-w18' : weekKey === 'week19' ? 'iframe-w19' : 'iframe-w9';
                 const iframe = document.getElementById(iframeId);
-                
-                // ใส่วงเล็บจัดกลุ่มเงื่อนไขให้ถูกต้อง เพื่อไม่ให้เกิด Error เมื่อ iframe เป็น null
-                if (iframe && (iframe.src === window.location.href || iframe.getAttribute('src') === '')) {
+                if (iframe && iframe.src === window.location.href || iframe.src === '') {
                      iframe.src = iframe.getAttribute('data-src');
                 }
             }
