@@ -63,8 +63,8 @@
             position: absolute;
             top: 6px;
             left: 6px;
-            width: 60px;
-            height: 60px;
+            width: 64px;
+            height: 64px;
             border-radius: 50% !important;
             pointer-events: none;
             z-index: 0;
@@ -72,6 +72,8 @@
             transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
             background: transparent;
         }
+
+        /* Outer Glowing Blue-White Flowing Ring */
         .magic-indicator::before {
             content: '';
             position: absolute;
@@ -98,6 +100,15 @@
         }
         @keyframes ringSpin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         @keyframes innerPulse { 0% { opacity: 0.6; transform: scale(0.96); } 100% { opacity: 1; transform: scale(1.02); } }
+        
+        /* Hide Scrollbar for Nav */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col text-slate-200 relative z-0">
@@ -138,7 +149,7 @@
                 </div>
                 <div class="flex-1 flex flex-col items-center justify-center start-opacity-0 animate-fade-in-up anim-delay-500 w-full">
                     <div class="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 hover:scale-105 transition-transform duration-500">
-                        <img src="https://live.staticflickr.com/65535/55605088814_c19d528e89_c.jpg" alt="ครูวิทยาศาสตร์ในห้องเรียนอัจฉริยะ" class="w-full h-full object-cover object-top rounded-full shadow-2xl border-4 border-slate-800 relative z-10"/>
+                        <img src="https://live.staticflickr.com/65535/55605088814_c19d528e89_b.jpg" alt="ครูวิทยาศาสตร์ในห้องเรียนอัจฉริยะ" class="w-full h-full object-cover object-top rounded-full shadow-2xl border-4 border-slate-800 relative z-10"/>
                         <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-[#0ea5e9]/40 to-[#f97316]/30 blur-2xl -z-10 animate-pulse"></div>
                     </div>
                     <div class="mt-6 md:mt-8 text-center bg-slate-900/80 px-5 md:px-6 py-3 rounded-2xl backdrop-blur-xl border border-slate-700/80 shadow-2xl hover:shadow-blue-500/10 transition-shadow w-fit mx-auto">
@@ -176,19 +187,19 @@
             <!-- ================== 🟢 เริ่มต้นพื้นที่ ปุ่มเมนู (Nav Links) 🟢 ================== -->
             <!-- วิธีเพิ่มปุ่มใหม่: ก็อปปี้ <a> เปลี่ยน onclick เป็นรหัสหน้า (pageId) และเปลี่ยนไอคอน/ข้อความ -->
 
-            <a href="#" draggable="false" onclick="navigateTo('home', event)" class="nav-link select-none relative z-10 snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group text-slate-400 bg-transparent transition-all duration-300 ease-out active:scale-90">
+            <a href="#" draggable="false" onclick="navigateTo('home', event)" class="nav-link select-none relative z-10 snap-start shrink-0 flex flex-col items-center justify-center w-[64px] h-[64px] rounded-full group text-slate-400 bg-transparent transition-all duration-300 ease-out active:scale-90">
                 <i class="fa-solid fa-house text-[20px] mb-1 group-hover:-translate-y-0.5 transition-transform duration-300 pointer-events-none" style="color: inherit;"></i>
-                <span class="text-[10px] font-medium tracking-wide pointer-events-none">หน้าแรก</span>
+                <span class="text-[9px] sm:text-[10px] font-medium pointer-events-none whitespace-nowrap">หน้าแรก</span>
             </a>
 
-            <a href="#" draggable="false" onclick="navigateTo('ailab', event)" class="nav-link select-none relative z-10 snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group text-slate-400 bg-transparent transition-all duration-300 ease-out active:scale-90">
+            <a href="#" draggable="false" onclick="navigateTo('ailab', event)" class="nav-link select-none relative z-10 snap-start shrink-0 flex flex-col items-center justify-center w-[64px] h-[64px] rounded-full group text-slate-400 bg-transparent transition-all duration-300 ease-out active:scale-90">
                 <i class="fa-solid fa-flask text-[20px] mb-1 group-hover:-translate-y-0.5 transition-transform duration-300 pointer-events-none" style="color: inherit;"></i>
-                <span class="text-[10px] font-medium tracking-wide pointer-events-none">Ai Lab</span>
+                <span class="text-[9px] sm:text-[10px] font-medium pointer-events-none whitespace-nowrap">Ai Lab</span>
             </a>
 
-            <a href="#" draggable="false" onclick="navigateTo('archive', event)" class="nav-link select-none relative z-10 snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group text-slate-400 bg-transparent transition-all duration-300 ease-out active:scale-90">
+            <a href="#" draggable="false" onclick="navigateTo('archive', event)" class="nav-link select-none relative z-10 snap-start shrink-0 flex flex-col items-center justify-center w-[64px] h-[64px] rounded-full group text-slate-400 bg-transparent transition-all duration-300 ease-out active:scale-90">
                 <i class="fa-solid fa-database text-[20px] mb-1 group-hover:-translate-y-0.5 transition-transform duration-300 pointer-events-none" style="color: inherit;"></i>
-                <span class="text-[10px] font-medium tracking-wide pointer-events-none">คลังข้อมูล</span>
+                <span class="text-[9px] sm:text-[10px] font-medium pointer-events-none whitespace-nowrap">คลังข้อมูล</span>
             </a>
 
             <!-- ================== 🔴 สิ้นสุดพื้นที่ ปุ่มเมนู (Nav Links) 🔴 ================== -->
@@ -313,7 +324,7 @@
                 if (!isDraggingIndicator) return;
                 e.preventDefault();
                 let newTranslate = currentTranslate + (clientX - dragStartX);
-                const maxScroll = bottomNav.scrollWidth - 72; 
+                const maxScroll = bottomNav.scrollWidth - 76; 
                 
                 if (newTranslate < 0) newTranslate = 0;
                 if (newTranslate > maxScroll) newTranslate = maxScroll;
