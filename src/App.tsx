@@ -39,7 +39,7 @@ const PAGES_CONFIG: PageItem[] = [
     {
     id: 'archive',
     label: 'ห้องเรียน',
-    icon: 'fa-solid fa-database',
+    icon: 'fa-solid fa-school',
     url: 'https://180iqmath.vercel.app/',
   },
   // 👇 ตัวอย่างการเพิ่มปุ่มใหม่ (ก๊อปปี้ไปวางต่อท้ายได้เลย ไม่ต้องกลัวชื่อ id ซ้ำ):
