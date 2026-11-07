@@ -33,8 +33,14 @@ const PAGES_CONFIG: PageItem[] = [
   {
     id: 'archive',
     label: 'คลังข้อมูล',
-    icon: 'fa-solid fa-database',
+    icon: 'fa-solid fa-school',
     url: 'https://bingo-five-rust.vercel.app/',
+  },
+    {
+    id: 'archive',
+    label: 'ห้องเรียน',
+    icon: 'fa-solid fa-database',
+    url: 'https://vercel.com/metawat/180iqmath/',
   },
   // 👇 ตัวอย่างการเพิ่มปุ่มใหม่ (ก๊อปปี้ไปวางต่อท้ายได้เลย ไม่ต้องกลัวชื่อ id ซ้ำ):
   // {
