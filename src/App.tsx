@@ -6,7 +6,7 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 
 export interface PageItem {
-  id: string;
+  id?: string;
   label: string;
   icon: string;
   url?: string;
@@ -15,8 +15,8 @@ export interface PageItem {
 // ============================================================================
 // 🟢 พื้นที่ตั้งค่าเมนูและหน้าเว็บ (เพิ่ม/ลบ/แก้ไข หน้าเว็บทั้งหมดได้ที่นี่จุดเดียว!) 🟢
 // วิธีเพิ่มคลังข้อมูลหรือหน้าใหม่:
-// เพียงคัดลอก 1 บล็อกด้านล่างไปวางต่อท้าย แล้วแก้ id, label, icon และ url
-// ระบบจะสร้างทั้ง "หน้าต่างแสดงเว็บ (Iframe)" และ "ปุ่มเมนูด้านล่าง" ให้อัตโนมัติทันที!
+// เพียงคัดลอกบล็อก { label: '...', icon: '...', url: '...' } ไปวางต่อท้าย
+// (ต่อให้ก๊อปปี้มาแล้วลืมแก้ id หรือไม่ใส่ id ระบบก็แยกปุ่มและหน้าเว็บให้อัตโนมัติ 100%)
 // ============================================================================
 const PAGES_CONFIG: PageItem[] = [
   {
@@ -36,15 +36,8 @@ const PAGES_CONFIG: PageItem[] = [
     icon: 'fa-solid fa-database',
     url: 'https://bingo-five-rust.vercel.app/',
   },
-   {
-    id: 'archive',
-    label: 'คลังข้อมูล 2 ',
-    icon: 'fa-solid fa-database',
-    url: 'https://bingo-five-rust.vercel.app/',
-  },
-  // 👇 ตัวอย่างการเพิ่มหน้าใหม่ (คัดลอกบรรทัดด้านล่างนี้ไปวางต่อท้ายได้เลย):
+  // 👇 ตัวอย่างการเพิ่มปุ่มใหม่ (ก๊อปปี้ไปวางต่อท้ายได้เลย ไม่ต้องกลัวชื่อ id ซ้ำ):
   // {
-  //   id: 'archive2',
   //   label: 'คลังข้อมูล 2',
   //   icon: 'fa-solid fa-folder-open',
   //   url: 'https://ใส่ลิงก์เว็บของคุณที่นี่.vercel.app/',
@@ -54,77 +47,128 @@ const PAGES_CONFIG: PageItem[] = [
 // 🔴 สิ้นสุดพื้นที่ตั้งค่าเมนู (โค้ดด้านล่างทำงานอัตโนมัติ ไม่ต้องแก้ไข) 🔴
 // ============================================================================
 
+// สร้างรหัสประจำปุ่มที่ไม่ซ้ำกันแน่นอน แม้ผู้ใช้จะก๊อปปี้ id เดิมมาวางซ้ำ
+const NORMALIZED_PAGES = PAGES_CONFIG.map((item, index) => ({
+  ...item,
+  index,
+  uniqueId: item.id && !PAGES_CONFIG.slice(0, index).some((p) => p.id === item.id)
+    ? item.id
+    : `${item.id || 'page'}-${index + 1}`,
+}));
+
 declare global {
   interface Window {
-    navigateTo?: (pageId: string, event?: React.MouseEvent | MouseEvent | null) => void;
+    navigateTo?: (
+      target: number | string,
+      event?: React.MouseEvent | MouseEvent | null
+    ) => void;
   }
 }
 
 export default function App() {
-  const defaultPageId = PAGES_CONFIG[0]?.id || 'home';
-  const [activePage, setActivePage] = useState<string>(defaultPageId);
-  const [visiblePage, setVisiblePage] = useState<string>(defaultPageId);
-  const [loadedIframes, setLoadedIframes] = useState<Record<string, boolean>>({});
-  const [iframeLoadedDone, setIframeLoadedDone] = useState<Record<string, boolean>>({});
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [visibleIndex, setVisibleIndex] = useState<number>(0);
+  const [loadedIframes, setLoadedIframes] = useState<Record<number, boolean>>({});
+  const [iframeLoadedDone, setIframeLoadedDone] = useState<Record<number, boolean>>({});
 
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const bottomNavRef = useRef<HTMLElement | null>(null);
   const indicatorRef = useRef<HTMLDivElement | null>(null);
-  const navLinksRef = useRef<Record<string, HTMLAnchorElement | null>>({});
-  const transitionTimeoutRef = useRef<number | null>(null);
+  const navLinksRef = useRef<(HTMLAnchorElement | null)[]>([]);
+  const activeIndexRef = useRef<number>(0);
+  const suppressNextClickRef = useRef<boolean>(false);
 
-  // Move Magic Indicator to active button
-  const moveIndicator = useCallback((targetLink: HTMLElement | null, instant = false) => {
-    const indicator = indicatorRef.current;
-    if (!targetLink || !indicator) return;
-    const offsetLeft = targetLink.offsetLeft;
-    indicator.style.transition = instant
-      ? 'none'
-      : 'transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
-    indicator.style.transform = `translate3d(${offsetLeft - 6}px, 0, 0)`;
+  useEffect(() => {
+    activeIndexRef.current = activeIndex;
+  }, [activeIndex]);
+
+  // คำนวณตำแหน่ง X ของวงแหวนไฟวิเศษให้ตรงกึ่งกลางปุ่มเสมอ
+  const getLinkTargetTranslateX = useCallback((targetLink: HTMLElement | null): number => {
+    if (!targetLink) return 0;
+    const indicatorWidth = 60;
+    const indicatorBaseLeft = 6;
+    return (
+      targetLink.offsetLeft +
+      (targetLink.offsetWidth - indicatorWidth) / 2 -
+      indicatorBaseLeft
+    );
   }, []);
 
-  // Navigation handler
+  // เลื่อนวงแหวนไฟวิเศษไปยังปุ่มเป้าหมายพร้อมเลื่อนแถบเมนูอัตโนมัติหากปุ่มล้นจอ
+  const moveIndicator = useCallback(
+    (targetLink: HTMLElement | null, instant = false) => {
+      const indicator = indicatorRef.current;
+      const bottomNav = bottomNavRef.current;
+      if (!targetLink || !indicator) return;
+
+      const targetX = getLinkTargetTranslateX(targetLink);
+      indicator.style.transition = instant
+        ? 'none'
+        : 'transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
+      indicator.style.transform = `translate3d(${targetX}px, 0, 0)`;
+
+      // เลื่อน scroll แถบเมนูด้านล่างให้เห็นปุ่มที่เลือกอย่างสมบูรณ์เมื่อมีหลายปุ่ม
+      if (bottomNav && bottomNav.scrollWidth > bottomNav.clientWidth) {
+        const navCenter = bottomNav.clientWidth / 2;
+        const linkCenter = targetLink.offsetLeft + targetLink.offsetWidth / 2;
+        bottomNav.scrollTo({
+          left: Math.max(0, linkCenter - navCenter),
+          behavior: instant ? 'auto' : 'smooth',
+        });
+      }
+    },
+    [getLinkTargetTranslateX]
+  );
+
+  // ฟังก์ชันเปลี่ยนหน้า (รองรับทั้งลำดับปุ่ม index และชื่อ uniqueId)
   const navigateTo = useCallback(
-    (pageId: string, event: React.MouseEvent | MouseEvent | null = null) => {
+    (target: number | string, event: React.MouseEvent | MouseEvent | null = null) => {
       if (event) {
         event.preventDefault();
       }
 
-      const targetPage = PAGES_CONFIG.find((p) => p.id === pageId);
-      if (!targetPage) return;
-
-      if (transitionTimeoutRef.current) {
-        window.clearTimeout(transitionTimeoutRef.current);
+      let targetIdx = -1;
+      if (typeof target === 'number') {
+        targetIdx = target;
+      } else {
+        targetIdx = NORMALIZED_PAGES.findIndex(
+          (p) => p.uniqueId === target || p.id === target
+        );
       }
 
-      // Lazy-load iframe automatically when navigated to for the first time
+      if (targetIdx < 0 || targetIdx >= NORMALIZED_PAGES.length) return;
+      const targetPage = NORMALIZED_PAGES[targetIdx];
+
+      // โหลด Iframe อัตโนมัติเมื่อเปิดหน้านั้นครั้งแรก
       if (targetPage.url) {
-        setLoadedIframes((prev) => (prev[pageId] ? prev : { ...prev, [pageId]: true }));
+        setLoadedIframes((prev) =>
+          prev[targetIdx] ? prev : { ...prev, [targetIdx]: true }
+        );
       }
 
-      setActivePage(pageId);
+      setActiveIndex(targetIdx);
+      activeIndexRef.current = targetIdx;
 
-      // Update URL hash without scrolling
+      // อัปเดต URL Hash โดยไม่ทำให้หน้ากระตุก
       if (window.history.replaceState) {
-        const newHash = pageId === defaultPageId ? window.location.pathname : `#${pageId}`;
+        const newHash =
+          targetIdx === 0 ? window.location.pathname : `#${targetPage.uniqueId}`;
         window.history.replaceState(null, '', newHash);
       }
 
-      // Trigger smooth opacity & translateY transition
       requestAnimationFrame(() => {
-        setVisiblePage(pageId);
+        setVisibleIndex(targetIdx);
       });
 
-      const targetLink = navLinksRef.current[pageId];
+      const targetLink = navLinksRef.current[targetIdx];
       if (targetLink) {
         moveIndicator(targetLink, false);
       }
     },
-    [defaultPageId, moveIndicator]
+    [moveIndicator]
   );
 
-  // Expose navigateTo globally
+  // เปิดให้เรียกใช้ window.navigateTo ได้จากภายนอก
   useEffect(() => {
     window.navigateTo = navigateTo;
     return () => {
@@ -132,20 +176,25 @@ export default function App() {
     };
   }, [navigateTo]);
 
-  // Initial page setup & URL hash support
+  // ตั้งค่าหน้าเริ่มต้นเมื่อโหลดเว็บ และรองรับ URL Hash
   useEffect(() => {
-    const hash = window.location.hash.replace('#', '');
-    const matchedPage = PAGES_CONFIG.find((p) => p.id === hash);
-    const initialPage = matchedPage ? matchedPage.id : defaultPageId;
+    const hash = decodeURIComponent(window.location.hash.replace('#', ''));
+    const matchedIdx = NORMALIZED_PAGES.findIndex(
+      (p) => p.uniqueId === hash || p.id === hash
+    );
+    const initialIdx = matchedIdx >= 0 ? matchedIdx : 0;
+    const initialPage = NORMALIZED_PAGES[initialIdx];
 
-    if (matchedPage?.url) {
-      setLoadedIframes((prev) => ({ ...prev, [initialPage]: true }));
+    if (initialPage?.url) {
+      setLoadedIframes((prev) => ({ ...prev, [initialIdx]: true }));
     }
 
-    setActivePage(initialPage);
+    setActiveIndex(initialIdx);
+    activeIndexRef.current = initialIdx;
+
     const timer = window.setTimeout(() => {
-      setVisiblePage(initialPage);
-      const activeLink = navLinksRef.current[initialPage];
+      setVisibleIndex(initialIdx);
+      const activeLink = navLinksRef.current[initialIdx];
       if (activeLink) {
         moveIndicator(activeLink, true);
       }
@@ -154,108 +203,133 @@ export default function App() {
     return () => {
       window.clearTimeout(timer);
     };
-  }, [defaultPageId, moveIndicator]);
+  }, [moveIndicator]);
 
-  // Keep Magic Indicator aligned on window resize
+  // จัดตำแหน่งวงแหวนไฟวิเศษใหม่อัตโนมัติเมื่อขนาดหน้าจอเปลี่ยนหรือจำนวนปุ่มเปลี่ยน
   useEffect(() => {
-    const handleResizeIndicator = () => {
-      const link = navLinksRef.current[activePage];
+    const syncIndicator = () => {
+      const link = navLinksRef.current[activeIndexRef.current];
       if (link) {
         moveIndicator(link, true);
       }
     };
-    window.addEventListener('resize', handleResizeIndicator);
-    return () => window.removeEventListener('resize', handleResizeIndicator);
-  }, [activePage, moveIndicator]);
+    syncIndicator();
+    window.addEventListener('resize', syncIndicator);
+    return () => window.removeEventListener('resize', syncIndicator);
+  }, [activeIndex, moveIndicator]);
 
-  // Magic Indicator Drag Logic (Touch & Mouse)
+  // ระบบลากวงแหวนไฟวิเศษ (แก้ไขปัญหาลากข้ามปุ่มไม่สุด และป้องกันการชนกับการคลิกปกติ)
   useEffect(() => {
     const bottomNav = bottomNavRef.current;
     const indicatorElement = indicatorRef.current;
     if (!bottomNav || !indicatorElement) return;
 
-    let isDraggingIndicator = false;
+    let isPointerDownOnIndicator = false;
+    let hasDragged = false;
     let dragStartX = 0;
+    let startScrollLeft = 0;
+    let startTranslate = 0;
     let currentTranslate = 0;
     let dragRAF: number | null = null;
 
-    const getTranslateX = () => {
-      const transform = window.getComputedStyle(indicatorElement).transform;
-      if (transform && transform !== 'none') {
-        const matrix = transform.match(/^matrix\((.+)\)$/);
-        if (matrix) return parseFloat(matrix[1].split(', ')[4]);
-        const matrix3d = transform.match(/^matrix3d\((.+)\)$/);
-        if (matrix3d) return parseFloat(matrix3d[1].split(', ')[12]);
-      }
-      return 0;
+    const getBounds = () => {
+      const firstLink = navLinksRef.current[0];
+      const lastLink = navLinksRef.current[NORMALIZED_PAGES.length - 1];
+      const minX = firstLink ? getLinkTargetTranslateX(firstLink) : 0;
+      const maxX = lastLink ? getLinkTargetTranslateX(lastLink) : 0;
+      return { minX, maxX };
     };
 
     const handleDragStart = (clientX: number, clientY: number) => {
       const rect = indicatorElement.getBoundingClientRect();
+      // ตรวจสอบว่าเริ่มกดลงบนบริเวณวงแหวนไฟวิเศษ
       if (
-        clientX >= rect.left - 10 &&
-        clientX <= rect.right + 10 &&
-        clientY >= rect.top - 10 &&
-        clientY <= rect.bottom + 10
+        clientX >= rect.left - 4 &&
+        clientX <= rect.right + 4 &&
+        clientY >= rect.top - 4 &&
+        clientY <= rect.bottom + 4
       ) {
-        isDraggingIndicator = true;
+        isPointerDownOnIndicator = true;
+        hasDragged = false;
         dragStartX = clientX;
-        currentTranslate = getTranslateX();
-        if (dragRAF) cancelAnimationFrame(dragRAF);
-        indicatorElement.style.transition = 'transform 0.15s cubic-bezier(0.2, 0, 0, 1)';
+        startScrollLeft = bottomNav.scrollLeft;
+        const currentLink = navLinksRef.current[activeIndexRef.current];
+        startTranslate = getLinkTargetTranslateX(currentLink);
+        currentTranslate = startTranslate;
       }
     };
 
     const handleDragMove = (clientX: number, e: TouchEvent | MouseEvent) => {
-      if (!isDraggingIndicator) return;
-      if (e.cancelable) e.preventDefault();
-      let newTranslate = currentTranslate + (clientX - dragStartX);
-      const maxScroll = bottomNav.scrollWidth - 72;
+      if (!isPointerDownOnIndicator) return;
 
-      if (newTranslate < 0) newTranslate = 0;
-      if (newTranslate > maxScroll) newTranslate = maxScroll;
+      const deltaX = clientX - dragStartX;
+      // เริ่มโหมดลากเมื่อขยับเมาส์หรือนิ้วเกิน 5px เพื่อไม่ให้กวนการคลิกปุ่มปกติ
+      if (!hasDragged && Math.abs(deltaX) < 5) {
+        return;
+      }
+
+      hasDragged = true;
+      if (e.cancelable) e.preventDefault();
+
+      const { minX, maxX } = getBounds();
+      const scrollDelta = bottomNav.scrollLeft - startScrollLeft;
+      let nextTranslate = startTranslate + deltaX + scrollDelta;
+
+      if (nextTranslate < minX) nextTranslate = minX;
+      if (nextTranslate > maxX) nextTranslate = maxX;
+      currentTranslate = nextTranslate;
 
       if (dragRAF) cancelAnimationFrame(dragRAF);
       dragRAF = requestAnimationFrame(() => {
         indicatorElement.style.transition = 'none';
-        indicatorElement.style.transform = `translate3d(${newTranslate}px, 0, 0)`;
+        indicatorElement.style.transform = `translate3d(${nextTranslate}px, 0, 0)`;
       });
     };
 
     const handleDragEnd = () => {
-      if (!isDraggingIndicator) return;
-      isDraggingIndicator = false;
+      if (!isPointerDownOnIndicator) return;
+      isPointerDownOnIndicator = false;
       if (dragRAF) cancelAnimationFrame(dragRAF);
 
-      const indicatorRect = indicatorElement.getBoundingClientRect();
-      const indicatorCenter = indicatorRect.left + indicatorRect.width / 2;
+      // ถ้าไม่ได้ลาก (แค่คลิกเฉยๆ) ให้ปล่อยให้ onClick ของปุ่มทำงานตามปกติ
+      if (!hasDragged) {
+        return;
+      }
 
-      let closestPageId: string | null = null;
+      hasDragged = false;
+      suppressNextClickRef.current = true;
+      window.setTimeout(() => {
+        suppressNextClickRef.current = false;
+      }, 80);
+
+      // หาปุ่มที่อยู่ใกล้ตำแหน่งที่ลากไปปล่อยมากที่สุดด้วยพิกัดภายในแถบเมนูโดยตรง
+      let closestIdx = activeIndexRef.current;
       let minDistance = Infinity;
 
-      PAGES_CONFIG.forEach(({ id }) => {
-        const link = navLinksRef.current[id];
+      NORMALIZED_PAGES.forEach((_, idx) => {
+        const link = navLinksRef.current[idx];
         if (!link) return;
-        const rect = link.getBoundingClientRect();
-        const center = rect.left + rect.width / 2;
-        const distance = Math.abs(center - indicatorCenter);
+        const targetX = getLinkTargetTranslateX(link);
+        const distance = Math.abs(targetX - currentTranslate);
         if (distance < minDistance) {
           minDistance = distance;
-          closestPageId = id;
+          closestIdx = idx;
         }
       });
 
-      if (closestPageId) {
-        navigateTo(closestPageId);
-      } else {
-        const currentLink = navLinksRef.current[activePage];
-        if (currentLink) moveIndicator(currentLink);
-      }
+      navigateTo(closestIdx);
     };
 
-    const onTouchStart = (e: TouchEvent) =>
-      handleDragStart(e.touches[0].clientX, e.touches[0].clientY);
-    const onTouchMove = (e: TouchEvent) => handleDragMove(e.touches[0].clientX, e);
+    const onTouchStart = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        handleDragStart(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    };
+    const onTouchMove = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        handleDragMove(e.touches[0].clientX, e);
+      }
+    };
     const onMouseDown = (e: MouseEvent) => handleDragStart(e.clientX, e.clientY);
     const onMouseMove = (e: MouseEvent) => handleDragMove(e.clientX, e);
 
@@ -279,7 +353,7 @@ export default function App() {
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mouseup', handleDragEnd);
     };
-  }, [activePage, moveIndicator, navigateTo]);
+  }, [getLinkTargetTranslateX, navigateTo]);
 
   // Interactive Particle Background Canvas
   useEffect(() => {
@@ -447,8 +521,8 @@ export default function App() {
         <section
           id="home"
           aria-label="หน้าแรก ห้องเรียนครูอาร์ม"
-          className={`page-section ${activePage === 'home' ? 'active' : ''} ${
-            visiblePage === 'home' ? 'visible' : ''
+          className={`page-section ${activeIndex === 0 ? 'active' : ''} ${
+            visibleIndex === 0 ? 'visible' : ''
           } border-b border-slate-800/80 relative z-10 w-full min-h-dvh pb-[100px] overflow-hidden m-0 flex-col items-center justify-center`}
         >
           <div className="w-full max-w-[1600px] mx-auto px-5 sm:px-12 lg:px-20 py-10 md:py-16 flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12">
@@ -517,17 +591,18 @@ export default function App() {
         </section>
 
         {/* AUTO-GENERATED IFRAME SECTIONS FROM PAGES_CONFIG */}
-        {PAGES_CONFIG.filter((page) => Boolean(page.url)).map((page) => {
-          const isLoaded = Boolean(loadedIframes[page.id]);
-          const isDone = Boolean(iframeLoadedDone[page.id]);
+        {NORMALIZED_PAGES.map((page) => {
+          if (!page.url || page.index === 0) return null;
+          const isLoaded = Boolean(loadedIframes[page.index]);
+          const isDone = Boolean(iframeLoadedDone[page.index]);
 
           return (
             <section
-              key={page.id}
-              id={page.id}
+              key={page.uniqueId}
+              id={page.uniqueId}
               aria-label={page.label}
-              className={`page-section ${activePage === page.id ? 'active' : ''} ${
-                visiblePage === page.id ? 'visible' : ''
+              className={`page-section ${activeIndex === page.index ? 'active' : ''} ${
+                visibleIndex === page.index ? 'visible' : ''
               } w-full h-dvh flex-col relative z-10 p-0 m-0 flex-grow bg-slate-950`}
             >
               {isLoaded && !isDone && (
@@ -536,13 +611,13 @@ export default function App() {
                 </div>
               )}
               <iframe
-                id={`iframe-${page.id}`}
+                id={`iframe-${page.uniqueId}`}
                 src={isLoaded ? page.url : 'about:blank'}
                 data-src={page.url}
                 title={page.label}
                 onLoad={() => {
                   if (isLoaded) {
-                    setIframeLoadedDone((prev) => ({ ...prev, [page.id]: true }));
+                    setIframeLoadedDone((prev) => ({ ...prev, [page.index]: true }));
                   }
                 }}
                 className="w-full h-full border-0 relative z-10"
@@ -565,19 +640,25 @@ export default function App() {
           {/* ไฟวิเศษที่วิ่งตามปุ่ม */}
           <div id="magic-indicator" ref={indicatorRef} className="magic-indicator" />
 
-          {PAGES_CONFIG.map((item) => {
-            const isActive = activePage === item.id;
+          {NORMALIZED_PAGES.map((item) => {
+            const isActive = activeIndex === item.index;
             return (
               <a
-                key={item.id}
-                href={`#${item.id}`}
+                key={item.uniqueId}
+                href={`#${item.uniqueId}`}
                 ref={(el) => {
-                  navLinksRef.current[item.id] = el;
+                  navLinksRef.current[item.index] = el;
                 }}
                 draggable={false}
                 aria-current={isActive ? 'page' : undefined}
-                onClick={(e) => navigateTo(item.id, e)}
-                className={`nav-link select-none relative z-10 snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] rounded-full group bg-transparent transition-all duration-300 ease-out active:scale-90 ${
+                onClick={(e) => {
+                  if (suppressNextClickRef.current) {
+                    e.preventDefault();
+                    return;
+                  }
+                  navigateTo(item.index, e);
+                }}
+                className={`nav-link select-none relative z-10 snap-start shrink-0 flex flex-col items-center justify-center w-[60px] h-[60px] px-0.5 rounded-full group bg-transparent transition-all duration-300 ease-out active:scale-90 overflow-hidden ${
                   isActive ? 'active-menu-item text-white' : 'text-slate-400'
                 }`}
               >
@@ -585,7 +666,7 @@ export default function App() {
                   className={`${item.icon} text-[20px] mb-1 group-hover:-translate-y-0.5 transition-transform duration-300 pointer-events-none`}
                   aria-hidden="true"
                 />
-                <span className="text-[10px] font-medium tracking-wide pointer-events-none">
+                <span className="text-[10px] font-medium tracking-tight leading-none whitespace-nowrap max-w-[56px] truncate pointer-events-none">
                   {item.label}
                 </span>
               </a>
