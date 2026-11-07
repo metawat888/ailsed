@@ -33,7 +33,7 @@ const PAGES_CONFIG: PageItem[] = [
   {
     id: 'archive',
     label: 'คลังข้อมูล',
-    icon: 'fa-solid fa-school',
+    icon: 'fa-solid fa-book',
     url: 'https://bingo-five-rust.vercel.app/',
   },
     {
