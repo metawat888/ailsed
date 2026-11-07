@@ -5,56 +5,66 @@
 
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 
-type PageId = 'home' | 'ailab' | 'archive';
-
-interface NavItem {
-  id: PageId;
+export interface PageItem {
+  id: string;
   label: string;
   icon: string;
+  url?: string;
 }
 
-const NAV_ITEMS: NavItem[] = [
-  { id: 'home', label: 'หน้าแรก', icon: 'fa-solid fa-house' },
-  { id: 'ailab', label: 'Ai Lab', icon: 'fa-solid fa-flask' },
-  { id: 'archive', label: 'คลังข้อมูล', icon: 'fa-solid fa-database' },
-];
-
-const IFRAME_CONFIG: Record<Exclude<PageId, 'home'>, { id: string; url: string; title: string }> = {
-  ailab: {
-    id: 'iframe-ailab',
+// ============================================================================
+// 🟢 พื้นที่ตั้งค่าเมนูและหน้าเว็บ (เพิ่ม/ลบ/แก้ไข หน้าเว็บทั้งหมดได้ที่นี่จุดเดียว!) 🟢
+// วิธีเพิ่มคลังข้อมูลหรือหน้าใหม่:
+// เพียงคัดลอก 1 บล็อกด้านล่างไปวางต่อท้าย แล้วแก้ id, label, icon และ url
+// ระบบจะสร้างทั้ง "หน้าต่างแสดงเว็บ (Iframe)" และ "ปุ่มเมนูด้านล่าง" ให้อัตโนมัติทันที!
+// ============================================================================
+const PAGES_CONFIG: PageItem[] = [
+  {
+    id: 'home',
+    label: 'หน้าแรก',
+    icon: 'fa-solid fa-house',
+  },
+  {
+    id: 'ailab',
+    label: 'Ai Lab',
+    icon: 'fa-solid fa-flask',
     url: 'https://ailabv2.vercel.app/',
-    title: 'Ai Lab Platform',
   },
-  archive: {
-    id: 'iframe-archive',
+  {
+    id: 'archive',
+    label: 'คลังข้อมูล',
+    icon: 'fa-solid fa-database',
     url: 'https://bingo-five-rust.vercel.app/',
-    title: 'Archive Platform',
   },
-};
+  // 👇 ตัวอย่างการเพิ่มหน้าใหม่ (คัดลอกบรรทัดด้านล่างนี้ไปวางต่อท้ายได้เลย):
+  // {
+  //   id: 'archive2',
+  //   label: 'คลังข้อมูล 2',
+  //   icon: 'fa-solid fa-folder-open',
+  //   url: 'https://ใส่ลิงก์เว็บของคุณที่นี่.vercel.app/',
+  // },
+];
+// ============================================================================
+// 🔴 สิ้นสุดพื้นที่ตั้งค่าเมนู (โค้ดด้านล่างทำงานอัตโนมัติ ไม่ต้องแก้ไข) 🔴
+// ============================================================================
 
 declare global {
   interface Window {
-    navigateTo?: (pageId: PageId, event?: React.MouseEvent | MouseEvent | null) => void;
+    navigateTo?: (pageId: string, event?: React.MouseEvent | MouseEvent | null) => void;
   }
 }
 
 export default function App() {
-  const [activePage, setActivePage] = useState<PageId>('home');
-  const [visiblePage, setVisiblePage] = useState<PageId>('home');
+  const defaultPageId = PAGES_CONFIG[0]?.id || 'home';
+  const [activePage, setActivePage] = useState<string>(defaultPageId);
+  const [visiblePage, setVisiblePage] = useState<string>(defaultPageId);
   const [loadedIframes, setLoadedIframes] = useState<Record<string, boolean>>({});
-  const [iframeLoading, setIframeLoading] = useState<Record<string, boolean>>({
-    ailab: true,
-    archive: true,
-  });
+  const [iframeLoadedDone, setIframeLoadedDone] = useState<Record<string, boolean>>({});
 
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const bottomNavRef = useRef<HTMLElement | null>(null);
   const indicatorRef = useRef<HTMLDivElement | null>(null);
-  const navLinksRef = useRef<Record<PageId, HTMLAnchorElement | null>>({
-    home: null,
-    ailab: null,
-    archive: null,
-  });
+  const navLinksRef = useRef<Record<string, HTMLAnchorElement | null>>({});
   const transitionTimeoutRef = useRef<number | null>(null);
 
   // Move Magic Indicator to active button
@@ -68,19 +78,22 @@ export default function App() {
     indicator.style.transform = `translate3d(${offsetLeft - 6}px, 0, 0)`;
   }, []);
 
-  // Navigation handler matching original navigateTo(pageId, event)
+  // Navigation handler
   const navigateTo = useCallback(
-    (pageId: PageId, event: React.MouseEvent | MouseEvent | null = null) => {
+    (pageId: string, event: React.MouseEvent | MouseEvent | null = null) => {
       if (event) {
         event.preventDefault();
       }
+
+      const targetPage = PAGES_CONFIG.find((p) => p.id === pageId);
+      if (!targetPage) return;
 
       if (transitionTimeoutRef.current) {
         window.clearTimeout(transitionTimeoutRef.current);
       }
 
-      // Lazy-load iframe when navigated to for the first time
-      if (pageId !== 'home') {
+      // Lazy-load iframe automatically when navigated to for the first time
+      if (targetPage.url) {
         setLoadedIframes((prev) => (prev[pageId] ? prev : { ...prev, [pageId]: true }));
       }
 
@@ -88,7 +101,7 @@ export default function App() {
 
       // Update URL hash without scrolling
       if (window.history.replaceState) {
-        const newHash = pageId === 'home' ? window.location.pathname : `#${pageId}`;
+        const newHash = pageId === defaultPageId ? window.location.pathname : `#${pageId}`;
         window.history.replaceState(null, '', newHash);
       }
 
@@ -102,10 +115,10 @@ export default function App() {
         moveIndicator(targetLink, false);
       }
     },
-    [moveIndicator]
+    [defaultPageId, moveIndicator]
   );
 
-  // Expose navigateTo globally for compatibility with original script structure
+  // Expose navigateTo globally
   useEffect(() => {
     window.navigateTo = navigateTo;
     return () => {
@@ -115,11 +128,11 @@ export default function App() {
 
   // Initial page setup & URL hash support
   useEffect(() => {
-    const hash = window.location.hash.replace('#', '') as PageId;
-    const initialPage: PageId =
-      hash === 'ailab' || hash === 'archive' || hash === 'home' ? hash : 'home';
+    const hash = window.location.hash.replace('#', '');
+    const matchedPage = PAGES_CONFIG.find((p) => p.id === hash);
+    const initialPage = matchedPage ? matchedPage.id : defaultPageId;
 
-    if (initialPage !== 'home') {
+    if (matchedPage?.url) {
       setLoadedIframes((prev) => ({ ...prev, [initialPage]: true }));
     }
 
@@ -132,18 +145,21 @@ export default function App() {
       }
     }, 50);
 
+    return () => {
+      window.clearTimeout(timer);
+    };
+  }, [defaultPageId, moveIndicator]);
+
+  // Keep Magic Indicator aligned on window resize
+  useEffect(() => {
     const handleResizeIndicator = () => {
       const link = navLinksRef.current[activePage];
       if (link) {
         moveIndicator(link, true);
       }
     };
-
     window.addEventListener('resize', handleResizeIndicator);
-    return () => {
-      window.clearTimeout(timer);
-      window.removeEventListener('resize', handleResizeIndicator);
-    };
+    return () => window.removeEventListener('resize', handleResizeIndicator);
   }, [activePage, moveIndicator]);
 
   // Magic Indicator Drag Logic (Touch & Mouse)
@@ -208,18 +224,18 @@ export default function App() {
       const indicatorRect = indicatorElement.getBoundingClientRect();
       const indicatorCenter = indicatorRect.left + indicatorRect.width / 2;
 
-      let closestPageId: PageId | null = null;
+      let closestPageId: string | null = null;
       let minDistance = Infinity;
 
-      (Object.keys(navLinksRef.current) as PageId[]).forEach((pageId) => {
-        const link = navLinksRef.current[pageId];
+      PAGES_CONFIG.forEach(({ id }) => {
+        const link = navLinksRef.current[id];
         if (!link) return;
         const rect = link.getBoundingClientRect();
         const center = rect.left + rect.width / 2;
         const distance = Math.abs(center - indicatorCenter);
         if (distance < minDistance) {
           minDistance = distance;
-          closestPageId = pageId;
+          closestPageId = id;
         }
       });
 
@@ -494,66 +510,45 @@ export default function App() {
           </div>
         </section>
 
-        {/* SECTION 2: Ai Lab */}
-        <section
-          id="ailab"
-          aria-label="Ai Lab"
-          className={`page-section ${activePage === 'ailab' ? 'active' : ''} ${
-            visiblePage === 'ailab' ? 'visible' : ''
-          } w-full h-dvh flex-col relative z-10 p-0 m-0 flex-grow bg-slate-950`}
-        >
-          {iframeLoading.ailab && loadedIframes.ailab && (
-            <div className="absolute inset-0 flex items-center justify-center bg-slate-950 z-0 pointer-events-none">
-              <div className="w-10 h-10 rounded-full border-2 border-sky-500/30 border-t-sky-400 animate-spin" />
-            </div>
-          )}
-          <iframe
-            id={IFRAME_CONFIG.ailab.id}
-            src={loadedIframes.ailab ? IFRAME_CONFIG.ailab.url : 'about:blank'}
-            data-src={IFRAME_CONFIG.ailab.url}
-            title={IFRAME_CONFIG.ailab.title}
-            onLoad={() => {
-              if (loadedIframes.ailab) {
-                setIframeLoading((prev) => ({ ...prev, ailab: false }));
-              }
-            }}
-            className="w-full h-full border-0 relative z-10"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        </section>
+        {/* AUTO-GENERATED IFRAME SECTIONS FROM PAGES_CONFIG */}
+        {PAGES_CONFIG.filter((page) => Boolean(page.url)).map((page) => {
+          const isLoaded = Boolean(loadedIframes[page.id]);
+          const isDone = Boolean(iframeLoadedDone[page.id]);
 
-        {/* SECTION 3: Archive */}
-        <section
-          id="archive"
-          aria-label="คลังข้อมูล"
-          className={`page-section ${activePage === 'archive' ? 'active' : ''} ${
-            visiblePage === 'archive' ? 'visible' : ''
-          } w-full h-dvh flex-col relative z-10 p-0 m-0 flex-grow bg-slate-950`}
-        >
-          {iframeLoading.archive && loadedIframes.archive && (
-            <div className="absolute inset-0 flex items-center justify-center bg-slate-950 z-0 pointer-events-none">
-              <div className="w-10 h-10 rounded-full border-2 border-sky-500/30 border-t-sky-400 animate-spin" />
-            </div>
-          )}
-          <iframe
-            id={IFRAME_CONFIG.archive.id}
-            src={loadedIframes.archive ? IFRAME_CONFIG.archive.url : 'about:blank'}
-            data-src={IFRAME_CONFIG.archive.url}
-            title={IFRAME_CONFIG.archive.title}
-            onLoad={() => {
-              if (loadedIframes.archive) {
-                setIframeLoading((prev) => ({ ...prev, archive: false }));
-              }
-            }}
-            className="w-full h-full border-0 relative z-10"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        </section>
+          return (
+            <section
+              key={page.id}
+              id={page.id}
+              aria-label={page.label}
+              className={`page-section ${activePage === page.id ? 'active' : ''} ${
+                visiblePage === page.id ? 'visible' : ''
+              } w-full h-dvh flex-col relative z-10 p-0 m-0 flex-grow bg-slate-950`}
+            >
+              {isLoaded && !isDone && (
+                <div className="absolute inset-0 flex items-center justify-center bg-slate-950 z-0 pointer-events-none">
+                  <div className="w-10 h-10 rounded-full border-2 border-sky-500/30 border-t-sky-400 animate-spin" />
+                </div>
+              )}
+              <iframe
+                id={`iframe-${page.id}`}
+                src={isLoaded ? page.url : 'about:blank'}
+                data-src={page.url}
+                title={page.label}
+                onLoad={() => {
+                  if (isLoaded) {
+                    setIframeLoadedDone((prev) => ({ ...prev, [page.id]: true }));
+                  }
+                }}
+                className="w-full h-full border-0 relative z-10"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </section>
+          );
+        })}
       </main>
 
-      {/* Bottom Navigation Bar */}
+      {/* Bottom Navigation Bar (Auto-Generated from PAGES_CONFIG) */}
       <div className="fixed bottom-4 sm:bottom-6 left-0 w-full z-[999] pb-safe px-4 pointer-events-none flex justify-center">
         <nav
           id="bottom-nav"
@@ -564,7 +559,7 @@ export default function App() {
           {/* ไฟวิเศษที่วิ่งตามปุ่ม */}
           <div id="magic-indicator" ref={indicatorRef} className="magic-indicator" />
 
-          {NAV_ITEMS.map((item) => {
+          {PAGES_CONFIG.map((item) => {
             const isActive = activePage === item.id;
             return (
               <a
