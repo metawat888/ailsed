@@ -36,6 +36,12 @@ const PAGES_CONFIG: PageItem[] = [
     icon: 'fa-solid fa-database',
     url: 'https://bingo-five-rust.vercel.app/',
   },
+   {
+    id: 'archive',
+    label: 'คลังข้อมูล 2 ',
+    icon: 'fa-solid fa-database',
+    url: 'https://bingo-five-rust.vercel.app/',
+  },
   // 👇 ตัวอย่างการเพิ่มหน้าใหม่ (คัดลอกบรรทัดด้านล่างนี้ไปวางต่อท้ายได้เลย):
   // {
   //   id: 'archive2',
