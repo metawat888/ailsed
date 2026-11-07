@@ -1,0 +1,6 @@
+{
+  "name": "Ailsed | Ai lab studio education",
+  "description": "Ailsed แพลตฟอร์มการเรียนรู้ดิจิทัล นวัตกรรมการศึกษา สื่อการเรียนรู้ และเครื่องมือออนไลน์ ห้องเรียนครูอาร์ม",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

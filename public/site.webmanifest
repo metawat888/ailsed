@@ -1,0 +1,22 @@
+{
+  "name": "Ailsed | Ai lab studio education",
+  "short_name": "Ailsed",
+  "description": "Ailsed แพลตฟอร์มการเรียนรู้ดิจิทัล นวัตกรรมการศึกษา สื่อการเรียนรู้ และเครื่องมือออนไลน์",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "lang": "th",
+  "icons": [
+    {
+      "src": "https://live.staticflickr.com/65535/55608910330_91be335ec1.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "https://live.staticflickr.com/65535/55608910330_91be335ec1.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
