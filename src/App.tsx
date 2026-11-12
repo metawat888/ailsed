@@ -40,7 +40,7 @@ const PAGES_CONFIG: PageItem[] = [
     id: 'archive',
     label: 'Ai Class',
     icon: 'fa-solid fa-book',
-    url: 'https://180iqmath.vercel.app/',
+    url: 'https://aiclass-beige.vercel.app',
   },
    {
     id: 'archive',
