@@ -48,6 +48,12 @@ const PAGES_CONFIG: PageItem[] = [
     icon: 'fa-solid fa-file',
     url: 'https://meb1.vercel.app/',
   },
+   {
+    id: 'thing',
+    label: 'comment',
+    icon: 'fa-solid fa-user-group',
+    url: 'https://think-dusky.vercel.app',
+  },
   // 👇 ตัวอย่างการเพิ่มปุ่มใหม่ (ก๊อปปี้ไปวางต่อท้ายได้เลย ไม่ต้องกลัวชื่อ id ซ้ำ):
   // {
   //   label: 'คลังข้อมูล 2',
