@@ -21,7 +21,7 @@ export interface PageItem {
 const PAGES_CONFIG: PageItem[] = [
   {
     id: 'home',
-    label: 'หน้าแรก',
+    label: 'Home',
     icon: 'fa-solid fa-house',
   },
   {
