@@ -44,7 +44,7 @@ const PAGES_CONFIG: PageItem[] = [
   },
    {
     id: 'archive',
-    label: 'Ai Publish',
+    label: 'Ai Book',
     icon: 'fa-solid fa-file',
     url: 'https://meb1.vercel.app/',
   },
