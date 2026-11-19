@@ -36,18 +36,6 @@ const PAGES_CONFIG: PageItem[] = [
     icon: 'fa-solid fa-database',
     url: 'https://bingo-five-rust.vercel.app/',
   },
-    {
-    id: 'archive',
-    label: 'Ai Class',
-    icon: 'fa-solid fa-book',
-    url: 'https://aiclass-beige.vercel.app',
-  },
-   {
-    id: 'archive',
-    label: 'Ai Book',
-    icon: 'fa-solid fa-file',
-    url: 'https://meb1.vercel.app/',
-  },
    {
     id: 'think',
     label: 'Ai Think',
