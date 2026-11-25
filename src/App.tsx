@@ -513,7 +513,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col text-slate-200 relative z-0">
+    <div className="min-h-dvh flex flex-col text-slate-200 relative z-0">
       {/* Interactive Background Canvas */}
       <canvas
         id="particle-canvas"
@@ -609,7 +609,7 @@ export default function App() {
               aria-label={page.label}
               className={`page-section ${activeIndex === page.index ? 'active' : ''} ${
                 visibleIndex === page.index ? 'visible' : ''
-              } w-full h-dvh flex-col relative z-10 p-0 m-0 flex-grow bg-slate-950`}
+              } w-full h-dvh min-h-0 flex-none flex-col relative z-10 p-0 m-0 bg-slate-950`}
             >
               {isLoaded && !isDone && (
                 <div className="absolute inset-0 flex items-center justify-center bg-slate-950 z-0 pointer-events-none">
@@ -626,7 +626,7 @@ export default function App() {
                     setIframeLoadedDone((prev) => ({ ...prev, [page.index]: true }));
                   }
                 }}
-                className="w-full h-full border-0 relative z-10"
+                className="w-full h-full min-h-0 border-0 relative z-10"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
