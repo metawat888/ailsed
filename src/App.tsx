@@ -21,7 +21,7 @@ export interface PageItem {
 const PAGES_CONFIG: PageItem[] = [
   {
     id: 'home',
-    label: 'Home',
+    label: 'หน้าแรก',
     icon: 'fa-solid fa-house',
   },
   {
@@ -32,15 +32,9 @@ const PAGES_CONFIG: PageItem[] = [
   },
   {
     id: 'archive',
-    label: 'Ai Data',
+    label: 'คลังข้อมูล',
     icon: 'fa-solid fa-database',
     url: 'https://bingo-five-rust.vercel.app/',
-  },
-   {
-    id: 'think',
-    label: 'Ai Think',
-    icon: 'fa-solid fa-user-group',
-    url: 'https://think-dusky.vercel.app',
   },
   // 👇 ตัวอย่างการเพิ่มปุ่มใหม่ (ก๊อปปี้ไปวางต่อท้ายได้เลย ไม่ต้องกลัวชื่อ id ซ้ำ):
   // {

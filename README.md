@@ -1,17 +1,20 @@
-# ClassBoard — กระดานไวท์บอร์ดแสดงความคิดเห็นนักเรียน (GitHub & Vercel Ready)
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
+</div>
 
-เว็บแอปพลิเคชันกระดานไวท์บอร์ดแสดงความคิดเห็นสำหรับห้องเรียน ที่ให้นักเรียนพิมพ์ชื่อเล่นแล้วเข้ามาโพสต์ แปะโน้ต วาดรูป กดถูกใจ และคอมเมนต์ตอบกลับใต้โพสต์เหมือน Facebook บนกระดานไวท์บอร์ด พร้อมระบบเก็บก้อน Data (Persistent JSON Data + LocalStorage + Cloud Sync)
+# Run and deploy your AI Studio app
 
-## วิธีอัปโหลดขึ้น GitHub และ Deploy บน Vercel.com
+This contains everything you need to run your app locally.
 
-1. อัปโหลดไฟล์ทั้งหมดในโฟลเดอร์นี้ (`index.html`, `vercel.json`, `package.json`, `README.md`) ขึ้น GitHub Repository ของคุณ:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit: ClassBoard Student Whiteboard"
-   git branch -M main
-   git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
-   git push -u origin main
-   ```
-2. ไปที่ [https://vercel.com](https://vercel.com) กด **Add New... -> Project**
-3. เลือก GitHub Repository ที่เพิ่งสร้าง แล้วกดปุ่ม **Deploy** ได้ทันที
+View your app in AI Studio: https://ai.studio/apps/99813ff5-22b7-4d8a-b1c1-c583853d7a25
+
+## Run Locally
+
+**Prerequisites:**  Node.js
+
+
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`
