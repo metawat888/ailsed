@@ -575,7 +575,7 @@ export default function App() {
             <div className="flex-1 flex flex-col items-center justify-center start-opacity-0 animate-fade-in-up anim-delay-500 w-full">
               <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 hover:scale-105 transition-transform duration-500">
                 <img
-                  src="https://live.staticflickr.com/65535/55605088814_c19d528e89_c.jpg"
+                  src="/homepage-portrait.jpg"
                   alt="ครูวิทยาศาสตร์ในห้องเรียนอัจฉริยะ"
                   width="320"
                   height="320"
