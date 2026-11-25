@@ -36,6 +36,12 @@ const PAGES_CONFIG: PageItem[] = [
     icon: 'fa-solid fa-database',
     url: 'https://bingo-five-rust.vercel.app/',
   },
+  {
+    id: 'think-board',
+    label: 'Think Board',
+    icon: 'fa-duotone fa-solid fa-user-group',
+    url: 'https://think-dusky.vercel.app',
+  },
   // 👇 ตัวอย่างการเพิ่มปุ่มใหม่ (ก๊อปปี้ไปวางต่อท้ายได้เลย ไม่ต้องกลัวชื่อ id ซ้ำ):
   // {
   //   label: 'คลังข้อมูล 2',
