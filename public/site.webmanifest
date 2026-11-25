@@ -3,20 +3,22 @@
   "short_name": "Ailsed",
   "description": "Ailsed แพลตฟอร์มการเรียนรู้ดิจิทัล นวัตกรรมการศึกษา สื่อการเรียนรู้ และเครื่องมือออนไลน์",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "any",
   "background_color": "#020617",
   "theme_color": "#020617",
   "lang": "th",
   "icons": [
     {
-      "src": "https://live.staticflickr.com/65535/55608910330_91be335ec1.jpg",
+      "src": "/android-chrome-192x192.png",
       "sizes": "192x192",
-      "type": "image/jpeg"
+      "type": "image/png"
     },
     {
-      "src": "https://live.staticflickr.com/65535/55608910330_91be335ec1.jpg",
+      "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
-      "type": "image/jpeg"
+      "type": "image/png"
     }
   ]
 }
