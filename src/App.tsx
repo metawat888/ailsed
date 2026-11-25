@@ -536,7 +536,7 @@ export default function App() {
               <div className="mb-4 flex justify-center md:justify-start start-opacity-0 animate-fade-in-up">
                 <div className="p-2 bg-slate-900/80 border border-slate-700/60 rounded-2xl backdrop-blur-md shadow-xl inline-block hover:scale-105 transition-transform duration-300">
                   <img
-                    src="https://live.staticflickr.com/65535/55608910330_91be335ec1.jpg"
+                    src="/ailsed-1024x1024.png"
                     alt="AILSED Logo"
                     width="64"
                     height="64"
